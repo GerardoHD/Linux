@@ -1,0 +1,9 @@
+#Limpiar Ubuntu
+echo --Limpiando Ubuntu--
+sleep 1s
+echo
+#!/bin/bash
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+df -h

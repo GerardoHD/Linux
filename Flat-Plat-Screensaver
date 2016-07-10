@@ -1,0 +1,3 @@
+#Flat-Plat-Screensaver
+sudo cp /usr/share/themes/Flat-Plat/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+echo Restart GNOME Shell by pressing Alt+F2, then type r
