@@ -1,6 +1,6 @@
 #Limpiar Manjaro
-echo ------==Script Creado por GerardoHD==------
-echo --Limpiando Manjaro Linux--
+echo         ------==Script Creado por GerardoHD==------
+echo     ---=Limpiando Manjaro Linux=---
 sleep 1s
 echo
 #!/bin/bash
