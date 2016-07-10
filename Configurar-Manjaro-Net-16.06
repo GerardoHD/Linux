@@ -46,7 +46,7 @@ yaourt -S ttf-roboto
 sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
-sudo pacman -S gnome-initial-setup
+sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools
 sudo pacman -S gnome-shell-extension-openweather
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
