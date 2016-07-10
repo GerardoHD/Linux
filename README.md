@@ -1,2 +1,2 @@
-# Poblar-Distros
-Scripts Para poblar Distros Linux tras instalación Inicial
+# Distros Linux
+Scripts para Realizar Labores Administrativas en Distros Linux
