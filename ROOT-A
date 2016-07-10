@@ -1,0 +1,6 @@
+#ROOT-A
+echo --Clonando Chromium OS ROOT-A--
+dd if=/dev/sdb3 of=/dev/sda8
+sleep 1s
+e2fsck -f -y -v -C 0 /dev/sda8
+resize2fs -p /dev/sda8
