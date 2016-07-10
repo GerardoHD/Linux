@@ -37,7 +37,7 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 echo ---=Instalación de Programas=---
 sleep 1s
 sudo pacman -S snapd flatpak
-sudo pacman -S speedtest-cli screenfetch cmatrix
+sudo pacman -S speedtest-cli cmatrix
 sudo pacman -S prelink preload
 yaourt -S ttf-roboto
 sudo pacman -S gnome-gvfs
