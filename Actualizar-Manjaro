@@ -1,6 +1,6 @@
 #Actualizar Manjaro
-echo ------==Script Creado por GerardoHD==------
-echo --Actualizando Manjaro Linux--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando Manjaro Linux=---
 sleep 1s
 echo
 #!/bin/bash
