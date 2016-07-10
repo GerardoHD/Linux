@@ -155,7 +155,7 @@ echo
 echo
 #
 echo
-echo ---=Instalación de Programas=---
+echo     ---=Instalación de Programas=---
 sleep 1s
 # cheese, aplicación que nos permite tomar fotografías y vídeos con nuestra webcam.
 sudo apt install cheese -y
