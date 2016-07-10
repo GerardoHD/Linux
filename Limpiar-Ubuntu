@@ -1,6 +1,6 @@
 #Limpiar Ubuntu
 echo          ------==Script Creado por GerardoHD==------
-echo     ---=Limpiando Ubuntu=--
+echo       ---=Limpiando Ubuntu=---
 sleep 1s
 echo
 #!/bin/bash
