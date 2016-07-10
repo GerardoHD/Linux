@@ -32,7 +32,7 @@ sleep 1s
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 echo ¿El Touchpad no funciona en GNOME?
 echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-echo Si el Touchpad aun no funciona usar xf86-input-synaptics (No recomendado)
+echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo ---=Instalación de Programas=---
 sleep 1s
