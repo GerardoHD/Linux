@@ -1,6 +1,6 @@
 #Reparar-var Ubuntu
-echo ------==Script Creado por GerardoHD==------
-echo --Reparando Var--
+echo          ------==Script Creado por GerardoHD==------
+echo     ---=Reparando Var=---
 sudo fuser -vki  /var/lib/dpkg/lock
 sudo rm -f /var/lib/dpkg/lock
 sudo dpkg --configure -a
