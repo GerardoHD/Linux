@@ -1,9 +1,9 @@
 #Descargar Scripts
-echo ------==Script Creado por GerardoHD==------
-echo https://github.com/GerardoHD
+echo          ------==Script Creado por GerardoHD==------
+echo     https://github.com/GerardoHD
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo --Descargando Scripts--
+echo     ---=Descargando Scripts=---
 sleep 1s
 echo
 #!/bin/bash
