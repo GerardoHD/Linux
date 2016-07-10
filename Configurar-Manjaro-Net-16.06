@@ -60,19 +60,3 @@ yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
 yaourt -S antu-dark-icon-theme-git flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome
 #
-echo     ---=Limpiando Manjaro Linux=---
-sleep 1s
-echo
-#!/bin/bash
-sudo pacman-optimize
-sudo pacman -Sc
-sudo yaourt -Sc
-df -h
-screenfetch
-#
-echo     ---Reinicio en 1 minuto---
-sleep 1s
-sudo shutdown -r +5
-echo          ------==Script Creado por GerardoHD==------
-echo https://github.com/GerardoHD
-#
