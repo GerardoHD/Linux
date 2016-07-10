@@ -1,6 +1,6 @@
 #Remover Scripts
-echo ------==Script Creado por GerardoHD==------
-echo --Removiendo Scripts--
+echo          ------==Script Creado por GerardoHD==------
+echo     ---=Removiendo Scripts=---
 sleep 1s
 echo
 #!/bin/bash
