@@ -1,0 +1,509 @@
+#!/bin/sh
+#
+# Script_Ubuntu_16.04_Post_Install.sh
+#
+# Para Ubuntu 16.04 (Xenial Xerus)
+#
+echo Script creado por Luis Cordero, Blog:
+echo http://trastetes.blogspot.com.es/
+# 
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+# 
+# Está licenciado bajo la licencia de Creative Commons
+# Reconocimiento-NoComercial-CompartirIgual 3.0 España.
+# http://creativecommons.org/licenses/by-nc-sa/3.0/es/ 
+#
+#
+# El script Ubuntu 16.04 Post Install, añade repositorios, actualiza el sistema e instala el software mas relevante, para el uso de nuestro Ubuntu.
+#
+#
+# Solo preguntará en:
+#
+# ubuntu-restricted-extras por razones legales
+#
+# Si queremos que se instalen las fuentes de Microsoft, tenemos que aceptar el EULA de la licencia, para ello, pulsamos la tecla Intro del teclado en Aceptar
+# Nos preguntara si aceptamos la instalación de ttf-mscorefonts (fuentes de Microsoft), para movernos a la opción <Sí> o la opción <No> pulsamos la tecla tabulador del teclado, posteriormente pulsamos Intro
+#
+#
+# Tener en cuenta lo siguiente:
+#
+# Leer el script detenidamente.
+#
+#
+# Si algún software no os interesa comentar o eliminar la linea.
+# Para comentar escribir delante "#" sin comillas. Para descomentar quitar #
+#
+# Si algún software no esta incluido, lo podéis incluir.
+#
+# Copiar el script en un archivo vacío. Darle un nombre, por ejemplo:
+# Script_Ubuntu_16.04_Post_Install.sh
+# y darle permisos de ejecución.
+# Es importante que tenga la extensión .sh
+#
+# Como dar permisos de ejecución:
+#
+# Botón derecho del ratón sobre el archivo, ir a la pestaña permisos y seleccionar, Permitir ejecutar el archivo como un programa.
+#
+# Como ejecutar el script:
+#
+# Doble clic con botón izquierdo del ratón y clicar en el botón, Ejecutar en un terminal
+#
+# Si no funciona la ejecución, o más información, visita la siguiente pagina:
+#
+# Permitir Script o Archivos de texto ejecutables como un programa en Ubuntu 16.04 LTS
+# http://trastetes.blogspot.com.es/2016/04/permitir-script-o-archivos-de-texto.html
+#
+#
+# Script Modificado por GerardoHD
+echo ---=Poblando Ubuntu 16.04 Xenial Xerus=---
+sleep 3s
+#
+echo ---=Inicio Repositorios=---
+sleep 1s
+# Activar repositorio Socios de Canonical.
+sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
+# Hay que tener precaución de no repetir los Repositorios, ya que nos crearían problemas
+# GerardoHD
+# Repositorio Papirus  
+sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
+#Repositorio Arc Theme
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" -y
+#
+wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+sudo apt-key add - < Release.key -y
+# Repositorio Noobslab Themes
+sudo add-apt-repository ppa:noobslab/themes
+# Repositorio Daniel Richter
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
+#
+#
+# Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
+# Si quieres más, visita la pagina: http://www.atareao.es/
+sudo add-apt-repository ppa:atareao/atareao --yes
+#
+# Repositorio atareao/nautilus-extensions, para varias aplicaciones: Nautilus Pdf Tools, Nautilus Image Tools
+# Si quieres más, visita la pagina: http://www.atareao.es/ 
+sudo add-apt-repository ppa:atareao/nautilus-extensions --yes
+#
+# Repositorio diesch/testing, para varias aplicaciones: Classic Menu Indicator, Unsettings
+sudo add-apt-repository ppa:diesch/testing --yes
+#
+# Repositorio indicator-brightness, un indicador de aplicación que ajusta el brillo de la pantalla, desde el panel superior
+sudo add-apt-repository ppa:indicator-brightness/ppa --yes
+#
+# Repositorio de MultiSystem, permite tener múltiples sistemas LiveUSB en una memoria USB
+sudo apt-add-repository 'deb http://liveusb.info/multisystem/depot all main' --yes
+# Añadir la clave pública de MultiSystem
+wget -q -O - http://liveusb.info/multisystem/depot/multisystem.asc | sudo apt-key add -
+#
+# Repositorio nemh/systemback, aplicación para realizar copias de seguridad, copia del sistema, la instalación del sistema y la creación del sistema en vivo (livecd o LiveUSB del sistema instalado).
+sudo add-apt-repository ppa:nemh/systemback --yes
+#
+# Repositorio oibaf/graphics-drivers, Drivers gráficos para Ubuntu, drivers libres y de código abierto actualizados y optimizados, tarjetas gráficas NVIDIA, ATI o INTEL(solo es necesario actualizar biblioteca de paquetes y sistema).
+#sudo add-apt-repository ppa:oibaf/graphics-drivers --yes
+#
+# Repositorio peterlevi, Variety, aplicación que cambia el fondo de escritorio de forma regular.
+sudo add-apt-repository ppa:peterlevi/ppa --yes
+#
+# Repositorio webupd8team, y-ppa-manager, herramienta para gestionar los PPAs.
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager --yes
+#
+echo ------Final Repositorios------
+#
+echo -----Actualizando el sistema-----
+sleep 1s
+# Actualizamos la biblioteca de paquetes.
+sudo apt update
+#
+# Actualizamos el sistema.
+sudo apt upgrade -y
+#
+#
+echo
+echo --------Instalaciones---------
+sleep 2s
+echo
+echo
+#
+echo ----Instalacion de Controladores o Codecs----
+sleep 1s
+# Ubuntu Restricted Extras, Codecs y fuentes adicionales, Java, Flash, etc.,software esencial no incluido por razones legales.
+sudo apt install ubuntu-restricted-extras -y
+#
+# para las fuentes de Microsoft añadirlas a todas las aplicaciones (poner # en caso de no querer la instalación).
+sudo fc-cache -f -v
+#
+# Ver películas y vídeos en HD.
+# x264, codificador de vídeo para el H.264 / MPEG-4 AVC estándar
+sudo apt install x264 -y
+#
+# codificador de vídeo para el H.265 / HEVC
+sudo apt install x265 -y
+#
+# exfat-fuse, exfat-utils, controlador para FUSE para poder leer y escribir exFAT , utilidades para crear, comprobar, etiqueta y volcado del sistema de archivos exFAT
+sudo apt install exfat-fuse exfat-utils -y
+#
+# Herramientas para la lectura y escritura de volúmenes de Macintosh, para acceder a HFS + volúmenes formateados,  mkfs y fsck para HFS y HFS + sistemas de archivos, Tecnología traducir hfst, leer y escribir interfaces de Tcl / Tk
+sudo apt install hfsplus hfsprogs hfst hfsutils hfsutils-tcltk -y
+#
+echo
+echo ----Final Instalación de Controladores o Codecs----
+sleep 2s
+echo
+echo
+#
+echo
+echo -----Instalación de Aplicaciones------
+sleep 1s
+# 2gif, aplicación que nos permite crear un gif animado de un vídeo en Ubuntu, utilizando la tecnología Drag & Drop (arrastrar y soltar), y a partir de ahí seleccionar el momento de inicio y el momento de fin del vídeo.
+# Es necesario el repositorio ppa:atareao/atareao
+#sudo apt install 2gif -y
+#
+# aMule, programa de intercambio P2P libre y multiplataforma, cliente para las redes eD2k y Kad, como eMule
+#sudo apt install amule amule-utils amule-utils-gui amule-gnome-support -y
+#
+# ANTIVIRUS
+# ClamTk, para los archivos que se comparten con Windows, (no se necesita para Ubuntu).
+#sudo apt install clamtk clamtk-gnome clamtk-nautilus -y
+#
+# ANTIVIRUS (# comentado)
+# Si lo quieres instalar (quitar #) como un demonio para que al reiniciar siempre esté vigilante (no se necesita para Ubuntu) scanner daemon.
+#sudo apt-get install clamav-daemon -y
+#
+# Archivos comprimidos.
+sudo apt install rar unrar unace zip unzip p7zip p7zip-full p7zip-rar -y
+#
+# Audacious, reproductor de audio pequeño y rápido que soporta gran cantidad de formatos
+#sudo apt install audacious -y
+#
+# Audacity, editor de audio libre y multiplataforma, puede grabar audio en directo a través de un micrófono o un mezclador, digitalizar sus cassettes, discos de vinilo y minidisco. Con algunas tarjetas de sonido, puede capturar streaming de audio.
+#sudo apt install audacity -y
+#
+# AcetoneISO, aplicación para montar y gestionar CD y DVD. Formatos de disco de imagen soportados son ISO, BIN, NRG, MDF e IMG.
+#sudo apt install acetoneiso -y
+#
+# Blender, programa de código abierto para modelado 3D, rigging, animación, simulación, renderizado, composición y seguimiento de movimiento, incluso la edición de vídeo y creación de juego, multi plataforma
+#sudo apt install blender -y
+#
+# Bluefish, editor de código (para HTML, PHP, Javascript, JSP, SQL, XML, Python, Perl, CSS, ColdFusion, Pascal, R, Octave/Matlab...).
+#sudo apt install bluefish -y
+#
+# cairo-dock, barra estilo dock, más , Plug-ins para Cairo-Dock para una mejor integración en GNOME, KDE y Xfce
+#sudo apt install cairo-dock cairo-dock-plug-ins cairo-dock-plug-ins-integration -y
+#
+# Calibre, gestor y organizador de libros electrónicos, conversor de libros electrónicos e-book
+#sudo apt install calibre -y
+#
+# Classic Menu Indicator, Applet para el área de notificación que revive el  clásico menú de Gnome2.
+# Es necesario el repositorio ppa:diesch/testing
+#sudo apt install classicmenu-indicator -y
+#
+# Compiz y plugins. Administrador de configuración de Compiz
+#sudo apt install compizconfig-settings-manager compiz-plugins-extra -y
+#
+# CUPS-PDF, impresora virtual para crear un documento PDF a partir de cualquier aplicación
+#sudo apt install cups-pdf printer-driver-cups-pdf -y
+#
+# cheese, aplicación que nos permite tomar fotografías y vídeos con nuestra webcam.
+sudo apt install cheese -y
+#
+# Chromium, Navegador proyecto libre en el cual Google está basando el desarrollo de su navegador Google Chrome.
+#sudo apt install chromium-browser chromium-codecs-ffmpeg-extra unity-chromium-extension -y
+#
+# Darktable, aplicación de código abierto para el flujo de trabajo fotográfico y revelado RAW (cuarto oscuro para los fotógrafos)(recomendado utilizar en 64 bits)
+#sudo apt install darktable -y
+#
+# dconf-tools, configurar Gnome. Herramienta muy útil que nos permite configurar varios aspectos de Unity.
+sudo apt install dconf-tools -y
+#
+# Evince es un visor de documentos para múltiples formatos de documentos. El objetivo de evince es reemplazar los múltiples visores de documentos que existen en el escritorio GNOME con una sola aplicación simple. Viene instalado por defecto en Ubuntu
+#sudo apt install evince -y
+#
+# Filezilla, cliente FTP. Posee una agradable e intuitiva interfaz. Sustenta FTP, SFTP y FTP sobre SSL..
+#sudo apt install filezilla filezilla-common -y
+#
+# Fotowall, Herramienta creativa de colección de fotos, añadir texto, vídeo en directo desde tu webcam y las imágenes de Internet.
+#sudo apt install fotowall -y
+#
+# Geany, editor de código rápido y ligero (C, C++, C#, Java, JavaScript, PHP, HTML, CSS, Python, Perl, Ruby, Fortran, Pascal y Haskell..).
+#sudo apt install geany -y
+#
+# GCompris, programa de cómputo educativo con diferentes actividades para niños entre 2 y 10 años de edad, algunas actividades son como juegos, pero siempre son educacionales, comprende mas de 100 actividades y evoluciona constantemente
+#sudo apt install gcompris -y
+#
+# GConf-Editor, herramienta que se utiliza para la edición de la base de datos de configuración de GConf (configuración de Gnome).
+sudo apt install gconf-editor -y
+#
+# Gdebi, herramienta para ver e instalar paquetes deb. Sin recurrir a una línea de comandos.
+sudo apt install gdebi -y
+#
+# gedit es un editor de texto pequeño y ligero para el escritorio GNOME que viene instalado por defecto en Ubuntu
+sudo apt install gedit -y
+#
+# Gimp con plugins. Programa libre, de edición de imágenes digitales, similar a Photoshop.
+#sudo apt install gimp gimp-plugin-registry gimp-ufraw gimp-gmic gimp-help-es -y
+# GKrellM, barra que incorpora gráficas del uso de tu CPU, discos, carga del sistema, interfaces de red y conexiones a Internet entre otros.
+#sudo apt install gkrellm -y
+#
+# gnome-sushi, previsualizador de casi toda clase de archivos, documentos, imágenes, audio y vídeo...Trabaja en Unity y Gnome-shell.
+#sudo apt install gnome-sushi -y
+#
+# gnome-system-tools, gestionar permisos a usuarios y grupos gráficamente
+sudo apt install gnome-system-tools -y
+#
+# gnome-tweak-tool, Herramienta de retoques de GNOME, nos servirá para aplicar temas, añadir opciones al sistema, para configurar Gnome Shell y Unity.
+sudo apt install gnome-tweak-tool -y
+#
+# GParted es un editor de particiones gratuito para gestionar gráficamente las particiones del disco. Con GParted se puede cambiar el tamaño, crear, eliminar, copiar y mover particiones sin pérdida de datos y crear un espacio para nuevos sistemas operativos
+sudo apt install gparted -y
+#
+# gtkpod, Gestiona música y vídeos en un iPod de Apple
+#sudo apt install gtkpod gtkpod-data gtkpod-dbg libgtkpod-dev libgtkpod1 -y
+#
+# Handbrake, herramienta que permite codificar vídeo multiproceso, de código abierto, y liberado bajo licencia GPL.
+sudo apt install handbrake -y
+#
+# HardInfo, interfaz gráfica que muestra información del sistema, memoria, procesador, kernell, entre otras cosas
+#sudo apt install hardinfo -y
+#
+# Indicator Brightness, es un indicador de aplicación que ajusta el brillo de la pantalla, desde el panel superior.
+# Es necesario el repositorio ppa:indicator-brightness/ppa
+#sudo apt install indicator-brightness -y
+#
+# Indicador de Frecuencia de la Cpu o indicator-cpufreq, es una herramienta para seleccionar diferentes niveles de frecuencia de los procesadores, así podemos enfriarlos o hacer que consuman menos, también nos permite ahorrar bastante batería en los portátiles
+#sudo apt install indicator-cpufreq -y
+#
+# Indicador Multiload, Indicador applet para monitorear los recursos del sistema, como el uso del procesador, memoria, internet, memoria, swap, etc. Por defecto sólo se muestra una gráfica del procesador
+#sudo apt install indicator-multiload -y
+#
+# InkScape, editor de Gráficos Vectoriales, similar al Adobe Illustrator, que busca ser compatible con SVG.
+#sudo apt install inkscape -y
+#
+# ISO Master, editor de Imágenes ISO, crear Imágenes ISO a partir de archivos o carpetas, ISO Booteables, modificar ISO ya existentes
+#sudo apt install isomaster -y
+#
+# Java. OpenJRE. La versión libre de la plataforma de desarrollo Java (para usuarios)
+#sudo apt install openjdk-9-jre -y
+#
+# Java. OpenJDK. La versión libre de la plataforma de desarrollo Java (para desarrolladores)
+#sudo apt install openjdk-9-jdk -y
+#
+# k3b, suites de grabación más usadas en GNU/Linux, proporciona una interfaz de usuario cómoda para la grabación de CD y DVD
+#sudo apt install k3b -y && sudo apt install kde-l10n-es -y
+#
+# lm-sensors, herramientas para leer la información de los sensores de temperatura, voltaje y ventiladores
+#sudo apt install lm-sensors -y
+#
+# Lshw-gtk, interfaz gráfica de lshw, sirve para mostrar información sobre la configuración del hardware
+#sudo apt install lshw lshw-gtk -y
+#
+# Microcódigo de AMD
+#sudo apt install amd64-microcode -y
+#
+# Microcódigo en procesadores Intel
+sudo apt install microcode.ctl -y
+#
+# Midori, Navegador basado su motor principal en Webkit conocido por su eficacia en el navegador Safari de Mac OS X y Chrome.
+#sudo apt install midori -y
+#
+# MultiSystem, es una herramienta gráfica que permite tener múltiples sistemas LiveUSB en una memoria USB, así como un Gestor de arranque para elegir que sistema queremos cargar durante el arranque del equipo, utiliza Grub2, podemos crear un buen número de distribuciones Linux de arranque en una unidad USB
+# Es necesario el repositorio y Añadir la clave pública de MultiSystem
+#sudo apt install multisystem -y
+#
+# My Weather Indicator, indicador avanzado que permite tener la situación meteorológica, de hasta dos ubicaciones, en la zona de indicadores.
+# Es necesario el repositorio ppa:atareao/atareao
+#sudo apt install my-weather-indicator -y
+#
+# Nautilus-Convert2Ogg, la forma mas sencilla de convertir archivos de audio a formato OGG es desde el menú contextual de Nautilus, puesto que de esta forma no es necesario iniciar ninguna aplicación, desde el menú contextual seleccionar la opción de conversión
+# Es necesario el repositorio ppa:atareao/nautilus-extensions
+#sudo apt install nautilus-convert2ogg -y
+#
+# Nautilus-Document-Converter, complemento para Nautilus que nos permite convertir documentos entre diferentes formatos en Ubuntu directamente desde el menú contextual del explorador de archivos, sin que sea necesario iniciar una nueva aplicación
+# Es necesario el repositorio ppa:atareao/nautilus-extensions
+#sudo apt install nautilus-document-converter -y
+#
+# Nautilus Image Tools, extensión de Nautilus que nos permite tener en el menú contextual, las herramientas necesarias para modificar imágenes de una forma sencilla, y con la ventaja de realizarlo de forma masiva.
+# Es necesario el repositorio ppa:atareao/nautilus-extensions
+#sudo apt install nautilus-image-tools -y
+#
+# Nautilus Pdf Tools, extensión de Nautilus que nos permite tener en el menú contextual, las herramientas mas habituales para modificar documentos PDF en Ubuntu
+# Es necesario el repositorio ppa:atareao/nautilus-extensions
+#sudo apt install nautilus-pdf-tools -y
+#
+# openshot, programa diseñado para crear y editar vídeos en Linux.
+#sudo apt install openshot openshot-doc -y
+#
+# pdfmod, editor PDF, modificar documentos PDF, permitiéndote reordenar, girar, quitar, añadir, combinar documentos arrastrándolos..
+#sudo apt install pdfmod -y
+#
+# PDF-Shuffler, aplicación gráfica interactiva e intuitiva que permite fusionar, dividir y volver a organizar las páginas de los documentos PDF
+#sudo apt install pdfshuffler -y
+#
+# Pinta, Crea y edita imágenes fácilmente de forma sencilla, eficaz para dibujar y manipular imágenes
+#sudo apt install pinta -y
+#
+# Pomodoro Indicator, indicador que facilita utilizar la técnica Pomodoro en Ubuntu. Un método para la administración del tiempo, consistente en dividir el tiempo dedicado a realizar un trabajo en intervalos de 25 minutos, separados por pausas. 
+# Es necesario el repositorio ppa:atareao/atareao
+#sudo apt install pomodoro-indicator -y
+#
+# prelink se encarga de preenlazar las librerías que necesitan las aplicaciones que utilizamos, reduciendo así los tiempos de apertura
+sudo apt install prelink -y
+#
+# preload, carga las aplicaciones mas rápidamente.
+sudo apt install preload -y
+#
+# Psensor, es una aplicación GTK+ que recoge y muestra información de los sensores del hardware, es un monitor gráfico de temperatura.
+#sudo apt install psensor -y
+#
+# QPxTool, interfaz gráfica, le ayudará a encontrar los medios adecuados y la velocidad de escritura optimizado para el control completo de CDs y DVDs
+#sudo apt install qpxtool -y
+#
+# qBittorrent, una alternativa de software libre de uTorrent. Además, qBittorrent funciona con las mismas características en todas las plataformas
+#sudo apt install qbittorrent -y
+#
+# Radio Tray, aplicación que sirve para escuchar radios online
+#sudo apt install radiotray -y
+#
+# scribus, programa de maquetación de páginas, creación de publicaciones por ordenador.Plantillas Scribus adicionales
+#sudo apt install scribus scribus-template -y
+#
+# Shutter, herramienta de captura de pantalla. Las imágenes capturadas se pueden editar directamente
+#sudo apt install shutter -y
+#
+# Skype, permite realizar llamadas de voz y vídeo gratuitas
+#sudo apt install skype empathy-skype pidgin-skype pidgin-skype-common pidgin-skype-dbg python-skype4py -y
+#
+# SMTube-SMPlayer, reproducir y descargar vídeos de Youtube, reproductor multimedia gratuito con códecs incorporados
+#sudo apt install smplayer smtube smplayer-themes smplayer-l10n -y
+#
+# SoundConverter, Aplicación de GNOME para convertir archivos de audio en otros formatos
+#sudo apt install soundconverter -y
+#
+# Stellarium, planetario, muestra un cielo auténtico en 3D, tal como lo que ve a simple vista, con binoculares o un telescopio, generador de cielo en tiempo real
+#sudo apt install stellarium -y
+#
+# synaptic, Herramienta gráfica para la gestión de paquetes, que nos proporciona una mayor cantidad de información, es un gestor de paquetes muy completo, tenemos un mejor control sobre la gestión de paquetes, que nos permite instalar software en el equipo y gestionar el que está instalado
+sudo apt install synaptic -y
+#
+# Sysinfo, herramienta gráfica para mostrar información sobre la configuración del hardware
+#sudo apt install sysinfo -y
+#
+# Systemback, aplicación para realizar copias de seguridad, copia del sistema, la instalación del sistema y la creación del sistema en vivo (livecd o LiveUSB del sistema instalado) se puede incluir /home.
+# Es necesario el repositorio ppa:nemh/systemback
+#sudo apt install systemback -y
+#
+# Thermald, impide que los equipos se sobrecalienten, en especial los portátiles. Supervisa los sensores térmicos y modifica los controles de refrigeración para mantener fresco el hardware, utiliza los sensores de temperatura disponibles y evita el sobrecalentamiento de la CPU
+#sudo apt install thermald -y
+#
+# Tint2, panel inferior, (barra de tareas) con la lista de ventanas abiertas corriendo junto a Unity, consume muy pocos recursos, podremos gestionar y configurar de forma gráfica el panel de tint2 con Administrador de panel.
+#sudo apt install tint2 -y
+#
+# Touchpad-Indicator, aplicación que te permitirá habilitar e inhabilitar el touchpad de tu equipo de diferentes formas, posibilidad de configurar los toques como pulsaciones del ratón.
+# Es necesario el repositorio ppa:atareao/atareao
+#sudo apt install touchpad-indicator -y
+#
+# Transmageddon, conversor de vídeos múltiples formatos
+#sudo apt install transmageddon -y
+#
+# unetbootin, permite la instalación de varias distribuciones GNU/Linux desde una memoria USB o desde un disco duro USB.
+sudo apt install unetbootin unetbootin-translations -y
+#
+# Unity Tweak Tool, herramienta de configuración para el escritorio de Unity, Proporciona a los usuarios una interfaz rápida, sencilla y fácil de usar con la que acceder a muchas características y configuraciones útiles y poco conocidas. 
+sudo apt install unity-tweak-tool -y
+#
+# Unsettings, programa de configuración gráfica para el entorno de escritorio, que permite cambiar algunos ajustes de Unity, sólo puede cambiar la configuración de los usuarios
+# Es necesario el repositorio ppa:diesch/testing
+#sudo apt install unsettings -y
+#
+# Variety, aplicación que cambia el fondo de escritorio de forma regular, el uso de imágenes especificadas por el usuario o descargados automáticamente.
+# Es necesario el repositorio ppa:peterlevi/ppa
+#sudo apt install variety -y
+#
+# VLC, reproductor multimedia archivos multimedia, así como DVD, protocolos Audio CD, VCD y streaming diversos..
+sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
+#
+# wallch, aplicación que ayuda a automatizar el cambio de fondo de escritorio
+#sudo apt install wallch -y
+#
+# Xfburn, Es muy ligero y simple, grabador de discos ópticos. (muy bueno para grabar imágenes iso).
+#sudo apt install xfburn -y
+#
+# Y-PPA Manager, es una herramienta para gestionar los PPAs desde una única interfaz de usuario, podemos buscar y eliminar repositorios duplicados, agregar repositorios adicionales, descargar paquetes desde un repositorio sin agregarlo, así como la búsqueda de paquetes en Launchpad PPA.
+# Es necesario el repositorio ppa:webupd8team/y-ppa-manager
+sudo apt install y-ppa-manager -y
+#
+#GerardoHD
+sudo apt-get install python-pip -y
+#
+sudo pip install speedtest-cli
+#
+sudo apt install autoconf -y
+#
+sudo apt install git -y
+#
+sudo apt install libgtk-3-dev -y
+#
+sudo apt-get install weather-util -y
+#
+sudo apt-get install grub-customizer -y
+#
+sudo apt-get install papirus-gtk-icon-theme -y
+#
+sudo apt-get install arc-theme -y --allow-unauthenticate
+#
+sudo apt install android-tools-adb android-tools-fastboot -y
+#
+sudo apt install rhythmbox-plugin-alternative-toolbar -y
+#
+sudo apt install geary -y
+#
+sudo apt install gnome-calendar -y
+#
+sudo apt install gnome-contacts -y 
+#
+sudo apt install nautilus-actions nautilus-admin -y
+#
+sudo apt install account-plugin-twitter -y
+#
+sudo apt install shotwell -y
+#
+sudo apt install elinks -y
+#
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+#
+echo
+echo ---Final Instalación de Aplicaciones---
+sleep 2s
+echo
+echo
+echo ---=Actualizando el sistema=---
+sleep 2s
+echo
+# Actualizamos la biblioteca de paquetes
+sudo apt-get update
+# Actualizamos el sistema
+sudo apt-get upgrade -y
+#
+echo
+echo ---=Reinicio en 1 minuto=---
+sleep 1s
+echo
+echo
+#
+sudo shutdown -r +5
+#
+cd /usr/bin && sudo wget -c https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+#
+sudo chmod +x screenfetch
+#
+echo
+echo No te olvides de visitar:
+echo
+echo Trastetes
+echo http://trastetes.blogspot.com.es/
+sleep 15s
+echo
+echo
+#
+#
+#
