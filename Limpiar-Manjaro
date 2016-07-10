@@ -1,9 +1,0 @@
-#Limpiar Manjaro
-echo --Limpiando Manjaro Linux--
-sleep 1s
-echo
-#!/bin/bash
-sudo pacman-optimize
-sudo pacman -Sc
-sudo yaourt -Sc
-df -h
