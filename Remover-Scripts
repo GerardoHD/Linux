@@ -1,6 +1,6 @@
 #Remover Scripts
-echo ------==Script Creado por GerardoHD==------
-echo --Removiendo Scripts--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Removiendo Scripts=---
 sleep 1s
 echo
 #!/bin/bash
@@ -10,12 +10,12 @@ sudo rm -rf screenfetch
 sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Backup-Gnome-Screensaver
+sudo rm -rf Configurar-Manjaro-Net-16.06
+sudo rm -rf Configurar-Ubuntu-16.04
 sudo rm -rf Flat-Plat-Screensaver
 sudo rm -rf Limpiar-Manjaro
 sudo rm -rf Limpiar-Ubuntu
 sudo rm -rf Original-Gnome-Screensaver
-sudo rm -rf Configurar-Manjaro-Net-16.06
-sudo rm -rf Configurar-Ubuntu-16.04
 sudo rm -rf ROOT-A
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf STATE
