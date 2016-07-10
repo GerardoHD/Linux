@@ -1,0 +1,38 @@
+#Descargar Scripts
+echo ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+echo --Descargando Scripts--
+sleep 1s
+echo
+#!/bin/bash
+cd /usr/local/bin
+sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Backup-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Configurar-Manjaro-Net-16.06
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Configurar-Ubuntu-16.04
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Flat-Plat-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Limpiar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Limpiar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Original-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/ROOT-A
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Remover-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Reparar-var-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/STATE
+sudo chmod +x screenfetch
+sudo chmod +x Actualizar-Manjaro
+sudo chmod +x Actualizar-Ubuntu
+sudo chmod +x Backup-Gnome-Screensaver
+sudo chmod +x Configurar-Manjaro-Net-16.06
+sudo chmod +x Configurar-Ubuntu-16.04
+sudo chmod +x Flat-Plat-Screensaver
+sudo chmod +x Limpiar-Manjaro
+sudo chmod +x Limpiar-Ubuntu
+sudo chmod +x Original-Gnome-Screensaver
+sudo chmod +x ROOT-A
+sudo chmod +x Remover-Scripts
+sudo chmod +x Reparar-var-Ubuntu
+sudo chmod +x STATE

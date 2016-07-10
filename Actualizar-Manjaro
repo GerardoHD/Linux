@@ -1,0 +1,13 @@
+#Actualizar Manjaro
+echo ------==Script Creado por GerardoHD==------
+echo --Actualizando Manjaro Linux--
+sleep 1s
+echo
+#!/bin/bash
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+sudo pacman -Syyu
+yaourt -Syyyua
+sudo update-grub
+sudo fc-cache -f -v
+screenfetch
