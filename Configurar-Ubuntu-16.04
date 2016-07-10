@@ -54,11 +54,11 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 # http://trastetes.blogspot.com.es/2016/04/permitir-script-o-archivos-de-texto.html
 #
 #
-echo ------==Script Modificado por GerardoHD==------
-echo ---=Configurar Ubuntu 16.04 Xenial Xerus=---
+echo          ------==Script Modificado por GerardoHD==------
+echo          ---=Configurar Ubuntu 16.04 Xenial Xerus=---
 sleep 3s
 #
-echo ---=Inicio Repositorios=---
+echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
 sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
@@ -110,9 +110,9 @@ sudo add-apt-repository ppa:peterlevi/ppa --yes
 # Repositorio webupd8team, y-ppa-manager, herramienta para gestionar los PPAs.
 sudo add-apt-repository ppa:webupd8team/y-ppa-manager --yes
 #
-echo ------Final Repositorios------
+echo     ---=Final Repositorios=---
 #
-echo -----Actualizando el sistema-----
+echo     ---=Actualizando el sistema=---
 sleep 1s
 # Actualizamos la biblioteca de paquetes.
 sudo apt update
@@ -122,12 +122,12 @@ sudo apt upgrade -y
 #
 #
 echo
-echo --------Instalaciones---------
+echo     ---=Instalaciones=---
 sleep 2s
 echo
 echo
 #
-echo ----Instalacion de Controladores o Codecs----
+echo     ---=Instalacion de Controladores o Codecs=---
 sleep 1s
 # Ubuntu Restricted Extras, Codecs y fuentes adicionales, Java, Flash, etc.,software esencial no incluido por razones legales.
 sudo apt install ubuntu-restricted-extras -y
@@ -149,13 +149,13 @@ sudo apt install exfat-fuse exfat-utils -y
 sudo apt install hfsplus hfsprogs hfst hfsutils hfsutils-tcltk -y
 #
 echo
-echo ----Final Instalación de Controladores o Codecs----
+echo     ---=Final Instalación de Controladores o Codecs=----
 sleep 2s
 echo
 echo
 #
 echo
-echo -----Instalación de Aplicaciones------
+echo     ---=Instalación de Aplicaciones=---
 sleep 1s
 # cheese, aplicación que nos permite tomar fotografías y vídeos con nuestra webcam.
 sudo apt install cheese -y
@@ -216,23 +216,21 @@ sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
 sudo apt install y-ppa-manager -y
 #
 #GerardoHD
-sudo apt-get install python-pip -y
+sudo apt install python-pip -y
 #
 sudo pip install speedtest-cli
 #
 sudo apt install autoconf -y
 #
-sudo apt install git -y
+sudo apt install git libgtk-3-dev -y
 #
-sudo apt install libgtk-3-dev -y
+sudo apt install weather-util -y
 #
-sudo apt-get install weather-util -y
+sudo apt install grub-customizer -y
 #
-sudo apt-get install grub-customizer -y
+sudo apt install papirus-gtk-icon-theme -y
 #
-sudo apt-get install papirus-gtk-icon-theme -y
-#
-sudo apt-get install arc-theme -y --allow-unauthenticate
+sudo apt install arc-theme -y --allow-unauthenticate
 #
 sudo apt install android-tools-adb android-tools-fastboot -y
 #
@@ -242,9 +240,7 @@ sudo apt install geary -y
 #
 sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
 #
-sudo apt-get install paper-icon-theme sudo apt-get install paper-gtk-theme-y
-#
-sudo apt-get install paper-cursor-theme -y
+sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme -y
 #
 sudo apt install shotwell -y
 #
@@ -253,20 +249,20 @@ sudo apt install elinks -y
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
 #
 echo
-echo ---Final Instalación de Aplicaciones---
+echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
 echo
 echo
-echo ---=Actualizando el sistema=---
+echo     ---=Actualizando el sistema=---
 sleep 2s
 echo
 # Actualizamos la biblioteca de paquetes
-sudo apt-get update
+sudo apt update
 # Actualizamos el sistema
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 #
 echo
-echo ---=Reinicio en 1 minuto=---
+echo     ---=Reinicio en 1 minuto=---
 sleep 1s
 echo
 echo
@@ -280,6 +276,4 @@ echo http://trastetes.blogspot.com.es/
 sleep 15s
 echo
 echo
-#
-#
 #
