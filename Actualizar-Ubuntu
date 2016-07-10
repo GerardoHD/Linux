@@ -1,0 +1,13 @@
+#update Ubuntu
+echo --Actualizando Ubuntu--
+sleep 1s
+echo
+#!/bin/bash
+speedtest
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo update-grub
+sudo fc-cache -f -v
+weather mmvr
+screenfetch

@@ -1,0 +1,6 @@
+#STATE
+echo --Clonando Chromium OS STATE--
+dd if=/dev/sdb1 of=/dev/sda9
+sleep 1s
+e2fsck -f -y -v -C 0 /dev/sda9
+resize2fs -p /dev/sda9

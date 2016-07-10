@@ -1,0 +1,3 @@
+#Original-Gnome-Screensaver
+sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource~ /usr/share/gnome-shell/gnome-shell-theme.gresource
+echo Restart GNOME Shell by pressing Alt+F2, then type r
