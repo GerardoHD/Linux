@@ -1,2 +1,2 @@
-# Distros Linux
-Scripts para Realizar Labores Administrativas en Distros Linux
+# Linux
+Scripts (por ahora solo Scripts) para Administrar, Mantener y Personalizar Manjaro Linux y Ubuntu
