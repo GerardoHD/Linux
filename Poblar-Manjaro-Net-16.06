@@ -71,4 +71,5 @@ echo ------Reinicio en 1 minuto------
 sleep 1s
 sudo shutdown -r +5
 echo ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
 #
