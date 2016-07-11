@@ -4,8 +4,8 @@
 sudo chmod +x Nombre-de-Script
 
 #Actualizar Manjaro
-echo ------==Script Creado por GerardoHD==------
-echo --Actualizando Manjaro Linux--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando Manjaro Linux--
 sleep 1s
 echo
 #!/bin/bash
@@ -18,8 +18,8 @@ sudo fc-cache -f -v
 screenfetch
 
 #Actualizar Ubuntu
-echo ------==Script Creado por GerardoHD==------
-echo --Actualizando Ubuntu--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando Ubuntu---
 sleep 1s
 echo
 #!/bin/bash
@@ -37,16 +37,16 @@ sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shel
 
 
 #Configurar-Manjaro-Net-Daniella
-echo ------==Script Creado por GerardoHD==------
+echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo ---=Configurando Manjaro-Net Daniella=---
+echo       ---=Configurando Manjaro-Net Daniella=---
 sleep 3s
 echo Regenerando la lista de mirrors de Pacman
 sudo pacman-mirrors -g
 #
-echo ---=Instalando Bases para Manjaro=---
+echo     ---=Instalando Bases para Manjaro=---
 sleep 1s
 sudo pacman -S base-devel cmake
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
@@ -56,7 +56,7 @@ sudo pacman -S xorg-twm xorg-xclock xterm
 echo Testeando X:
 startx
 #
-echo ---=Instalando Gnome=---
+echo     ---=Instalando Gnome=---
 sleep 1s
 echo Flags pacman -S gnome:
 echo 1 2 3 5 7 8 9 10 11 12 13 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 echo 41 44 45 46
@@ -68,14 +68,14 @@ echo Ejecutar al final para activar Gnome Display Manager "gdm"
 echo systemctl start gdm.service
 echo systemctl enable gdm.service
 #
-echo ---=Configurando Touchpad=---
+echo     ---=Configurando Touchpad=---
 sleep 1s
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 echo ¿El Touchpad no funciona en GNOME?
 echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
-echo ---=Instalando Programas=---
+echo     ---=Instalando Programas=---
 sleep 1s
 sudo pacman -S snapd flatpak
 sudo pacman -S speedtest-cli cmatrix
@@ -84,7 +84,7 @@ yaourt -S ttf-roboto
 sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
-sudo pacman -S gnome-initial-setup
+sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools
 sudo pacman -S gnome-shell-extension-openweather
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
@@ -97,6 +97,7 @@ yaourt -S nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git 
 yaourt -S antu-dark-icon-theme-git flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome
+#e-chrome
 #
 
 #!/bin/sh
@@ -155,16 +156,16 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 # http://trastetes.blogspot.com.es/2016/04/permitir-script-o-archivos-de-texto.html
 #
 #
-echo ------==Script Modificado por GerardoHD==------
-echo ---=Configurar Ubuntu 16.04 Xenial Xerus=---
+echo          ------==Script Modificado por GerardoHD==------
+echo       ---=Configurando Ubuntu 16.04 Xenial Xerus=---
 sleep 3s
 #
-echo ---=Inicio Repositorios=---
+echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
 sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 # Hay que tener precaución de no repetir los Repositorios, ya que nos crearían problemas
-# GerardoHD
+echo ---=Programas de GerardoHD=---
 # Repositorio Papirus  
 sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
@@ -211,9 +212,9 @@ sudo add-apt-repository ppa:peterlevi/ppa --yes
 # Repositorio webupd8team, y-ppa-manager, herramienta para gestionar los PPAs.
 sudo add-apt-repository ppa:webupd8team/y-ppa-manager --yes
 #
-echo ------Final Repositorios------
+echo     ---=Final Repositorios=---
 #
-echo -----Actualizando el sistema-----
+echo     ---=Actualizando el sistema=---
 sleep 1s
 # Actualizamos la biblioteca de paquetes.
 sudo apt update
@@ -223,12 +224,12 @@ sudo apt upgrade -y
 #
 #
 echo
-echo --------Instalaciones---------
+echo     ---=Instalaciones=---
 sleep 2s
 echo
 echo
 #
-echo ----Instalacion de Controladores o Codecs----
+echo     ---=Instalacion de Controladores o Codecs=---
 sleep 1s
 # Ubuntu Restricted Extras, Codecs y fuentes adicionales, Java, Flash, etc.,software esencial no incluido por razones legales.
 sudo apt install ubuntu-restricted-extras -y
@@ -250,13 +251,13 @@ sudo apt install exfat-fuse exfat-utils -y
 sudo apt install hfsplus hfsprogs hfst hfsutils hfsutils-tcltk -y
 #
 echo
-echo ----Final Instalación de Controladores o Codecs----
+echo     ---=Final Instalación de Controladores o Codecs=---
 sleep 2s
 echo
 echo
 #
 echo
-echo -----Instalación de Aplicaciones------
+echo     ---=Instalación de Programas=---
 sleep 1s
 # cheese, aplicación que nos permite tomar fotografías y vídeos con nuestra webcam.
 sudo apt install cheese -y
@@ -316,7 +317,7 @@ sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
 # Es necesario el repositorio ppa:webupd8team/y-ppa-manager
 sudo apt install y-ppa-manager -y
 #
-#GerardoHD
+echo     ---=Programas de GerardoHD=---
 sudo apt-get install python-pip -y
 #
 sudo pip install speedtest-cli
@@ -327,13 +328,13 @@ sudo apt install git -y
 #
 sudo apt install libgtk-3-dev -y
 #
-sudo apt-get install weather-util -y
+sudo apt install weather-util -y
 #
-sudo apt-get install grub-customizer -y
+sudo apt install grub-customizer -y
 #
-sudo apt-get install papirus-gtk-icon-theme -y
+sudo apt install papirus-gtk-icon-theme -y
 #
-sudo apt-get install arc-theme -y --allow-unauthenticate
+sudo apt install arc-theme -y --allow-unauthenticate
 #
 sudo apt install android-tools-adb android-tools-fastboot -y
 #
@@ -343,7 +344,7 @@ sudo apt install geary -y
 #
 sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
 #
-sudo apt-get install paper-icon-theme sudo apt-get install paper-gtk-theme-y
+sudo apt-get install paper-icon-theme sudo apt-get install paper-gtk-theme paper-cursor-theme -y
 #
 sudo apt-get install paper-cursor-theme -y
 #
@@ -354,20 +355,20 @@ sudo apt install elinks -y
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
 #
 echo
-echo ---Final Instalación de Aplicaciones---
+echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
 echo
 echo
-echo ---=Actualizando el sistema=---
+echo     ---=Actualizando el sistema=---
 sleep 2s
 echo
 # Actualizamos la biblioteca de paquetes
-sudo apt-get update
+sudo apt update
 # Actualizamos el sistema
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 #
 echo
-echo ---=Reinicio en 1 minuto=---
+echo     ---=Reinicio en 1 minuto=---
 sleep 1s
 echo
 echo
@@ -382,34 +383,14 @@ sleep 15s
 echo
 echo
 #
-#
-#
-
-
-echo ---=Limpiando Manjaro Linux=---
-sleep 1s
-echo
-#!/bin/bash
-sudo pacman-optimize
-sudo pacman -Sc
-sudo yaourt -Sc
-df -h
-screenfetch
-#
-echo ------Reinicio en 1 minuto------
-sleep 1s
-sudo shutdown -r +5
-echo ------==Script Creado por GerardoHD==------
-echo https://github.com/GerardoHD
-#
 
 
 #Descargar Scripts
-echo ------==Script Creado por GerardoHD==------
+echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo --Descargando Scripts--
+echo       ---=Descargando Scripts=---
 sleep 1s
 echo
 #!/bin/bash
@@ -449,8 +430,8 @@ echo Reiniciar GNOME Shell presionando Alt+F2, then type r
 
 
 #Limpiar Manjaro
-echo ------==Script Creado por GerardoHD==------
-echo --Limpiando Manjaro Linux--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Limpiando Manjaro Linux=--
 sleep 1s
 echo
 #!/bin/bash
@@ -461,8 +442,8 @@ df -h
 
 
 #Limpiar Ubuntu
-echo ------==Script Creado por GerardoHD==------
-echo --Limpiando Ubuntu--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Limpiando Ubuntu=---
 sleep 1s
 echo
 #!/bin/bash
@@ -478,16 +459,16 @@ echo Restart GNOME Shell by pressing Alt+F2, then type r
 
 
 #ROOT-A
-echo ------==Script Creado por GerardoHD==------
-echo --Clonando Chromium OS ROOT-A--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Clonando Chromium OS ROOT-A=---
 dd if=/dev/sdb3 of=/dev/sda8
 sleep 1s
 e2fsck -f -y -v -C 0 /dev/sda8
 resize2fs -p /dev/sda8
 
 #Remover Scripts
-echo ------==Script Creado por GerardoHD==------
-echo --Removiendo Scripts--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Removiendo Scripts=---
 sleep 1s
 echo
 #!/bin/bash
@@ -510,8 +491,8 @@ sudo rm -rf Descargar-Scripts
 
 
 #Reparar Var Ubuntu
-echo ------==Script Creado por GerardoHD==------
-echo --Reparando Var--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Reparando Var--
 sudo fuser -vki  /var/lib/dpkg/lock
 sudo rm -f /var/lib/dpkg/lock
 sudo dpkg --configure -a
@@ -520,8 +501,8 @@ sudo apt update --fix-missing
 
 
 #STATE
-echo ------==Script Creado por GerardoHD==------
-echo --Clonando Chromium OS STATE--
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Clonando Chromium OS STATE--
 dd if=/dev/sdb1 of=/dev/sda9
 sleep 1s
 e2fsck -f -y -v -C 0 /dev/sda9
