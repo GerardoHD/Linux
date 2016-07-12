@@ -77,9 +77,9 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo     ---=Instalando Programas=---
 sleep 1s
-sudo pacman -S snapd flatpak
+sudo pacman -S snapd
 sudo pacman -S speedtest-cli cmatrix
-sudo pacman -S prelink preload
+sudo pacman -S prelink preload gksu
 yaourt -S ttf-roboto
 sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
@@ -97,7 +97,7 @@ yaourt -S nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git 
 yaourt -S antu-dark-icon-theme-git flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome
-#e-chrome
+#
 #
 
 #!/bin/sh
