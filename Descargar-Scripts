@@ -1,13 +1,11 @@
-#Descargar Scripts
+#Remover Scripts
 echo          ------==Script Creado por GerardoHD==------
-echo https://github.com/GerardoHD
-echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
-sleep 1s
-echo       ---=Descargando Scripts=---
+echo       ---=Removiendo Scripts=---
 sleep 1s
 echo
 #!/bin/bash
 cd /usr/local/bin
+sudo rm -rf Remover-Scripts
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Ubuntu
