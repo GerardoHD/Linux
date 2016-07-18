@@ -5,7 +5,6 @@ sleep 1s
 echo
 #!/bin/bash
 cd /usr/local/bin
-cd /usr/local/bin
 sudo rm -rf screenfetch
 sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
