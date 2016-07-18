@@ -220,7 +220,7 @@ sudo apt-get install python-pip -y
 #
 sudo pip install speedtest-cli
 #
-sudo apt install autoconf -y
+sudo apt install autoconf inxi automake -y
 #
 sudo apt install git -y
 #
