@@ -225,15 +225,15 @@ sudo apt install autoconf inxi automake -y
 #
 sudo apt install git -y
 #
-sudo apt install libgtk-3-dev gtk2-engines-murrine gtk3-engines-unico -y
+sudo apt install libgtk-3-dev gtk2-engines-murrine gtk3-engines-unico gtk2-engines-pixbuf -y
+#
+sudo apt install gnomes-themes-standard gnome-themes-standard-data -y
 #
 sudo apt install weather-util -y
 #
 sudo apt install grub-customizer -y
 #
-sudo apt install papirus-gtk-icon-theme -y
-#
-sudo apt install arc-theme -y --allow-unauthenticate
+sudo apt install arc-theme -y --allow-unauthenticated
 #
 sudo apt install android-tools-adb android-tools-fastboot -y
 #
@@ -243,9 +243,9 @@ sudo apt install geary -y
 #
 sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
 #
-sudo apt-get install paper-icon-theme sudo apt-get install paper-gtk-theme paper-cursor-theme -y
+sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme -y
 #
-sudo apt-get install paper-cursor-theme -y
+sudo apt install paper-cursor-theme -y
 #
 sudo apt install shotwell -y
 #
