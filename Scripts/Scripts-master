@@ -412,19 +412,19 @@ echo
 cd /usr/local/bin
 sudo rm -rf Remover-Scripts
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Manjaro
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Actualizar-Ubuntu
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Backup-Gnome-Screensaver
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Configurar-Manjaro-Net-16.06
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Configurar-Ubuntu-16.04
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Flat-Plat-Screensaver
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Limpiar-Manjaro
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Limpiar-Ubuntu
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Original-Gnome-Screensaver
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/ROOT-A
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Remover-Scripts
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Reparar-var-Ubuntu
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/STATE
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net-16.06
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu-16.04
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Flat-Plat-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Remover-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
 sudo chmod +x screenfetch
 sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
