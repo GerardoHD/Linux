@@ -265,6 +265,15 @@ sudo apt update
 # Actualizamos el sistema
 sudo apt upgrade -y
 #
+echo       ---=Limpiando Ubuntu=---
+sleep 1s
+echo
+#!/bin/bash
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+df -h
+#
 echo
 echo     ---=Reinicio en 1 minuto=---
 sleep 1s
