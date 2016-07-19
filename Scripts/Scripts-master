@@ -222,11 +222,6 @@ sudo add-apt-repository ppa:webupd8team/y-ppa-manager --yes
 #
 echo     ---=Final Repositorios=---
 #
-echo     ---=Remover Programas=---
-sleep 1s
-sudo apt purge firefox
-sudo apt purge thunderbird
-sudo apt purge totem
 #
 echo     ---=Actualizando el sistema=---
 sleep 1s
@@ -372,6 +367,11 @@ echo
 echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
 echo
+echo     ---=Remover Programas=---
+sleep 1s
+sudo apt purge firefox
+sudo apt purge thunderbird
+sudo apt purge totem
 echo
 echo     ---=Actualizando el sistema=---
 sleep 2s
