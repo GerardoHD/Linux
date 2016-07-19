@@ -338,10 +338,10 @@ sudo apt install git -y
 sudo apt install libgtk-3-dev gtk2-engines-murrine gtk3-engines-unico gtk2-engines-pixbuf -y
 #
 sudo apt install gnomes-themes-standard gnome-themes-standard-data -y
+#
 sudo apt install weather-util -y
 #
 sudo apt install grub-customizer -y
-#
 #
 sudo apt install arc-theme -y --allow-unauthenticated
 #
