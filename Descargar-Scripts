@@ -1,6 +1,6 @@
-#Remover Scripts
+#Descargar-Scripts
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Removiendo Scripts=---
+echo       ---=Descargando Scripts=---
 sleep 1s
 echo
 #!/bin/bash
