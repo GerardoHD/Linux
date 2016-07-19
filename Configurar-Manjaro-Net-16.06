@@ -61,3 +61,11 @@ yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome
 #
+echo       ---=Limpiando Manjaro Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
