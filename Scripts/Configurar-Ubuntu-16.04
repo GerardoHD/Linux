@@ -253,6 +253,10 @@ sudo apt install elinks -y
 #
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
 #
+git clone https://github.com/andreisergiu98/arc-flatabulous-theme && cd arc-flatabulous-theme
+#
+bash arc-flatabulous-theme-upgrade
+#
 echo
 echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
