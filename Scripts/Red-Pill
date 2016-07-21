@@ -8,6 +8,7 @@ echo "Introduce un numero [0-6]"
 read entrada
 if(($aletorio == $entrada)); then
 echo "Sigues vivo"
+screenfetch
 else
 clear
 cmatrix
