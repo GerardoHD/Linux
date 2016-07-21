@@ -1,4 +1,4 @@
-#Neo
+#Red-Script
 aletorio=`echo $(($RANDOM%6))`
 clear
 echo
