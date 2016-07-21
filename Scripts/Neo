@@ -1,0 +1,14 @@
+#Neo
+aletorio=`echo $(($RANDOM%6))`
+clear
+echo
+echo "¿Jugamos a un juego?"
+echo
+echo "Introduce un numero [0-6]"
+read entrada
+if(($aletorio == $entrada)); then
+echo "Sigues vivo"
+else
+clear
+cmatrix
+fi
