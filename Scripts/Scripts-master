@@ -17,6 +17,7 @@ sudo update-grub
 sudo fc-cache -f -v
 screenfetch
 
+
 #Actualizar Ubuntu
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Ubuntu---
@@ -32,8 +33,14 @@ sudo fc-cache -f -v
 weather mmvr
 screenfetch
 
+
 #Backup-Gnome-Screensaver
 sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource~
+
+
+#Blue-Script
+echo "Sigues vivo"
+screenfetch
 
 
 #Configurar-Manjaro-Net-Daniella
@@ -339,7 +346,7 @@ sudo apt install libgtk-3-dev gtk2-engines-murrine gtk3-engines-unico gtk2-engin
 #
 sudo apt install gnomes-themes-standard gnome-themes-standard-data -y
 #
-sudo apt install weather-util -y
+sudo apt install weather-util cmatrix cmatrix-xfont -y
 #
 sudo apt install grub-customizer -y
 #
@@ -419,35 +426,62 @@ sleep 1s
 echo
 #!/bin/bash
 cd /usr/local/bin
-sudo rm -rf Remover-Scripts
+sudo rm -rf screenfetch
+sudo rm -rf Actualizar-Manjaro
+sudo rm -rf Actualizar-Ubuntu
+sudo rm -rf Backup-Gnome-Screensaver
+sudo rm -rf Blue-Script
+sudo rm -rf Configurar-Manjaro-Net-16.06
+sudo rm -rf Configurar-Ubuntu-16.04
+sudo rm -rf Descargar-Scripts
+sudo rm -rf Flat-Plat-Screensaver
+sudo rm -rf Limpiar-Manjaro
+sudo rm -rf Limpiar-Ubuntu
+sudo rm -rf Original-Gnome-Screensaver
+sudo rm -rf Red-Script
+sudo rm -rf Reparar-var-Ubuntu
+sudo rm -rf ROOT-A
+sudo rm -rf STATE
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net-16.06
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu-16.04
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Flat-Plat-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Remover-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
 sudo chmod +x screenfetch
 sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Backup-Gnome-Screensaver
+sudo chmod +x Blue-Script
 sudo chmod +x Configurar-Manjaro-Net-16.06
 sudo chmod +x Configurar-Ubuntu-16.04
+sudo chmod +x Descargar-Scripts
 sudo chmod +x Flat-Plat-Screensaver
 sudo chmod +x Limpiar-Manjaro
 sudo chmod +x Limpiar-Ubuntu
 sudo chmod +x Original-Gnome-Screensaver
-sudo chmod +x ROOT-A
-sudo chmod +x Remover-Scripts
+sudo chmod +x Red-Script
 sudo chmod +x Reparar-var-Ubuntu
+sudo chmod +x ROOT-A
 sudo chmod +x STATE
+sudo -i
+echo Recuerda, lo único que te ofrezco son estos Scripts. Nada más.
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
+
 
 #Flat-Plat-Screensaver
 sudo cp /usr/share/themes/Flat-Plat/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
@@ -483,37 +517,6 @@ sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource~ /usr/share/gnome-
 echo Restart GNOME Shell by pressing Alt+F2, then type r
 
 
-#ROOT-A
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Clonando Chromium OS ROOT-A=---
-dd if=/dev/sdb3 of=/dev/sda8
-sleep 1s
-e2fsck -f -y -v -C 0 /dev/sda8
-resize2fs -p /dev/sda8
-
-#Remover Scripts
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Removiendo Scripts=---
-sleep 1s
-echo
-#!/bin/bash
-cd /usr/local/bin
-sudo rm -rf screenfetch
-sudo rm -rf Actualizar-Manjaro
-sudo rm -rf Actualizar-Ubuntu
-sudo rm -rf Backup-Gnome-Screensaver
-sudo rm -rf Configurar-Manjaro-Net-16.06
-sudo rm -rf Configurar-Ubuntu-16.04
-sudo rm -rf Flat-Plat-Screensaver
-sudo rm -rf Limpiar-Manjaro
-sudo rm -rf Limpiar-Ubuntu
-sudo rm -rf Original-Gnome-Screensaver
-sudo rm -rf ROOT-A
-sudo rm -rf Reparar-var-Ubuntu
-sudo rm -rf STATE
-sudo rm -rf Descargar-Scripts
-
-
 #Reparar Var Ubuntu
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Reparando Var--
@@ -522,6 +525,31 @@ sudo rm -f /var/lib/dpkg/lock
 sudo dpkg --configure -a
 sudo apt autoremove
 sudo apt update --fix-missing
+
+#ROOT-A
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Clonando Chromium OS ROOT-A=---
+dd if=/dev/sdb3 of=/dev/sda8
+sleep 1s
+e2fsck -f -y -v -C 0 /dev/sda8
+resize2fs -p /dev/sda8
+
+
+#Red-Script
+aletorio=`echo $(($RANDOM%6))`
+clear
+echo
+echo "¿Jugamos a un juego?"
+echo
+echo "Introduce un numero [0-6]"
+read entrada
+if(($aletorio == $entrada)); then
+echo "Sigues vivo"
+screenfetch
+else
+clear
+cmatrix
+fi
 
 
 #STATE
