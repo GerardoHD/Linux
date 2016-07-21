@@ -58,5 +58,5 @@ echo Recuerda, lo único que te ofrezco son estos Scripts. Nada más.
 sleep 2s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
-sleep 5s
+sleep 10s
 clear
