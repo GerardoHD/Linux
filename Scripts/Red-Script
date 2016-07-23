@@ -2,7 +2,7 @@
 aletorio=`echo $(($RANDOM%6))`
 clear
 echo
-echo "¿Jugamos a un juego?"
+echo "¿Jugamos a un Acertijo?"
 echo
 echo "Introduce un numero [0-6]"
 read entrada
