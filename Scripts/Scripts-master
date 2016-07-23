@@ -114,6 +114,14 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
+#
+#
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
+#
 
 #!/bin/sh
 #
@@ -413,8 +421,11 @@ echo No te olvides de visitar:
 echo
 echo Trastetes
 echo http://trastetes.blogspot.com.es/
-sleep 15s
-echo
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
 echo
 #
 
@@ -475,12 +486,6 @@ sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
 sudo -i
-echo Recuerda, lo único que te ofrezco son estos Scripts. Nada más.
-sleep 2s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 10s
-clear
 
 
 #Flat-Plat-Screensaver
@@ -539,7 +544,7 @@ resize2fs -p /dev/sda8
 aletorio=`echo $(($RANDOM%6))`
 clear
 echo
-echo "¿Jugamos a un juego?"
+echo "¿Jugamos a un Acertijo?"
 echo
 echo "Introduce un numero [0-6]"
 read entrada
