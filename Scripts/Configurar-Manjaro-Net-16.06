@@ -69,3 +69,11 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
+#
+#
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
+#
