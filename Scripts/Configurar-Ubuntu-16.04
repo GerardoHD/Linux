@@ -296,7 +296,10 @@ echo No te olvides de visitar:
 echo
 echo Trastetes
 echo http://trastetes.blogspot.com.es/
-sleep 15s
-echo
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
 echo
 #
