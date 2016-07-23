@@ -53,11 +53,4 @@ sudo chmod +x Red-Script
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
-echo Recuerda, lo único que te ofrezco son estos Scripts. Nada más.
-sleep 2s
-echo Ejecuta el Script Elegido
-echo
-echo
-ls /usr/local/bin/
-sleep 10s
-clear
+sudo -i
