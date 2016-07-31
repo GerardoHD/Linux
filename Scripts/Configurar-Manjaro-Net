@@ -1,10 +1,11 @@
-#Configurar-Manjaro-Net-Daniella
+#Configurar-Manjaro-Net
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
+echo Script creado para Manjaro-Net 16.06 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo       ---=Configurando Manjaro-Net Daniella=---
-sleep 3s
+echo       ---=Configurando Manjaro-Net=---
+sleep 1s
 echo Regenerando la lista de mirrors de Pacman
 sudo pacman-mirrors -g
 #
@@ -50,12 +51,12 @@ sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools
 sudo pacman -S gnome-shell-extension-openweather
+sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git 
 yaourt -S flatplat-theme bing-wallpaper-git
