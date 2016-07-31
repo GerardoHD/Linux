@@ -43,13 +43,14 @@ echo "Sigues vivo"
 screenfetch
 
 
-#Configurar-Manjaro-Net-Daniella
+#Configurar-Manjaro-Net
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
+echo Script creado para Manjaro-Net 16.06 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo       ---=Configurando Manjaro-Net Daniella=---
-sleep 3s
+echo       ---=Configurando Manjaro-Net=---
+sleep 1s
 echo Regenerando la lista de mirrors de Pacman
 sudo pacman-mirrors -g
 #
@@ -95,12 +96,12 @@ sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools
 sudo pacman -S gnome-shell-extension-openweather
+sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git 
 yaourt -S flatplat-theme bing-wallpaper-git
@@ -447,8 +448,8 @@ sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Backup-Gnome-Screensaver
 sudo rm -rf Blue-Script
-sudo rm -rf Configurar-Manjaro-Net-16.06
-sudo rm -rf Configurar-Ubuntu-16.04
+sudo rm -rf Configurar-Manjaro-Net
+sudo rm -rf Configurar-Ubuntu
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Flat-Plat-Screensaver
 sudo rm -rf Limpiar-Manjaro
@@ -463,8 +464,8 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ac
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net-16.06
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu-16.04
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Flat-Plat-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
@@ -479,8 +480,8 @@ sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Backup-Gnome-Screensaver
 sudo chmod +x Blue-Script
-sudo chmod +x Configurar-Manjaro-Net-16.06
-sudo chmod +x Configurar-Ubuntu-16.04
+sudo chmod +x Configurar-Manjaro-Net
+sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Flat-Plat-Screensaver
 sudo chmod +x Limpiar-Manjaro
@@ -495,7 +496,7 @@ sudo -i
 
 #Flat-Plat-Screensaver
 sudo cp /usr/share/themes/Flat-Plat/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
-echo Reiniciar GNOME Shell presionando Alt+F2, then type r
+echo Reiniciar GNOME Shell presionando Alt+F2, escribir r
 
 
 #Limpiar Manjaro
