@@ -51,8 +51,9 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 echo       ---=Configurando Manjaro-Net=---
 sleep 1s
-echo Regenerando la lista de mirrors de Pacman
+sudo pacman-key --init
 sudo pacman-mirrors -g
+sudo pacman-Syyu
 #
 echo     ---=Instalando Bases para Manjaro=---
 sleep 1s
