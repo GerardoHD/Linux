@@ -53,7 +53,7 @@ echo       ---=Configurando Manjaro-Net=---
 sleep 1s
 sudo pacman-key --init
 sudo pacman-mirrors -g
-sudo pacman-Syyu
+sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Manjaro=---
 sleep 1s
