@@ -198,7 +198,7 @@ sudo add-apt-repository ppa:snwh/pulp -y
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" -y
 #
 wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
-sudo apt-key add - < Release.key -y
+sudo apt-key add - < Release.key
 # Repositorio Noobslab Themes
 sudo add-apt-repository ppa:noobslab/themes
 # Repositorio Daniel Richter
@@ -380,6 +380,8 @@ sudo apt install paper-cursor-theme -y
 sudo apt install shotwell -y
 #
 sudo apt install elinks -y
+#
+echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
 sudo apt install indicator-brightness
 #
