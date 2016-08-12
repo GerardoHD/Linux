@@ -58,6 +58,8 @@ echo          ------==Script Modificado por GerardoHD==------
 echo       ---=Configurando Ubuntu 16.04 Xenial Xerus=---
 sleep 3s
 #
+echo Probando conexión a Internet
+ping -c 3 www.google.com
 echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
