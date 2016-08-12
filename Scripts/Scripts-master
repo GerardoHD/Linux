@@ -49,8 +49,12 @@ echo https://github.com/GerardoHD
 echo Script creado para Manjaro-Net 16.06.1 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
+echo Ejecutar en sesión normal, no superusuario, de lo contrario Makepkg no finalizará la instalación de paquetes desde AUR
+echo Probando conexión a Internet
+ping -c 3 www.google.com
 echo       ---=Configurando Manjaro-Net=---
 sleep 1s
+echo Inicializando Pacman
 sudo pacman-key --init
 sudo pacman-mirrors -g
 sudo pacman -Syyu
@@ -95,18 +99,19 @@ sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup gnome-software
-sudo pacman -S file-roller gparted android-tools
+sudo pacman -S file-roller gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
+yaourt -S gnome-shell-frippery gnome-shell-extension-topicons-plus-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S nautilus-admin
-yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git 
+yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git
-yaourt -S google-chrome
+yaourt -S google-chrome chrome-gnome-shell-git
 #
 echo       ---=Limpiando Manjaro Linux=--
 sleep 1s
@@ -116,7 +121,6 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
-#
 #
 sleep 2s
 echo Ejecuta el Script Elegido
@@ -185,6 +189,8 @@ echo          ------==Script Modificado por GerardoHD==------
 echo       ---=Configurando Ubuntu 16.04 Xenial Xerus=---
 sleep 3s
 #
+echo Probando conexión a Internet
+ping -c 3 www.google.com
 echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
