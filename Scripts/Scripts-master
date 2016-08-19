@@ -209,6 +209,10 @@ sudo apt-key add - < Release.key
 sudo add-apt-repository ppa:noobslab/themes
 # Repositorio Daniel Richter
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
+# Repositorio Gradio
+sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
+# Repositorio Oranchelo Icon Pack
+sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 #
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
@@ -379,11 +383,11 @@ sudo apt install geary -y
 #
 sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
 #
-sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme -y
+sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme oranchelo-icon-theme -y
 #
 sudo apt install paper-cursor-theme -y
 #
-sudo apt install shotwell -y
+sudo apt install shotwell gradio -y
 #
 sudo apt install elinks -y
 #
