@@ -105,6 +105,7 @@ sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S gnome-shell-frippery gnome-shell-extension-topicons-plus-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
+yaourt -S gnome-shell-extension-dynamic-top-bar
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
@@ -469,6 +470,7 @@ sudo rm -rf Limpiar-Manjaro
 sudo rm -rf Limpiar-Ubuntu
 sudo rm -rf Original-Gnome-Screensaver
 sudo rm -rf Red-Script
+sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf ROOT-A
 sudo rm -rf STATE
@@ -485,6 +487,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Li
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-Pacman-db.lck
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
@@ -501,6 +504,7 @@ sudo chmod +x Limpiar-Manjaro
 sudo chmod +x Limpiar-Ubuntu
 sudo chmod +x Original-Gnome-Screensaver
 sudo chmod +x Red-Script
+sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
@@ -539,6 +543,15 @@ df -h
 #Original-Gnome-Screensaver
 sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource~ /usr/share/gnome-shell/gnome-shell-theme.gresource
 echo Restart GNOME Shell by pressing Alt+F2, then type r
+
+
+#Reparar Pacman db.lck
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Reparando Pacman db.lck--
+sudo rm -f /var/lib/pacman/db.lck
+sudo pacman-mirrors -g
+sudo pacman -Syyuu
+sudo sudo pacman -Suu
 
 
 #Reparar Var Ubuntu
