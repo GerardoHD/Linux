@@ -7,6 +7,9 @@ sudo chmod +x Nombre-de-Script
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Manjaro Linux--
 sleep 1s
+echo No ejecutar en sesión root, de lo contrario Makepkg no finalizará la actualización de paquetes desde AUR
+echo Comprobando Permisos
+whoami
 echo
 #!/bin/bash
 speedtest
@@ -49,7 +52,7 @@ echo https://github.com/GerardoHD
 echo Script creado para Manjaro-Net 16.06.1 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo Ejecutar en sesión normal, no superusuario, de lo contrario Makepkg no finalizará la instalación de paquetes desde AUR
+echo No ejecutar en sesión root, de lo contrario Makepkg no finalizará la instalación de paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo Probando conexión a Internet
