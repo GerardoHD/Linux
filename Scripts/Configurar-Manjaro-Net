@@ -5,6 +5,8 @@ echo Script creado para Manjaro-Net 16.06.1 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 echo Ejecutar en sesión normal, no superusuario, de lo contrario Makepkg no finalizará la instalación de paquetes desde AUR
+echo Comprobando Permisos
+whoami
 echo Probando conexión a Internet
 ping -c 3 www.google.com
 echo       ---=Configurando Manjaro-Net=---
