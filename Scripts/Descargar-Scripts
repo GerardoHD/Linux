@@ -18,6 +18,7 @@ sudo rm -rf Limpiar-Manjaro
 sudo rm -rf Limpiar-Ubuntu
 sudo rm -rf Original-Gnome-Screensaver
 sudo rm -rf Red-Script
+sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf ROOT-A
 sudo rm -rf STATE
@@ -34,6 +35,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Li
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-Pacman-db.lck
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
@@ -50,6 +52,7 @@ sudo chmod +x Limpiar-Manjaro
 sudo chmod +x Limpiar-Ubuntu
 sudo chmod +x Original-Gnome-Screensaver
 sudo chmod +x Red-Script
+sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
