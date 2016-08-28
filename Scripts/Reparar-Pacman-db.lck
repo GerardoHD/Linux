@@ -1,0 +1,7 @@
+#Reparar Pacman db.lck
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Reparando Pacman db.lck--
+sudo rm -f /var/lib/pacman/db.lck
+sudo pacman-mirrors -g
+sudo pacman -Syyuu
+sudo sudo pacman -Suu
