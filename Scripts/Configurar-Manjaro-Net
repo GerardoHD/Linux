@@ -60,6 +60,7 @@ sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S gnome-shell-frippery gnome-shell-extension-topicons-plus-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
+yaourt -S gnome-shell-extension-dynamic-top-bar
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
