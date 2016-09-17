@@ -7,7 +7,7 @@ sudo chmod +x Nombre-de-Script
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Manjaro Linux--
 sleep 1s
-echo No ejecutar en sesión root, de lo contrario Makepkg no finalizará la actualización de paquetes desde AUR
+echo No ejecutar en sesión root, de lo contrario Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo
@@ -52,7 +52,7 @@ echo https://github.com/GerardoHD
 echo Script creado para Manjaro-Net 16.06.1 Daniella
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo No ejecutar en sesión root, de lo contrario Makepkg no finalizará la instalación de paquetes desde AUR
+echo No ejecutar en sesión root, de lo contrario Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo Probando conexión a Internet
@@ -105,12 +105,12 @@ sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools xcursor-maia
-sudo pacman -S gnome-shell-extension-openweather
+sudo pacman -S gnome-shell-extension-openweather gnome-shell-extension-mediaplayer
 sudo pacman -S nautilus-open-terminal nautilus-actions
 yaourt -S gnome-shell-frippery gnome-shell-extension-topicons-plus-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
-yaourt -S gnome-shell-extension-dynamic-top-bar
+yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 sudo pacman -S geary
 sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
