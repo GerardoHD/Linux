@@ -71,7 +71,6 @@ sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 sudo add-apt-repository ppa:snwh/pulp -y
 #Repositorio Arc Theme
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" -y
-#
 wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
 sudo apt-key add - < Release.key
 # Repositorio Noobslab Themes
@@ -82,6 +81,8 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
 sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
 # Repositorio Oranchelo Icon Pack
 sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
+# Repositorio Adapta Theme
+sudo apt-add-repository ppa:tista/adapta -y
 #
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
@@ -254,7 +255,7 @@ sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin a
 #
 sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme oranchelo-icon-theme -y
 #
-sudo apt install paper-cursor-theme -y
+sudo apt install paper-cursor-theme adapta-gtk-theme -y
 #
 sudo apt install shotwell gradio -y
 #
