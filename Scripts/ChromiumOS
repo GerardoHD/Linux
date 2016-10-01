@@ -2,7 +2,6 @@
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo       ---=Instalando Flash para ChromiumOS=---
-cmatrix
 mount -o remount, rw /
 mkdir /usr/lib/cromo
 mkdir /opt/google/chrome/pepper
