@@ -10,5 +10,4 @@ sudo apt upgrade
 sudo apt full-upgrade
 sudo update-grub
 sudo fc-cache -f -v
-weather mmvr
 screenfetch
