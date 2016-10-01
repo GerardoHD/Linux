@@ -1,0 +1,12 @@
+#ChromiumOS
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo       ---=Instalando Flash para ChromiumOS=---
+mount -o remount, rw /
+mkdir /usr/lib/cromo
+mkdir /opt/google/chrome/pepper
+cd /usr/local/bin/
+wget https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
+chmod +x Descargar-Scripts
+curl -L http://goo.gl/MuVta5 | bash
+#
