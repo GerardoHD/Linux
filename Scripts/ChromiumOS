@@ -1,13 +1,98 @@
 #ChromiumOS
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
-echo       ---=Instalando Flash para ChromiumOS=---
+echo       ---=Preparando Sistema de archivos=---
 mount -o remount, rw /
 mkdir /usr/lib/cromo
 mkdir /opt/google/chrome/pepper
+echo       ---=Descargando Scripts de GerardoHD=---
 cd /usr/local/bin/
-wget https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
-chmod +x Descargar-Scripts
-Descargar-Scripts
-curl -L http://goo.gl/MuVta5 | bash
+sudo rm -rf screenfetch
+sudo rm -rf Actualizar-Manjaro
+sudo rm -rf Actualizar-Ubuntu
+sudo rm -rf Backup-Gnome-Screensaver
+sudo rm -rf Blue-Script
+sudo rm -rf Configurar-Manjaro-Net
+sudo rm -rf Configurar-Ubuntu
+sudo rm -rf Descargar-Scripts
+sudo rm -rf Flat-Plat-Screensaver
+sudo rm -rf Limpiar-Manjaro
+sudo rm -rf Limpiar-Ubuntu
+sudo rm -rf Original-Gnome-Screensaver
+sudo rm -rf Red-Script
+sudo rm -rf Reparar-Pacman-db.lck
+sudo rm -rf Reparar-var-Ubuntu
+sudo rm -rf ROOT-A
+sudo rm -rf STATE
+sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Flat-Plat-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-Pacman-db.lck
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
+sudo chmod +x screenfetch
+sudo chmod +x Actualizar-Manjaro
+sudo chmod +x Actualizar-Ubuntu
+sudo chmod +x Backup-Gnome-Screensaver
+sudo chmod +x Blue-Script
+sudo chmod +x Configurar-Manjaro-Net
+sudo chmod +x Configurar-Ubuntu
+sudo chmod +x Descargar-Scripts
+sudo chmod +x Flat-Plat-Screensaver
+sudo chmod +x Limpiar-Manjaro
+sudo chmod +x Limpiar-Ubuntu
+sudo chmod +x Original-Gnome-Screensaver
+sudo chmod +x Red-Script
+sudo chmod +x Reparar-Pacman-db.lck
+sudo chmod +x Reparar-var-Ubuntu
+sudo chmod +x ROOT-A
+sudo chmod +x STATE
+cd /
 #
+echo       ---=Instalando Flash para ChromiumOS=---
+#!/bin/bash
+ 
+if [ `uname -m` != 'x86_64' ]; then
+  # non x86_64
+  echo "This script is designed for working with x86_64 system"
+  exit
+else
+    #x86_64
+  echo "x86_64 system detected. OK to continue."
+fi
+ 
+#remount / as read/write
+mount -o remount,rw /
+ 
+cd /opt/google/chrome/
+#remove old files
+rm -f libpdf.so
+rm -f libffmpegsumo.so
+mkdir pepper
+cd pepper
+rm -f manifest.json
+rm -f libpepflashplayer.so
+rm -f pepper-flash.info
+ 
+#download package
+curl -L "https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/plugin.tgz" -o "plugin.tgz"
+#flash
+tar -xzvf plugin.tgz
+#PDF
+mv -f libpdf.so ..
+#mp3/mp4
+mv -f libffmpegsumo.so ..
+#delete downloaded package
+rm -f plugin.tgz
+restart ui
