@@ -58,6 +58,7 @@ sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
+cd /
 #
 echo       ---=Instalando Flash para ChromiumOS=---
 #!/bin/bash
