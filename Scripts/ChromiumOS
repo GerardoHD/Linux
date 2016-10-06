@@ -8,5 +8,6 @@ mkdir /opt/google/chrome/pepper
 cd /usr/local/bin/
 wget https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 chmod +x Descargar-Scripts
+Descargar-Scripts
 curl -L http://goo.gl/MuVta5 | bash
 #
