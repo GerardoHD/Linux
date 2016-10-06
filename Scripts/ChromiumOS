@@ -6,6 +6,9 @@ mount -o remount, rw /
 mkdir /usr/lib/cromo
 mkdir /opt/google/chrome/pepper
 echo       ---=Descargando Scripts de GerardoHD=---
+mkdir /usr
+mkdir /usr/local
+mkdir /usr/local/bin
 cd /usr/local/bin/
 sudo rm -rf screenfetch
 sudo rm -rf Actualizar-Manjaro
