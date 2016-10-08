@@ -101,4 +101,3 @@ mv -f libffmpegsumo.so ..
 #delete downloaded package
 rm -f plugin.tgz
 restart ui
-Contact GitHub API Training Shop Blog About
