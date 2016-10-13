@@ -7,7 +7,7 @@ sudo chmod +x Nombre-de-Script
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Manjaro Linux--
 sleep 1s
-echo No ejecutar en sesión root, de lo contrario Makepkg no compilará paquetes desde AUR
+echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo
@@ -48,29 +48,121 @@ screenfetch
 #ChromiumOS
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
-echo       ---=Instalando Flash para ChromiumOS=---
+echo       ---=Preparando Sistema de archivos=---
 mount -o remount, rw /
 mkdir /usr/lib/cromo
 mkdir /opt/google/chrome/pepper
+echo       ---=Descargando Scripts de GerardoHD=---
+mkdir /usr
+mkdir /usr/local
+mkdir /usr/local/bin
 cd /usr/local/bin/
-wget https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
-chmod +x Descargar-Scripts
-curl -L http://goo.gl/MuVta5 | bash
+sudo rm -rf screenfetch
+sudo rm -rf Actualizar-Manjaro
+sudo rm -rf Actualizar-Ubuntu
+sudo rm -rf Backup-Gnome-Screensaver
+sudo rm -rf Blue-Script
+sudo rm -rf Configurar-Manjaro-Net
+sudo rm -rf Configurar-Ubuntu
+sudo rm -rf Descargar-Scripts
+sudo rm -rf Flat-Plat-Screensaver
+sudo rm -rf Limpiar-Manjaro
+sudo rm -rf Limpiar-Ubuntu
+sudo rm -rf Original-Gnome-Screensaver
+sudo rm -rf Red-Script
+sudo rm -rf Reparar-Pacman-db.lck
+sudo rm -rf Reparar-var-Ubuntu
+sudo rm -rf ROOT-A
+sudo rm -rf STATE
+sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Flat-Plat-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-Gnome-Screensaver
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-Pacman-db.lck
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
+sudo chmod +x screenfetch
+sudo chmod +x Actualizar-Manjaro
+sudo chmod +x Actualizar-Ubuntu
+sudo chmod +x Backup-Gnome-Screensaver
+sudo chmod +x Blue-Script
+sudo chmod +x Configurar-Manjaro-Net
+sudo chmod +x Configurar-Ubuntu
+sudo chmod +x Descargar-Scripts
+sudo chmod +x Flat-Plat-Screensaver
+sudo chmod +x Limpiar-Manjaro
+sudo chmod +x Limpiar-Ubuntu
+sudo chmod +x Original-Gnome-Screensaver
+sudo chmod +x Red-Script
+sudo chmod +x Reparar-Pacman-db.lck
+sudo chmod +x Reparar-var-Ubuntu
+sudo chmod +x ROOT-A
+sudo chmod +x STATE
 #
+screenfetch
+cd /
+#
+echo       ---=Instalando Flash para ChromiumOS=---
+#!/bin/bash
+ 
+if [ `uname -m` != 'x86_64' ]; then
+  # non x86_64
+  echo "This script is designed for working with x86_64 system"
+  exit
+else
+    #x86_64
+  echo "x86_64 system detected. OK to continue."
+fi
+ 
+#remount / as read/write
+mount -o remount,rw /
+ 
+cd /opt/google/chrome/
+#remove old files
+rm -f libpdf.so
+rm -f libffmpegsumo.so
+mkdir pepper
+cd pepper
+rm -f manifest.json
+rm -f libpepflashplayer.so
+rm -f pepper-flash.info
+ 
+#download package
+curl -L "https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/plugin.tgz" -o "plugin.tgz"
+#flash
+tar -xzvf plugin.tgz
+#PDF
+mv -f libpdf.so ..
+#mp3/mp4
+mv -f libffmpegsumo.so ..
+#delete downloaded package
+rm -f plugin.tgz
+restart ui
 
 
 #Configurar-Manjaro-Net
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
-echo Script creado para Manjaro-Net 16.06.1 Daniella
+echo Script creado para Manjaro-Net
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-echo No ejecutar en sesión root, de lo contrario Makepkg no compilará paquetes desde AUR
+echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo Probando conexión a Internet
 ping -c 3 www.google.com
-echo       ---=Configurando Manjaro-Net=---
+#
+echo       ---=Configurando Pacman=---
 sleep 1s
 echo Inicializando Pacman
 sudo pacman-key --init
@@ -81,11 +173,11 @@ echo     ---=Instalando Bases para Manjaro=---
 sleep 1s
 sudo pacman -S base-devel cmake
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
-echo Testeando Bocinas
-speaker-test -c 2
+#echo Testeando Bocinas
+#speaker-test -c 2
 sudo pacman -S xorg-twm xorg-xclock xterm
-echo Testeando X:
-startx
+#echo Testeando X:
+#startx
 #
 echo     ---=Instalando Gnome=---
 sleep 1s
@@ -96,9 +188,6 @@ sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
 echo 4 7 8 10 12 13 14 18 19 21 23 26 28 31 33 34 37 39 42 47 51 
 sudo pacman -S gnome-extra
-echo Ejecutar al final para activar Gnome Display Manager "gdm"
-echo systemctl start gdm.service
-echo systemctl enable gdm.service
 #
 echo     ---=Configurando Touchpad=---
 sleep 1s
@@ -107,12 +196,11 @@ echo ¿El Touchpad no funciona en GNOME?
 echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
-echo     ---=Instalando Programas=---
+echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S snapd
 sudo pacman -S speedtest-cli cmatrix inxi
 sudo pacman -S prelink preload gksu
-yaourt -S ttf-roboto
 sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
@@ -120,12 +208,16 @@ sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S file-roller gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather gnome-shell-extension-mediaplayer
 sudo pacman -S nautilus-open-terminal nautilus-actions
+sudo pacman -S geary
+sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
+#
+echo     ---=Instalando Software desde Arch User Repository=---
+sleep 1s
+yaourt -S ttf-roboto
 yaourt -S gnome-shell-frippery gnome-shell-extension-topicons-plus-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
-sudo pacman -S geary
-sudo pacman -S vlc handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
@@ -141,13 +233,15 @@ sudo pacman -Sc
 sudo yaourt -Sc
 df -h
 #
-sleep 2s
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=--
+systemctl enable gdm.service
+#
+sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
-sleep 10s
+sleep 5s
 clear
 #
-
 
 
 #Descargar-Scripts
