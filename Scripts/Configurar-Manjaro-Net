@@ -36,9 +36,6 @@ sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
 echo 4 7 8 10 12 13 14 18 19 21 23 26 28 31 33 34 37 39 42 47 51 
 sudo pacman -S gnome-extra
-echo Ejecutar al final para activar Gnome Display Manager "gdm"
-echo systemctl start gdm.service
-echo systemctl enable gdm.service
 #
 echo     ---=Configurando Touchpad=---
 sleep 1s
@@ -84,11 +81,12 @@ sudo pacman -Sc
 sudo yaourt -Sc
 df -h
 #
-sleep 2s
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=--
+systemctl enable gdm.service
+#
+sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
 sleep 5s
 clear
-echo Para activar Gnome Display Manager "gdm"
-echo systemctl enable gdm.service
 #
