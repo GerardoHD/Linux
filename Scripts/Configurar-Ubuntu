@@ -19,6 +19,8 @@ sleep 3s
 #
 echo Probando conexión a Internet
 ping -c 3 www.google.com
+#
+#
 echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
@@ -29,9 +31,9 @@ sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
 sudo add-apt-repository ppa:snwh/pulp -y
 # Repositorio Noobslab Themes
-sudo add-apt-repository ppa:noobslab/themes
+sudo add-apt-repository ppa:noobslab/themes -y
 # Repositorio Daniel Richter
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 # Repositorio Gradio
 sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
 # Repositorio Oranchelo Icon Pack
@@ -40,8 +42,8 @@ sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 sudo apt-add-repository ppa:tista/adapta -y
 #Repositorio Tony George
 sudo apt-add-repository ppa:teejee2008/ppa -y
-#
-#
+#Repositorio Convergent Apps Testing
+sudo add-apt-repository ppa:convergent-apps/testing -y
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
 # Si quieres más, visita la pagina: http://www.atareao.es/
@@ -223,8 +225,36 @@ echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
 sudo apt install indicator-brightness
 #
-sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+echo     ---=Instalando Software Para Unity 8=---
+sudo apt install mediaplayer-app mediascanner2.0 unity-scope-mediascanner2 ubuntu-restricted-extras -y
 #
+echo Snappy Apps!
+sudo snap install --edge --devmode gallery-app
+#
+sudo snap install --edge --devmode camera-app
+#
+sudo snap install --edge --devmode address-book-app
+#
+sudo apt install calendar-app music-app ubuntu-calculator-app ubuntu-weather-app -y
+#
+sudo apt install libertine libertine-scope libertine-tools -y
+#
+echo Para más información:
+echo https://insights.ubuntu.com/2016/10/13/unity-8-preview-session-in-ubuntu-16-10-yakkety-yak/
+#
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+echo
+echo     ---=Final Instalación de Aplicaciones=---
+sleep 2s
+echo
+echo     ---=Remover Programas=---
+sleep 1s
+sudo apt purge firefox
+sudo apt purge thunderbird
+sudo apt purge totem
+echo
+#
+echo     ---=Descargando Software desde Github=---
 git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
 #
 cd arc-flatabulous-theme
@@ -241,16 +271,6 @@ cd la-capitaine-icon-theme
 #
 cd /
 #
-echo
-echo     ---=Final Instalación de Aplicaciones=---
-sleep 2s
-echo
-echo     ---=Remover Programas=---
-sleep 1s
-sudo apt purge firefox
-sudo apt purge thunderbird
-sudo apt purge totem
-echo
 echo     ---=Actualizando el sistema=---
 sleep 2s
 echo
