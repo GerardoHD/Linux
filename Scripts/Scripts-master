@@ -5,7 +5,7 @@ sudo chmod +x Nombre-de-Script
 
 #Actualizar Manjaro
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Actualizando Manjaro Linux--
+echo       ---=Actualizando Manjaro Linux=---
 sleep 1s
 echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
@@ -23,7 +23,7 @@ screenfetch
 
 #Actualizar Ubuntu
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Actualizando Ubuntu---
+echo       ---=Actualizando Ubuntu=---
 sleep 1s
 echo
 #!/bin/bash
@@ -204,8 +204,8 @@ sudo pacman -S prelink preload gksu
 sudo pacman -S gnome-gvfs
 sudo pacman -S qt4 git pamac
 sudo pacman -S manjaro-settings-manager
-sudo pacman -S gnome-initial-setup gnome-software
-sudo pacman -S file-roller gparted android-tools xcursor-maia
+sudo pacman -S gnome-initial-setup
+sudo pacman -S gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather gnome-shell-extension-mediaplayer
 sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary
@@ -233,7 +233,7 @@ sudo pacman -Sc
 sudo yaourt -Sc
 df -h
 #
-echo       ---=Activando Servicio Gnome Display Manager "gdm"=--
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
 #
 sleep 1s
@@ -264,6 +264,8 @@ sleep 3s
 #
 echo Probando conexión a Internet
 ping -c 3 www.google.com
+#
+#
 echo     ---=Inicio Repositorios=---
 sleep 1s
 # Activar repositorio Socios de Canonical.
@@ -274,9 +276,9 @@ sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
 sudo add-apt-repository ppa:snwh/pulp -y
 # Repositorio Noobslab Themes
-sudo add-apt-repository ppa:noobslab/themes
+sudo add-apt-repository ppa:noobslab/themes -y
 # Repositorio Daniel Richter
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 # Repositorio Gradio
 sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
 # Repositorio Oranchelo Icon Pack
@@ -285,8 +287,8 @@ sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 sudo apt-add-repository ppa:tista/adapta -y
 #Repositorio Tony George
 sudo apt-add-repository ppa:teejee2008/ppa -y
-#
-#
+#Repositorio Convergent Apps Testing
+sudo add-apt-repository ppa:convergent-apps/testing -y
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
 # Si quieres más, visita la pagina: http://www.atareao.es/
@@ -468,8 +470,36 @@ echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
 sudo apt install indicator-brightness
 #
-sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+echo     ---=Instalando Software Para Unity 8=---
+sudo apt install mediaplayer-app mediascanner2.0 unity-scope-mediascanner2 ubuntu-restricted-extras -y
 #
+echo Snappy Apps!
+sudo snap install --edge --devmode gallery-app
+#
+sudo snap install --edge --devmode camera-app
+#
+sudo snap install --edge --devmode address-book-app
+#
+sudo apt install calendar-app music-app ubuntu-calculator-app ubuntu-weather-app -y
+#
+sudo apt install libertine libertine-scope libertine-tools -y
+#
+echo Para más información:
+echo https://insights.ubuntu.com/2016/10/13/unity-8-preview-session-in-ubuntu-16-10-yakkety-yak/
+#
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+echo
+echo     ---=Final Instalación de Aplicaciones=---
+sleep 2s
+echo
+echo     ---=Remover Programas=---
+sleep 1s
+sudo apt purge firefox
+sudo apt purge thunderbird
+sudo apt purge totem
+echo
+#
+echo     ---=Descargando Software desde Github=---
 git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
 #
 cd arc-flatabulous-theme
@@ -486,16 +516,6 @@ cd la-capitaine-icon-theme
 #
 cd /
 #
-echo
-echo     ---=Final Instalación de Aplicaciones=---
-sleep 2s
-echo
-echo     ---=Remover Programas=---
-sleep 1s
-sudo apt purge firefox
-sudo apt purge thunderbird
-sudo apt purge totem
-echo
 echo     ---=Actualizando el sistema=---
 sleep 2s
 echo
@@ -630,7 +650,7 @@ echo Restart GNOME Shell by pressing Alt+F2, then type r
 
 #Reparar Pacman db.lck
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Reparando Pacman db.lck--
+echo       ---=Reparando Pacman db.lck=---
 sudo rm -f /var/lib/pacman/db.lck
 sudo pacman-mirrors -g
 sudo pacman -Syyuu
@@ -674,7 +694,7 @@ fi
 
 #STATE
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Clonando Chromium OS STATE--
+echo       ---=Clonando Chromium OS STATE=---
 dd if=/dev/sdb1 of=/dev/sda8
 sleep 1s
 e2fsck -f -y -v -C 0 /dev/sda8
