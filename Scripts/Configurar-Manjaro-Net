@@ -1,4 +1,5 @@
 #Configurar-Manjaro-Net
+#Configurar-Manjaro-Net
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Manjaro-Net
@@ -81,7 +82,7 @@ sudo pacman -Sc
 sudo yaourt -Sc
 df -h
 #
-echo       ---=Activando Servicio Gnome Display Manager "gdm"=--
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
 #
 sleep 1s
