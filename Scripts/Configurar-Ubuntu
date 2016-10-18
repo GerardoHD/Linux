@@ -84,6 +84,8 @@ sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 # Repositorio Adapta Theme
 sudo apt-add-repository ppa:tista/adapta -y
 #
+#Repositorio Tony George
+sudo apt-add-repository ppa:teejee2008/ppa -y
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
 # Si quieres más, visita la pagina: http://www.atareao.es/
@@ -231,7 +233,7 @@ sudo apt-get install python-pip -y
 #
 sudo pip install speedtest-cli
 #
-sudo apt install autoconf inxi automake cmake -y
+sudo apt install autoconf inxi automake cmake indicator-diskman -y
 #
 sudo apt install git -y
 #
