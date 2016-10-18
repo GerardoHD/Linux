@@ -1,6 +1,6 @@
 #STATE
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Clonando Chromium OS STATE--
+echo       ---=Clonando Chromium OS STATE=---
 dd if=/dev/sdb1 of=/dev/sda8
 sleep 1s
 e2fsck -f -y -v -C 0 /dev/sda8
