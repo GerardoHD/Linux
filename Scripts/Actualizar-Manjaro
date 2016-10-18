@@ -1,6 +1,6 @@
 #Actualizar Manjaro
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Actualizando Manjaro Linux--
+echo       ---=Actualizando Manjaro Linux=---
 sleep 1s
 echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
