@@ -1,9 +1,5 @@
 #!/bin/sh
 #
-# Script_Ubuntu_16.04_Post_Install.sh
-#
-# Para Ubuntu 16.04 (Xenial Xerus)
-#
 echo Script creado por Luis Cordero, Blog:
 echo http://trastetes.blogspot.com.es/
 # 
@@ -14,44 +10,7 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 # http://creativecommons.org/licenses/by-nc-sa/3.0/es/ 
 #
 #
-# El script Ubuntu 16.04 Post Install, añade repositorios, actualiza el sistema e instala el software mas relevante, para el uso de nuestro Ubuntu.
-#
-#
-# Solo preguntará en:
-#
-# ubuntu-restricted-extras por razones legales
-#
-# Si queremos que se instalen las fuentes de Microsoft, tenemos que aceptar el EULA de la licencia, para ello, pulsamos la tecla Intro del teclado en Aceptar
-# Nos preguntara si aceptamos la instalación de ttf-mscorefonts (fuentes de Microsoft), para movernos a la opción <Sí> o la opción <No> pulsamos la tecla tabulador del teclado, posteriormente pulsamos Intro
-#
-#
-# Tener en cuenta lo siguiente:
-#
-# Leer el script detenidamente.
-#
-#
-# Si algún software no os interesa comentar o eliminar la linea.
-# Para comentar escribir delante "#" sin comillas. Para descomentar quitar #
-#
-# Si algún software no esta incluido, lo podéis incluir.
-#
-# Copiar el script en un archivo vacío. Darle un nombre, por ejemplo:
-# Script_Ubuntu_16.04_Post_Install.sh
-# y darle permisos de ejecución.
-# Es importante que tenga la extensión .sh
-#
-# Como dar permisos de ejecución:
-#
-# Botón derecho del ratón sobre el archivo, ir a la pestaña permisos y seleccionar, Permitir ejecutar el archivo como un programa.
-#
-# Como ejecutar el script:
-#
-# Doble clic con botón izquierdo del ratón y clicar en el botón, Ejecutar en un terminal
-#
-# Si no funciona la ejecución, o más información, visita la siguiente pagina:
-#
-# Permitir Script o Archivos de texto ejecutables como un programa en Ubuntu 16.04 LTS
-# http://trastetes.blogspot.com.es/2016/04/permitir-script-o-archivos-de-texto.html
+# El script Configurar-Ubuntu, añade repositorios, actualiza el sistema e instala el software mas relevante.
 #
 #
 echo          ------==Script Modificado por GerardoHD==------
@@ -69,10 +28,6 @@ sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
 sudo add-apt-repository ppa:snwh/pulp -y
-#Repositorio Arc Theme
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" -y
-wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
-sudo apt-key add - < Release.key
 # Repositorio Noobslab Themes
 sudo add-apt-repository ppa:noobslab/themes
 # Repositorio Daniel Richter
@@ -83,9 +38,10 @@ sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
 sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 # Repositorio Adapta Theme
 sudo apt-add-repository ppa:tista/adapta -y
-#
 #Repositorio Tony George
 sudo apt-add-repository ppa:teejee2008/ppa -y
+#
+#
 #
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
 # Si quieres más, visita la pagina: http://www.atareao.es/
@@ -245,7 +201,7 @@ sudo apt install cmatrix cmatrix-xfont -y
 #
 sudo apt install grub-customizer -y
 #
-sudo apt install arc-theme -y --allow-unauthenticated
+sudo apt install arc-theme -y
 #
 sudo apt install android-tools-adb android-tools-fastboot -y
 #
@@ -269,9 +225,21 @@ sudo apt install indicator-brightness
 #
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
 #
-git clone https://github.com/andreisergiu98/arc-flatabulous-theme && cd arc-flatabulous-theme
+git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
+#
+cd arc-flatabulous-theme
 #
 bash arc-flatabulous-theme-upgrade
+#
+cd /
+#
+git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
+#
+cd la-capitaine-icon-theme
+#
+./configure
+#
+cd /
 #
 echo
 echo     ---=Final Instalación de Aplicaciones=---
@@ -309,7 +277,6 @@ echo
 sudo shutdown -r +5
 echo
 echo No te olvides de visitar:
-echo
 echo Trastetes
 echo http://trastetes.blogspot.com.es/
 sleep 2s
