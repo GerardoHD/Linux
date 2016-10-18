@@ -243,6 +243,295 @@ sleep 5s
 clear
 #
 
+#!/bin/sh
+#
+echo Script creado por Luis Cordero, Blog:
+echo http://trastetes.blogspot.com.es/
+# 
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+# 
+# Está licenciado bajo la licencia de Creative Commons
+# Reconocimiento-NoComercial-CompartirIgual 3.0 España.
+# http://creativecommons.org/licenses/by-nc-sa/3.0/es/ 
+#
+#
+# El script Configurar-Ubuntu, añade repositorios, actualiza el sistema e instala el software mas relevante.
+#
+#
+echo          ------==Script Modificado por GerardoHD==------
+echo       ---=Configurando Ubuntu 16.04 Xenial Xerus=---
+sleep 3s
+#
+echo Probando conexión a Internet
+ping -c 3 www.google.com
+echo     ---=Inicio Repositorios=---
+sleep 1s
+# Activar repositorio Socios de Canonical.
+sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
+# Hay que tener precaución de no repetir los Repositorios, ya que nos crearían problemas
+# Repositorio Papirus  
+sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
+#Repositorio Paper
+sudo add-apt-repository ppa:snwh/pulp -y
+# Repositorio Noobslab Themes
+sudo add-apt-repository ppa:noobslab/themes
+# Repositorio Daniel Richter
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer --yes
+# Repositorio Gradio
+sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
+# Repositorio Oranchelo Icon Pack
+sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
+# Repositorio Adapta Theme
+sudo apt-add-repository ppa:tista/adapta -y
+#Repositorio Tony George
+sudo apt-add-repository ppa:teejee2008/ppa -y
+#
+#
+#
+# Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
+# Si quieres más, visita la pagina: http://www.atareao.es/
+sudo add-apt-repository ppa:atareao/atareao --yes
+#
+# Repositorio atareao/nautilus-extensions, para varias aplicaciones: Nautilus Pdf Tools, Nautilus Image Tools
+# Si quieres más, visita la pagina: http://www.atareao.es/ 
+sudo add-apt-repository ppa:atareao/nautilus-extensions --yes
+#
+# Repositorio diesch/testing, para varias aplicaciones: Classic Menu Indicator, Unsettings
+sudo add-apt-repository ppa:diesch/testing --yes
+#
+# Repositorio indicator-brightness, un indicador de aplicación que ajusta el brillo de la pantalla, desde el panel superior
+sudo add-apt-repository ppa:indicator-brightness/ppa --yes
+#
+# Repositorio de MultiSystem, permite tener múltiples sistemas LiveUSB en una memoria USB
+sudo apt-add-repository 'deb http://liveusb.info/multisystem/depot all main' --yes
+# Añadir la clave pública de MultiSystem
+wget -q -O - http://liveusb.info/multisystem/depot/multisystem.asc | sudo apt-key add -
+#
+# Repositorio nemh/systemback, aplicación para realizar copias de seguridad, copia del sistema, la instalación del sistema y la creación del sistema en vivo (livecd o LiveUSB del sistema instalado).
+sudo add-apt-repository ppa:nemh/systemback --yes
+#
+# Repositorio oibaf/graphics-drivers, Drivers gráficos para Ubuntu, drivers libres y de código abierto actualizados y optimizados, tarjetas gráficas NVIDIA, ATI o INTEL(solo es necesario actualizar biblioteca de paquetes y sistema).
+#sudo add-apt-repository ppa:oibaf/graphics-drivers --yes
+#
+# Repositorio peterlevi, Variety, aplicación que cambia el fondo de escritorio de forma regular.
+sudo add-apt-repository ppa:peterlevi/ppa --yes
+#
+# Repositorio webupd8team, y-ppa-manager, herramienta para gestionar los PPAs.
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager --yes
+#
+echo     ---=Final Repositorios=---
+#
+#
+echo     ---=Actualizando el sistema=---
+sleep 1s
+# Actualizamos la biblioteca de paquetes.
+sudo apt update
+#
+# Actualizamos el sistema.
+sudo apt upgrade -y
+#
+#
+echo
+echo     ---=Instalaciones=---
+sleep 2s
+echo
+echo
+#
+echo     ---=Instalacion de Controladores o Codecs=---
+sleep 1s
+# Ubuntu Restricted Extras, Codecs y fuentes adicionales, Java, Flash, etc.,software esencial no incluido por razones legales.
+sudo apt install ubuntu-restricted-extras -y
+#
+# para las fuentes de Microsoft añadirlas a todas las aplicaciones (poner # en caso de no querer la instalación).
+sudo fc-cache -f -v
+#
+# Ver películas y vídeos en HD.
+# x264, codificador de vídeo para el H.264 / MPEG-4 AVC estándar
+sudo apt install x264 -y
+#
+# codificador de vídeo para el H.265 / HEVC
+sudo apt install x265 -y
+#
+# exfat-fuse, exfat-utils, controlador para FUSE para poder leer y escribir exFAT , utilidades para crear, comprobar, etiqueta y volcado del sistema de archivos exFAT
+sudo apt install exfat-fuse exfat-utils -y
+#
+# Herramientas para la lectura y escritura de volúmenes de Macintosh, para acceder a HFS + volúmenes formateados,  mkfs y fsck para HFS y HFS + sistemas de archivos, Tecnología traducir hfst, leer y escribir interfaces de Tcl / Tk
+sudo apt install hfsplus hfsprogs hfst hfsutils hfsutils-tcltk -y
+#
+echo
+echo     ---=Final Instalación de Controladores o Codecs=---
+sleep 2s
+echo
+echo
+#
+echo
+echo     ---=Instalación de Programas=---
+sleep 1s
+# cheese, aplicación que nos permite tomar fotografías y vídeos con nuestra webcam.
+sudo apt install cheese -y
+#
+# dconf-tools, configurar Gnome. Herramienta muy útil que nos permite configurar varios aspectos de Unity.
+sudo apt install dconf-tools -y
+#
+# GConf-Editor, herramienta que se utiliza para la edición de la base de datos de configuración de GConf (configuración de Gnome).
+sudo apt install gconf-editor -y
+#
+# Gdebi, herramienta para ver e instalar paquetes deb. Sin recurrir a una línea de comandos.
+sudo apt install gdebi -y
+#
+# gedit es un editor de texto pequeño y ligero para el escritorio GNOME que viene instalado por defecto en Ubuntu
+sudo apt install gedit -y
+# gnome-system-tools, gestionar permisos a usuarios y grupos gráficamente
+sudo apt install gnome-system-tools -y
+#
+# gnome-tweak-tool, Herramienta de retoques de GNOME, nos servirá para aplicar temas, añadir opciones al sistema, para configurar Gnome Shell y Unity.
+sudo apt install gnome-tweak-tool -y
+#
+# GParted es un editor de particiones gratuito para gestionar gráficamente las particiones del disco. Con GParted se puede cambiar el tamaño, crear, eliminar, copiar y mover particiones sin pérdida de datos y crear un espacio para nuevos sistemas operativos
+sudo apt install gparted -y
+#
+# Handbrake, herramienta que permite codificar vídeo multiproceso, de código abierto, y liberado bajo licencia GPL.
+sudo apt install handbrake -y
+#
+# Microcódigo de AMD
+sudo apt install amd64-microcode -y
+#
+# Microcódigo en procesadores Intel
+sudo apt install microcode.ctl -y
+#
+# prelink se encarga de preenlazar las librerías que necesitan las aplicaciones que utilizamos, reduciendo así los tiempos de apertura
+sudo apt install prelink -y
+#
+# preload, carga las aplicaciones mas rápidamente.
+sudo apt install preload -y
+# synaptic, Herramienta gráfica para la gestión de paquetes, que nos proporciona una mayor cantidad de información, es un gestor de paquetes muy completo, tenemos un mejor control sobre la gestión de paquetes, que nos permite instalar software en el equipo y gestionar el que está instalado
+sudo apt install synaptic -y
+#
+# Sysinfo, herramienta gráfica para mostrar información sobre la configuración del hardware
+#sudo apt install sysinfo -y
+#
+# Systemback, aplicación para realizar copias de seguridad, copia del sistema, la instalación del sistema y la creación del sistema en vivo (livecd o LiveUSB del sistema instalado) se puede incluir /home.
+# Es necesario el repositorio ppa:nemh/systemback
+#sudo apt install systemback -y
+# unetbootin, permite la instalación de varias distribuciones GNU/Linux desde una memoria USB o desde un disco duro USB.
+sudo apt install unetbootin unetbootin-translations -y
+#
+# Unity Tweak Tool, herramienta de configuración para el escritorio de Unity, Proporciona a los usuarios una interfaz rápida, sencilla y fácil de usar con la que acceder a muchas características y configuraciones útiles y poco conocidas. 
+sudo apt install unity-tweak-tool -y
+#
+# Variety, aplicación que cambia el fondo de escritorio de forma regular, el uso de imágenes especificadas por el usuario o descargados automáticamente.
+# Es necesario el repositorio ppa:peterlevi/ppa
+#sudo apt install variety -y
+#
+# VLC, reproductor multimedia archivos multimedia, así como DVD, protocolos Audio CD, VCD y streaming diversos..
+sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
+# Y-PPA Manager, es una herramienta para gestionar los PPAs desde una única interfaz de usuario, podemos buscar y eliminar repositorios duplicados, agregar repositorios adicionales, descargar paquetes desde un repositorio sin agregarlo, así como la búsqueda de paquetes en Launchpad PPA.
+# Es necesario el repositorio ppa:webupd8team/y-ppa-manager
+sudo apt install y-ppa-manager -y
+#
+echo     ---=Programas de GerardoHD=---
+sudo apt-get install python-pip -y
+#
+sudo pip install speedtest-cli
+#
+sudo apt install autoconf inxi automake cmake indicator-diskman -y
+#
+sudo apt install git -y
+#
+sudo apt install libgtk-3-dev gtk2-engines-murrine gtk3-engines-unico gtk2-engines-pixbuf -y
+#
+sudo apt install gnomes-themes-standard gnome-themes-standard-data -y
+#
+sudo apt install cmatrix cmatrix-xfont -y
+#
+sudo apt install grub-customizer -y
+#
+sudo apt install arc-theme -y
+#
+sudo apt install android-tools-adb android-tools-fastboot -y
+#
+sudo apt install rhythmbox-plugin-alternative-toolbar -y
+#
+sudo apt install geary -y
+#
+sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
+#
+sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme oranchelo-icon-theme -y
+#
+sudo apt install paper-cursor-theme adapta-gtk-theme -y
+#
+sudo apt install shotwell gradio -y
+#
+sudo apt install elinks -y
+#
+echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
+#
+sudo apt install indicator-brightness
+#
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+#
+git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
+#
+cd arc-flatabulous-theme
+#
+bash arc-flatabulous-theme-upgrade
+#
+cd /
+#
+git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
+#
+cd la-capitaine-icon-theme
+#
+./configure
+#
+cd /
+#
+echo
+echo     ---=Final Instalación de Aplicaciones=---
+sleep 2s
+echo
+echo     ---=Remover Programas=---
+sleep 1s
+sudo apt purge firefox
+sudo apt purge thunderbird
+sudo apt purge totem
+echo
+echo     ---=Actualizando el sistema=---
+sleep 2s
+echo
+# Actualizamos la biblioteca de paquetes
+sudo apt update
+# Actualizamos el sistema
+sudo apt upgrade -y
+#
+echo       ---=Limpiando Ubuntu=---
+sleep 1s
+echo
+#!/bin/bash
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+df -h
+#
+echo
+echo     ---=Reinicio en 1 minuto=---
+sleep 1s
+echo
+echo
+#
+sudo shutdown -r +5
+echo
+echo No te olvides de visitar:
+echo Trastetes
+echo http://trastetes.blogspot.com.es/
+sleep 2s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 10s
+clear
+echo
+#
+
 
 #Descargar-Scripts
 echo          ------==Script Creado por GerardoHD==------
