@@ -161,6 +161,7 @@ echo Comprobando Permisos
 whoami
 echo Probando conexión a Internet
 ping -c 3 www.google.com
+sudo mount -o remount,size=2G,noatime /tmp
 #
 echo       ---=Configurando Pacman=---
 sleep 1s
@@ -243,7 +244,9 @@ echo Ejecuta el Script Elegido
 ls /usr/local/bin/
 sleep 5s
 clear
+screenfetch
 #
+
 
 #!/bin/sh
 #
