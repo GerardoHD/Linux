@@ -1,7 +1,7 @@
 #ROOT-A
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Clonando Chromium OS ROOT-A=---
-dd if=/dev/sdb3 of=/dev/sda7
+#dd if=/dev/sdb3 of=/dev/sda7
 sleep 1s
-e2fsck -f -y -v -C 0 /dev/sda7
-resize2fs -p /dev/sda7
+#e2fsck -f -y -v -C 0 /dev/sda7
+#resize2fs -p /dev/sda7
