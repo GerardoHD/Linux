@@ -431,7 +431,7 @@ sudo apt install unity-tweak-tool -y
 #sudo apt install variety -y
 #
 # VLC, reproductor multimedia archivos multimedia, así como DVD, protocolos Audio CD, VCD y streaming diversos..
-sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
+#sudo apt install vlc browser-plugin-vlc libvlc5 libvlccore8 -y
 # Y-PPA Manager, es una herramienta para gestionar los PPAs desde una única interfaz de usuario, podemos buscar y eliminar repositorios duplicados, agregar repositorios adicionales, descargar paquetes desde un repositorio sin agregarlo, así como la búsqueda de paquetes en Launchpad PPA.
 # Es necesario el repositorio ppa:webupd8team/y-ppa-manager
 sudo apt install y-ppa-manager -y
@@ -467,7 +467,7 @@ sudo apt install paper-icon-theme paper-gtk-theme paper-cursor-theme oranchelo-i
 #
 sudo apt install paper-cursor-theme adapta-gtk-theme -y
 #
-sudo apt install shotwell gradio -y
+sudo apt install shotwell gradio gnome-mpv youtube-dl atomicparsley -y
 #
 sudo apt install elinks -y
 #
@@ -518,6 +518,10 @@ git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
 cd la-capitaine-icon-theme
 #
 ./configure
+#
+cd /
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 cd /
 #
