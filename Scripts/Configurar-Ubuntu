@@ -271,6 +271,7 @@ cd la-capitaine-icon-theme
 #
 cd /
 #
+#
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 cd /
@@ -291,6 +292,7 @@ sudo apt clean
 sudo apt autoclean
 sudo apt autoremove
 df -h
+sleep 3s
 #
 echo
 echo     ---=Reinicio en 1 minuto=---
