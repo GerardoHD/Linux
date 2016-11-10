@@ -8,3 +8,4 @@ sudo apt clean
 sudo apt autoclean
 sudo apt autoremove
 df -h
+sleep 3s
