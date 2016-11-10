@@ -8,3 +8,4 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
+sleep 3s
