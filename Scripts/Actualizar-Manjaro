@@ -13,4 +13,5 @@ sudo pacman -Syyu
 yaourt -Syyyua
 sudo update-grub
 sudo fc-cache -f -v
+sudo gtk-update-icon-cache
 screenfetch
