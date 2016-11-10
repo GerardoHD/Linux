@@ -18,6 +18,7 @@ sudo pacman -Syyu
 yaourt -Syyyua
 sudo update-grub
 sudo fc-cache -f -v
+sudo gtk-update-icon-cache
 screenfetch
 
 
@@ -33,6 +34,7 @@ sudo apt upgrade
 sudo apt full-upgrade
 sudo update-grub
 sudo fc-cache -f -v
+sudo gtk-update-icon-cache
 screenfetch
 
 
@@ -203,7 +205,7 @@ sudo pacman -S snapd
 sudo pacman -S speedtest-cli cmatrix inxi
 sudo pacman -S prelink preload gksu
 sudo pacman -S gnome-gvfs
-sudo pacman -S git pamac
+sudo pacman -S git pamac pacli
 sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup
 sudo pacman -S gparted android-tools xcursor-maia
@@ -211,21 +213,25 @@ sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary
 sudo pacman -S handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
-#sudo pacman -S gnome-shell-extension-mediaplayer qt4 vlc
+sudo pacman -S youtube-dl atomicparsley 
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S ttf-roboto
-yaourt -S gnome-shell-extension-topicons-plus-git nautilus-admin
+yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
-yaourt -S rhythmbox-plugin-alternative-toolbar-git
+yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome chrome-gnome-shell-git
-yaourt -S gnome-mpv youtube-dl atomicparsley
-#yaourt -S gnome-shell-frippery 
+yaourt -S gnome-mpv 
+#
+echo     ---=Descargando Software desde Github=---
+git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo       ---=Limpiando Manjaro Linux=--
 sleep 1s
@@ -235,6 +241,7 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
+sleep 3s
 #
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
@@ -521,6 +528,7 @@ cd la-capitaine-icon-theme
 #
 cd /
 #
+#
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 cd /
@@ -541,6 +549,7 @@ sudo apt clean
 sudo apt autoclean
 sudo apt autoremove
 df -h
+sleep 3s
 #
 echo
 echo     ---=Reinicio en 1 minuto=---
@@ -621,6 +630,13 @@ sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
 cd /
+sleep 1s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
 
 
 #Flat-Plat-Screensaver
@@ -638,6 +654,7 @@ sudo pacman-optimize
 sudo pacman -Sc
 sudo yaourt -Sc
 df -h
+sleep 3s
 
 
 #Limpiar Ubuntu
@@ -650,6 +667,7 @@ sudo apt clean
 sudo apt autoclean
 sudo apt autoremove
 df -h
+sleep 3s
 
 
 #Original-Gnome-Screensaver
