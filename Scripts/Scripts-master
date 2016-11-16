@@ -205,7 +205,7 @@ sudo pacman -S snapd
 sudo pacman -S speedtest-cli cmatrix inxi
 sudo pacman -S prelink preload gksu
 sudo pacman -S gnome-gvfs
-sudo pacman -S git pamac pacli
+sudo pacman -S pamac
 sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup
 sudo pacman -S gparted android-tools xcursor-maia
@@ -219,7 +219,7 @@ echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S ttf-roboto
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-arch-update gnome-shell-extension-coverflow-alt-tab
+yaourt -S gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
