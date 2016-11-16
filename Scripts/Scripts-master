@@ -211,7 +211,7 @@ sudo pacman -S gnome-initial-setup
 sudo pacman -S gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
-sudo pacman -S geary
+sudo pacman -S geary eog-plugins
 sudo pacman -S handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
 sudo pacman -S youtube-dl atomicparsley 
 #
