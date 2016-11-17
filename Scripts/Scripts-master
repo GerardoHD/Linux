@@ -189,7 +189,7 @@ echo 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
 echo 41 42 44 45 46 47
 sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
-echo 6 7 9 12 13 14 20 21 22 23 25 27 29 31 32 34 36 41 47 51 
+echo 6 7 9 12 13 14 17 20 21 22 23 25 27 29 31 32 34 36 41 47 51 
 sudo pacman -S gnome-extra
 #
 echo     ---=Configurando Touchpad=---
@@ -202,18 +202,18 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S snapd
-sudo pacman -S speedtest-cli cmatrix inxi
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion
 sudo pacman -S prelink preload gksu
 sudo pacman -S gnome-gvfs
 sudo pacman -S pamac
 sudo pacman -S manjaro-settings-manager
-sudo pacman -S gnome-initial-setup
+sudo pacman -S gnome-initial-setup gnome-software
 sudo pacman -S gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
-sudo pacman -S geary eog-plugins
+sudo pacman -S geary catfish
 sudo pacman -S handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
-sudo pacman -S youtube-dl atomicparsley 
+sudo pacman -S youtube-dl atomicparsley eog-plugins
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
@@ -226,7 +226,7 @@ yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git
 yaourt -S google-chrome chrome-gnome-shell-git
-yaourt -S gnome-mpv 
+yaourt -S gnome-mpv gradio
 #
 echo     ---=Descargando Software desde Github=---
 #
@@ -465,7 +465,7 @@ sudo apt install android-tools-adb android-tools-fastboot -y
 #
 sudo apt install rhythmbox-plugin-alternative-toolbar -y
 #
-sudo apt install geary -y
+sudo apt install geary catfish eog-plugins -y
 #
 sudo apt install gnome-calendar gnome-contacts nautilus-actions nautilus-admin account-plugin-twitter -y
 #
