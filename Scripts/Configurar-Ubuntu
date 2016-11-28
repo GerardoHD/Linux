@@ -26,8 +26,6 @@ sleep 1s
 # Activar repositorio Socios de Canonical.
 sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 # Hay que tener precaución de no repetir los Repositorios, ya que nos crearían problemas
-# Repositorio Papirus  
-sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
 sudo add-apt-repository ppa:snwh/pulp -y
 # Repositorio Noobslab Themes
