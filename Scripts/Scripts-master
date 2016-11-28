@@ -212,8 +212,11 @@ sudo pacman -S gparted android-tools xcursor-maia
 sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary catfish
-sudo pacman -S handbrake handbrake-cli gimp transmission-gtk rhythmbox mx gst-libav
-sudo pacman -S youtube-dl atomicparsley eog-plugins
+sudo pacman -S handbrake handbrake-cli avidemux-cli avidemux-qt gimp transmission-gtk rhythmbox mx gst-libav
+sudo pacman -S youtube-dl atomicparsley eog-plugins 
+sudo pacman -S kodi kodi-addon-adsp-freesuround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
+sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav kodi-addon-visualization-shadertoy
+sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
@@ -224,9 +227,9 @@ yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome chrome-gnome-shell-git
-yaourt -S gnome-mpv gradio
+yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #
 echo     ---=Descargando Software desde Github=---
 #
@@ -282,8 +285,6 @@ sleep 1s
 # Activar repositorio Socios de Canonical.
 sudo sed 's/# deb/deb/' -i /etc/apt/sources.list
 # Hay que tener precaución de no repetir los Repositorios, ya que nos crearían problemas
-# Repositorio Papirus  
-sudo add-apt-repository ppa:varlesh-l/papirus-pack -y
 #Repositorio Paper
 sudo add-apt-repository ppa:snwh/pulp -y
 # Repositorio Noobslab Themes
