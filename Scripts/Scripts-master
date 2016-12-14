@@ -204,7 +204,7 @@ sleep 1s
 sudo pacman -S snapd
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion
 sudo pacman -S prelink preload gksu
-sudo pacman -S gnome-gvfs
+sudo pacman -S gnome-gvfs p7zip lrzip lzip minizip
 sudo pacman -S pamac
 sudo pacman -S manjaro-settings-manager
 sudo pacman -S gnome-initial-setup gnome-software
@@ -213,22 +213,23 @@ sudo pacman -S gnome-shell-extension-openweather
 sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary catfish
 sudo pacman -S handbrake handbrake-cli avidemux-cli avidemux-qt gimp transmission-gtk rhythmbox mx gst-libav
-sudo pacman -S youtube-dl atomicparsley eog-plugins p7zip lrzip lzip minizip
+sudo pacman -S youtube-dl atomicparsley eog-plugins 
+sudo pacman -S manjaro-printer gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppdscups libcups iscan iscan-data
 sudo pacman -S kodi kodi-addon-adsp-freesuround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto
+yaourt -S ttf-roboto epson-inkjet-printer-201207w
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab
+yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-topicons-plus
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
-yaourt -S google-chrome chrome-gnome-shell-git
+yaourt -S google-chrome chrome-gnome-shell-git 
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 #
@@ -248,6 +249,8 @@ sleep 3s
 #
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
+echo       ---=Activando Servicio Cups "cupsd"=---
+sudo systemctl enable org.cups.cupsd.service
 #
 sleep 1s
 echo Ejecuta el Script Elegido
@@ -256,7 +259,6 @@ sleep 5s
 clear
 screenfetch
 #
-
 
 #!/bin/sh
 #
