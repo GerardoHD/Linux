@@ -228,7 +228,7 @@ yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors vimix-gtk-themes-git
 yaourt -S google-chrome chrome-gnome-shell-git 
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service kodi-addon-superrepo-all
