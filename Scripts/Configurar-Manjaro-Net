@@ -72,12 +72,17 @@ yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediapla
 yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-topicons-plus
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
+yaourt -S gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls
+yaourt -S gnome-shell-extension-zorin-menu gnome-shell-extension-zorin-overview
+yaourt -S gnome-shell-extension-zorin-panel gnome-shell-extension-zorin-taskbar
+yaourt -S gnome-shell-extension-zorin-tray gnome-shell-extensions-zorin-window-list-bottom-pannel
+yaourt -S gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors vimix-gtk-themes-git
-yaourt -S google-chrome chrome-gnome-shell-git 
+yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-yaourt -S kodi-standalone-service kodi-addon-superrepo-all
+yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
 #
 echo     ---=Descargando Software desde Github=---
 #
