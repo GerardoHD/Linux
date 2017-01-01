@@ -151,7 +151,7 @@ mv -f libffmpegsumo.so ..
 rm -f plugin.tgz
 restart ui
 
-#Configurar-Arch
+#Configurar-Arch Linux
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Manjaro-Net
@@ -172,7 +172,7 @@ sudo pacman-key --init
 sudo pacman-mirrors -g
 sudo pacman -Syyu
 #
-echo     ---=Instalando Bases para Arch=---
+echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
 sudo pacman -S base-devel cmake wget
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
@@ -261,7 +261,6 @@ ls /usr/local/bin/
 sleep 5s
 clear
 screenfetch
-#
 
 
 #Configurar-Manjaro-Net
