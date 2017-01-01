@@ -60,7 +60,7 @@ sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary catfish
 sudo pacman -S handbrake handbrake-cli avidemux-cli avidemux-qt gimp transmission-gtk rhythmbox mx gst-libav
 sudo pacman -S youtube-dl atomicparsley eog-plugins 
-sudo pacman -S manjaro-printer gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppdscups libcups iscan iscan-data
+sudo pacman -S manjaro-printer gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
