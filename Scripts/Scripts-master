@@ -151,6 +151,118 @@ mv -f libffmpegsumo.so ..
 rm -f plugin.tgz
 restart ui
 
+#Configurar-Arch
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Script creado para Manjaro-Net
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
+echo Comprobando Permisos
+whoami
+echo Probando conexión a Internet
+ping -c 3 www.google.com
+sudo mount -o remount,size=2G,noatime /tmp
+#
+echo       ---=Configurando Pacman=---
+sleep 1s
+echo Inicializando Pacman
+sudo pacman-key --populate archlinux
+sudo pacman-key --init
+sudo pacman-mirrors -g
+sudo pacman -Syyu
+#
+echo     ---=Instalando Bases para Arch=---
+sleep 1s
+sudo pacman -S base-devel cmake wget
+sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
+#echo Testeando Bocinas
+#speaker-test -c 2
+sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm
+sudo pacman -S mesa mesa-demos intel-ucode alsa-utils
+sudo pacman -Sy yaourt
+#echo Testeando X:
+#startx
+#
+echo     ---=Configurando Touchpad=---
+sleep 1s
+sudo pacman -S libinput xf86-input-libinput xorg-xinput
+echo ¿El Touchpad no funciona en GNOME?
+echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+echo Si el Touchpad aun no funciona usar xf86-input-synaptics
+#
+echo     ---=Instalando Gnome=---
+sleep 1s
+echo Flags pacman -S gnome:
+echo 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
+echo 41 42 44 45 46 47
+sudo pacman -S gnome
+echo Flags pacman -S gnome-extra:
+echo 6 7 9 12 13 14 17 20 21 22 23 25 27 29 31 32 34 36 41 47 51 
+sudo pacman -S gnome-extra
+#
+echo     ---=Instalando Software desde Repositorios Oficiales=---
+sleep 1s
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu
+sudo pacman -S p7zip lrzip lzip minizip
+sudo pacman -S gvfs p7zip lrzip lzip minizip
+sudo pacman -S gnome-initial-setup gnome-software
+sudo pacman -S gparted android-tools
+sudo pacman -S nautilus-open-terminal nautilus-actions
+sudo pacman -S geary catfish
+sudo pacman -S rhythmbox mx gst-libav
+sudo pacman -S youtube-dl atomicparsley eog-plugins 
+sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
+sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
+sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+#
+echo     ---=Instalando Software desde Arch User Repository=---
+sleep 1s
+yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur
+yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
+yaourt -S gnome-shell-extension-coverflow-alt-tab
+yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
+yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
+yaourt -S gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls
+yaourt -S gnome-shell-extension-zorin-menu gnome-shell-extension-zorin-overview
+yaourt -S gnome-shell-extension-zorin-panel gnome-shell-extension-zorin-taskbar
+yaourt -S gnome-shell-extension-zorin-tray gnome-shell-extensions-zorin-window-list-bottom-pannel
+yaourt -S gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop
+yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
+yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
+yaourt -S google-chrome chrome-gnome-shell-git etcher
+yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
+yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
+#
+echo     ---=Descargando Software desde Github=---
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
+#
+echo       ---=Limpiando Manjaro Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+#
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
+systemctl enable gdm.service
+echo       ---=Activando Servicio Cups "cupsd"=---
+sudo systemctl enable org.cups.cupsd.service
+#
+sleep 1s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
+
 
 #Configurar-Manjaro-Net
 echo          ------==Script Creado por GerardoHD==------
@@ -214,7 +326,7 @@ sudo pacman -S nautilus-open-terminal nautilus-actions
 sudo pacman -S geary catfish
 sudo pacman -S handbrake handbrake-cli avidemux-cli avidemux-qt gimp transmission-gtk rhythmbox mx gst-libav
 sudo pacman -S youtube-dl atomicparsley eog-plugins 
-sudo pacman -S manjaro-printer gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppdscups libcups iscan iscan-data
+sudo pacman -S manjaro-printer gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
@@ -223,7 +335,7 @@ echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S ttf-roboto epson-inkjet-printer-201207w
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-topicons-plus
+yaourt -S gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls
@@ -233,7 +345,7 @@ yaourt -S gnome-shell-extension-zorin-tray gnome-shell-extensions-zorin-window-l
 yaourt -S gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors vimix-gtk-themes-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
@@ -264,6 +376,8 @@ sleep 5s
 clear
 screenfetch
 #
+
+
 #!/bin/sh
 #
 echo Script creado por Luis Cordero, Blog:
