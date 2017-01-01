@@ -219,7 +219,7 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur
+yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 yaourt -S gnome-shell-extension-coverflow-alt-tab
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
@@ -240,7 +240,7 @@ echo     ---=Descargando Software desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
-echo       ---=Limpiando Manjaro Linux=--
+echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
 #!/bin/bash
@@ -333,9 +333,9 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto epson-inkjet-printer-201207w
+yaourt -S ttf-roboto epson-inkjet-printer-201207w 
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab
+yaourt -S gnome-shell-extension-coverflow-alt-tab 
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls
@@ -704,6 +704,7 @@ sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Backup-Gnome-Screensaver
 sudo rm -rf Blue-Script
+sudo rm -rf Configurar-Arch
 sudo rm -rf Configurar-Manjaro-Net
 sudo rm -rf Configurar-Ubuntu
 sudo rm -rf Descargar-Scripts
@@ -721,6 +722,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ac
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
@@ -738,6 +740,7 @@ sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Backup-Gnome-Screensaver
 sudo chmod +x Blue-Script
+sudo chmod +x Configurar-Arch
 sudo chmod +x Configurar-Manjaro-Net
 sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
@@ -751,14 +754,6 @@ sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x ROOT-A
 sudo chmod +x STATE
 cd /
-sleep 1s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 5s
-clear
-screenfetch
-#
-
 
 #Flat-Plat-Screensaver
 sudo cp /usr/share/themes/Flat-Plat/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
