@@ -154,7 +154,7 @@ restart ui
 #Configurar-Arch Linux
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
-echo Script creado para Manjaro-Net
+echo Script creado para Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
@@ -204,14 +204,12 @@ sudo pacman -S gnome-extra
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu
-sudo pacman -S p7zip lrzip lzip minizip
-sudo pacman -S gvfs p7zip lrzip lzip minizip
-sudo pacman -S gnome-initial-setup gnome-software
-sudo pacman -S gparted android-tools
+sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
+sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
+sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
+sudo pacman -S gnome-initial-setup gnome-software rhythmbox
+sudo pacman -S android-tools geary catfish youtube-dl eog-plugins
 sudo pacman -S nautilus-open-terminal nautilus-actions
-sudo pacman -S geary catfish
-sudo pacman -S rhythmbox mx gst-libav
-sudo pacman -S youtube-dl atomicparsley eog-plugins 
 sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
@@ -261,6 +259,7 @@ ls /usr/local/bin/
 sleep 5s
 clear
 screenfetch
+#
 
 
 #Configurar-Manjaro-Net
