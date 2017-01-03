@@ -16,7 +16,6 @@ sleep 1s
 echo Inicializando Pacman
 sudo pacman-key --populate archlinux
 sudo pacman-key --init
-sudo pacman-mirrors -g
 sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
