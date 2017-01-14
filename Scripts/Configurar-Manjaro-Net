@@ -67,16 +67,12 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto epson-inkjet-printer-201207w
+yaourt -S ttf-roboto epson-inkjet-printer-201207w 
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab
+yaourt -S gnome-shell-extension-coverflow-alt-tab 
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
-yaourt -S gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls
-yaourt -S gnome-shell-extension-zorin-menu gnome-shell-extension-zorin-overview
-yaourt -S gnome-shell-extension-zorin-panel gnome-shell-extension-zorin-taskbar
-yaourt -S gnome-shell-extension-zorin-tray gnome-shell-extensions-zorin-window-list-bottom-pannel
-yaourt -S gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop
+yaourt -S gnome-shell-extension-zorin-menu
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
