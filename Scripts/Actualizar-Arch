@@ -1,0 +1,17 @@
+#Actualizar Arch
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando Arch Linux=---
+sleep 1s
+echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
+echo Comprobando Permisos
+whoami
+echo
+#!/bin/bash
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+sudo pacman -Syyu
+yaourt -Syyyua
+grub-mkconfig -o /boot/grub/grub.cfg
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+screenfetch
