@@ -6,6 +6,7 @@ echo
 #!/bin/bash
 cd /usr/local/bin
 sudo rm -rf screenfetch
+sudo rm -rf Actualizar-Arch
 sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Backup-Gnome-Screensaver
@@ -24,6 +25,7 @@ sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf ROOT-A
 sudo rm -rf STATE
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
@@ -42,6 +44,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Re
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
 sudo chmod +x screenfetch
+sudo chmod +x Actualizar-Arch
 sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Backup-Gnome-Screensaver
