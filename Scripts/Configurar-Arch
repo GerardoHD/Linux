@@ -1,4 +1,5 @@
-#Configurar-Arch Linux
+
+#Configurar Arch Linux
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
@@ -16,12 +17,11 @@ sleep 1s
 echo Inicializando Pacman
 sudo pacman-key --populate archlinux
 sudo pacman-key --init
-sudo pacman-mirrors -g
 sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
-sudo pacman -S base-devel cmake wget
+sudo pacman -S base-devel cmake wget os-prober
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
@@ -80,6 +80,17 @@ echo     ---=Descargando Software desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
+echo       ---=Actualizando Arch Linux=---
+sleep 1s
+#!/bin/bash
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+sudo pacman -Syyu
+yaourt -Syyyua
+grub-mkconfig -o /boot/grub/grub.cfg
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+screenfetch
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
