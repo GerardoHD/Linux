@@ -56,7 +56,7 @@ sudo chmod +x Configurar-Manjaro-Net
 sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Flat-Plat-Screensaver
-sudo chmod +x Actualizar-Arch
+sudo chmod +x Limpiar-Arch
 sudo chmod +x Limpiar-Manjaro
 sudo chmod +x Limpiar-Ubuntu
 sudo chmod +x Original-Gnome-Screensaver
