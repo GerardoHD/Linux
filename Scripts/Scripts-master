@@ -781,6 +781,18 @@ sudo cp /usr/share/themes/Flat-Plat/gnome-shell/gnome-shell-theme.gresource /usr
 echo Reiniciar GNOME Shell presionando Alt+F2, escribir r
 
 
+#Limpiar Arch
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Limpiando Arch Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+
 #Limpiar Manjaro
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Limpiando Manjaro Linux=--
