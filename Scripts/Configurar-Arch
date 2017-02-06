@@ -26,7 +26,7 @@ sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #speaker-test -c 2
 sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm
 sudo pacman -S mesa mesa-demos intel-ucode alsa-utils
-sudo pacman -Sy yaourt
+sudo pacman -S yaourt
 #echo Testeando X:
 #startx
 #
