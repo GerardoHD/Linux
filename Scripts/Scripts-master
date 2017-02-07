@@ -180,7 +180,7 @@ echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
 echo Comprobando Permisos
 whoami
 echo Probando conexión a Internet
-ping -c 3 www.google.com
+ping -c 3 www.archlinux.org
 sudo mount -o remount,size=2G,noatime /tmp
 #
 echo       ---=Configurando Pacman=---
@@ -211,9 +211,6 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo     ---=Instalando Gnome=---
 sleep 1s
-echo Flags pacman -S gnome:
-echo 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 
-echo 41 42 43 44 45 46 47
 sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
 echo 6 7 9 12 13 14 17 20 21 22 23 25 27 29 31 32 34 36 41 42 47 49 51 
@@ -221,7 +218,7 @@ sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
 sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
@@ -276,6 +273,7 @@ echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
+sudo cups-genppdupdate
 #
 sleep 1s
 echo Ejecuta el Script Elegido
