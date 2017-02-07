@@ -253,6 +253,7 @@ sleep 1s
 #!/bin/bash
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
+sudo cups-genppdupdate
 sudo pacman -Syyu
 yaourt -Syyyua
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -273,7 +274,6 @@ echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 systemctl enable gdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
-sudo cups-genppdupdate
 #
 sleep 1s
 echo Ejecuta el Script Elegido
