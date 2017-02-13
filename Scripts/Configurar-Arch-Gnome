@@ -48,7 +48,7 @@ echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
 sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
-sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
+sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
 sudo pacman -S android-tools geary catfish youtube-dl eog-plugins
@@ -100,7 +100,7 @@ df -h
 sleep 3s
 #
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
-systemctl enable gdm.service
+sudo systemctl enable gdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 #
