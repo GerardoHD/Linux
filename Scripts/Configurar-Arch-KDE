@@ -24,7 +24,7 @@ sudo pacman -S base-devel cmake wget os-prober
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
-sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm
+sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-intel
 sudo pacman -S yaourt
 #echo Testeando X:
@@ -40,38 +40,31 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 echo     ---=Instalando KDE=---
 sleep 1s
 sudo pacman -S plasma-meta kde-applications-meta plasma-wayland-session sddm-kcm
-
+sudo pacman -S plasma-pa kdeconnect
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S kde-gtk-configkde-l10n-es kmix
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
-
-sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
-sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
-sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
-sudo pacman -S gnome-initial-setup gnome-software rhythmbox
-sudo pacman -S android-tools geary catfish youtube-dl eog-plugins
-sudo pacman -S nautilus-open-terminal nautilus-actions
+sudo pacman -S kde-gtk-configkde-l10n-es kmix print-manager kdenetwork-filesharing powerdevil
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
+sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
+sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley
+sudo pacman -S rhythmbox android-tools geary catfish youtube-dl eog-plugins
 sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+#sudo pacman -S gparted
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
-yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab 
-yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
-yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
-yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
-yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
-yaourt -S google-chrome chrome-gnome-shell-git etcher
+yaourt -S rhythmbox-plugin-alternative-toolbar-git 
+yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
+yaourt -S google-chrome etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
-# la-capitaine-icon-theme-git gnome-shell-extension-zorin-menu
 #
 echo     ---=Descargando Software desde Github=---
 #
