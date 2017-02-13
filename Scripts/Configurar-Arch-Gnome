@@ -99,6 +99,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
+echo       ---=Activando Servicio Network Manager"
+sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
