@@ -46,7 +46,7 @@ echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S kde-gtk-config kde-l10n-es print-manager kdenetwork-filesharing powerdevil
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley
 sudo pacman -S rhythmbox android-tools geary catfish youtube-dl
@@ -58,13 +58,13 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
+yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S rhythmbox-plugin-alternative-toolbar-git 
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
+yaourt -S kodi-standalone-service
 #
 echo     ---=Descargando Software desde Github=---
 #
