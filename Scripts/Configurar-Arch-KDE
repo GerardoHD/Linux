@@ -99,10 +99,12 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Sumple Desktop Disy Managegdm"=---
-sudo systemctl enable sddm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
+echo       ---=Activando Servicio Network Manager"
+sudo systemctl enable NetworkManager.service
+echo       ---=Activando Simple Desktop Display Manager "sddm"=---
+sudo systemctl enable sddm.service
 #
 sleep 1s
 echo Ejecuta el Script Elegido
