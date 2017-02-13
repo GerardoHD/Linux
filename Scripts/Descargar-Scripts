@@ -11,7 +11,8 @@ sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Backup-Gnome-Screensaver
 sudo rm -rf Blue-Script
-sudo rm -rf Configurar-Arch
+sudo rm -rf Configurar-Arch-Gnome
+sudo rm -rf Configurar-Arch-KDE
 sudo rm -rf Configurar-Manjaro-Net
 sudo rm -rf Configurar-Ubuntu
 sudo rm -rf Descargar-Scripts
@@ -31,7 +32,8 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ac
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-Gnome
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-KDE
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
@@ -51,7 +53,8 @@ sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Backup-Gnome-Screensaver
 sudo chmod +x Blue-Script
-sudo chmod +x Configurar-Arch
+sudo chmod +x Configurar-Arch-Gnome
+sudo chmod +x Configurar-Arch-KDE
 sudo chmod +x Configurar-Manjaro-Net
 sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
