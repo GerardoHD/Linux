@@ -40,7 +40,7 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 echo     ---=Instalando KDE=---
 sleep 1s
 sudo pacman -S plasma-meta kde-applications-meta plasma-wayland-session sddm-kcm
-sudo pacman -S plasma-pa kdeconnect
+sudo pacman -S plasma-pa kdeconnect libkgapi
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
@@ -62,9 +62,9 @@ yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S rhythmbox-plugin-alternative-toolbar-git 
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
-yaourt -S google-chrome etcher
+yaourt -S google-chrome etcher babe-qt-git
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-yaourt -S kodi-standalone-service
+yaourt -S kodi-standalone-service pamac-tray-appindicator 
 #
 echo     ---=Descargando Software desde Github=---
 #
@@ -81,7 +81,6 @@ yaourt -Syyyua
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
-screenfetch
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
@@ -94,7 +93,7 @@ sleep 3s
 #
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
-echo       ---=Activando Servicio Network Manager"
+=---echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Simple Desktop Display Manager "sddm"=---
 sudo systemctl enable sddm.service
