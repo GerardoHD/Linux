@@ -50,7 +50,7 @@ sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley
 sudo pacman -S rhythmbox android-tools geary catfish youtube-dl
-sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
