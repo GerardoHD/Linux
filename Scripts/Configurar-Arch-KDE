@@ -39,21 +39,14 @@ echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo     ---=Instalando KDE=---
 sleep 1s
-sudo pacman -S plasma-meta kde-applications-meta plasma-wayland-session
+sudo pacman -S plasma-meta kde-applications-meta plasma-wayland-session sddm-kcm
 
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S kde-gtk-configkde-l10n-es
-
-
-
-
-
-
-
-
+sudo pacman -S kde-gtk-configkde-l10n-es kmix
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
+
 sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
@@ -106,8 +99,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
-systemctl enable gdm.service
+echo       ---=Activando Sumple Desktop Disy Managegdm"=---
+sudo systemctl enable sddm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 #
