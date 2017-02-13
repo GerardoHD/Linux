@@ -1,4 +1,4 @@
-#Configurar Arch Linux
+#Configurar Arch Linux con Gnome
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
@@ -62,15 +62,16 @@ echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-zorin-menu
+yaourt -S gnome-shell-extension-coverflow-alt-tab 
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
-yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git la-capitaine-icon-theme-git
+yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
 yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
+# la-capitaine-icon-theme-git gnome-shell-extension-zorin-menu
 #
 echo     ---=Descargando Software desde Github=---
 #
