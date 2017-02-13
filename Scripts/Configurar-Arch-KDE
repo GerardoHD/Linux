@@ -1,0 +1,110 @@
+#Configurar Arch Linux con KDE
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Script creado para Arch Linux
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía al ser un Script Experimental
+sleep 1s
+echo Si se ejecuta en sesión root, Makepkg no compilará paquetes desde AUR
+echo Comprobando Permisos
+whoami
+echo Probando conexión a Internet
+ping -c 3 www.archlinux.org
+sudo mount -o remount,size=2G,noatime /tmp
+#
+echo       ---=Configurando Pacman=---
+sleep 1s
+echo Inicializando Pacman
+sudo pacman-key --populate archlinux
+sudo pacman-key --init
+sudo pacman -Syyu
+#
+echo     ---=Instalando Bases para Arch Linux=---
+sleep 1s
+sudo pacman -S base-devel cmake wget os-prober
+sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
+#echo Testeando Bocinas
+#speaker-test -c 2
+sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm
+sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-intel
+sudo pacman -S yaourt
+#echo Testeando X:
+#startx
+#
+echo     ---=Configurando Touchpad=---
+sleep 1s
+sudo pacman -S libinput xf86-input-libinput xorg-xinput
+echo ¿El Touchpad no funciona en GNOME?
+echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+echo Si el Touchpad aun no funciona usar xf86-input-synaptics
+#
+echo     ---=Instalando KDE=---
+sleep 1s
+
+#
+echo     ---=Instalando Software desde Repositorios Oficiales=---
+sleep 1s
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
+sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart kde-l10n-es
+sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkitreiserfsprogs xfsprogs
+sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
+sudo pacman -S gnome-initial-setup gnome-software rhythmbox
+sudo pacman -S android-tools geary catfish youtube-dl eog-plugins
+sudo pacman -S nautilus-open-terminal nautilus-actions
+sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
+sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
+sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+#
+echo     ---=Instalando Software desde Arch User Repository=---
+sleep 1s
+yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
+yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
+yaourt -S gnome-shell-extension-coverflow-alt-tab 
+yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
+yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
+yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
+yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
+yaourt -S google-chrome chrome-gnome-shell-git etcher
+yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
+yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
+# la-capitaine-icon-theme-git gnome-shell-extension-zorin-menu
+#
+echo     ---=Descargando Software desde Github=---
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
+#
+echo       ---=Actualizando Arch Linux=---
+sleep 1s
+#!/bin/bash
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+sudo cups-genppdupdate
+sudo pacman -Syyu
+yaourt -Syyyua
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+screenfetch
+echo       ---=Limpiando Arch Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+#
+echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
+systemctl enable gdm.service
+echo       ---=Activando Servicio Cups "cupsd"=---
+sudo systemctl enable org.cups.cupsd.service
+#
+sleep 1s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
