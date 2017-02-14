@@ -47,7 +47,7 @@ sudo pacman -S gnome-extra
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
-sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart 
+sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
@@ -60,7 +60,7 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S ttf-roboto epson-inkjet-printer-201207w pamac-aur pacli
+yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 yaourt -S gnome-shell-extension-coverflow-alt-tab 
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
@@ -70,9 +70,8 @@ yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git paper-gtk-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
 yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-yaourt -S kodi-standalone-service kodi-addon-superrepo-all 
-#yaourt -S la-capitaine-icon-theme-git gnome-shell-extension-zorin-menu
-#
+yaourt -S kodi-standalone-service
+#yaourt -S la-capitaine-icon-theme-git
 echo     ---=Descargando Software desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
@@ -88,7 +87,6 @@ yaourt -Syyyua
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
-screenfetch
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
@@ -106,10 +104,9 @@ sudo systemctl enable gdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 #
-sleep 1s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
 sleep 5s
 clear
 screenfetch
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
 #
