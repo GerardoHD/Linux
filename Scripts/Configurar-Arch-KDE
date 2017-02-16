@@ -32,7 +32,7 @@ sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-
 echo     ---=Configurando Touchpad=---
 sleep 1s
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
-echo ¿El Touchpad no funciona en GNOME?
+echo ¿El Touchpad no funciona en KDE?
 echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
