@@ -140,13 +140,13 @@ sudo apt install gedit -y
 sudo apt install gnome-system-tools -y
 #
 # gnome-tweak-tool, Herramienta de retoques de GNOME, nos servirá para aplicar temas, añadir opciones al sistema, para configurar Gnome Shell y Unity.
-sudo apt install gnome-tweak-tool -y
+#sudo apt install gnome-tweak-tool -y
 #
 # GParted es un editor de particiones gratuito para gestionar gráficamente las particiones del disco. Con GParted se puede cambiar el tamaño, crear, eliminar, copiar y mover particiones sin pérdida de datos y crear un espacio para nuevos sistemas operativos
 sudo apt install gparted -y
 #
 # Handbrake, herramienta que permite codificar vídeo multiproceso, de código abierto, y liberado bajo licencia GPL.
-sudo apt install handbrake -y
+#sudo apt install handbrake -y
 #
 # Microcódigo de AMD
 sudo apt install amd64-microcode -y
@@ -221,7 +221,7 @@ sudo apt install elinks -y
 #
 echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
-sudo apt install indicator-brightness
+#sudo apt install indicator-brightness
 #
 #echo     ---=Instalando Software Para Unity 8=---
 #sudo apt install mediaplayer-app mediascanner2.0 unity-scope-mediascanner2 ubuntu-restricted-extras -y
