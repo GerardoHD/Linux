@@ -223,22 +223,22 @@ echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
 sudo apt install indicator-brightness
 #
-echo     ---=Instalando Software Para Unity 8=---
-sudo apt install mediaplayer-app mediascanner2.0 unity-scope-mediascanner2 ubuntu-restricted-extras -y
+#echo     ---=Instalando Software Para Unity 8=---
+#sudo apt install mediaplayer-app mediascanner2.0 unity-scope-mediascanner2 ubuntu-restricted-extras -y
 #
-echo Snappy Apps!
-sudo snap install --edge --devmode gallery-app
+#echo Snappy Apps!
+#sudo snap install --edge --devmode gallery-app
 #
-sudo snap install --edge --devmode camera-app
+#sudo snap install --edge --devmode camera-app
 #
-sudo snap install --edge --devmode address-book-app
+#sudo snap install --edge --devmode address-book-app
 #
-sudo apt install calendar-app music-app ubuntu-calculator-app ubuntu-weather-app -y
+#sudo apt install calendar-app music-app ubuntu-calculator-app ubuntu-weather-app -y
 #
-sudo apt install libertine libertine-scope libertine-tools -y
+#sudo apt install libertine libertine-scope libertine-tools -y
 #
-echo Para más información:
-echo https://insights.ubuntu.com/2016/10/13/unity-8-preview-session-in-ubuntu-16-10-yakkety-yak/
+#echo Para más información:
+#echo https://insights.ubuntu.com/2016/10/13/unity-8-preview-session-in-ubuntu-16-10-yakkety-yak/
 #
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
 echo
