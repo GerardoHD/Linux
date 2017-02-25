@@ -62,7 +62,8 @@ echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
-yaourt -S gnome-shell-extension-coverflow-alt-tab 
+yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel
+yaourt -S gnome-shell-extension-panel-osd-git gnome-shell-extension-scroll-workspaces-git
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
