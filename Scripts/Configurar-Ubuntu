@@ -277,7 +277,9 @@ cd capitaine-cursors/src
 #
 bash ./build.sh
 #
-cp -rf capitaine-cursors /usr/share/icons/La-Capitaine/cursors
+cd /
+#
+cp -rf capitaine-cursors/src /usr/share/icons/La-Capitaine/cursors
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
