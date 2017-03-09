@@ -285,6 +285,10 @@ curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | 
 #
 cd /
 #
+cd /tmp
+curl -sL https://github.com/nana-4/Flat-Plat/archive/v20170307.tar.gz | tar xz
+cd Flat-Plat-20170307 && sudo ./install.sh
+cd /
 #
 echo     ---=Actualizando el sistema=---
 sleep 2s
