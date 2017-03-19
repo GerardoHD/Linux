@@ -20,13 +20,12 @@ sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
-sudo pacman -S base-devel cmake wget os-prober
+sudo pacman -S base-devel cmake wget os-prober yaourt
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
-sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm
+sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-intel
-sudo pacman -S yaourt
 #echo Testeando X:
 #startx
 #
