@@ -25,7 +25,11 @@ sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
 sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
-sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-intel
+sudo pacman -S mesa mesa-demos alsa-utils
+echo Graficos Intel:
+sudo pacman -S intel-ucode xf86-video-intel
+echo Graficos AMD:
+sudo pacman -S xf86-video-ati
 #echo Testeando X:
 #startx
 #
@@ -52,11 +56,12 @@ sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
 sudo pacman -S android-tools geary catfish youtube-dl eog-plugins
-sudo pacman -S nautilus-open-terminal nautilus-actions
+sudo pacman -S nautilus-open-terminal filemanager-actions
 sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
@@ -83,7 +88,7 @@ sleep 1s
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
 sudo cups-genppdupdate
-sudo pacman -Syyu
+#sudo pacman -Syyu
 yaourt -Syyyua
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo fc-cache -f -v
