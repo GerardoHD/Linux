@@ -1,0 +1,2 @@
+#Configurar Arch Linux con Deepin Desktop Environment
+sudo pacman -S deepin deepin-extra deepin-extras
