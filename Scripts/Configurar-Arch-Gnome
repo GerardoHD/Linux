@@ -61,7 +61,7 @@ sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cup
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
