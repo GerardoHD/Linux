@@ -6,11 +6,11 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
 
-	echo "ERROR: No ejecute este Script en una sesiòn Root, porque Makepkg no compilarà paquetes desde AUR"
+	echo "ERROR: No ejecute este Script en una sesión Root, porque Makepkg no compilará paquetes desde AUR"
 
 	echo " Simplemente ejecutelo desde su usuario Regular  "
 
-	echo " Este Script usarà sudo cuando sea necesario. Saliendo."
+	echo " Este Script usará sudo cuando sea necesario. Saliendo."
 
 	exit 1
 
