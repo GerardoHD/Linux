@@ -40,7 +40,7 @@ echo Graficos AMD:
 sudo pacman -S xf86-video-ati
 #echo Testeando X:
 #startx
-curl -s https://gist.githubusercontent.com/Tadly/0e65d30f279a34c33e9b/raw/pacaur_install.sh | bash
+#curl -s https://gist.githubusercontent.com/Tadly/0e65d30f279a34c33e9b/raw/pacaur_install.sh | bash
 #
 echo     ---=Configurando Touchpad=---
 sleep 1s
@@ -74,7 +74,7 @@ sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S pacaur
+#yaourt -S pacaur
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel
