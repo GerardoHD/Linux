@@ -78,7 +78,7 @@ yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediapla
 yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel
 yaourt -S gnome-shell-extension-panel-osd-git gnome-shell-extension-scroll-workspaces-git
 yaourt -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git gnome-shell-extension-zorin-menu
-yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
+yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock gnome-shell-extension-activities-config
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
