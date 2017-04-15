@@ -3,16 +3,16 @@ echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Manjaro Linux=---
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
+ 	echo " ERROR: Makepkg no compilará paquetes desde AUR en una sesión Root "
 
-	echo "ERROR: No ejecute este Script en una sesiòn Root, porque Makepkg no compilarà paquetes desde AUR"
+	echo " Simplemente ejecute este Script desde su usuario Regular. "
 
-	echo " Simplemente ejecutelo desde su usuario Regular  "
-
-	echo " Este Script usarà sudo cuando sea necesario. Saliendo."
+	echo " Este Script usará sudo cuando sea necesario. Saliendo."
 
 	exit 1
 
 fi
+#
 #!/bin/bash
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
