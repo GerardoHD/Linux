@@ -14,6 +14,7 @@ if [ "$(id -u)" -eq 0 ] ; then
 	exit 1
 
 fi
+#
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
 sudo mount -o remount,size=2G,noatime /tmp
@@ -27,7 +28,7 @@ sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
-sudo pacman -S base-devel cmake wget os-prober yaourt
+sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
@@ -39,6 +40,7 @@ echo Graficos AMD:
 sudo pacman -S xf86-video-ati
 #echo Testeando X:
 #startx
+curl -s https://gist.githubusercontent.com/Tadly/0e65d30f279a34c33e9b/raw/pacaur_install.sh | bash
 #
 echo     ---=Configurando Touchpad=---
 sleep 1s
@@ -72,6 +74,7 @@ sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
+yaourt -S pacaur
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
 yaourt -S gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel
