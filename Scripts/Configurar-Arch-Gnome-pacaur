@@ -82,7 +82,7 @@ pacaur -S gnome-shell-extension-panel-osd-git gnome-shell-extension-scroll-works
 pacaur -S gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 pacaur -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock
 pacaur -S gnome-shell-extension-activities-config gnome-shell-extension-zorin-menu
-pacaur -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
+pacaur -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin gnome-shell-extension-pixel-saver
 pacaur -S gtk-arc-flatabulous-theme-git paper-icon-theme-git
 pacaur -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
 pacaur -S google-chrome chrome-gnome-shell-git etcher
