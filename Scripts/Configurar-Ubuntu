@@ -229,7 +229,7 @@ echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #
 echo     ---=Descargando Google Chrome=---
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 #sudo apt install indicator-brightness
 #
 #echo     ---=Instalando Software Para Unity 8=---
@@ -255,11 +255,13 @@ echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
 echo
 echo     ---=Descargando Software desde Github=---
+cd /
+#
 git clone https://github.com/andreisergiu98/arc-flatabulous-theme 
 #
 cd arc-flatabulous-theme
 #
-bash arc-flatabulous-theme-upgrade
+sudo bash arc-flatabulous-theme-upgrade
 #
 cd /
 #
@@ -267,7 +269,7 @@ git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
 #
 cd la-capitaine-icon-theme
 #
-bash ./configure
+sudo bash ./configure
 #
 sudo cp -rf /la-capitaine-icon-theme /usr/share/icons/La-Capitaine-Icon-Theme
 #
