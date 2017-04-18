@@ -225,11 +225,12 @@ sudo apt install shotwell gradio gnome-mpv youtube-dl atomicparsley -y
 #
 sudo apt install elinks -y
 #
-echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
+sudo snap install canonical-livepatch
 #
 echo     ---=Descargando Google Chrome=---
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+#echo Instalar Brigthness Indicator si la PC no tiene teclas de Brillo
 #sudo apt install indicator-brightness
 #
 #echo     ---=Instalando Software Para Unity 8=---
@@ -250,6 +251,8 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 #echo https://insights.ubuntu.com/2016/10/13/unity-8-preview-session-in-ubuntu-16-10-yakkety-yak/
 #
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop 
+#
+sudo systemctl enable snapd.socket
 echo
 echo     ---=Final Instalación de Aplicaciones=---
 sleep 2s
