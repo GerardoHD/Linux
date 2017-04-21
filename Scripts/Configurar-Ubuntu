@@ -44,11 +44,14 @@ sudo add-apt-repository ppa:haecker-felix/gradio-daily -y
 sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme -y
 # Repositorio Adapta Theme
 sudo apt-add-repository ppa:tista/adapta -y
-#Repositorio Tony George
+# Repositorio Tony George
 sudo apt-add-repository ppa:teejee2008/ppa -y
-#Repositorio Convergent Apps Testing
+# Repositorio Convergent Apps Testing
 sudo add-apt-repository ppa:convergent-apps/testing -y
-#
+# Repositorio Hardcode-Tray
+sudo add-apt-repository ppa:andreas-angerer89/sni-qt-patched -y
+# Repositorio Papirus icon theme
+sudo add-apt-repository ppa:papirus/papirus -y
 # Repositorio atareao/atareao, para varias aplicaciones: Touchpad-Indicator, Pomodoro Indicator, 2gi, My Weather Indicator
 # Si quieres más, visita la pagina: http://www.atareao.es/
 sudo add-apt-repository ppa:atareao/atareao --yes
@@ -226,6 +229,8 @@ sudo apt install shotwell gradio gnome-mpv youtube-dl atomicparsley -y
 sudo apt install elinks -y
 #
 sudo snap install canonical-livepatch
+#
+sudo apt install sni-qt sni-qt:i386 hardcode-tray papirus-icon-theme
 #
 echo     ---=Descargando Google Chrome=---
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
