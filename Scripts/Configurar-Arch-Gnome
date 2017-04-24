@@ -34,9 +34,9 @@ sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #speaker-test -c 2
 sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos alsa-utils
-echo Graficos Intel:
+echo -=Graficos Intel=-
 sudo pacman -S intel-ucode xf86-video-intel
-echo Graficos AMD:
+echo -=Graficos AMD=-
 sudo pacman -S xf86-video-ati
 #echo Testeando X:
 #startx
