@@ -74,10 +74,10 @@ sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
-yaourt -S gnome-shell-extension-zorin-menu
-yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin gnome-shell-extension-pixel-saver
+yaourt -S gnome-shell-extension-zorin-menu gnome-backgrounds-bitday-git
+yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin 
 yaourt -S gtk-arc-flatabulous-theme-git paper-icon-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors gnome-shell-extension-openweather-git
+yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
@@ -87,7 +87,7 @@ yaourt -S kodi-standalone-service
 #yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel gnome-shell-extension-panel-osd-git
 #yaourt -S gnome-shell-extension-scroll-workspaces-git gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
 #yaourt -S gnome-shell-extension-dynamic-top-bar gnome-shell-extension-workspaces-to-dock gnome-shell-extension-pixel-saver
-#yaourt -S gnome-shell-extension-openweather-git
+#yaourt -S gnome-shell-extension-openweather-git gnome-shell-extension-pixel-saver
 #yaourt -S pacaur
 #curl -s https://gist.githubusercontent.com/Tadly/0e65d30f279a34c33e9b/raw/pacaur_install.sh | bash
 #
@@ -116,7 +116,7 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Servicio Network Manager"
+echo       ---="Activando Servicio Network Manager"
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
