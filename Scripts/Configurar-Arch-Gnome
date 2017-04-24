@@ -52,7 +52,7 @@ echo     ---=Instalando Gnome=---
 sleep 1s
 sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
-echo 6 7 9 12 13 14 17 20 21 22 23 25 27 29 31 32 34 36 41 42 47 49 51 
+echo 6 7 10 13 14 16 18 21 22 23 26 28 30 32 35 36 37 42 43 46 50 52 
 sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
