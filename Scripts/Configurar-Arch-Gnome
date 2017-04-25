@@ -52,7 +52,7 @@ echo     ---=Instalando Gnome=---
 sleep 1s
 sudo pacman -S gnome
 echo Flags pacman -S gnome-extra:
-echo 6 7 10 13 14 16 18 21 22 23 26 28 30 32 35 36 37 42 43 46 50 52 
+echo 6 7 10 13 14 16 18 21 22 23 26 28 30 32 35 37 42 43 46 50 52 
 sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
@@ -65,7 +65,7 @@ sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
 sudo pacman -S android-tools geary catfish youtube-dl
 sudo pacman -S nautilus-open-terminal filemanager-actions
-sudo pacman -S gutenprint foomatic-db-gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
@@ -82,7 +82,7 @@ yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv gradio kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 #
-#yaourt -S la-capitaine-icon-theme-git paper-gtk-theme-git
+#yaourt -S la-capitaine-icon-theme-git paper-gtk-theme-git foomatic-db-gutenprint
 #yaourt -S gnome-shell-extension-activities-config gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
 #yaourt -S gnome-shell-extension-coverflow-alt-tab gnome-shell-extension-dash-to-panel gnome-shell-extension-panel-osd-git
 #yaourt -S gnome-shell-extension-scroll-workspaces-git gnome-shell-extension-dash-to-dock gnome-shell-extension-lockkeys-git
@@ -100,7 +100,7 @@ sleep 1s
 #!/bin/bash
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
-sudo cups-genppdupdate
+#sudo cups-genppdupdate
 #sudo pacman -Syyu
 yaourt -Syyyua
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -116,7 +116,7 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---="Activando Servicio Network Manager"
+echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
