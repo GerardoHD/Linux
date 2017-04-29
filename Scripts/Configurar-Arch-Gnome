@@ -63,8 +63,8 @@ sudo pacman -S libunrar unrar cmus opusfile
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
-sudo pacman -S android-tools geary catfish youtube-dl archlinux-wallpaper
-sudo pacman -S nautilus-open-terminal filemanager-actions
+sudo pacman -S android-tools geary catfish youtube-dl archlinux-wallpaper arch-wiki-lite
+sudo pacman -S nautilus-open-terminal filemanager-actions elinks
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
