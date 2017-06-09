@@ -59,7 +59,7 @@ echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
 sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
-sudo pacman -S libunrar unrar cmus opusfile
+sudo pacman -S libunrar unrar cmus opusfile x264
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
