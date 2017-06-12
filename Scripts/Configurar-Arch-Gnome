@@ -117,12 +117,15 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Servicio Network Manager=---
-sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
+echo       ---=Activando Servicio Network Manager=---
+sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
+echo       ---=Activando SSHD=---
+systemctl enable sshd.service
+systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
