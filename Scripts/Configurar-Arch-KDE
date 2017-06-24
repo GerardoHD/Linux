@@ -63,19 +63,21 @@ sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley
-sudo pacman -S rhythmbox android-tools geary youtube-dl 
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S rhythmbox android-tools geary youtube-dl archlinux-wallpaper arch-wiki-lite
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups elinks
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #sudo pacman -S gparted
+sudo pacman -S avidemux-cli avidemux-qt openssh
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli akonadi-googledata
 yaourt -S rhythmbox-plugin-alternative-toolbar-git 
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
+yaourt -S bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome etcher
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service pamac-tray-appindicator 
