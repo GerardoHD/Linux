@@ -54,6 +54,7 @@ sudo pacman -S kde-applications
 sudo pacman -S plasma-wayland-session 
 sudo pacman -S sddm-kcm kcmutils systemd-kcm
 sudo pacman -S plasma-pa
+
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
@@ -113,6 +114,9 @@ sudo systemctl enable org.cups.cupsd.service
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Simple Desktop Display Manager "sddm"=---
 sudo systemctl enable sddm.service
+echo       ---=Activando SSHD=---
+systemctl enable sshd.service
+systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
