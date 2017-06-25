@@ -40,16 +40,13 @@ sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-
 echo     ---=Configurando Touchpad=---
 sleep 1s
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
-echo ¿El Touchpad no funciona en KDE?
-echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo     ---=Instalando KDE=---
 sleep 1s
 sudo pacman -S plasma
 echo flags kde-applications:
-echo 1 2 3 5 10 13 14 15 16 17 19 20 21 22 23 24 27 32 39 40 41 42 43 44 45 46 47 48 49 64 65 67 68 70 71 73 74 75 76 78
-echo 79 80 81 82 83 84 87 91 93 96 100 105 106 115 116 117 118 120 121 122 127 133 136 142 145 146 149 151 152 
+echo 1 2 3 5 10 14 15 16 17 19 20 21 23 24 25 27 32 34 39 42 43 44 45 46 47 48 49 65 68 70 71 74 78
+echo 79 84 87 116 117 118 120 122 145 146 149 151 152 
 sudo pacman -S kde-applications
 sudo pacman -S plasma-wayland-session 
 sudo pacman -S sddm-kcm kcmutils systemd-kcm
