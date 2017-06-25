@@ -1,0 +1,3 @@
+yaourt -Syyyuua
+df -h
+sudo reboot
