@@ -1,0 +1,3 @@
+yaourt -Syyyuua
+df -h
+sudo poweroff
