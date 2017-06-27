@@ -75,7 +75,7 @@ sleep 1s
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli akonadi-googledata
 yaourt -S rhythmbox-plugin-alternative-toolbar-git 
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
-yaourt -S bing-wallpaper-git capitaine-cursors
+yaourt -S capitaine-cursors
 yaourt -S google-chrome etcher
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service pamac-tray-appindicator 
@@ -107,13 +107,13 @@ sleep 3s
 #
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
-=---echo       ---=Activando Servicio Network Manager=---
+echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Simple Desktop Display Manager "sddm"=---
 sudo systemctl enable sddm.service
 echo       ---=Activando SSHD=---
-systemctl enable sshd.service
-systemctl enable sshd.socket
+sudo systemctl enable sshd.service
+sudo systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
