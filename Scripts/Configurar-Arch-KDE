@@ -28,12 +28,16 @@ sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
-sudo pacman -S base-devel cmake wget os-prober yaourt
+sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 #echo Testeando Bocinas
 #speaker-test -c 2
 sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
-sudo pacman -S mesa mesa-demos intel-ucode alsa-utils xf86-video-ati xf86-video-intel
+sudo pacman -S mesa mesa-demos alsa-utils
+echo -=Graficos Intel=-
+sudo pacman -S intel-ucode xf86-video-intel
+echo -=Graficos AMD=-
+sudo pacman -S xf86-video-ati
 #echo Testeando X:
 #startx
 #
@@ -45,8 +49,9 @@ echo     ---=Instalando KDE=---
 sleep 1s
 sudo pacman -S plasma
 echo flags kde-applications:
-echo 1 2 3 5 10 14 15 16 17 19 20 21 23 24 25 27 32 34 39 42 43 44 45 46 47 48 49 65 68 70 71 74 78
-echo 79 84 87 116 117 118 120 122 145 146 149 151 152 
+echo 1 2 3 5 10 14 15 16 17 19 20 21 23 24 25 27 32 34 39 42 43 44 45 46 47 48 
+sudo pacman -S kde-applications
+echo 49 65 68 70 71 74 78 79 84 87 116 117 118 120 122 145 146 149 151 152 
 sudo pacman -S kde-applications
 sudo pacman -S plasma-wayland-session 
 sudo pacman -S sddm-kcm kcmutils systemd-kcm
@@ -55,8 +60,8 @@ sudo pacman -S plasma-pa
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S kde-gtk-config kde-l10n-es print-manager kdenetwork-filesharing powerdevil
-sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi sshfs
+sudo pacman -S kde-gtk-config kde-l10n-es print-manager kdenetwork-filesharing powerdevil libcdr
+sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi sshfs openssh
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
@@ -66,13 +71,14 @@ sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups elinks
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es 
+sudo pacman -S avidemux-cli avidemux-qt
 #sudo pacman -S gparted
-sudo pacman -S avidemux-cli avidemux-qt openssh
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S epson-inkjet-printer-201207w pamac-aur pacli akonadi-googledata
+yaourt -S epson-inkjet-printer-201207w 
+yaourt -S pamac-aur pacli akonadi-googledata
 yaourt -S rhythmbox-plugin-alternative-toolbar-git archlinux-themes-sddm
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S capitaine-cursors
