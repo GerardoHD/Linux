@@ -56,7 +56,7 @@ sudo pacman -S plasma-pa
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S kde-gtk-config kde-l10n-es print-manager kdenetwork-filesharing powerdevil
-sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi 
+sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi sshfs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
@@ -73,7 +73,7 @@ sudo pacman -S avidemux-cli avidemux-qt openssh
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S epson-inkjet-printer-201207w pamac-aur pacli akonadi-googledata
-yaourt -S rhythmbox-plugin-alternative-toolbar-git 
+yaourt -S rhythmbox-plugin-alternative-toolbar-git archlinux-themes-sddm
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S capitaine-cursors
 yaourt -S google-chrome etcher
