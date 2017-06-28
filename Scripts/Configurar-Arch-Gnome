@@ -70,7 +70,7 @@ sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac ko
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
-sudo pacman -S avidemux-cli avidemux-qt openssh
+sudo pacman -S avidemux-cli avidemux-qt openssh sshfs
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
