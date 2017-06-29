@@ -78,11 +78,12 @@ sudo pacman -S avidemux-cli avidemux-qt
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S epson-inkjet-printer-201207w 
-yaourt -S pamac-aur pacli akonadi-googledata
+yaourt -S pamac-aur pacli akonadi-plasma-browser-integration-git
 yaourt -S rhythmbox-plugin-alternative-toolbar-git archlinux-themes-sddm
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S capitaine-cursors
-yaourt -S google-chrome etcher
+yaourt -S google-chrome
+yaourt -S etcher
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service pamac-tray-appindicator 
 #
