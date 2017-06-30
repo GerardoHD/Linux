@@ -38,6 +38,10 @@ echo -=Graficos Intel=-
 sudo pacman -S intel-ucode xf86-video-intel
 echo -=Graficos AMD=-
 sudo pacman -S xf86-video-ati
+echo -=Drivers propietarios principales Nvidia=-
+sudo pacman -S nvidia nvidia-utils
+echo -=Drivers de código abierto Nvidia=-
+sudo pacman -S xf86-video-nouveau
 #echo Testeando X:
 #startx
 #
@@ -64,17 +68,17 @@ sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
 sudo pacman -S gnome-initial-setup gnome-software rhythmbox
 sudo pacman -S android-tools geary catfish youtube-dl archlinux-wallpaper arch-wiki-lite
-sudo pacman -S nautilus-open-terminal filemanager-actions elinks
+sudo pacman -S nautilus-open-terminal filemanager-actions elinks budgie-desktop
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr budgie-desktop
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr 
 sudo pacman -S avidemux-cli avidemux-qt openssh sshfs
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S epson-inkjet-printer-201207w pamac-aur pacli
+yaourt -S pamac-aur pacli
 yaourt -S gnome-backgrounds-bitday-git
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin 
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
@@ -82,6 +86,8 @@ yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
 yaourt -S google-chrome chrome-gnome-shell-git etcher
 yaourt -S gnome-mpv kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
+echo -=Soporte Impresora Epson L210=-
+yaourt -S epson-inkjet-printer-201207w
 #
 #yaourt -S la-capitaine-icon-theme-git paper-gtk-theme-git foomatic-db-gutenprint gnome-shell-extension-zorin-menu
 #yaourt -S gnome-shell-extension-activities-config gnome-shell-extension-topicons-plus-git gnome-shell-extension-mediaplayer-git
