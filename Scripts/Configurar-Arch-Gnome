@@ -58,9 +58,10 @@ sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation
-sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
+sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S libunrar unrar cmus opusfile x264
+sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
 sudo pacman -S gnome-initial-setup rhythmbox
@@ -78,7 +79,7 @@ sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
-yaourt -S pamac-aur pacli
+yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S gnome-backgrounds-bitday-git
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin 
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
