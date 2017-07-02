@@ -62,8 +62,9 @@ echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
 sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil quota-tools
 sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi sshfs openssh
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace partitionmanager
+sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley elinks gnome-disk-utility
 sudo pacman -S rhythmbox android-tools geary youtube-dl arch-wiki-lite
@@ -82,7 +83,7 @@ sleep 1s
 yaourt -S pamac-aur pacli akonadi-plasma-browser-integration-git
 yaourt -S rhythmbox-plugin-alternative-toolbar-git archlinux-themes-sddm
 yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
-yaourt -S capitaine-cursors
+yaourt -S capitaine-cursors otf-san-francisco
 yaourt -S google-chrome
 yaourt -S etcher
 echo -=KODI=-
