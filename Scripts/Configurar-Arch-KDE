@@ -60,23 +60,25 @@ sudo pacman -S kde-applications
 sudo pacman -S plasma-wayland-session 
 sudo pacman -S sddm-kcm kcmutils systemd-kcm
 sudo pacman -S plasma-pa
-
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 1s
-sudo pacman -S kde-gtk-config kde-l10n-es print-manager kdenetwork-filesharing powerdevil libcdr
+sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil quota-tools
 sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi sshfs openssh
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
-sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley
-sudo pacman -S rhythmbox android-tools geary youtube-dl archlinux-wallpaper arch-wiki-lite
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups elinks
+sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley elinks
+sudo pacman -S rhythmbox android-tools geary youtube-dl arch-wiki-lite
+sudo pacman -S avidemux-cli avidemux-qt
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es 
-sudo pacman -S avidemux-cli avidemux-qt
+echo -=Soporte de impresion=-
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager 
+sudo pacman -S system-config-printer cups-pk-helper
 #sudo pacman -S gparted
 #
 echo     ---=Instalando Software desde Arch User Repository=---
