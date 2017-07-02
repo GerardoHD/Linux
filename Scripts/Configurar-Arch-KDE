@@ -30,20 +30,17 @@ echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
 sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
-#echo Testeando Bocinas
-#speaker-test -c 2
+echo   -=X Window System y Drivers de Vìdeo=-
 sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos alsa-utils
-echo -=Graficos Intel=-
+echo -=Drivers Intel=-
 sudo pacman -S intel-ucode xf86-video-intel
-echo -=Graficos AMD=-
+echo -=Drivers AMD=-
 sudo pacman -S xf86-video-ati
 echo -=Drivers propietarios principales Nvidia=-
 sudo pacman -S nvidia nvidia-utils
 echo -=Drivers de código abierto Nvidia=-
 sudo pacman -S xf86-video-nouveau
-#echo Testeando X:
-#startx
 #
 echo     ---=Configurando Touchpad=---
 sleep 1s
@@ -79,7 +76,6 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager 
 sudo pacman -S system-config-printer cups-pk-helper
-#sudo pacman -S gparted
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
