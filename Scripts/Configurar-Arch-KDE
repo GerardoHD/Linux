@@ -89,6 +89,7 @@ yaourt -S gtk-arc-flatabulous-theme-git la-capitaine-icon-theme-git
 yaourt -S capitaine-cursors
 yaourt -S google-chrome
 yaourt -S etcher
+echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service pamac-tray-appindicator
 echo -=Soporte Impresora Epson L210=-
