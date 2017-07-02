@@ -2,7 +2,7 @@
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
-echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía al ser un Script Experimental
+echo Se distribuye con la esperanza de que sea útil
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
  	echo " ERROR: Makepkg no compilará paquetes desde AUR en una sesión Root "
