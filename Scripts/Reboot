@@ -1,3 +1,15 @@
+#Reiniciar y Actualizar-Arch Linux
+if [ "$(id -u)" -eq 0 ] ; then
+ 	echo " ERROR: Makepkg no compilará paquetes desde AUR en una sesión Root "
+
+	echo " Simplemente ejecute este Script desde su usuario Regular. "
+
+	echo " Este Script usará sudo cuando sea necesario. Saliendo."
+
+	exit 1
+
+fi
+#
 yaourt -Syyyuua
 df -h
 sudo reboot
