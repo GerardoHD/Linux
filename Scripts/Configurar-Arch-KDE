@@ -65,7 +65,7 @@ sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi 
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace ttf-liberation partitionmanager
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-roboto
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
-sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley elinks
+sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley elinks gnome-disk-utility
 sudo pacman -S rhythmbox android-tools geary youtube-dl arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
 sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
