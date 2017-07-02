@@ -66,15 +66,18 @@ sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart ttf-r
 sudo pacman -S libunrar unrar cmus opusfile x264
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
-sudo pacman -S gnome-initial-setup gnome-software rhythmbox
+sudo pacman -S gnome-initial-setup rhythmbox
 sudo pacman -S android-tools geary catfish youtube-dl archlinux-wallpaper arch-wiki-lite
 sudo pacman -S nautilus-open-terminal filemanager-actions elinks budgie-desktop
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr 
+sudo pacman -S avidemux-cli avidemux-qt openssh sshfs
+echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr 
-sudo pacman -S avidemux-cli avidemux-qt openssh sshfs
+echo -=Soporte de impresion=-
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager 
+sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
@@ -83,7 +86,9 @@ yaourt -S gnome-backgrounds-bitday-git
 yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin 
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
 yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
-yaourt -S google-chrome chrome-gnome-shell-git etcher
+yaourt -S google-chrome chrome-gnome-shell-git 
+yaourt -S etcher
+echo -=KODI=-
 yaourt -S gnome-mpv kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 echo -=Soporte Impresora Epson L210=-
@@ -130,8 +135,8 @@ sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando SSHD=---
-systemctl enable sshd.service
-systemctl enable sshd.socket
+sudo systemctl enable sshd.service
+sudo systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
