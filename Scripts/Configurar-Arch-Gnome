@@ -3,16 +3,11 @@ echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
-sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
- 	echo " ERROR: Makepkg no compilará paquetes desde AUR en una sesión Root "
-
-	echo " Simplemente ejecute este Script desde su usuario Regular. "
-
-	echo " Este Script usará sudo cuando sea necesario. Saliendo."
-
-	exit 1
-
+        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+        echo " Simplemente ejecute este Script desde su usuario. "
+        exit
 fi
 #
 echo Probando conexión a Internet
@@ -85,15 +80,14 @@ yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme
 yaourt -S etcher
 sleep 1s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git 
-yaourt -S nautilus-admin 
-yaourt -S bing-wallpaper-git gnome-mpv
+yaourt -S nautilus-admin bing-wallpaper-git gnome-mpv
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
 #
-echo     ---=Descargando Software desde Github=---
+echo     ---=Descargando Sudocabulary desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
