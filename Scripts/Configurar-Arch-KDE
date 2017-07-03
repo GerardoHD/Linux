@@ -58,7 +58,7 @@ echo     ---=Instalando Software desde Repositorios Oficiales=---
 sleep 3s
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
-sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
+sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks
@@ -79,7 +79,7 @@ sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-sleep 1s
+sleep 3s
 yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
