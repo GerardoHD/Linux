@@ -72,7 +72,7 @@ sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-sleep 1s
+sleep 3s
 yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
