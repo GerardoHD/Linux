@@ -65,6 +65,7 @@ sudo pacman -S libunrar unrar cmus opusfile x264 elinks
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
+sudo pacman -S nautilus 
 sleep 1s
 sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil
 sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi
@@ -82,9 +83,10 @@ echo     ---=Instalando Software desde Arch User Repository=---
 sleep 3s
 yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome 
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
+yaourt -S nautilus-admin
 sleep 1s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 echo -=KODI=-
