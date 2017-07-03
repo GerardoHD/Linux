@@ -45,9 +45,6 @@ sudo pacman -S xf86-video-nouveau
 echo     ---=Configurando Touchpad=---
 sleep 1s
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
-echo ¿El Touchpad no funciona en GNOME?
-echo gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-echo Si el Touchpad aun no funciona usar xf86-input-synaptics
 #
 echo     ---=Instalando Gnome=---
 sleep 1s
@@ -57,40 +54,45 @@ echo 6 7 10 13 14 16 18 21 22 23 26 28 30 32 35 37 42 43 46 50 52
 sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-sleep 1s
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
-sudo pacman -S gparted btrfs-progs dosfstools exfat-utils f2fs-tools gpart
-sudo pacman -S libunrar unrar cmus opusfile x264
-sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
+sleep 3s
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
-sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley eog-plugins
-sudo pacman -S gnome-initial-setup rhythmbox
-sudo pacman -S android-tools geary catfish youtube-dl archlinux-wallpaper arch-wiki-lite
-sudo pacman -S nautilus-open-terminal filemanager-actions elinks budgie-desktop
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
+sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley
+sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
+sudo pacman -S libunrar unrar cmus opusfile x264 elinks 
+sudo pacman -S openssh sshfs youtube-dl android-tools
+sudo pacman -S geary catfish rhythmbox arch-wiki-lite archlinux-wallpaper
+sudo pacman -S avidemux-cli avidemux-qt
+sleep 1s
+sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
+sudo pacman -S gnome-initial-setup eog-plugins gparted
 sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr 
-sudo pacman -S avidemux-cli avidemux-qt openssh sshfs
 echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 echo -=Soporte de impresion=-
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager 
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 sleep 1s
 yaourt -S pamac-aur pacli otf-san-francisco
-yaourt -S gnome-backgrounds-bitday-git
-yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin 
+yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
-yaourt -S flatplat-theme bing-wallpaper-git capitaine-cursors
-yaourt -S google-chrome chrome-gnome-shell-git 
+yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
+sleep 1s
+yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git 
+yaourt -S nautilus-admin 
+yaourt -S bing-wallpaper-git gnome-mpv
 echo -=KODI=-
-yaourt -S gnome-mpv kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
+yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
+#
 echo     ---=Descargando Software desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
@@ -118,10 +120,10 @@ sleep 3s
 #
 echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
-echo       ---=Activando Servicio Network Manager=---
-sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
+echo       ---=Activando Servicio Network Manager=---
+sudo systemctl enable NetworkManager.service
 echo       ---=Activando SSHD=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
