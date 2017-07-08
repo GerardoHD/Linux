@@ -3,6 +3,7 @@ echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
         echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
         echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
@@ -49,7 +50,7 @@ echo 6 7 10 13 14 16 18 21 22 23 26 28 30 32 35 37 42 43 46 50 52
 sudo pacman -S gnome-extra
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-sleep 3s
+#Base Común
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
@@ -57,9 +58,10 @@ sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks 
 sudo pacman -S openssh sshfs youtube-dl android-tools
-sudo pacman -S geary catfish rhythmbox arch-wiki-lite archlinux-wallpaper
+sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
-sleep 1s
+sleep 3s
+sudo pacman -S archlinux-wallpaper
 sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted
 sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr 
@@ -72,15 +74,15 @@ sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-sleep 3s
+#Base Común
 yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
-sleep 1s
+sleep 3s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git 
-yaourt -S nautilus-admin bing-wallpaper-git gnome-mpv
+yaourt -S bing-wallpaper-git gnome-mpv
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
@@ -112,13 +114,13 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Servicio Gnome Display Manager "gdm"=---
-sudo systemctl enable gdm.service
+echo       ---=Activando Simple Desktop Display Manager "sddm"=---
+sudo systemctl enable sddm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
-echo       ---=Activando SSHD=---
+echo       ---=Activando Servicio SSHD=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
