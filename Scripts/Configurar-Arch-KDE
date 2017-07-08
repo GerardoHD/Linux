@@ -55,7 +55,7 @@ sudo pacman -S sddm-kcm kcmutils systemd-kcm
 sudo pacman -S plasma-pa
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-sleep 3s
+#Base Común
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
@@ -65,8 +65,8 @@ sudo pacman -S libunrar unrar cmus opusfile x264 elinks
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
-sudo pacman -S nautilus 
-sleep 1s
+sleep 3s
+sudo pacman -S nautilus
 sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil
 sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi
 sudo pacman -S partitionmanager gnome-disk-utility
@@ -80,14 +80,13 @@ sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-sleep 3s
+#Base Común
 yaourt -S pamac-aur pacli otf-san-francisco
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome 
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
-yaourt -S nautilus-admin
-sleep 1s
+sleep 3s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
@@ -126,7 +125,7 @@ echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
-echo       ---=Activando SSHD=---
+echo       ---=Activando Servicio SSHD=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
