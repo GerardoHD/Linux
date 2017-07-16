@@ -25,11 +25,12 @@ sudo rm -rf Poweroff
 sudo rm -rf ROOT-A
 sudo rm -rf Reboot
 sudo rm -rf Red-Script
+sudo rm -rf Remover KDE
 sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf STATE
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Arch
+sudo wget -c https://raw.gitsudo rm -rf hubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
@@ -47,6 +48,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Or
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Poweroff
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reboot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Remover KDE
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-Pacman-db.lck
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
@@ -70,6 +72,7 @@ sudo chmod +x Original-Gnome-Screensaver
 sudo chmod +x Poweroff
 sudo chmod +x ROOT-A
 sudo chmod +x Reboot
+sudo chmod +x Remover KDE
 sudo chmod +x Red-Script
 sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
