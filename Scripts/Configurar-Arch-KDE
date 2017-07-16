@@ -37,25 +37,10 @@ echo -=Drivers propietarios principales Nvidia=-
 sudo pacman -S nvidia nvidia-utils
 echo -=Drivers de código abierto Nvidia=-
 sudo pacman -S xf86-video-nouveau
-#
-echo     ---=Configurando Touchpad=---
-sleep 1s
+echo -=Touchpad=-
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 #
-echo     ---=Instalando KDE=---
-sleep 1s
-sudo pacman -S plasma
-echo flags kde-applications:
-echo 1 2 3 5 10 14 15 16 17 19 20 21 23 24 25 27 32 34 39 42 43 44 45 46 47 48 
-sudo pacman -S kde-applications
-echo 49 65 68 70 71 74 78 79 84 87 116 117 118 120 122 145 146 149 151 152 
-sudo pacman -S kde-applications
-sudo pacman -S plasma-wayland-session 
-sudo pacman -S sddm-kcm kcmutils systemd-kcm
-sudo pacman -S plasma-pa
-#
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-#Base Común
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
@@ -67,33 +52,48 @@ sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
-sudo pacman -S nautilus
-sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil
-sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi
-sudo pacman -S partitionmanager gnome-disk-utility
+echo -=LibreOffice=-
 sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 echo -=Soporte de impresion=-
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups print-manager 
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-#Base Común
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git pop-gtk-theme
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
 sleep 3s
-yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
 echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
+#
+echo     ---=Instalando KDE=---
+sleep 1s
+sudo pacman -S plasma
+echo paquetes a instalar de kde-applications:
+echo 1 2 3 5 10 14 15 16 17 19 20 21 23 24 25 27 32 34 39 42 43 44 45 46 47 48 
+sudo pacman -S kde-applications
+echo paquetes a instalar de kde-applications:
+echo 49 65 68 70 71 74 78 79 84 87 116 117 118 120 122 145 146 149 151 152 
+sudo pacman -S kde-applications
+sudo pacman -S plasma-wayland-session 
+sudo pacman -S sddm-kcm kcmutils systemd-kcm
+sudo pacman -S plasma-pa
+sleep 2s
+sudo pacman -S nautilus
+sudo pacman -S kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil
+sudo pacman -S akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi
+sudo pacman -S partitionmanager gnome-disk-utility
+sleep 2s
+yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
@@ -126,7 +126,7 @@ echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
-echo       ---=Activando Servicio SSHD=---
+echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
