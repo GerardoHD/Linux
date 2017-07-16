@@ -30,7 +30,7 @@ sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf STATE
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
-sudo wget -c https://raw.gitsudo rm -rf hubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Arch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
