@@ -1,0 +1,30 @@
+#Remover KDE
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Script creado para Arch Linux
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+if [ "$(id -u)" -eq 0 ] ; then
+        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+        echo " Simplemente ejecute este Script desde su usuario. "
+        exit
+fi
+#
+echo     ---=Removiendo KDE=---
+echo       ---=Desactivando Simple Desktop Display Manager "sddm"=---
+sudo systemctl stop sddm.service
+sudo systemctl disable sddm.service
+sleep 1s
+sudo pacman -Rsc plasma
+sudo pacman -Rsc kde-applications
+sudo pacman -Rsc kde-applications
+sudo pacman -Rsc plasma-wayland-session
+sudo pacman -Rsc sddm-kcm kcmutils systemd-kcm
+sudo pacman -Rsc plasma-pa
+sleep 2s
+sudo pacman -Rsc nautilus evince
+sudo pacman -Rsc kde-gtk-config kde-l10n-es kdenetwork-filesharing powerdevil
+sudo pacman -Rsc akonadi-calendar akonadi-contacts kio-gdrive kdeconnect libkgapi
+sudo pacman -Rsc partitionmanager gnome-disk-utility
+yaourt -R plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
