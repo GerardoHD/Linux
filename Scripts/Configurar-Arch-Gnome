@@ -52,12 +52,14 @@ sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
-echo -=LibreOffice=-
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+echo -=VLC=-
+sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
 echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+echo -=LibreOffice=-
+sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
 sudo pacman -S system-config-printer cups-pk-helper
@@ -72,6 +74,8 @@ sleep 3s
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
+echo -=PLEX=-
+yaourt -S plex-media-server plex-media-player 
 echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
 #
@@ -87,7 +91,7 @@ sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted
 sleep 2s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git 
-yaourt -S bing-wallpaper-git gnome-mpv
+yaourt -S bing-wallpaper-git gnome-mpv tilix-bin
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
