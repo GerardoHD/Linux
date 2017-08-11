@@ -66,7 +66,7 @@ sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
-yaourt -S rhythmbox-plugin-alternative-toolbar-git pop-gtk-theme-git
+yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
@@ -91,7 +91,7 @@ sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted
 sleep 2s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git 
-yaourt -S bing-wallpaper-git gnome-mpv tilix-bin
+yaourt -S bing-wallpaper-git gnome-mpv tilix-bin pop-gtk-theme-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
