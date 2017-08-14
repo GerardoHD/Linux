@@ -80,7 +80,7 @@ echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
 #
 echo     ---=Instalando Cinnamon=---
-Gnome
+
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
