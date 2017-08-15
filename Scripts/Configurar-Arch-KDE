@@ -27,7 +27,7 @@ sleep 1s
 sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 echo   -=X Window System y Drivers de Vìdeo=-
-sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils xterm xorg-twm xorg-xclock xterm xorg-apps
+sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos alsa-utils
 echo -=Drivers Intel=-
 sudo pacman -S intel-ucode xf86-video-intel
@@ -67,7 +67,7 @@ sudo pacman -S system-config-printer cups-pk-helper
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin paper-icon-theme-git
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
 sleep 3s
@@ -97,6 +97,7 @@ sudo pacman -S kio-gdrive kdeconnect
 sudo pacman -S partitionmanager
 sleep 2s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
+yaourt -S nautilus-admin
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
