@@ -67,7 +67,7 @@ sudo pacman -S system-config-printer cups-pk-helper
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome nautilus-admin paper-icon-theme-git
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
 sleep 3s
@@ -84,10 +84,10 @@ sudo pacman -S cinnamon
 sleep 2s
 sudo pacman -S gdm gnome-screenshot
 sudo pacman -S nemo-fileroller
+sudo pacman -S mate-calc mate-system-monitor eom pluma evince
 sleep 2s
 yaourt -S cinnamon-sound-effects
 yaourt -S macos-arc-white-theme
-yaourt -S cinnamon-applet-icingtaskmanager-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
