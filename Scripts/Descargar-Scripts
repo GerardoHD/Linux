@@ -13,6 +13,7 @@ sudo rm -rf Backup-Gnome-Screensaver
 sudo rm -rf Blue-Script
 sudo rm -rf Configurar-Arch-Cinnamon
 sudo rm -rf Configurar-Arch-Gnome
+sudo rm -rf Configurar-Arch-Mate
 sudo rm -rf Configurar-Arch-KDE
 sudo rm -rf Configurar-Manjaro-Net
 sudo rm -rf Configurar-Ubuntu
@@ -39,6 +40,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Bl
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-Cinnamon
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-Gnome
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-KDE
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Arch-Mate
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
@@ -64,6 +66,7 @@ sudo chmod +x Blue-Script
 sudo chmod +x Configurar-Arch-Cinnamon
 sudo chmod +x Configurar-Arch-Gnome
 sudo chmod +x Configurar-Arch-KDE
+sudo chmod +x Configurar-Arch-Mate
 sudo chmod +x Configurar-Manjaro-Net
 sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
