@@ -1,4 +1,4 @@
-#Configurar Arch Linux con Gnome
+#Configurar Arch Linux con Cinnamon
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
@@ -83,11 +83,12 @@ echo     ---=Instalando Cinnamon=---
 sudo pacman -S cinnamon
 sleep 2s
 sudo pacman -S gdm gnome-screenshot
-sudo pacman -S nemo-fileroller
+sudo pacman -S nemo-fileroller sddm
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince
 sleep 2s
 yaourt -S cinnamon-sound-effects
 yaourt -S macos-arc-white-theme
+yaourt -S archlinux-themes-sddm
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
@@ -114,8 +115,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Gnome Display Manager "gdm"=---
-sudo systemctl enable gdm.service
+echo       ---=Activando Simple Desktop Display Manager "sddm"=---
+sudo systemctl enable sddm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
