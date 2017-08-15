@@ -80,7 +80,14 @@ echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
 #
 echo     ---=Instalando Cinnamon=---
-
+sudo pacman -S cinnamon
+sleep 2s
+sudo pacman -S gdm gnome-screenshot
+sudo pacman -S nemo-fileroller
+sleep 2s
+yaourt -S cinnamon-sound-effects
+yaourt -S macos-arc-white-theme
+yaourt -S cinnamon-applet-icingtaskmanager-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
