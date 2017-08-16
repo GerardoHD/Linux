@@ -112,6 +112,12 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
+#Modificar valor Swappiness
+{
+  echo 'vm.swappiness=70'
+  echo 'vm.vfs_cache_pressure=50'
+} >/etc/sysctl.d/99-sysctl.conf
+#
 sleep 1s
 PS3='Introduce tu elecciòn: '
 options=("Arch-Cinnamon" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Quitar")
@@ -144,3 +150,4 @@ do
         *) echo invalid option;;
     esac
 done
+#
