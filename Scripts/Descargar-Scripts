@@ -12,6 +12,7 @@ sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Blue-Script
 sudo rm -rf Arch-Cinnamon
 sudo rm -rf Arch-Common
+sudo rm -rf Arch-Deepin
 sudo rm -rf Arch-Gnome
 sudo rm -rf Arch-Mate
 sudo rm -rf Arch-KDE
@@ -37,6 +38,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ac
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Cinnamon
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Common
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Deepin
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Gnome
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-KDE
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Mate
@@ -63,6 +65,7 @@ sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Arch-Cinnamon
 sudo chmod +x Arch-Common
+sudo chmod +x Arch-Deepin
 sudo chmod +x Arch-Gnome
 sudo chmod +x Arch-KDE
 sudo chmod +x Arch-Mate
