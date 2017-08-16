@@ -67,7 +67,7 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-fPlease enter your choiclatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
+yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
 sleep 3s
@@ -113,12 +113,6 @@ sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
 sleep 1s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 5s
-clear
-screenfetch
-#
 PS3='Introduce tu elecciòn: '
 options=("Arch-Cinnamon" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Quitar")
 select opt in "${options[@]}"
