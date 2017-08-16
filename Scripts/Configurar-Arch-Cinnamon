@@ -86,7 +86,7 @@ sudo pacman -S gdm gnome-screenshot
 sudo pacman -S nemo-fileroller sddm
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince
 sleep 2s
-yaourt -S cinnamon-sound-effects
+yaourt -S cinnamon-sound-effects gnome-mpv
 yaourt -S macos-arc-white-theme
 yaourt -S archlinux-themes-sddm
 #
