@@ -9,7 +9,7 @@ if [ "$(id -u)" -eq 0 ] ; then
         echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
         echo " Simplemente ejecute este Script desde su usuario. "
         exit
-fisudo pacman -S deepin deepin-extra deepin-extras
+fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
