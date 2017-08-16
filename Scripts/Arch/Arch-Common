@@ -110,8 +110,27 @@ sudo systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 5s
-clear
-screenfetch
+PS3='Please enter your choice: '
+options=("Arch-KDE" "Option 2" "screenfetch" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Poweroff")
+            echo "you chose choice 1"
+            ;;
+        "Option 2")
+            echo "you chose choice 2"
+            ;;
+        "screenfetch")
+            echo "Escogiste screenfetch"
+            screenfetch
+            break
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done
+
 #
