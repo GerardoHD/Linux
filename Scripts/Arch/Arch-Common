@@ -67,7 +67,7 @@ sudo pacman -S system-config-printer cups-pk-helper
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
+yaourt -S gtk-arc-fPlease enter your choiclatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S etcher
 sleep 3s
@@ -78,6 +78,11 @@ echo -=PLEX=-
 yaourt -S plex-media-server plex-media-player 
 echo -=Soporte Impresora Epson L210=-
 yaourt -S epson-inkjet-printer-201207w
+#
+#
+echo     ---=Descargando Sudocabulary desde Github=---
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
@@ -110,27 +115,39 @@ sudo systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
-PS3='Please enter your choice: '
-options=("Arch-KDE" "Option 2" "screenfetch" "Quit")
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
+PS3='Introduce tu elecciòn: '
+options=("Arch-Cinnamon" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Quitar")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Poweroff")
-            echo "you chose choice 1"
-            ;;
-        "Option 2")
-            echo "you chose choice 2"
-            ;;
-        "screenfetch")
-            echo "Escogiste screenfetch"
-            screenfetch
+        "Arch-Cinnamon")
+            echo "Escogiste Instalar Cinnamon"
+            Arch-Cinnamon
             break
             ;;
-        "Quit")
+        "Arch-Gnome")
+            echo "Escogiste Instalar Gnome"
+            Arch-Gnome
+            break
+            ;;
+        "Arch-KDE")
+            echo "Escogiste Instalar KDE"
+            Arch-KDE
+            break
+            ;;
+        "Arch-Mate")
+            echo "Escogiste Instalar Mate"
+            Arch-Mate
+            break
+            ;;
+        "Quitar")
             break
             ;;
         *) echo invalid option;;
     esac
 done
-
-#
