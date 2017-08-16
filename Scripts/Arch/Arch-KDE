@@ -35,6 +35,8 @@ sleep 2s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 yaourt -S nautilus-admin
 #
+#Ajustar Mapa de Teclas para sddm
+sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
 #!/bin/bash
