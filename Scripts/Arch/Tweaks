@@ -42,3 +42,8 @@ sleep 1s
 #
 #Ajustar Mapa de Teclas para sddm
 #sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
+#Modificar valor Swappiness
+#{
+#  echo 'vm.swappiness=70'
+#  echo 'vm.vfs_cache_pressure=50'
+#} >/etc/sysctl.d/99-sysctl.conf
