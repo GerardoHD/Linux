@@ -47,8 +47,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Simple Desktop Display Manager "sddm"=---
-sudo systemctl enable sddm.service
+echo       ---=Activando LightDM=---
+sudo systemctl enable lightdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
