@@ -32,6 +32,7 @@ sudo rm -rf Red-Script
 sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf STATE
+sudo rm -rf Tweaks
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Actualizar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
@@ -59,6 +60,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Re
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Reparar-Pacman-db.lck
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo chmod +x screenfetch
 sudo chmod +x Actualizar-Arch
 sudo chmod +x Actualizar-Manjaro
@@ -86,4 +88,5 @@ sudo chmod +x Red-Script
 sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x STATE
+sudo chmod +x Tweaks
 cd /
