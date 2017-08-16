@@ -84,11 +84,8 @@ sudo pacman -S mate mate-extra
 sleep 2s
 sudo pacman -S mate-netbook mate-applet-streamer
 sudo pacman -S lightdm-gtk-greeter
-sudo pacman -S 
 sleep 2s
-yaourt -S mate-applet-lockkeys mate-disk-utility
-yaourt -S 
-yaourt -S 
+yaourt -S mate-applet-lockkeys 
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
