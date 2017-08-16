@@ -16,7 +16,7 @@ ping -c 3 www.archlinux.org
 sudo mount -o remount,size=2G,noatime /tmp
 #
 echo     ---=Instalando Deepin=---
-sudo pacman -S deepin deepin-extra deepin-extras
+sudo pacman -S deepin deepin-extra
 sleep 2s
 #sudo pacman -S 
 #sudo pacman -S 
