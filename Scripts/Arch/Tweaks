@@ -36,3 +36,9 @@ sleep 1s
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Gnome
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-KDE
+#
+#Cambiar configuraciòn de UDisks2
+#sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+#
+#Ajustar Mapa de Teclas para sddm
+#sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
