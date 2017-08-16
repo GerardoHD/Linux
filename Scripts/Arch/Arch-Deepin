@@ -1,2 +1,66 @@
 #Configurar Arch Linux con Deepin Desktop Environment
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Script creado para Arch Linux
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+if [ "$(id -u)" -eq 0 ] ; then
+        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+        echo " Simplemente ejecute este Script desde su usuario. "
+        exit
+fisudo pacman -S deepin deepin-extra deepin-extras
+#
+echo Probando conexión a Internet
+ping -c 3 www.archlinux.org
+sudo mount -o remount,size=2G,noatime /tmp
+#
+echo     ---=Instalando Deepin=---
 sudo pacman -S deepin deepin-extra deepin-extras
+sleep 2s
+#sudo pacman -S 
+#sudo pacman -S 
+#sudo pacman -S 
+sleep 2s
+#yaourt -S 
+#yaourt -S 
+#yaourt -S
+#
+echo       ---=Actualizando Arch Linux=---
+sleep 1s
+#!/bin/bash
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+#sudo cups-genppdupdate
+#sudo pacman -Syyu
+yaourt -Syyyua
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+echo       ---=Limpiando Arch Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+#
+echo       ---=Activando Simple Desktop Display Manager "sddm"=---
+sudo systemctl enable sddm.service
+echo       ---=Activando Servicio Cups "cupsd"=---
+sudo systemctl enable org.cups.cupsd.service
+echo       ---=Activando Servicio Network Manager=---
+sudo systemctl enable NetworkManager.service
+echo       ---=Activando Servicio SSHD "sshd"=---
+sudo systemctl enable sshd.service
+sudo systemctl enable sshd.socket
+#
+sleep 1s
+echo Ejecuta el Script Elegido
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
