@@ -29,14 +29,14 @@ sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 echo   -=X Window System y Drivers de Vìdeo=-
 sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos alsa-utils
-echo -=Drivers Intel=-
-sudo pacman -S intel-ucode xf86-video-intel
-echo -=Drivers AMD=-
-sudo pacman -S xf86-video-ati
-echo -=Drivers propietarios principales Nvidia=-
-sudo pacman -S nvidia nvidia-utils
-echo -=Drivers de código abierto Nvidia=-
-sudo pacman -S xf86-video-nouveau
+#echo -=Drivers Intel=-
+#sudo pacman -S intel-ucode xf86-video-intel
+#echo -=Drivers AMD=-
+#sudo pacman -S xf86-video-ati
+#echo -=Drivers propietarios principales Nvidia=-
+#sudo pacman -S nvidia nvidia-utils
+#echo -=Drivers de código abierto Nvidia=-
+#sudo pacman -S xf86-video-nouveau
 echo -=Touchpad=-
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 #
@@ -52,17 +52,17 @@ sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
 sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
-echo -=VLC=-
-sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
+#echo -=VLC=-
+#sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
 echo -=KODI=-
 sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
-echo -=LibreOffice=-
-sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
-echo -=Soporte de impresion=-
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
-sudo pacman -S system-config-printer cups-pk-helper
+#echo -=LibreOffice=-
+#sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+#echo -=Soporte de impresion=-
+#sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
+#sudo pacman -S system-config-printer cups-pk-helper
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
@@ -74,11 +74,10 @@ sleep 3s
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
-echo -=PLEX=-
-yaourt -S plex-media-server plex-media-player 
-echo -=Soporte Impresora Epson L210=-
-yaourt -S epson-inkjet-printer-201207w
-#
+#echo -=PLEX=-
+#yaourt -S plex-media-server plex-media-player 
+#echo -=Soporte Impresora Epson L210=-
+#yaourt -S epson-inkjet-printer-201207w
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
