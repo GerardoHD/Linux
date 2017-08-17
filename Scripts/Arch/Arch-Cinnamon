@@ -19,12 +19,12 @@ echo     ---=Instalando Cinnamon=---
 sudo pacman -S cinnamon
 sleep 2s
 sudo pacman -S gdm gnome-screenshot
-sudo pacman -S nemo-fileroller sddm gparted
+sudo pacman -S nemo-fileroller gparted lightdm-gtk-greeter
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince
 sleep 2s
 yaourt -S cinnamon-sound-effects gnome-mpv
 yaourt -S macos-arc-white-theme
-yaourt -S archlinux-themes-sddm tilix-bin
+yaourt -S tilix-bin
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
@@ -47,8 +47,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Simple Desktop Display Manager "sddm"=---
-sudo systemctl enable sddm.service
+echo       ---=Activando LightDM=---
+sudo systemctl enable lightdm.service
 echo       ---=Activando Servicio Cups "cupsd"=---
 sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
@@ -56,6 +56,20 @@ sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
+#
+#
+#Cambiar distribución del teclado en LightDM
+echo >> 20-keyboard.conf
+sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
+sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
+sudo sed -i '$ a\    MatchIsKeyboard "yes"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbLayout" "es"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
+sudo sed -i '$ a\EndSection' 20-keyboard.conf
+sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
+#
+#Cambiar greeter de LightDM a GTK-Greeter
+sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
 #
 sleep 1s
 echo Ejecuta el Script Elegido
