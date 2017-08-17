@@ -42,7 +42,7 @@ sudo pacman -S libinput xf86-input-libinput xorg-xinput
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace gvfs-mtp
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family
@@ -104,8 +104,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Servicio Cups "cupsd"=---
-sudo systemctl enable org.cups.cupsd.service
+#echo       ---=Activando Servicio Cups "cupsd"=---
+#sudo systemctl enable org.cups.cupsd.service
 echo       ---=Activando Servicio Network Manager=---
 sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio SSHD "sshd"=---
