@@ -112,11 +112,11 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
-#Modificar valor Swappiness
-{
-  echo 'vm.swappiness=70'
-  echo 'vm.vfs_cache_pressure=50'
-} >/etc/sysctl.d/99-sysctl.conf
+#Modificar valor Swappiness -Usado en Arch-Common-
+echo >> 99-sysctl.conf
+sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
+sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
+sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
 sleep 1s
 PS3='Introduce tu elecciòn: '
