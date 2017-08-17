@@ -18,13 +18,7 @@ sudo mount -o remount,size=2G,noatime /tmp
 echo     ---=Instalando Deepin=---
 sudo pacman -S deepin deepin-extra
 sleep 2s
-#sudo pacman -S 
-#sudo pacman -S 
-#sudo pacman -S 
-sleep 2s
-#yaourt -S 
-#yaourt -S 
-#yaourt -S
+sudo pacman -S gparted gedit evince gnome-disk-utility
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
@@ -58,14 +52,18 @@ sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
 #Cambiar distribución del teclado en LightDM
-{
-  echo 'Section "InputClass"'
-  echo '    Identifier "keyboard"'
-  echo '    MatchIsKeyboard "yes"'
-  echo '    Option "XkbLayout" "es"'
-  echo '    Option "XkbVariant" "nodeadkeys"'
-  echo 'EndSection'
-} >/etc/X11/xorg.conf.d/20-keyboard.conf
+echo >> 20-keyboard.conf
+sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
+sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
+sudo sed -i '$ a\    MatchIsKeyboard "yes"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbLayout" "es"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
+sudo sed -i '$ a\EndSection' 20-keyboard.conf
+sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
+#
+#Cambiar greeter de LightDM a Deepin
+sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
+#
 sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
