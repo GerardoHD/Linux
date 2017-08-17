@@ -18,7 +18,7 @@ sudo mount -o remount,size=2G,noatime /tmp
 echo     ---=Instalando Cinnamon=---
 sudo pacman -S cinnamon
 sleep 2s
-sudo pacman -S gdm gnome-screenshot
+sudo pacman -S gnome-screenshot
 sudo pacman -S nemo-fileroller gparted lightdm-gtk-greeter
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince gnome-disk-utility
 sleep 2s
