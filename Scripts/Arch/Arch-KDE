@@ -68,6 +68,9 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
+#Ajustar Mapa de Teclas en sddm
+sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
+#
 sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
