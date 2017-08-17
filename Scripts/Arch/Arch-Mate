@@ -54,6 +54,19 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
+#Cambiar distribución del teclado en LightDM
+echo >> 20-keyboard.conf
+sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
+sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
+sudo sed -i '$ a\    MatchIsKeyboard "yes"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbLayout" "es"' 20-keyboard.conf
+sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
+sudo sed -i '$ a\EndSection' 20-keyboard.conf
+sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
+#
+#Cambiar greeter de LightDM a GTK-Greeter
+sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
+#
 sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
