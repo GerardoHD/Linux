@@ -12,30 +12,34 @@ sleep 1s
 #sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Common
 #sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Deepin
 #sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-KDE
+#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Mate
+#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Xfce
 #
 #sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Cinnamon
 #sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Common
 #sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Deepin
 #sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-KDE
+#sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Mate
+#sed -i 's/yaourt -S /yaourt -S --noconfirm /g' /usr/local/bin/Arch-Xfce
 #
 #Automatizar desinstalaciòn de paquetes en mis scripts:
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Cinnamon
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Common
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Deepin
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-KDE
+#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
+#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Xfce
 #
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Cinnamon
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Common
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Deepin
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-KDE
+#sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
+#sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Xfce
 #
 #Cambiar configuraciòn de UDisks2
 #sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
