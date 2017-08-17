@@ -50,7 +50,7 @@ sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks 
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite
-sudo pacman -S avidemux-cli avidemux-qt
+#sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
 #echo -=VLC=-
 #sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
