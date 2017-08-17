@@ -120,13 +120,18 @@ sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
 sleep 1s
 PS3='Introduce tu elecciòn: '
-options=("Arch-Cinnamon" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Quitar")
+options=("Arch-Cinnamon" "Arch-Deepin" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Arch-Xfce" "Salir")
 select opt in "${options[@]}"
 do
     case $opt in
         "Arch-Cinnamon")
             echo "Escogiste Instalar Cinnamon"
             Arch-Cinnamon
+            break
+            ;;
+        "Arch-Deepin")
+            echo "Escogiste Instalar Deepin"
+            Arch-Deepin
             break
             ;;
         "Arch-Gnome")
@@ -144,7 +149,12 @@ do
             Arch-Mate
             break
             ;;
-        "Quitar")
+        "Arch-Xfce")
+            echo "Escogiste Instalar Xfce"
+            Arch-Xfce
+            break
+            ;;
+        "Salir")
             break
             ;;
         *) echo invalid option;;
