@@ -40,10 +40,20 @@ sleep 1s
 #Cambiar configuraciòn de UDisks2
 #sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 #
-#Ajustar Mapa de Teclas para sddm
+#Ajustar Mapa de Teclas en sddm
 #sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
 #Modificar valor Swappiness
 #{
 #  echo 'vm.swappiness=70'
 #  echo 'vm.vfs_cache_pressure=50'
 #} >/etc/sysctl.d/99-sysctl.conf
+#
+#Cambiar distribución del teclado en LightDM
+#{
+#  echo 'Section "InputClass"'
+#  echo '    Identifier "keyboard"'
+#  echo '    MatchIsKeyboard "yes"'
+#  echo '    Option "XkbLayout" "es"'
+#  echo '    Option "XkbVariant" "nodeadkeys"'
+#  echo 'EndSection'
+#} >/etc/X11/xorg.conf.d/20-keyboard.conf
