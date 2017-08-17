@@ -57,6 +57,15 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
+#Cambiar distribución del teclado en LightDM
+{
+  echo 'Section "InputClass"'
+  echo '    Identifier "keyboard"'
+  echo '    MatchIsKeyboard "yes"'
+  echo '    Option "XkbLayout" "es"'
+  echo '    Option "XkbVariant" "nodeadkeys"'
+  echo 'EndSection'
+} >/etc/X11/xorg.conf.d/20-keyboard.conf
 sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
