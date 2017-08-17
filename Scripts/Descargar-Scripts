@@ -15,6 +15,7 @@ sudo rm -rf Arch-Common
 sudo rm -rf Arch-Deepin
 sudo rm -rf Arch-Gnome
 sudo rm -rf Arch-Mate
+sudo rm -rf Arch-Xfce
 sudo rm -rf Arch-KDE
 sudo rm -rf Backup-Gnome-Screensaver
 sudo rm -rf Configurar-Manjaro-Net
@@ -43,6 +44,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Gnome
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-KDE
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Mate
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Xfce
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Backup-Gnome-Screensaver
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
@@ -71,6 +73,7 @@ sudo chmod +x Arch-Deepin
 sudo chmod +x Arch-Gnome
 sudo chmod +x Arch-KDE
 sudo chmod +x Arch-Mate
+sudo chmod +x Arch-Xfce
 sudo chmod +x Backup-Gnome-Screensaver
 sudo chmod +x Blue-Script
 sudo chmod +x Configurar-Manjaro-Net
