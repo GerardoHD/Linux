@@ -69,7 +69,7 @@ yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome paper-icon-theme-git
 yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
-yaourt -S etcher
+yaourt -S etcher torrential
 sleep 3s
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
