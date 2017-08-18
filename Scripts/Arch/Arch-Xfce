@@ -19,7 +19,8 @@ echo     ---=Instalando Xfce=---
 sudo pacman -S xfce4 xfce4-goodies
 sleep 2s
 sudo pacman -S gparted lightdm-gtk-greeter
-sudo pacman -S gnome-disk-utility
+sudo pacman -S gnome-disk-utility network-manager-applet
+sudo pacman -S pulseaudio-alsa libcanberra-pulse
 sleep 2s
 yaourt -S gnome-mpv
 yaourt -S tilix-bin
