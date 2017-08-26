@@ -24,6 +24,7 @@ sudo pacman -S pulseaudio-alsa libcanberra-pulse
 sudo pacman -S lightdm-gtk-greeter light-locker gnome-screensaver
 sleep 2s
 yaourt -S gnome-mpv
+yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin xfce4-kbdleds-plugin
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
