@@ -23,8 +23,11 @@ sudo pacman -S gnome-disk-utility file-roller evince
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
 sudo pacman -S lightdm-gtk-greeter light-locker gnome-screensaver
 sleep 2s
-yaourt -S gnome-mpv
+yaourt -S gnome-mpv redshift-gtk-git
 yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin xfce4-kbdleds-plugin
+yaourt -S bing-wallpaper-git
+yaourt -S lightdm-webkit2-greeter
+yaourt -S lightdm-webkit2-theme-material2
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
@@ -70,6 +73,12 @@ sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
 #
 #Cambiar greeter de LightDM a GTK-Greeter
 sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
+#
+#Cambiar greeter de LightDM a Webkit2-Greeter
+#sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+#
+#Cambiar Tema de Webkit2-Greeter
+#sudo sed -i 's/  webkit_theme        = material2/  webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 #
 sleep 1s
 echo Ejecuta el Script Elegido
