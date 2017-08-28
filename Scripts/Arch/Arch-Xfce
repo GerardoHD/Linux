@@ -1,4 +1,4 @@
-#Configurar Arch Linux con Cinnamon
+#Configurar Arch Linux con Xfce
 echo          ------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
 echo Script creado para Arch Linux
@@ -25,7 +25,7 @@ sudo pacman -S lightdm-gtk-greeter light-locker gnome-screensaver
 sleep 2s
 yaourt -S redshift-gtk-git mugshot
 yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin xfce4-kbdleds-plugin dockbarx-macosx-theme
-yaourt -S bing-wallpaper-git papirus-icon-theme-git 
+yaourt -S bing-wallpaper-git papirus-icon-theme-git
 yaourt -S lightdm-webkit2-greeter
 yaourt -S lightdm-webkit2-theme-material2
 #
