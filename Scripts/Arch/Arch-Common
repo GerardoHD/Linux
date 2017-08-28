@@ -62,7 +62,7 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #echo -=Soporte de impresion=-
 #sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
-#sudo pacman -S system-config-printer cups-pk-helper
+#sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
