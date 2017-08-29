@@ -20,7 +20,7 @@ sudo pacman -S xfce4 xfce4-goodies
 sleep 2s
 sudo pacman -S gparted network-manager-applet parole
 sudo pacman -S gnome-disk-utility file-roller evince arc-gtk-theme baobab
-sudo pacman -S pulseaudio-alsa libcanberra-pulse zenity
+sudo pacman -S pulseaudio-alsa libcanberra-pulse zenity light-locker menulibre
 sudo pacman -S lightdm-gtk-greeter light-locker gnome-screensaver
 sleep 2s
 yaourt -S redshift-gtk-git mugshot
@@ -71,14 +71,11 @@ sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
 sudo sed -i '$ a\EndSection' 20-keyboard.conf
 sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
 #
-#Cambiar greeter de LightDM a GTK-Greeter
-sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
+#echo Cambiar greeter de LightDM a Webkit2-Greeter
+sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 #
-#Cambiar greeter de LightDM a Webkit2-Greeter
-#sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
-#
-#Cambiar Tema de Webkit2-Greeter
-#sudo sed -i 's/  webkit_theme        = Antergos/  webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+echo Cambiar Tema de Webkit2-Greeter
+sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 #
 sleep 1s
 echo Ejecuta el Script Elegido
