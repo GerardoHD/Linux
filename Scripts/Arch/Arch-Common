@@ -74,6 +74,8 @@ sleep 3s
 echo -=KODI=-
 yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 yaourt -S kodi-standalone-service
+echo -=KDE Connect=-
+yaourt -S indicator-kdeconnect kde-cli-tools
 #echo -=PLEX=-
 #yaourt -S plex-media-server plex-media-player 
 #echo -=Soporte Impresora Epson L210=-
