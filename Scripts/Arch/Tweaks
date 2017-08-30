@@ -41,19 +41,19 @@ sleep 1s
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
 #sed -i 's/yaourt -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Xfce
 #
-#Cambiar configuraciòn de UDisks2
+#echo Cambiando configuraciòn de UDisks2
 #sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 #
-#Ajustar Mapa de Teclas en sddm
+#echo Ajustando Mapa de Teclas en sddm
 #sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
 #
-#Modificar valor Swappiness -Usado en Arch-Common-
+#echo Modificando valor Swappiness -Usado en Arch-Common-
 #echo >> 99-sysctl.conf
 #sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
 #sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
 #sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
-#Cambiando distribución del teclado en LightDM -Usado en Arch-Deepin, Arch-Cinnamon y Arch-Mate-
+#echo Cambiando distribución del teclado en LightDM -Usado en Arch-Deepin, Arch-Cinnamon y Arch-Mate-
 #echo >> 20-keyboard.conf
 #sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
 #sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
