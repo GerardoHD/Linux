@@ -25,7 +25,7 @@ sudo pacman -S light-locker
 sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin dockbarx-macosx-theme
-yaourt -S bing-wallpaper-git papirus-icon-theme-git
+yaourt -S bing-wallpaper-git 
 yaourt -S lightdm-webkit2-greeter
 yaourt -S lightdm-webkit2-theme-material2
 #
@@ -71,11 +71,11 @@ sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
 sudo sed -i '$ a\EndSection' 20-keyboard.conf
 sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
 #
-#echo Cambiando greeter de LightDM a Webkit2-Greeter -Usado en Arch-Xfce-
-#sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+echo Cambiando greeter de LightDM a Webkit2-Greeter -Usado en Arch-Xfce-
+sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 #
-#echo Cambiando Tema de Webkit2-Greeter -Usado en Arch-Xfce-
-#sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+echo Cambiando Tema de Webkit2-Greeter -Usado en Arch-Xfce-
+sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 sleep 1s
 echo Ejecuta el Script Elegido
 ls /usr/local/bin/
