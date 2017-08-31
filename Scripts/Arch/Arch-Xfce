@@ -19,7 +19,7 @@ echo     ---=Instalando Xfce=---
 sudo pacman -S xfce4 xfce4-goodies
 sleep 2s
 sudo pacman -S gparted network-manager-applet parole galculator
-sudo pacman -S gnome-disk-utility file-roller evince baobab
+sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects
 sudo pacman -S pulseaudio-alsa libcanberra-pulse zenity light-locker menulibre
 sudo pacman -S light-locker
 sleep 2s
