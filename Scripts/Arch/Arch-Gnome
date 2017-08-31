@@ -24,7 +24,7 @@ sudo pacman -S gnome-extra
 sleep 2s
 sudo pacman -S archlinux-wallpaper
 sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
-sudo pacman -S gnome-initial-setup eog-plugins gparted 
+sudo pacman -S gnome-initial-setup eog-plugins gparted gnome-video-effects
 sleep 2s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git nautilus-admin
 yaourt -S bing-wallpaper-git gnome-mpv tilix-bin pop-gtk-theme-git
