@@ -49,7 +49,7 @@ sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart adapta-gtk-theme
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
-sudo pacman -S geary catfish rhythmbox arch-wiki-lite
+sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
 #sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
 #echo -=VLC=-
