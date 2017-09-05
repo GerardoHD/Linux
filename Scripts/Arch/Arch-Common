@@ -26,6 +26,8 @@ echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
 sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
+echo   -=Pulse Audio=-
+sudo pacman -S pulseaudio-alsa libcanberra-pulse
 echo   -=X Window System y Drivers de Vìdeo=-
 sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S mesa mesa-demos alsa-utils
@@ -50,6 +52,7 @@ sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart adapta-gtk-th
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
+sudo pacman -S ffmpegthumbnailer 
 #sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
 #echo -=VLC=-
