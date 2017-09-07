@@ -64,7 +64,7 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #echo -=LibreOffice=-
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #echo -=Soporte de impresion=-
-#sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups 
+#sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 #sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
 echo     ---=Instalando Software desde Arch User Repository=---
@@ -95,8 +95,6 @@ sleep 1s
 #!/bin/bash
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
-#sudo cups-genppdupdate
-#sudo pacman -Syyu
 yaourt -Syyyua
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
