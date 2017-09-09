@@ -39,7 +39,7 @@ sudo pacman -S mesa mesa-demos alsa-utils
 #sudo pacman -S nvidia nvidia-utils
 #echo -=Drivers de código abierto Nvidia=-
 #sudo pacman -S xf86-video-nouveau
-echo -=Touchpad=-
+echo -=libinput=-
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
@@ -53,14 +53,13 @@ sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
 sudo pacman -S ffmpegthumbnailer 
-#sudo pacman -S avidemux-cli avidemux-qt
 sleep 3s
 #echo -=VLC=-
 #sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
-echo -=KODI=-
-sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
-sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
-sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+#echo -=KODI=-
+#sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
+#sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
+#sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #echo -=LibreOffice=-
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #echo -=Soporte de impresion=-
@@ -70,20 +69,23 @@ sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git gtk-theme-united-gnome papirus-icon-theme-git
-yaourt -S flatplat-theme google-chrome capitaine-cursors la-capitaine-icon-theme-git
-yaourt -S etcher torrential
+yaourt -S gtk-arc-flatabulous-theme-git papirus-icon-theme-git
+yaourt -S flatplat-theme google-chrome capitaine-cursors
+yaourt -S etcher torrential albert
 sleep 3s
-echo -=KODI=-
-yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-yaourt -S kodi-standalone-service
-echo -=KDE Connect=-
-yaourt -S indicator-kdeconnect kde-cli-tools
+#echo -=KODI=-
+#yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
+#yaourt -S kodi-standalone-service
+#echo -=KDE Connect=-
+#yaourt -S indicator-kdeconnect kde-cli-tools
 #echo -=PLEX=-
 #yaourt -S plex-media-server plex-media-player 
 #echo -=Soporte Impresora Epson L210=-
 #yaourt -S epson-inkjet-printer-201207w
 #
+#echo -=Software Extra=-
+#yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git
+#sudo pacman -S avidemux-cli avidemux-qt
 xdg-user-dirs-update
 #
 echo     ---=Descargando Sudocabulary desde Github=---
