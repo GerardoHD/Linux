@@ -1,7 +1,7 @@
 #Descargar-Scripts
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Descargando Scripts=---
-sleep 1s
+sleep 3s
 echo
 #!/bin/bash
 cd /usr/local/bin
@@ -101,4 +101,3 @@ ls /usr/local/bin/
 sleep 5s
 clear
 screenfetch
-#
