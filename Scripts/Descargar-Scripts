@@ -93,3 +93,12 @@ sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x STATE
 sudo chmod +x Tweaks
 cd /
+sleep 1s
+echo Ejecuta el Script Elegido
+echo Recomiendo editar alguno de los scripts ubicados en:
+echo /usr/local/bin/
+ls /usr/local/bin/
+sleep 5s
+clear
+screenfetch
+#
