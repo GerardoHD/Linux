@@ -28,8 +28,9 @@ sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
-echo   -=X Window System y Drivers de Vìdeo=-
+echo   -=X Window System=-
 sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
+sudo pacman -S libinput xf86-input-libinput xorg-xinput
 sudo pacman -S mesa mesa-demos alsa-utils
 #echo -=Drivers Intel=-
 #sudo pacman -S intel-ucode xf86-video-intel
@@ -39,8 +40,6 @@ sudo pacman -S mesa mesa-demos alsa-utils
 #sudo pacman -S nvidia nvidia-utils
 #echo -=Drivers de código abierto Nvidia=-
 #sudo pacman -S xf86-video-nouveau
-echo -=libinput=-
-sudo pacman -S libinput xf86-input-libinput xorg-xinput
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
@@ -86,7 +85,6 @@ sleep 3s
 #echo -=Software Extra=-
 #yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git
 #sudo pacman -S avidemux-cli avidemux-qt
-xdg-user-dirs-update
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
@@ -102,6 +100,7 @@ sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
+xdg-user-dirs-update
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
