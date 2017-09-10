@@ -19,10 +19,10 @@ echo     ---=Instalando Cinnamon=---
 sudo pacman -S cinnamon
 sleep 2s
 sudo pacman -S gnome-screenshot
-sudo pacman -S nemo-fileroller gparted lightdm-gtk-greeter
+sudo pacman -S nemo-fileroller gparted lightdm-gtk-greeter gnome-mplayer
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince gnome-disk-utility
 sleep 2s
-yaourt -S cinnamon-sound-effects gnome-mpv
+yaourt -S cinnamon-sound-effects
 yaourt -S macos-arc-white-theme
 yaourt -S tilix-bin
 #
