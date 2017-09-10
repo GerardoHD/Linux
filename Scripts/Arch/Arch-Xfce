@@ -18,12 +18,12 @@ sudo mount -o remount,size=2G,noatime /tmp
 echo     ---=Instalando Xfce=---
 sudo pacman -S xfce4 xfce4-goodies
 sleep 2s
-sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer
+sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer gnome-mplayer
 sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects
 sudo pacman -S pavucontrol zenity light-locker menulibre
 sudo pacman -S light-locker
 sleep 2s
-yaourt -S redshift-gtk-git mugshot indicator-keylock gnome-mpv
+yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin dockbarx-macosx-theme
 yaourt -S bing-wallpaper-git 
 yaourt -S lightdm-webkit2-greeter
