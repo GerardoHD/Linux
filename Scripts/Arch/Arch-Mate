@@ -19,7 +19,7 @@ echo     ---=Instalando Mate=---
 sudo pacman -S mate mate-extra
 sleep 2s
 sudo pacman -S mate-netbook mate-applet-streamer 
-sudo pacman -S lightdm-gtk-greeter gnome-disk-utility evince
+sudo pacman -S lightdm-gtk-greeter gnome-disk-utility evince gnome-mplayer
 sleep 2s
 yaourt -S mate-applet-lockkeys 
 #
