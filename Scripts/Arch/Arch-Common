@@ -77,6 +77,8 @@ sleep 3s
 #yaourt -S kodi-standalone-service
 #echo -=KDE Connect=-
 #yaourt -S indicator-kdeconnect kde-cli-tools
+#pacman -S qt5-styleplugins qt5ct
+#sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 #echo -=PLEX=-
 #yaourt -S plex-media-server plex-media-player 
 #echo -=Soporte Impresora Epson L210=-
