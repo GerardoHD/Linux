@@ -84,7 +84,12 @@ sleep 3s
 #echo -=Steam=-
 #yaourt -S steam-fonts
 #echo -=PLEX=-
-#yaourt -S plex-media-server plex-media-player 
+#yaourt -S plex-media-server plex-media-player
+#echo Instalando plex-media-player-standalone-service
+#git clone https://aur.archlinux.org/plex-media-player-standalone-service.git
+#cd plex-media-player-standalone-service
+#makepkg -si --skippgpcheck
+#rm -rf plex-media-player-standalone-service
 #echo -=Soporte Impresora Epson L210=-
 #yaourt -S epson-inkjet-printer-201207w
 #
