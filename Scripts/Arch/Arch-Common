@@ -82,7 +82,7 @@ sleep 3s
 #pacman -S qt5-styleplugins qt5ct
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 #echo -=Steam=-
-#yaourt -S steam-fonts steam-standalone
+#yaourt -S steam-fonts
 #echo -=PLEX=-
 #yaourt -S plex-media-server plex-media-player 
 #echo -=Soporte Impresora Epson L210=-
@@ -124,6 +124,8 @@ sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
+echo       ---=Activando Servicio Plex Media Server=---
+#systemctl enable plexmediaserver.service
 #
 #Modificar valor Swappiness -Usado en Arch-Common-
 echo >> 99-sysctl.conf
@@ -169,7 +171,7 @@ do
             ;;
         "Salir")
             break
-            ;;
+        steam-standalone    ;;
         *) echo invalid option;;
     esac
 done
