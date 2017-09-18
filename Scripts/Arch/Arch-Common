@@ -55,6 +55,8 @@ sudo pacman -S ffmpegthumbnailer
 sleep 3s
 #echo -=VLC=-
 #sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
+#echo -=Steam=-
+#sudo pacman -S steam steam-native-runtime
 #echo -=KODI=-
 #sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 #sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
@@ -79,6 +81,8 @@ sleep 3s
 #yaourt -S indicator-kdeconnect kde-cli-tools
 #pacman -S qt5-styleplugins qt5ct
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
+#echo -=Steam=-
+#yaourt -S steam-fonts steam-standalone
 #echo -=PLEX=-
 #yaourt -S plex-media-server plex-media-player 
 #echo -=Soporte Impresora Epson L210=-
