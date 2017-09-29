@@ -84,7 +84,9 @@ sleep 3s
 #echo -=Steam=-
 #yaourt -S steam-fonts
 #echo -=PLEX=-
-#yaourt -S plex-media-server plex-media-player
+#yaourt -S plex-media-server
+#yaourt -S plex-media-server-plexpass
+#yaourt -S plex-media-player
 #echo Instalando plex-media-player-standalone-service
 #git clone https://aur.archlinux.org/plex-media-player-standalone-service.git
 #cd plex-media-player-standalone-service
