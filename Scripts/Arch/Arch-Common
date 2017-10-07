@@ -140,6 +140,9 @@ sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
 sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
 sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
+echo Cambiando configuraciòn de UDisks2
+sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+#
 sleep 1s
 PS3='Introduce tu elecciòn: '
 options=("Arch-Cinnamon" "Arch-Deepin" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Arch-Xfce" "Salir")
