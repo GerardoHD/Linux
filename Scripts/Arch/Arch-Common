@@ -96,7 +96,7 @@ sleep 3s
 #yaourt -S epson-inkjet-printer-201207w
 #
 #echo -=Software Extra=-
-#yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git
+#yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git macos-icon-theme
 #sudo pacman -S avidemux-cli avidemux-qt
 #
 echo     ---=Descargando Sudocabulary desde Github=---
