@@ -32,14 +32,35 @@ echo   -=X Window System=-
 sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 sudo pacman -S mesa mesa-demos alsa-utils
-#echo -=Drivers Intel=-
-#sudo pacman -S intel-ucode xf86-video-intel
-#echo -=Drivers AMD=-
-#sudo pacman -S xf86-video-ati
-#echo -=Drivers propietarios principales Nvidia=-
-#sudo pacman -S nvidia nvidia-utils
-#echo -=Drivers de código abierto Nvidia=-
-#sudo pacman -S xf86-video-nouveau
+#
+PS3='Introduce tu elecciòn: '
+options=("Drivers Intel" "Drivers AMD" "Drivers Nvidia" "Drivers libres Nvidia" "Salir")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Drivers Intel")
+            echo "Escogiste Instalar Drivers Intel"
+            sudo pacman -S intel-ucode xf86-video-intel
+            break
+            ;;
+        "Drivers AMD")
+            echo "Escogiste Instalar Drivers AMD"
+            sudo pacman -S xf86-video-ati
+            break
+            ;;
+        "Drivers Nvidia")
+            echo "Escogiste Instalar Drivers Nvidia"
+            sudo pacman -S nvidia nvidia-utils
+            break
+            ;;
+        "Drivers libres Nvidia")
+            echo "Escogiste Instalar Drivers libres Nvidia"
+            sudo pacman -S xf86-video-nouveau
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
@@ -185,3 +206,4 @@ do
         *) echo invalid option;;
     esac
 done
+#
