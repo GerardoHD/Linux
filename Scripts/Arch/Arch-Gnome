@@ -18,9 +18,10 @@ sudo mount -o remount,size=2G,noatime /tmp
 echo     ---=Instalando Gnome=---
 sleep 1s
 sudo pacman -S gnome
-echo paquetes a instalar de gnome-extra:
-echo 7 8 11 14 19 22 23 24 27 31 32 36 38 43 44
-sudo pacman -S gnome-extra
+sudo pacman -S cheese dconf-editor file-roller gedit gnome-calendar gnome-clocks
+sudo pacman -S gnome-code-assistance gnome-color-manager gnome-getting-started-docs
+sudo pacman -S gnome-maps gnome-mines gnome-music gnome-photos gnome-sound-recorder 
+sudo pacman -S gnome-tweak-tool gnome-weather
 sleep 2s
 sudo pacman -S archlinux-wallpaper
 sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
