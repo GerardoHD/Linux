@@ -16,7 +16,12 @@ ping -c 3 www.archlinux.org
 sudo mount -o remount,size=2G,noatime /tmp
 #
 echo     ---=Instalando Xfce=---
-sudo pacman -S xfce4 xfce4-goodies
+sudo pacman -S xfce4
+sudo pacman -S orage thunar-archive-plugin thunar-media-tags-plugin xfce4-artwork
+sudo pacman -S xfce4-battery-plugin xfce4-datetime-plugin xfce4-diskperf-plugin
+sudo pacman -S xfce4-fsguard-plugin xfce4-mount-plugin xfce4-netload-plugin
+sudo pacman -S xfce4-notifyd xfce4-pulseaudio-plugin xfce4-taskmanager
+sudo pacman -S xfce4-verve-plugin xfce4-weather-plugin ristretto xfce4-whiskermenu-plugin
 sleep 2s
 sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer gnome-mplayer
 sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects
