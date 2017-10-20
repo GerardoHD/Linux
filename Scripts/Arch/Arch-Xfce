@@ -27,7 +27,7 @@ sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer gnome
 sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects
 sudo pacman -S pavucontrol zenity light-locker menulibre
 sudo pacman -S light-locker
-sudo pacman -S nautilus-open-terminal filemanager-actions
+sudo pacman -S nautilus-open-terminal filemanager-actions gedit
 sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin xfce4-dockbarx-plugin dockbarx-macosx-theme
