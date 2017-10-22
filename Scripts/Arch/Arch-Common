@@ -24,7 +24,7 @@ sudo pacman -Syyu
 #
 echo     ---=Instalando Bases para Arch Linux=---
 sleep 1s
-sudo pacman -S base-devel cmake wget os-prober yaourt git snapd
+sudo pacman -S base-devel cmake wget os-prober yaourt git
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
@@ -92,7 +92,7 @@ echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S gtk-arc-flatabulous-theme-git papirus-icon-theme-git
-yaourt -S flatplat-theme google-chrome capitaine-cursors
+yaourt -S google-chrome capitaine-cursors
 yaourt -S etcher torrential albert
 sleep 3s
 #echo -=KODI=-
