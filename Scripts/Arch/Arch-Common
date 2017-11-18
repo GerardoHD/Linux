@@ -68,7 +68,8 @@ sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace gvfs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart adapta-gtk-theme
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
+sudo pacman -S adapta-gtk-theme arc-gtk-theme arc-icon-theme
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
@@ -91,7 +92,7 @@ sleep 3s
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S gtk-arc-flatabulous-theme-git papirus-icon-theme-git
+yaourt -S papirus-icon-theme-git
 yaourt -S google-chrome capitaine-cursors
 yaourt -S etcher
 sleep 3s
@@ -118,7 +119,7 @@ sleep 3s
 #
 #echo -=Software Extra=-
 #yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git macos-icon-theme
-#sudo pacman -S avidemux-cli avidemux-qt torrential albert
+#sudo pacman -S avidemux-cli avidemux-qt torrential albert gtk-arc-flatabulous-theme-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
