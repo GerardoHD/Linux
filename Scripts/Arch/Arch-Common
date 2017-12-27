@@ -69,7 +69,7 @@ sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
-sudo pacman -S adapta-gtk-theme arc-gtk-theme arc-icon-theme
+sudo pacman -S adapta-gtk-theme
 sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
@@ -83,6 +83,7 @@ sleep 3s
 #sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 #sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 #sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
+#sudo pacman -S mediaelch
 #echo -=LibreOffice=-
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
 #echo -=Soporte de impresion=-
@@ -99,6 +100,7 @@ sleep 3s
 #echo -=KODI=-
 #yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #yaourt -S kodi-standalone-service
+#yaourt -S filebot java-openjfx
 #echo -=KDE Connect=-
 #yaourt -S indicator-kdeconnect kde-cli-tools
 #pacman -S qt5-styleplugins qt5ct
