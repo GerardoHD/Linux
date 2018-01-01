@@ -26,7 +26,7 @@ sleep 2s
 sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer gnome-mplayer
 sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects gnome-screenshot
 sudo pacman -S pavucontrol zenity light-locker menulibre
-sudo pacman -S light-locker lightdm-gtk-greeter
+sudo pacman -S light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-screensaver 
 sudo pacman -S nautilus-open-terminal filemanager-actions gedit
 sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
