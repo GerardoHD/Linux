@@ -93,8 +93,8 @@ sleep 3s
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S papirus-icon-theme-git
-yaourt -S google-chrome capitaine-cursors
+yaourt -S papirus-icon-theme-git capitaine-cursors
+yaourt -S google-chrome spotify
 yaourt -S etcher
 sleep 3s
 #echo -=KODI=-
