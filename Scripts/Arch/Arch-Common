@@ -93,7 +93,7 @@ sleep 3s
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
-yaourt -S papirus-icon-theme-git capitaine-cursors
+yaourt -S papirus-icon-theme-git capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S google-chrome spotify
 yaourt -S etcher
 sleep 3s
@@ -120,8 +120,8 @@ sleep 3s
 #yaourt -S epson-inkjet-printer-201207w
 #
 #echo -=Software Extra=-
-#yaourt -S gtk-theme-united-gnome la-capitaine-icon-theme-git macos-icon-theme
-#sudo pacman -S avidemux-cli avidemux-qt torrential albert gtk-arc-flatabulous-theme-git
+#yaourt -S gtk-theme-united-gnome  macos-icon-theme
+#sudo pacman -S avidemux-cli avidemux-qt albert gtk-arc-flatabulous-theme-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
 #
