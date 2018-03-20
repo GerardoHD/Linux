@@ -21,15 +21,15 @@ sudo pacman -S gnome
 sudo pacman -S cheese dconf-editor file-roller gedit gnome-calendar gnome-clocks
 sudo pacman -S gnome-code-assistance gnome-color-manager gnome-getting-started-docs
 sudo pacman -S gnome-maps gnome-mines gnome-music gnome-photos gnome-sound-recorder 
-sudo pacman -S gnome-tweak-tool gnome-weather
+sudo pacman -S gnome-tweak-tool gnome-weather gedit-plugins
 sleep 2s
-sudo pacman -S archlinux-wallpaper
+sudo pacman -S archlinux-wallpaper tilix
 sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted gnome-video-effects
 sleep 2s
 yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git nautilus-admin
-yaourt -S bing-wallpaper-git gnome-mpv tilix-bin
-#yaourt -S pop-gtk-theme-git
+yaourt -S gnome-mpv
+#yaourt -S pop-gtk-theme-git bing-wallpaper-git
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
