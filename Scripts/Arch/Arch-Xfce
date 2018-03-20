@@ -23,17 +23,16 @@ sudo pacman -S xfce4-fsguard-plugin xfce4-mount-plugin xfce4-netload-plugin
 sudo pacman -S xfce4-notifyd xfce4-pulseaudio-plugin xfce4-taskmanager
 sudo pacman -S xfce4-verve-plugin xfce4-weather-plugin ristretto xfce4-whiskermenu-plugin
 sleep 2s
-sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer gnome-mplayer
+sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer tilix
 sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects gnome-screenshot
 sudo pacman -S pavucontrol zenity light-locker menulibre
 sudo pacman -S light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-screensaver 
-sudo pacman -S nautilus-open-terminal filemanager-actions gedit
+sudo pacman -S filemanager-actions gedit gedit-plugins
 sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin
-yaourt -S bing-wallpaper-git 
-yaourt -S nautilus-admin
-# xfce4-dockbarx-plugin dockbarx-macosx-theme
+yaourt -S nautilus-admin gnome-mpv
+# xfce4-dockbarx-plugin dockbarx-macosx-theme bing-wallpaper-git
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
