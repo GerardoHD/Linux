@@ -102,21 +102,17 @@ sleep 3s
 #yaourt -S kodi-standalone-service
 #yaourt -S filebot java-openjfx
 #echo -=KDE Connect=-
-#
-#yaourt -S indicator-kdeconnect kde-cli-tools
-#pacman -S qt5-styleplugins qt5ct
+#En Gnome se usa la extension GSConnect
+#pacman -S qt5-styleplugins qt5ct kde-cli-tools
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
+#En Xfce instalar indicator-kdeconnect
+#yaourt -S indicator-kdeconnect 
 #echo -=Steam=-
 #yaourt -S steam-fonts
 #echo -=PLEX=-
 #yaourt -S plex-media-server
 #yaourt -S plex-media-server-plexpass
 #yaourt -S plex-media-player
-#echo Instalando plex-media-player-standalone-service
-#git clone https://aur.archlinux.org/plex-media-player-standalone-service.git
-#cd plex-media-player-standalone-service
-#makepkg -si --skippgpcheck
-#rm -rf plex-media-player-standalone-service
 #echo -=Soporte Impresora Epson L210=-
 #yaourt -S epson-inkjet-printer-201207w
 #
