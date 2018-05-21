@@ -102,6 +102,7 @@ sleep 3s
 #yaourt -S kodi-standalone-service
 #yaourt -S filebot java-openjfx
 #echo -=KDE Connect=-
+#
 #yaourt -S indicator-kdeconnect kde-cli-tools
 #pacman -S qt5-styleplugins qt5ct
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
