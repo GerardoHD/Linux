@@ -125,7 +125,6 @@ echo       ---=Actualizando Arch Linux=---
 sleep 1s
 #!/bin/bash
 speedtest
-sudo mount -o remount,size=2G,noatime /tmp
 yaourt -Syyyua --noconfirm
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
