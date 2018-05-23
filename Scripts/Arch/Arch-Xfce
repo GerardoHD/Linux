@@ -32,6 +32,9 @@ sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin
 yaourt -S nautilus-admin gnome-mpv
+#echo -=KDE Connect=-
+#En Xfce instalar indicator-kdeconnect
+#yaourt -S indicator-kdeconnect kde-cli-tools
 # xfce4-dockbarx-plugin dockbarx-macosx-theme bing-wallpaper-git
 #
 echo       ---=Actualizando Arch Linux=---
