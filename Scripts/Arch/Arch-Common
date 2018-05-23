@@ -75,6 +75,7 @@ sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
 sudo pacman -S openssh sshfs youtube-dl android-tools
 sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
 sudo pacman -S ffmpegthumbnailer transmission-gtk calibre
+sudo pacman -S evince gnome-disk-utility gedit menulibre
 sudo pacman -S qt5-styleplugins qt5ct
 sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 sleep 3s
@@ -95,7 +96,7 @@ sleep 3s
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
-yaourt -S rhythmbox-plugin-alternative-toolbar-git
+yaourt -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 yaourt -S capitaine-cursors la-capitaine-icon-theme-git
 yaourt -S google-chrome
 yaourt -S etcher-bin
@@ -112,6 +113,10 @@ sleep 3s
 #yaourt -S plex-media-player
 #echo -=Soporte Impresora Epson L210=-
 #yaourt -S epson-inkjet-printer-201207w
+#
+#echo -=Drivers Wi-Fi HP 240 G4=-
+#yaourt -S broadcom-wl-dkms linux-headers
+#yaourt -S b43-firmware bcm43142a0-firmware
 #
 #echo -=Software Extra=-
 #yaourt -S gtk-theme-united-gnome  macos-icon-theme spotify
