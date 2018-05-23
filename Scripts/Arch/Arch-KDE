@@ -25,7 +25,6 @@ sudo pacman -S kcharselect kcolorchooser kdenetwork-filesharing kdialog kfind kh
 sudo pacman -S plasma-wayland-session 
 sudo pacman -S systemd-kcm gvfs-mtp
 sleep 2s
-sudo pacman -S nautilus evince gnome-disk-utility gedit
 sudo pacman -S kde-l10n-es
 sudo pacman -S kio-gdrive kdeconnect
 sudo pacman -S partitionmanager
