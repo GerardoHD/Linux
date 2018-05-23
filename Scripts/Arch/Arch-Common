@@ -94,8 +94,8 @@ echo     ---=Instalando Software desde Arch User Repository=---
 yaourt -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
 yaourt -S rhythmbox-plugin-alternative-toolbar-git
 yaourt -S papirus-icon-theme-git capitaine-cursors la-capitaine-icon-theme-git
-yaourt -S google-chrome spotify
-yaourt -S etcher
+yaourt -S google-chrome
+yaourt -S etcher-bin
 sleep 3s
 #echo -=KODI=-
 #yaourt -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
@@ -117,7 +117,7 @@ sleep 3s
 #yaourt -S epson-inkjet-printer-201207w
 #
 #echo -=Software Extra=-
-#yaourt -S gtk-theme-united-gnome  macos-icon-theme
+#yaourt -S gtk-theme-united-gnome  macos-icon-theme spotify
 #sudo pacman -S avidemux-cli avidemux-qt albert gtk-arc-flatabulous-theme-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
