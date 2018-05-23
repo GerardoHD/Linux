@@ -24,10 +24,10 @@ sudo pacman -S xfce4-notifyd xfce4-pulseaudio-plugin xfce4-taskmanager
 sudo pacman -S xfce4-verve-plugin xfce4-weather-plugin ristretto xfce4-whiskermenu-plugin
 sleep 2s
 sudo pacman -S gparted network-manager-applet galculator gnome-font-viewer tilix
-sudo pacman -S gnome-disk-utility file-roller evince baobab cheese gnome-video-effects gnome-screenshot
+sudo pacman -S file-roller baobab cheese gnome-video-effects gnome-screenshot
 sudo pacman -S pavucontrol zenity light-locker menulibre
 sudo pacman -S light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-screensaver 
-sudo pacman -S filemanager-actions gedit gedit-plugins
+sudo pacman -S filemanager-actions gedit-plugins
 sleep 2s
 yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin
