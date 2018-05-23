@@ -18,16 +18,14 @@ sudo mount -o remount,size=2G,noatime /tmp
 echo     ---=Instalando Gnome=---
 sleep 1s
 sudo pacman -S gnome
-sudo pacman -S cheese dconf-editor file-roller gedit gnome-calendar gnome-clocks
-sudo pacman -S gnome-code-assistance gnome-color-manager gnome-getting-started-docs
-sudo pacman -S gnome-maps gnome-mines gnome-music gnome-photos gnome-sound-recorder 
-sudo pacman -S gnome-tweak-tool gnome-weather gedit-plugins
+sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
+sudo pacman -S gnome-tweak-tool gnome-weather gedit-plugins gnome-software-packagekit-plugin
 sleep 2s
 sudo pacman -S archlinux-wallpaper tilix
-sudo pacman -S nautilus-open-terminal filemanager-actions budgie-desktop
+sudo pacman -S filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted gnome-video-effects
 sleep 2s
-yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git nautilus-admin
+yaourt -S gnome-backgrounds-bitday-git chrome-gnome-shell-git
 yaourt -S gnome-mpv
 #yaourt -S pop-gtk-theme-git bing-wallpaper-git
 #
