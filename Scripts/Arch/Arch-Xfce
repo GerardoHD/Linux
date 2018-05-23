@@ -33,7 +33,6 @@ yaourt -S redshift-gtk-git mugshot indicator-keylock
 yaourt -S xfce4-windowck-plugin
 yaourt -S nautilus-admin gnome-mpv
 #echo -=KDE Connect=-
-#En Xfce instalar indicator-kdeconnect
 #yaourt -S indicator-kdeconnect kde-cli-tools
 # xfce4-dockbarx-plugin dockbarx-macosx-theme bing-wallpaper-git
 #
@@ -41,11 +40,7 @@ echo       ---=Actualizando Arch Linux=---
 sleep 1s
 #!/bin/bash
 speedtest
-sudo mount -o remount,size=2G,noatime /tmp
-#sudo cups-genppdupdate
-#sudo pacman -Syyu
-yaourt -Syyyua
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+yaourt -Syyyua --noconfirm
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 echo       ---=Limpiando Arch Linux=--
