@@ -33,6 +33,7 @@ speedtest
 yaourt -Syyyua --noconfirm
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
+#
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
