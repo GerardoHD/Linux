@@ -61,6 +61,12 @@ do
     esac
 done
 #
+echo   -=Instalando trizen=-
+git clone https://aur.archlinux.org/trizen.git
+cd trizen
+makepkg -si
+rm -rf trizen
+#
 echo     ---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace gvfs-mtp
