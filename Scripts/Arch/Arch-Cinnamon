@@ -43,6 +43,8 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
+echo       ---=Activando LightDM=---
+sudo systemctl enable lightdm.service
 #Cambiar distribución del teclado en LightDM
 echo >> 20-keyboard.conf
 sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
