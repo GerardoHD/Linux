@@ -34,11 +34,15 @@ yaourt -S nautilus-admin
 #
 #Ajustar Mapa de Teclas para sddm
 sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
+#
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
 #!/bin/bash
 speedtest
-yaourt -Syyyua -noconfirm
+yaourt -Syyyua --noconfirm
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+#
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
@@ -51,21 +55,11 @@ sleep 3s
 #
 echo       ---=Activando Simple Desktop Display Manager "sddm"=---
 sudo systemctl enable sddm.service
-echo       ---=Activando Servicio Cups "cupsd"=---
-sudo systemctl enable org.cups.cupsd.service
-echo       ---=Activando Servicio Network Manager=---
-sudo systemctl enable NetworkManager.service
-echo       ---=Activando Servicio SSHD "sshd"=---
-sudo systemctl enable sshd.service
-sudo systemctl enable sshd.socket
 #
 #Ajustar Mapa de Teclas en sddm
 sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
 #
 sleep 1s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 5s
 clear
 screenfetch
 #
