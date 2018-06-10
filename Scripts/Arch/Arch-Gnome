@@ -49,13 +49,6 @@ sleep 3s
 #
 echo       ---=Activando Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
-echo       ---=Activando Servicio Cups "cupsd"=---
-sudo systemctl enable org.cups.cupsd.service
-echo       ---=Activando Servicio Network Manager=---
-sudo systemctl enable NetworkManager.service
-echo       ---=Activando Servicio SSHD "sshd"=---
-sudo systemctl enable sshd.service
-sudo systemctl enable sshd.socket
 #
 sleep 1s
 echo Ejecuta el Script Elegido
