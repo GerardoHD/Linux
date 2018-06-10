@@ -101,7 +101,7 @@ flatpak install flathub de.haeckerfelix.gradio
 flatpak install flathub com.github.needleandthread.vocal
 flatpak install flathub de.haeckerfelix.Fragments
 echo     ---=Instalando Software desde Arch User Repository=---
-trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab
+trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab macos11-icon-theme
 trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S google-chrome
@@ -121,7 +121,7 @@ sleep 3s
 #trizen -S epson-inkjet-printer-201207w
 #
 #echo -=Drivers Wi-Fi HP 240 G4=-
-#trizen -S broadcom-wl-dkms b43-firmware bcm43142a0-firmware
+#trizen -S broadcom-wl-dkms b43-firmware bcm43142a0-firmware crda
 #trizen -S 
 #echo -=Software Extra=-
 #trizen -S gtk-theme-united-gnome  macos-icon-theme spotify
