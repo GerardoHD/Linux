@@ -24,11 +24,7 @@ echo       ---=Actualizando Arch Linux=---
 sleep 1s
 #!/bin/bash
 speedtest
-sudo mount -o remount,size=2G,noatime /tmp
-#sudo cups-genppdupdate
-#sudo pacman -Syyu
-yaourt -Syyyua
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+yaourt -Syyyua --noconfirm
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 echo       ---=Limpiando Arch Linux=--
@@ -43,13 +39,6 @@ sleep 3s
 #
 echo       ---=Activando LightDM=---
 sudo systemctl enable lightdm.service
-echo       ---=Activando Servicio Cups "cupsd"=---
-sudo systemctl enable org.cups.cupsd.service
-echo       ---=Activando Servicio Network Manager=---
-sudo systemctl enable NetworkManager.service
-echo       ---=Activando Servicio SSHD "sshd"=---
-sudo systemctl enable sshd.service
-sudo systemctl enable sshd.socket
 #
 #Cambiar distribución del teclado en LightDM
 echo >> 20-keyboard.conf
