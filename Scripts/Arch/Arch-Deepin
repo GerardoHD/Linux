@@ -54,10 +54,3 @@ sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
 #Cambiar greeter de LightDM a Deepin
 sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
 #
-sleep 1s
-echo Ejecuta el Script Elegido
-ls /usr/local/bin/
-sleep 5s
-clear
-screenfetch
-#
