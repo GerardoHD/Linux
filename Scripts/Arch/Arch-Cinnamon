@@ -22,9 +22,9 @@ sudo pacman -S gnome-screenshot
 sudo pacman -S nemo-fileroller gparted lightdm-gtk-greeter gnome-mplayer
 sudo pacman -S mate-calc gnome-system-monitor eom pluma evince gnome-disk-utility
 sleep 2s
-yaourt -S cinnamon-sound-effects
-yaourt -S macos-arc-white-theme
-yaourt -S tilix-bin
+trizen -S cinnamon-sound-effects
+trizen -S macos-arc-white-theme
+trizen -S tilix-bin
 #
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
