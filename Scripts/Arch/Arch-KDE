@@ -20,17 +20,17 @@ sleep 1s
 sudo pacman -S plasma
 sudo pacman -S akonadi-calendar-tools akonadi-import-wizard akonadiconsole ark
 sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
-sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kcalc
+sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc
 sudo pacman -S kcharselect kcolorchooser kdenetwork-filesharing kdialog kfind khelpcenter
-sudo pacman -S plasma-wayland-session 
-sudo pacman -S systemd-kcm gvfs-mtp
+sudo pacman -S plasma-wayland-session adapta-kde
+sudo pacman -S gvfs-mtp
 sleep 2s
 sudo pacman -S kde-l10n-es
 sudo pacman -S kio-gdrive kdeconnect
 sudo pacman -S partitionmanager
 sleep 2s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
-yaourt -S nautilus-admin
+yaourt -S nautilus-admin systemd-kcm
 #
 #Ajustar Mapa de Teclas para sddm
 sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
