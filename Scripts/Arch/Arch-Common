@@ -114,6 +114,7 @@ trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S google-chrome
 trizen -S etcher-bin
+trizen -S plymouth plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 sleep 3s
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
