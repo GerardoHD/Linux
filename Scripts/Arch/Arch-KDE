@@ -21,7 +21,7 @@ sudo pacman -S plasma
 sudo pacman -S akonadi-calendar-tools akonadi-import-wizard akonadiconsole ark
 sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
 sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc
-sudo pacman -S kcharselect kcolorchooser kdenetwork-filesharing kdialog kfind khelpcenter
+sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter
 sudo pacman -S plasma-wayland-session adapta-kde
 sudo pacman -S gvfs-mtp
 sleep 2s
