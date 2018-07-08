@@ -24,7 +24,7 @@ sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview ko
 sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
 sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
 sudo pacman -S plasma-wayland-session adapta-kde
-sudo pacman -S gvfs-mtp
+sudo pacman -S gvfs-mtp vlc
 sleep 2s
 sudo pacman -S kde-l10n-es
 sudo pacman -S kio-gdrive kdeconnect
