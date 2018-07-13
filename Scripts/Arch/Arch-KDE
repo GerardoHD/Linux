@@ -19,11 +19,11 @@ echo     ---=Instalando KDE=---
 sleep 1s
 sudo pacman -S plasma
 #sudo pacman -S akonadi-calendar-tools akonadi-import-wizard akonadiconsole 
-sudo pacman -S ark
+sudo pacman -S ark okular
 sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
 sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
 sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
-sudo pacman -S plasma-wayland-session adapta-kde
+sudo pacman -S plasma-wayland-session adapta-kde materia-kde mtpfs unarchiver zip
 sudo pacman -S gvfs-mtp vlc
 sleep 2s
 sudo pacman -S kde-l10n-es
