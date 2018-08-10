@@ -13,6 +13,7 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
+speedtest
 sudo mount -o remount,size=2G,noatime /tmp
 #
 echo       ---=Configurando Pacman=---
@@ -32,6 +33,7 @@ sudo pacman -S xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 sudo pacman -S mesa mesa-demos alsa-utils
 #
+echo     ---=Instalando Drivers Graficos=---
 PS3='Introduce tu elecciòn: '
 options=("Drivers Intel" "Drivers AMD" "Drivers Nvidia" "Drivers libres Nvidia" "Salir")
 select opt in "${options[@]}"
@@ -61,27 +63,43 @@ do
     esac
 done
 #
-echo   -=Instalando trizen=-
+echo   -=Instalando Soporte AUR=-
 git clone https://aur.archlinux.org/trizen.git
-cd trizen
-makepkg -si
-rm -rf trizen
+cd trizen && makepkg -si
+cd ..
+git clone https://aur.archlinux.org/package-query.git
+cd package-query && makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt && makepkg -si
+cd ..
+rm -rf trizen package-query yaourt
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
+trizen -Syyua
+os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion gksu mtools unace gvfs-mtp
-sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj
+sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
+sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
+sudo pacman -S mtools gvfs-mtp mlocate ffmpegthumbnailer mtpfs
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion
+sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
+#Fuentes
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart
+#Temas
 sudo pacman -S gtk-engine-murrine gtk-engines 
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
-sudo pacman -S libunrar unrar cmus opusfile x264 elinks xdg-user-dirs
-sudo pacman -S openssh sshfs youtube-dl android-tools
-sudo pacman -S geary catfish rhythmbox arch-wiki-lite mlocate
-sudo pacman -S ffmpegthumbnailer transmission-gtk calibre
-sudo pacman -S evince gnome-disk-utility gedit menulibre
-#Desacivar las siguientes dos lineas si se va a instalar KDE
+#Programas GTK 
+sudo pacman -S geary catfish rhythmbox
+sudo pacman -S transmission-gtk calibre
+sudo pacman -S evince gnome-disk-utility gedit gedit-plugins menulibre tilix
+#Mantener desactivadas las siguientes dos lineas si se va a instalar KDE
 #sudo pacman -S qt5-styleplugins qt5ct
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 sleep 3s
@@ -114,7 +132,7 @@ trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S google-chrome
 trizen -S etcher-bin
-trizen -S plymouth plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
+trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 sleep 3s
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
@@ -129,10 +147,7 @@ sleep 3s
 #echo -=Soporte Impresora Epson L210=-
 #trizen -S epson-inkjet-printer-201207w
 #
-#echo -=Drivers Wi-Fi HP 240 G4=-
-#trizen -S broadcom-wl-dkms b43-firmware bcm43142a0-firmware crda
-#trizen -S 
-#echo -=Software Extra=-
+#echo -=Freezer=-
 #trizen -S gtk-theme-united-gnome  macos-icon-theme spotify
 #sudo pacman -S avidemux-cli avidemux-qt albert gtk-arc-flatabulous-theme-git
 #
@@ -140,16 +155,25 @@ echo     ---=Descargando Sudocabulary desde Github=---
 #
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
-echo       ---=Actualizando Arch Linux=---
-sleep 1s
-#!/bin/bash
+echo Modificando valor Swappiness
+echo >> 99-sysctl.conf
+sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
+sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
+sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
+#
+echo Cambiando configuraciòn de UDisks2
+sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+#
+echo  -=Actualizando Arch Linux=-
 speedtest
-yaourt -Syyyua --noconfirm
-sudo os-prober
+sudo mount -o remount,size=2G,noatime /tmp
+trizen -Syyua
+os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
+#
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
@@ -169,15 +193,6 @@ sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #echo       ---=Activando Servicio Plex Media Server=---
 #systemctl enable plexmediaserver.service
-#
-#Modificar valor Swappiness
-echo >> 99-sysctl.conf
-sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
-sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
-sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
-#
-echo Cambiando configuraciòn de UDisks2
-sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 #
 sleep 1s
 PS3='Introduce tu elecciòn: '
