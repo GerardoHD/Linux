@@ -13,7 +13,11 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
 sudo mount -o remount,size=2G,noatime /tmp
+trizen -Syyua
 #
 echo     ---=Instalando Gnome=---
 sleep 1s
@@ -21,21 +25,13 @@ sudo pacman -S gnome
 sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
 sudo pacman -S gnome-tweak-tool gnome-weather gedit-plugins gnome-software-packagekit-plugin
 sleep 2s
-sudo pacman -S archlinux-wallpaper tilix
+sudo pacman -S archlinux-wallpaper
 sudo pacman -S filemanager-actions budgie-desktop
 sudo pacman -S gnome-initial-setup eog-plugins gparted gnome-video-effects
 sleep 2s
 trizen -S gnome-backgrounds-bitday-git chrome-gnome-shell-git
 trizen -S gnome-mpv
 #trizen -S pop-gtk-theme-git bing-wallpaper-git
-#
-echo       ---=Actualizando Arch Linux=---
-sleep 1s
-#!/bin/bash
-speedtest
-yaourt -Syyyua --noconfirm
-sudo fc-cache -f -v
-sudo gtk-update-icon-cache
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
