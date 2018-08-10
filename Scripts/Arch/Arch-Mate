@@ -13,27 +13,20 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
 sudo mount -o remount,size=2G,noatime /tmp
+trizen -Syyua
 #
 echo     ---=Instalando Mate=---
 sudo pacman -S mate mate-extra
 sleep 2s
 sudo pacman -S mate-netbook mate-applet-streamer 
-sudo pacman -S lightdm-gtk-greeter gnome-disk-utility evince gnome-mplayer
+sudo pacman -S lightdm-gtk-greeter gnome-mplayer
 sleep 2s
 yaourt -S mate-applet-lockkeys 
 #
-echo       ---=Actualizando Arch Linux=---
-sleep 1s
-#!/bin/bash
-speedtest
-sudo mount -o remount,size=2G,noatime /tmp
-#sudo cups-genppdupdate
-#sudo pacman -Syyu
-yaourt -Syyyua
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo fc-cache -f -v
-sudo gtk-update-icon-cache
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 echo
@@ -54,7 +47,7 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
-#Cambiar distribución del teclado en LightDM
+echo Cambiando distribución del teclado en LightDM
 echo >> 20-keyboard.conf
 sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
 sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
@@ -64,7 +57,7 @@ sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
 sudo sed -i '$ a\EndSection' 20-keyboard.conf
 sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
 #
-#Cambiar greeter de LightDM a GTK-Greeter
+echo Cambiando greeter de LightDM a GTK-Greeter
 sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
 #
 sleep 1s
