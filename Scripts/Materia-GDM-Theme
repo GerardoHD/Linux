@@ -1,0 +1,6 @@
+#Materia GDM Theme
+sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource~
+sudo cp -av /usr/share/gnome-shell/gnome-shell-theme.gresource{,~}
+cd /usr/share/themes/Materia-compact/gnome-shell
+sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+echo Reiniciar GNOME Shell presionando Alt+F2, e introduciendo r
