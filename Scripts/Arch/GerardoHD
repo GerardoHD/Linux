@@ -1,0 +1,167 @@
+#Configurando Arch Linux de GerardoHD
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo Script creado para Arch Linux
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+if [ "$(id -u)" -eq 0 ] ; then
+        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+        echo " Simplemente ejecute este Script desde su usuario. "
+        exit
+fi
+#
+echo Probando conexión a Internet
+ping -c 3 www.archlinux.org
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+#
+echo       ---=Configurando Pacman=---
+sleep 1s
+echo Inicializando Pacman
+sudo pacman-key --populate archlinux
+sudo pacman-key --init
+sudo pacman -Syyu --noconfirm 
+#
+echo     ---=Instalando Bases para Arch Linux=---
+sudo trizen -S  --noconfirm pacman-contrib linux-headers flatpak git
+sudo trizen -S  --noconfirm wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
+echo   -=Pulse Audio=-
+sudo trizen -S  --noconfirm pulseaudio-alsa libcanberra-pulse
+echo   -=X Window System=-
+sudo trizen -S  --noconfirm xorg-server xorg-xinit xterm xorg-twm xorg-xclock xterm xorg-apps
+sudo trizen -S  --noconfirm libinput xf86-input-libinput xorg-xinput
+sudo trizen -S  --noconfirm mesa mesa-demos alsa-utils
+#
+echo     ---=Instalando Drivers Gráficos=---
+sudo trizen -S  --noconfirm intel-ucode xf86-video-intel
+#
+echo   -=Instalando Soporte AUR=-
+git clone https://aur.archlinux.org/trizen.git
+cd trizen && makepkg -si
+cd ..
+git clone https://aur.archlinux.org/package-query.git
+cd package-query && makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt && makepkg -si
+cd ..
+rm -rf trizen package-query yaourt
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
+trizen -Syyua
+os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+#
+echo     ---=Instalando Software desde Repositorios Oficiales=---
+sudo trizen -S --noconfirm btrfs-progs dosfstools exfat-utils f2fs-tools gpart
+sudo trizen -S --noconfirm jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
+sudo trizen -S --noconfirm gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
+sudo trizen -S --noconfirm libunrar unrar unarchiver zip cmus opusfile x264 elinks 
+sudo trizen -S --noconfirm mtools gvfs-mtp mlocate ffmpegthumbnailer mtpfs
+sudo trizen -S --noconfirm speedtest-cli cmatrix inxi bash-completion
+sudo trizen -S --noconfirm openssh sshfs youtube-dl android-tools xdg-user-dirs
+#Fuentes
+sudo trizen -S --noconfirm noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
+sudo trizen -S --noconfirm ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
+#Temas
+sudo trizen -S --noconfirm gtk-engine-murrine gtk-engines 
+sudo trizen -S --noconfirm adapta-gtk-theme materia-gtk-theme papirus-icon-theme
+#Programas GTK 
+sudo trizen -S --noconfirm geary catfish rhythmbox
+sudo trizen -S --noconfirm transmission-gtk calibre
+sudo trizen -S --noconfirm evince gnome-disk-utility gedit gedit-plugins menulibre tilix
+sudo trizen -S --noconfirm qt5-styleplugins qt5ct
+sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
+sleep 3s
+echo -=Soporte de impresion=-
+sudo trizen -S --noconfirm gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
+sudo trizen -S --noconfirm system-config-printer cups-pk-helper gtk3-print-backends
+#
+echo     ---=Instalando Flatpak Sotware=---
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gtk.Gtk3theme.Materia -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub de.haeckerfelix.gradio -y
+flatpak install flathub com.github.needleandthread.vocal -y
+flatpak install flathub de.haeckerfelix.Fragments -y
+#
+echo     ---=Instalando Software desde Arch User Repository=---
+trizen -S --noconfirm pamac-aur pacli otf-san-francisco ttf-roboto-slab macos11-icon-theme
+trizen -S --noconfirm rhythmbox-plugin-alternative-toolbar-git nautilus-admin
+trizen -S --noconfirm capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
+trizen -S --noconfirm google-chrome
+trizen -S --noconfirm etcher-bin
+trizen -S --noconfirm plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
+sleep 3s
+echo -=Soporte Impresora Epson L210=-
+trizen -S --noconfirm epson-inkjet-printer-201207w
+#
+echo     ---=Descargando Sudocabulary desde Github=---
+#
+curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
+#
+echo Modificando valor Swappiness
+echo >> 99-sysctl.conf
+sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
+sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
+sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
+#
+echo Cambiando configuraciòn de UDisks2
+sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
+sudo mount -o remount,size=2G,noatime /tmp
+trizen -Syyua
+os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+xdg-user-dirs-update
+#
+echo       ---=Limpiando Arch Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+#
+echo       ---=Activando Servicio Cups "cupsd"=---
+sudo systemctl enable org.cups.cupsd.service
+echo       ---=Activando Servicio Network Manager=---
+sudo systemctl enable NetworkManager.service
+echo       ---=Activando Servicio SSHD "sshd"=---
+sudo systemctl enable sshd.service
+sudo systemctl enable sshd.socket
+#
+echo     ---=Instalando Gnome=---
+sleep 1s
+sudo trizen -S --noconfirm gnome
+sudo trizen -S --noconfirm dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
+sudo trizen -S --noconfirm gnome-tweak-tool gnome-weather gedit-plugins gnome-software-packagekit-plugin
+sleep 2s
+sudo trizen -S --noconfirm archlinux-wallpaper
+sudo trizen -S --noconfirm filemanager-actions budgie-desktop
+sudo trizen -S --noconfirm gnome-initial-setup eog-plugins gparted gnome-video-effects
+sleep 2s
+trizen -S --noconfirm gnome-backgrounds-bitday-git chrome-gnome-shell-git
+trizen -S --noconfirm gnome-mpv
+#
+echo       ---=Limpiando Arch Linux=--
+sleep 1s
+echo
+#!/bin/bash
+sudo pacman-optimize
+sudo pacman -Sc
+sudo yaourt -Sc
+df -h
+sleep 3s
+#
+echo       ---=Activando Gnome Display Manager "gdm"=---
+sudo systemctl enable gdm.service
+#
