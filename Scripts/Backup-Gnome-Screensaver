@@ -1,2 +1,0 @@
-#Backup-Gnome-Screensaver
-sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource~
