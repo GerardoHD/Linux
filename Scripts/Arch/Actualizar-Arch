@@ -10,11 +10,10 @@ if [ "$(id -u)" -eq 0 ] ; then
 fi
 #
 #!/bin/bash
+echo  -=Actualizando Arch Linux=-
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
-#sudo pacman -Syyu
-yaourt -Syyyua
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
-#sudo fc-cache -f -v
-sudo gtk-update-icon-cache
+trizen -Syyua
+os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 screenfetch
