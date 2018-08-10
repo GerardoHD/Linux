@@ -13,7 +13,11 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
+#
+echo  -=Actualizando Arch Linux=-
+speedtest
 sudo mount -o remount,size=2G,noatime /tmp
+trizen -Syyua
 #
 echo     ---=Instalando KDE=---
 sleep 1s
@@ -23,8 +27,7 @@ sudo pacman -S ark okular
 sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
 sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
 sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
-sudo pacman -S plasma-wayland-session adapta-kde materia-kde mtpfs unarchiver zip
-sudo pacman -S gvfs-mtp vlc
+sudo pacman -S plasma-wayland-session adapta-kde materia-kde
 sleep 2s
 sudo pacman -S kde-l10n-es
 sudo pacman -S kio-gdrive kdeconnect
@@ -33,16 +36,8 @@ sleep 2s
 yaourt -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
 yaourt -S nautilus-admin systemd-kcm
 #
-#Ajustar Mapa de Teclas para sddm
+echo Ajustando Mapa de Teclas para sddm
 sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
-#
-echo       ---=Actualizando Arch Linux=---
-sleep 1s
-#!/bin/bash
-speedtest
-yaourt -Syyyua --noconfirm
-sudo fc-cache -f -v
-sudo gtk-update-icon-cache
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
@@ -56,9 +51,6 @@ sleep 3s
 #
 echo       ---=Activando Simple Desktop Display Manager "sddm"=---
 sudo systemctl enable sddm.service
-#
-#Ajustar Mapa de Teclas en sddm
-sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
 #
 sleep 1s
 clear
