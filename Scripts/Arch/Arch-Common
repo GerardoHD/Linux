@@ -127,9 +127,9 @@ flatpak install flathub com.github.needleandthread.vocal -y
 flatpak install flathub de.haeckerfelix.Fragments -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab macos11-icon-theme
+trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab ttf-bookerly
 trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin
-trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
+trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme macos11-icon-theme
 trizen -S google-chrome
 trizen -S etcher-bin
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
