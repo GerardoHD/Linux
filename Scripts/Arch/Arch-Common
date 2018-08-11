@@ -87,7 +87,7 @@ sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
 sudo pacman -S mtools gvfs-mtp mlocate ffmpegthumbnailer mtpfs
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion
+sudo pacman -S speedtest-cli cmatrix inxi bash-completion vim vim-runtime
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
 #Fuentes
 sudo pacman -S noto-fonts ttf-hack libotf ttf-roboto ttf-liberation
