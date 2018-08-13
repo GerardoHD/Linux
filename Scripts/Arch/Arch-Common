@@ -95,10 +95,10 @@ sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines 
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
-#Programas GTK 
-sudo pacman -S geary catfish rhythmbox
-sudo pacman -S transmission-gtk calibre
-sudo pacman -S evince gnome-disk-utility gedit gedit-plugins menulibre tilix
+#Programas 
+sudo pacman -S evince gnome-disk-utiltiy gedit-plugins transmission-gtk
+sudo pacman -S menulibre geary tilix corebird
+sudo pacman -S calibre rhythmbox
 #Mantener desactivadas las siguientes dos lineas si se va a instalar KDE
 #sudo pacman -S qt5-styleplugins qt5ct
 #sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
@@ -146,6 +146,9 @@ sleep 3s
 #trizen -S plex-media-player
 #echo -=Soporte Impresora Epson L210=-
 #trizen -S epson-inkjet-printer-201207w
+#echo -=WPS-Office=-
+#trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
+#trizen -S wps-office-mui-es-mx ttf-wps-fonts
 #
 #echo -=Freezer=-
 #trizen -S gtk-theme-united-gnome  macos-icon-theme spotify
