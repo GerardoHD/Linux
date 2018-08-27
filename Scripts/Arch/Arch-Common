@@ -97,7 +97,7 @@ sudo pacman -S gtk-engine-murrine gtk-engines
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
 #Programas 
 sudo pacman -S evince gnome-disk-utiltiy gedit-plugins transmission-gtk
-sudo pacman -S menulibre geary tilix corebird
+sudo pacman -S menulibre geary tilix
 sudo pacman -S calibre rhythmbox
 #Mantener desactivadas las siguientes dos lineas si se va a instalar KDE
 #sudo pacman -S qt5-styleplugins qt5ct
