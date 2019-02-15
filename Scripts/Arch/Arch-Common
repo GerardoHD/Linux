@@ -24,7 +24,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo     ---=Instalando Bases para Arch Linux=---
-sudo pacman -S pacman-contrib linux-headers flatpak git
+sudo pacman -S pacman-contrib linux-headers dkms flatpak git
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
@@ -120,7 +120,7 @@ sleep 3s
 #
 echo     ---=Instalando Flatpak Sotware=---
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Materia -y
+flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 flatpak install flathub com.spotify.Client -y
 flatpak install flathub de.haeckerfelix.gradio -y
 flatpak install flathub com.github.needleandthread.vocal -y
