@@ -84,7 +84,7 @@ os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart npm npm-check-updates
+sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools gpart npm npm-check-updates nodejs
 sudo pacman -S jfsutils mtools nilfs-utils ntfs-3g polkit reiserfsprogs xfsprogs
 sudo pacman -S gvfs p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
