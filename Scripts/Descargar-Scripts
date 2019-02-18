@@ -98,7 +98,7 @@ sudo chmod +x Tweaks
 cd /
 sleep 1s
 echo Ejecuta el Script Elegido
-echo Recomiendo editar alguno de los scripts ubicados en:
+echo Recomiendo revisar alguno de los scripts ubicados en:
 echo /usr/local/bin/
 ls /usr/local/bin/
 sleep 5s
