@@ -34,7 +34,7 @@ sudo pacman -S xorg-server xorg-xinit
 sudo pacman -S libinput xf86-input-libinput xorg-xinput
 sudo pacman -S mesa alsa-utils
 #
-echo     ---=Instalando Drivers Graficos=---
+echo	---=Instalando Drivers Graficos=---
 PS3='Introduce tu elecciòn: '
 options=("Drivers Intel" "Drivers AMD" "Drivers Nvidia" "Drivers libres Nvidia" "Salir")
 select opt in "${options[@]}"
@@ -123,7 +123,7 @@ echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
-echo     ---=Instalando Flatpak Sotware=---
+echo     ---=Instalando Software desde Flathub=---
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 flatpak install flathub de.haeckerfelix.gradio -y
@@ -143,29 +143,23 @@ sleep 2s
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
 #trizen -S filebot java-openjfx
-#
 #echo -=Steam=-
 #trizen -S steam-fonts
-#
 #echo -=PLEX=-
 #trizen -S plex-media-server
 #trizen -S plex-media-server-plexpass
 #trizen -S plex-media-player
-#
 #echo -=Soporte Impresora Epson L210=-
 #trizen -S epson-inkjet-printer-201207w
-#
 #echo -=WPS-Office=-
 #trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
 #trizen -S wps-office-mui-es-mx ttf-wps-fonts
-#
-#-=Freezer=-
+#Freezer
 #sudo pacman -S avidemux-qt
 #trizen -S gtk-theme-united-gnome  macos-icon-theme spotify
 #trizen -S albert gtk-arc-flatabulous-theme-git
 #
 echo     ---=Descargando Sudocabulary desde Github=---
-#
 curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo Modificando valor Swappiness
@@ -198,6 +192,7 @@ sudo systemctl enable sshd.socket
 #systemctl enable plexmediaserver.service
 #
 sleep 1s
+echo     ---=Instalando Entorno de Escritorio=---
 PS3='Introduce tu elecciòn: '
 options=("Arch-Cinnamon" "Arch-Deepin" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Arch-Xfce" "Salir")
 select opt in "${options[@]}"
@@ -397,8 +392,6 @@ done
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
-echo
-#!/bin/bash
 sudo pacman -Sc
 trizen -Sc
 screenfetch
