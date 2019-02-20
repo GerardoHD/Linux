@@ -12,8 +12,9 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
-speedtest
+#speedtest
 sudo mount -o remount,size=2G,noatime /tmp
+sudo sytemctl set-ntp true
 #
 echo       ---=Configurando Pacman=---
 sleep 1s
@@ -25,7 +26,7 @@ sudo pacman -Syyu --noconfirm
 echo     ---=Instalando Bases para Arch Linux=---
 sudo pacman -S pacman-contrib linux-headers dkms flatpak git
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
-sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp 
+sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim 
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
@@ -90,7 +91,7 @@ sudo pacman -S gparted npm npm-check-updates nodejs polkit
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
 sudo pacman -S mtools mlocate ffmpegthumbnailer 
-sudo pacman -S speedtest-cli cmatrix inxi bash-completion vim 
+sudo pacman -S speedtest-cli cmatrix bash-completion vim 
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
@@ -295,7 +296,7 @@ do
            sudo pacman -S kio-gdrive kdeconnect
            sudo pacman -S partitionmanager
            sleep 2s
-           trizen -S plasma-browser-integration-git pamac-tray-appindicator archlinux-themes-sddm
+           trizen -S plasma-browser-integration pamac-tray-appindicator archlinux-themes-sddm
            trizen -S systemd-kcm
            # 
            echo Ajustando Mapa de Teclas para sddm
