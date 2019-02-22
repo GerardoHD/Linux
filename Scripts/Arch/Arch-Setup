@@ -103,7 +103,7 @@ sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins transmission-gtk
-sudo pacman -S menulibre geary tilix
+sudo pacman -S menulibre geary tilix vocal fragments
 sudo pacman -S calibre rhythmbox
 #Activar las siguientes dos lineas SOLO si se instalará un escritorio basado en GTK
 #sudo pacman -S qt5-styleplugins qt5ct 
@@ -127,9 +127,9 @@ sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 echo     ---=Instalando Software desde Flathub=---
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
-flatpak install flathub de.haeckerfelix.gradio -y
-flatpak install flathub com.github.needleandthread.vocal -y
-flatpak install flathub de.haeckerfelix.Fragments -y
+#flatpak install flathub de.haeckerfelix.gradio -y
+#flatpak install flathub com.github.needleandthread.vocal -y
+#flatpak install flathub de.haeckerfelix.Fragments -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
@@ -291,6 +291,7 @@ do
            sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
            sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
            sudo pacman -S plasma-wayland-session adapta-kde materia-kde
+	   sudo pacman -S redshift plasma5-applets-redshift-control
            sleep 2s
            sudo pacman -S kde-l10n-es
            sudo pacman -S kio-gdrive kdeconnect
