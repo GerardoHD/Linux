@@ -14,7 +14,7 @@ echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
 #speedtest
 sudo mount -o remount,size=2G,noatime /tmp
-sudo sytemctl set-ntp true
+sudo timedatectl set-ntp true
 #
 echo       ---=Configurando Pacman=---
 sleep 1s
@@ -83,7 +83,7 @@ rm -rf trizen package-query yaourt
 echo  -=Actualizando Arch Linux=-
 speedtest
 trizen -Syyua
-os-prober
+sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
@@ -364,8 +364,8 @@ do
            trizen -S xfce4-windowck-plugin
            trizen -S gnome-mpv
            #
-           #echo -=KDE Connect=-
-           #yaourt -S indicator-kdeconnect kde-cli-tools
+           echo -=KDE Connect=-
+           yaourt -S indicator-kdeconnect kde-cli-tools
            #
            echo Cambiando distribución del teclado en LightDM
            echo >> 20-keyboard.conf
