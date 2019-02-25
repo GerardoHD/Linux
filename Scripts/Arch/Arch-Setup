@@ -12,7 +12,6 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
-#speedtest
 sudo mount -o remount,size=2G,noatime /tmp
 sudo timedatectl set-ntp true
 #
@@ -24,7 +23,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo     ---=Instalando Bases para Arch Linux=---
-sudo pacman -S pacman-contrib linux-headers dkms flatpak git
+sudo pacman -S pacman-contrib linux-headers dkms flatpak
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim 
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
@@ -81,8 +80,8 @@ cd ..
 rm -rf trizen package-query yaourt
 #
 echo  -=Actualizando Arch Linux=-
-speedtest
-trizen -Syyua
+#speedtest
+trizen -Syyu
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
@@ -91,7 +90,7 @@ sudo pacman -S gparted npm npm-check-updates nodejs polkit
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
 sudo pacman -S mtools mlocate ffmpegthumbnailer 
-sudo pacman -S speedtest-cli cmatrix bash-completion vim 
+sudo pacman -S speedtest-cli cmatrix bash-completion vim gpart
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
@@ -100,7 +99,8 @@ sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines 
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
-sudo pacman -S kvantum-qt5 kvantum-theme-materia
+sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
+sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins transmission-gtk
 sudo pacman -S menulibre geary tilix vocal fragments
@@ -140,6 +140,7 @@ trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
 trizen -S google-chrome
 trizen -S etcher-bin
 sleep 2s
+#trizen -S aic94xx-firmware wd719
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
@@ -150,6 +151,8 @@ sleep 2s
 #trizen -S plex-media-server
 #trizen -S plex-media-server-plexpass
 #trizen -S plex-media-player
+#echo Activando Servicio Plex Media Server
+#systemctl enable plexmediaserver.service
 #echo -=Soporte Impresora Epson L210=-
 #trizen -S epson-inkjet-printer-201207w
 #echo -=WPS-Office=-
@@ -173,10 +176,10 @@ echo Cambiando configuraciòn de UDisks2
 sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 #
 echo Activando libinput-gestures
-libinput-gestures-setup autostart
+libinput-gestures-setup autostart 
 #
 echo  -=Actualizando Arch Linux=-
-trizen -Syyua
+trizen -Syyu
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
@@ -188,9 +191,6 @@ sudo systemctl enable NetworkManager.service
 echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
-#
-#echo       ---=Activando Servicio Plex Media Server=---
-#systemctl enable plexmediaserver.service
 #
 sleep 1s
 echo     ---=Instalando Entorno de Escritorio=---
@@ -262,18 +262,17 @@ do
            sleep 1s
            sudo pacman -S gnome
            sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
-           sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin
+           sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S archlinux-wallpaper
-           sudo pacman -S filemanager-actions
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
+	   sudo pacman -S budgie-desktop budgie-extras gnome-mpv
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
            trizen -S gnome-backgrounds-bitday-git chrome-gnome-shell-git
-           trizen -S gnome-mpv
            #
            echo       ---=Activando Gnome Display Manager "gdm"=---
            sudo systemctl enable gdm.service
@@ -293,11 +292,10 @@ do
            sudo pacman -S plasma-wayland-session adapta-kde materia-kde
 	   sudo pacman -S redshift plasma5-applets-redshift-control
            sleep 2s
-           sudo pacman -S kde-l10n-es
            sudo pacman -S kio-gdrive kdeconnect
-           sudo pacman -S partitionmanager
+           sudo pacman -S partitionmanager plasma-browser-integration
            sleep 2s
-           trizen -S plasma-browser-integration pamac-tray-appindicator archlinux-themes-sddm
+           trizen -S pamac-tray-appindicator archlinux-themes-sddm
            trizen -S systemd-kcm
            # 
            echo Ajustando Mapa de Teclas para sddm
@@ -350,22 +348,21 @@ do
            sudo pacman -S xfce4-notifyd xfce4-pulseaudio-plugin xfce4-taskmanager
            sudo pacman -S xfce4-verve-plugin xfce4-weather-plugin ristretto xfce4-whiskermenu-plugin
            sleep 2s
-           sudo pacman -S network-manager-applet galculator gnome-font-viewer
+           sudo pacman -S network-manager-applet galculator gnome-font-viewer gnome-mpv
            sudo pacman -S file-roller baobab cheese gnome-video-effects gnome-screenshot
-           sudo pacman -S pavucontrol zenity light-locker
+           sudo pacman -S pavucontrol zenity light-locker gnome-backgrounds redshift
            sudo pacman -S light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-screensaver 
-           sudo pacman -S filemanager-actions
            sleep 2s
 	   echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           trizen -S redshift-gtk-git mugshot indicator-keylock archlinux-themes-balou
+           trizen -S redshift-gtk-git 
+	   trizen -S mugshot indicator-keylock archlinux-themes-balou
            trizen -S xfce4-windowck-plugin
-           trizen -S gnome-mpv
            #
            echo -=KDE Connect=-
-           yaourt -S indicator-kdeconnect kde-cli-tools
+           trizen -S indicator-kdeconnect kde-cli-tools
            #
            echo Cambiando distribución del teclado en LightDM
            echo >> 20-keyboard.conf
@@ -392,10 +389,32 @@ do
     esac
 done
 #
+echo  -=Actualizando Arch Linux=-
+trizen -Syyu
+sudo fc-cache -f -v
+sudo gtk-update-icon-cache
+xdg-user-dirs-update
+#
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 sudo pacman -Sc
 trizen -Sc
+clear
 screenfetch
 df -h
 #
+#echo -=Experimental=-
+#echo Configurando GRUB
+#sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+#sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
+#sudo sed -i 's/GRUB_THEME="AÑADIR-RUTA-PREDETERMINADA/GRUB_THEME="/boot/grub/themes/arch-silence/theme.txt"/g' /etc/default/grub
+#sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
+#
+#echo Configurar Plymouth
+#sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
+#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
+#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
+#sudo plymouth-set-default-theme -R arch-beat
+#mkinitcpio -p linux
+#sudo grub-mkconfig -o /boot/grub/grub.cfg

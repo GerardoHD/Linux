@@ -24,6 +24,7 @@ sleep 1s
 sudo pacman -S gnome
 sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
 sudo pacman -S gnome-tweak-tool gnome-weather gedit-plugins gnome-software-packagekit-plugin
+
 sleep 2s
 sudo pacman -S archlinux-wallpaper
 sudo pacman -S filemanager-actions budgie-desktop
@@ -43,7 +44,7 @@ sudo yaourt -Sc
 df -h
 sleep 3s
 #
-echo       ---=Activando Gnome Display Manager "gdm"=---
+0echo       ---=Activando Gnome Display Manager "gdm"=---
 sudo systemctl enable gdm.service
 #
 sleep 1s
