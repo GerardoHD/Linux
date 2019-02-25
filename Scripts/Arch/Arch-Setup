@@ -397,6 +397,7 @@ xdg-user-dirs-update
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
+sudo pacman-optimize
 sudo pacman -Sc
 trizen -Sc
 clear

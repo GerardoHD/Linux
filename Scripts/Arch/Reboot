@@ -6,6 +6,6 @@ if [ "$(id -u)" -eq 0 ] ; then
         exit
 fi
 #
-trizen -Syyua
+trizen -Syyu --noconfirm
 df -h
 sudo reboot

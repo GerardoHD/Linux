@@ -2,10 +2,9 @@
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
-echo
-#!/bin/bash
 sudo pacman-optimize
 sudo pacman -Sc
-sudo yaourt -Sc
+trizen -Sc
+clear
+screenfetch
 df -h
-sleep 3s

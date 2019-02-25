@@ -8,70 +8,10 @@ echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 #
 #Automatizar instalaciòn de paquetes en mis scripts:
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Cinnamon
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Common
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Deepin
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-KDE
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Mate
-#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Xfce
-#
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Cinnamon
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Common
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Deepin
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-KDE
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Mate
-#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Xfce
+#sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Setup
+#sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Setup
 #
 #Automatizar desinstalaciòn de paquetes en mis scripts:
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Cinnamon
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Common
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Deepin
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-KDE
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Mate
-#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Xfce
+#sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Setup
+#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Setup
 #
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Cinnamon
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Common
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Deepin
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Gnome
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-KDE
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Mate
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Xfce
-#
-#echo Cambiando configuraciòn de UDisks2
-#sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
-#
-#echo Ajustando Mapa de Teclas en sddm
-#sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
-#
-#echo Modificando valor Swappiness -Usado en Arch-Common-
-#echo >> 99-sysctl.conf
-#sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
-#sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
-#sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
-#
-#echo Cambiando distribución del teclado en LightDM -Usado en Arch-Deepin, Arch-Cinnamon y Arch-Mate-
-#echo >> 20-keyboard.conf
-#sudo sed -i '$ a\Section "InputClass"' 20-keyboard.conf
-#sudo sed -i '$ a\    Identifier "keyboard"' 20-keyboard.conf
-#sudo sed -i '$ a\    MatchIsKeyboard "yes"' 20-keyboard.conf
-#sudo sed -i '$ a\    Option "XkbLayout" "es"' 20-keyboard.conf
-#sudo sed -i '$ a\    Option "XkbVariant" "nodeadkeys"' 20-keyboard.conf
-#sudo sed -i '$ a\EndSection' 20-keyboard.conf
-#sudo mv  20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf
-#
-#echo Cambiando greeter de LightDM a Deepin -Usado en Arch-Deepin-
-#sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
-#
-#echo Cambiando greeter de LightDM a GTK-Greeter -Usado en Arch-Cinnamon y Arch-Mate-
-#sudo sed -i 's/#greeter-session=lightdm-yourgreeter-greeter/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
-#
-#
-#echo Cambiando greeter de LightDM a Webkit2-Greeter -Usado en Arch-Xfce-
-#sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
-#
-#echo Cambiando Tema de Webkit2-Greeter -Usado en Arch-Xfce-
-#sudo sed -i 's/webkit_theme        = antergos/webkit_theme        = material2/g' /etc/lightdm/lightdm-webkit2-greeter.conf

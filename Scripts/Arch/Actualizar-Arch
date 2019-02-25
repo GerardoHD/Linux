@@ -14,6 +14,6 @@ echo  -=Actualizando Arch Linux=-
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
 trizen -Syyu --noconfirm
-os-prober
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+#sudo os-prober
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
 screenfetch
