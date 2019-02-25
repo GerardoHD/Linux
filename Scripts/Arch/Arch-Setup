@@ -360,7 +360,7 @@ do
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           trizen -S redshift-gtk-git mugshot indicator-keylock
+           trizen -S redshift-gtk-git mugshot indicator-keylock archlinux-themes-balou
            trizen -S xfce4-windowck-plugin
            trizen -S gnome-mpv
            #
