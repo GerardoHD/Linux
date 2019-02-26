@@ -25,7 +25,7 @@ sudo pacman -Syyu --noconfirm
 echo     ---=Instalando Bases para Arch Linux=---
 sudo pacman -S pacman-contrib linux-headers dkms flatpak
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
-sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim 
+sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim lsb-release
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse
