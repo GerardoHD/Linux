@@ -89,6 +89,7 @@ sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks
 sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap
 sudo pacman -S speedtest-cli cmatrix bash-completion vim gpart
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
+sudo pacman -S easytag python-pylast python-wikipedia
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-emoji
 sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
@@ -101,7 +102,7 @@ sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins
 sudo pacman -S menulibre geary tilix vocal fragments lollypop
-sudo pacman -S calibre rhythmbox
+sudo pacman -S calibre
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
@@ -129,7 +130,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin libinput-gestures
+trizen -S nautilus-admin libinput-gestures
 trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab ttf-bookerly
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
@@ -157,7 +158,7 @@ sleep 2s
 #trizen -S wps-office-mui-es-mx ttf-wps-fonts
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-cjk noto-fonts-extra npm npm-check-updates nodejs
-#trizen -S gtk-theme-united-gnome macos-icon-theme spotify
+#trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
 #echo     ---=Descargando Sudocabulary desde Github=---
