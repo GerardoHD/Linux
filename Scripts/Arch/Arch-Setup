@@ -101,7 +101,7 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins
-sudo pacman -S menulibre geary tilix vocal fragments lollypop
+sudo pacman -S menulibre geary tilix vocal fragments lollypop feedreader corebird feedreader
 sudo pacman -S calibre
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
@@ -131,7 +131,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 trizen -S nautilus-admin libinput-gestures
-trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab ttf-bookerly
+trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab otf-bitter
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 trizen -S google-chrome
@@ -182,7 +182,7 @@ sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 sudo sed -i 's/#GRUB_THEME="/path/to/gfxtheme"/GRUB_THEME="/boot/grub/themes/arch-silence/theme.txt"/g' /etc/default/grub
 sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
 #
-echo Configurar Plymouth
+echo Configurando Plymouth
 sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
 sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
 sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
@@ -273,7 +273,8 @@ do
            echo     ---=Instalando Gnome=---
            sleep 1s
            sudo pacman -S gnome
-           sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
+           sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder
+	   sudo pacman -S gedit-code-assistance gnome-podcasts 
            sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
@@ -405,6 +406,12 @@ trizen -Syyu
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
+#
+#echo Configurando SystemD para ignorar la tapa del portatil
+#sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+#sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
+#echo Configurando el botón de Apagado para Gnome
+#gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
