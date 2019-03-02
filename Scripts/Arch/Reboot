@@ -7,5 +7,5 @@ if [ "$(id -u)" -eq 0 ] ; then
 fi
 #
 trizen -Syyu --noconfirm
-df -h
 sudo reboot
+#

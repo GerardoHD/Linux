@@ -28,11 +28,10 @@ sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfspr
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim lsb-release
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
 echo   -=Pulse Audio=-
-sudo pacman -S pulseaudio-alsa libcanberra-pulse
+sudo pacman -S pulseaudio-alsa libcanberra-pulse alsa-utils
 echo   -=X Window System=-
-sudo pacman -S xorg-server xorg-xinit
-sudo pacman -S libinput xf86-input-libinput xorg-xinput
-sudo pacman -S mesa alsa-utils
+sudo pacman -S xorg-server xorg-xdriinfo xorg-xdpyinfo xorg-xprop xorg-xinit
+sudo pacman -S mesa mesa-demos 
 #
 echo	---=Instalando Drivers Graficos=---
 PS3='Introduce tu elecciòn: '
@@ -42,7 +41,7 @@ do
     case $opt in
         "Drivers Intel")
            echo "Escogiste Instalar Drivers Intel"
-           sudo pacman -S intel-ucode xf86-video-intel
+           sudo pacman -S intel-ucode xf86-video-intel libva-intel-driver
            break
            ;;
         "Drivers AMD")
@@ -80,35 +79,35 @@ cd ..
 rm -rf trizen package-query yaourt
 #
 echo  -=Actualizando Arch Linux=-
-#speedtest
 trizen -Syyu
 sudo os-prober
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 echo     ---=Instalando Software desde Repositorios Oficiales=---
-sudo pacman -S gparted npm npm-check-updates nodejs polkit
+sudo pacman -S gparted polkit
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
-sudo pacman -S mtools mlocate ffmpegthumbnailer 
+sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap
 sudo pacman -S speedtest-cli cmatrix bash-completion vim gpart
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
 #Fuentes
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+sudo pacman -S noto-fonts noto-fonts-emoji
 sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
 #Temas
-sudo pacman -S gtk-engine-murrine gtk-engines 
+sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 sudo pacman -S filemanager-actions
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins transmission-gtk
-sudo pacman -S menulibre geary tilix vocal fragments
+sudo pacman -S evince gnome-disk-utility gedit-plugins
+sudo pacman -S menulibre geary tilix vocal fragments lollypop
 sudo pacman -S calibre rhythmbox
-#Activar las siguientes dos lineas SOLO si se instalará un escritorio basado en GTK
-#sudo pacman -S qt5-styleplugins qt5ct 
-#sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
+echo -=Soporte de impresion=-
+sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
+sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 sleep 2s
+#echo Firefox
+#sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 #echo -=VLC=-
 #sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
 #echo -=Steam=-
@@ -120,11 +119,8 @@ sleep 2s
 #sudo pacman -S mediaelch
 #echo -=LibreOffice=-
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
-echo -=Soporte de impresion=-
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
-sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
-echo     ---=Instalando Software desde Flathub=---
+echo  -=Instalando Software desde Flathub=---
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #flatpak install flathub de.haeckerfelix.gradio -y
@@ -135,12 +131,13 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 echo     ---=Instalando Software desde Arch User Repository=---
 trizen -S rhythmbox-plugin-alternative-toolbar-git nautilus-admin libinput-gestures
 trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab ttf-bookerly
-trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme macos11-icon-theme
+trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 trizen -S google-chrome
 trizen -S etcher-bin
 sleep 2s
-#trizen -S aic94xx-firmware wd719
+#echo Firmware Especifico
+#trizen -S aic94xx-firmware wd719x-firmware
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
@@ -159,12 +156,12 @@ sleep 2s
 #trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
 #trizen -S wps-office-mui-es-mx ttf-wps-fonts
 #Freezer
-#sudo pacman -S avidemux-qt
-#trizen -S gtk-theme-united-gnome  macos-icon-theme spotify
-#trizen -S albert gtk-arc-flatabulous-theme-git
+#sudo pacman -S avidemux-qt noto-fonts-cjk noto-fonts-extra npm npm-check-updates nodejs
+#trizen -S gtk-theme-united-gnome macos-icon-theme spotify
+#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
-echo     ---=Descargando Sudocabulary desde Github=---
-curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
+#echo     ---=Descargando Sudocabulary desde Github=---
+#curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo Modificando valor Swappiness
 echo >> 99-sysctl.conf
@@ -177,6 +174,20 @@ sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedeskto
 #
 echo Activando libinput-gestures
 libinput-gestures-setup autostart 
+#
+echo Configurando GRUB
+sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
+sudo sed -i 's/#GRUB_THEME="/path/to/gfxtheme"/GRUB_THEME="/boot/grub/themes/arch-silence/theme.txt"/g' /etc/default/grub
+sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+#
+echo Configurar Plymouth
+sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
+sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
+sudo plymouth-set-default-theme -R arch-charge-big
+sudo mkinitcpio -p linux
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 echo  -=Actualizando Arch Linux=-
 trizen -Syyu
@@ -264,7 +275,6 @@ do
            sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder 
            sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
-           sudo pacman -S archlinux-wallpaper
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
 	   sudo pacman -S budgie-desktop budgie-extras gnome-mpv
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
@@ -272,10 +282,10 @@ do
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           trizen -S gnome-backgrounds-bitday-git chrome-gnome-shell-git
+           trizen -S gnome-backgrounds-bitday-git
            #
            echo       ---=Activando Gnome Display Manager "gdm"=---
-           sudo systemctl enable gdm.service
+           #sudo systemctl enable gdm.service
            #
            break
            ;;
@@ -397,25 +407,11 @@ xdg-user-dirs-update
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
-sudo pacman-optimize
 sudo pacman -Sc
 trizen -Sc
 clear
 screenfetch
 df -h
+date
+echo .-=[El nuevo Sistema basado en Arch Linux está listo]=-.
 #
-#echo -=Experimental=-
-#echo Configurando GRUB
-#sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-#sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
-#sudo sed -i 's/GRUB_THEME="AÑADIR-RUTA-PREDETERMINADA/GRUB_THEME="/boot/grub/themes/arch-silence/theme.txt"/g' /etc/default/grub
-#sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
-#
-#echo Configurar Plymouth
-#sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
-#sudo plymouth-set-default-theme -R arch-beat
-#mkinitcpio -p linux
-#sudo grub-mkconfig -o /boot/grub/grub.cfg

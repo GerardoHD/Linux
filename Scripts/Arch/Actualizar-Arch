@@ -17,3 +17,6 @@ trizen -Syyu --noconfirm
 #sudo os-prober
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 screenfetch
+df -h
+date
+#

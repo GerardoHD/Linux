@@ -7,15 +7,11 @@ echo
 cd /usr/local/bin
 sudo rm -rf screenfetch
 sudo rm -rf Actualizar-Arch
-sudo rm -rf Actualizar-Manjaro
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Arch-Setup
 sudo rm -rf Blue-Script
-sudo rm -rf Configurar-Manjaro-Net
-sudo rm -rf Configurar-Ubuntu
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Limpiar-Arch
-sudo rm -rf Limpiar-Manjaro
 sudo rm -rf Limpiar-Ubuntu
 sudo rm -rf Materia-GDM-Theme
 sudo rm -rf Original-GDM-Theme
@@ -27,17 +23,14 @@ sudo rm -rf Reparar-Pacman-db.lck
 sudo rm -rf Reparar-var-Ubuntu
 sudo rm -rf STATE
 sudo rm -rf Tweaks
+sudo rm -rf Ubuntu-Setup
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Actualizar-Arch
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Manjaro-Net
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Configurar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Limpiar-Arch
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Manjaro
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Limpiar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-GDM-Theme
@@ -49,17 +42,14 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Reparar-var-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
 sudo chmod +x screenfetch
 sudo chmod +x Actualizar-Arch
-sudo chmod +x Actualizar-Manjaro
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Arch-Setup
 sudo chmod +x Blue-Script
-sudo chmod +x Configurar-Manjaro-Net
-sudo chmod +x Configurar-Ubuntu
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Limpiar-Arch
-sudo chmod +x Limpiar-Manjaro
 sudo chmod +x Limpiar-Ubuntu
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
@@ -71,6 +61,7 @@ sudo chmod +x Reparar-Pacman-db.lck
 sudo chmod +x Reparar-var-Ubuntu
 sudo chmod +x STATE
 sudo chmod +x Tweaks
+sudo chmod +x Ubuntu-Setup
 cd /
 sleep 1s
 echo Ejecuta el Script Elegido
