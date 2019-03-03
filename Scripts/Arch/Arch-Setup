@@ -41,17 +41,17 @@ do
     case $opt in
         "Drivers Intel")
            echo "Escogiste Instalar Drivers Intel"
-           sudo pacman -S intel-ucode xf86-video-intel libva-intel-driver
+           sudo pacman -S intel-ucode xf86-video-intel libva-intel-driver beignet
            break
            ;;
         "Drivers AMD")
            echo "Escogiste Instalar Drivers AMD"
-           sudo pacman -S xf86-video-ati
+           sudo pacman -S xf86-video-ati opencl-mesa 
            break
            ;;
         "Drivers Nvidia")
            echo "Escogiste Instalar Drivers Nvidia"
-           sudo pacman -S nvidia nvidia-utils
+           sudo pacman -S nvidia nvidia-utils opencl-nvidia
            break
            ;;
         "Drivers libres Nvidia")
@@ -101,7 +101,7 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins
-sudo pacman -S menulibre geary tilix vocal fragments lollypop feedreader corebird feedreader
+sudo pacman -S menulibre geary tilix vocal fragments lollypop feedreader corebird
 sudo pacman -S calibre
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
