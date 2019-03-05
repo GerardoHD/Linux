@@ -101,14 +101,15 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins
-sudo pacman -S menulibre geary tilix vocal fragments lollypop feedreader corebird
+sudo pacman -S menulibre geary tilix vocal fragments lollypop
 sudo pacman -S calibre
+sudo pacman -S gnome-twitch feedreader corebird
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 sleep 2s
-#echo Firefox
-#sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
+echo Firefox
+sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 #echo -=VLC=-
 #sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
 #echo -=Steam=-
@@ -137,8 +138,8 @@ trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
 trizen -S google-chrome
 trizen -S etcher-bin
 sleep 2s
-#echo Firmware Especifico
-#trizen -S aic94xx-firmware wd719x-firmware
+#Firmware Especifico
+trizen -S aic94xx-firmware wd719x-firmware
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
@@ -176,7 +177,7 @@ sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedeskto
 echo Activando libinput-gestures
 libinput-gestures-setup autostart 
 #
-echo Configurando GRUB
+echo Customizando GRUB
 sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 sudo sed -i 's/#GRUB_THEME="/path/to/gfxtheme"/GRUB_THEME="/boot/grub/themes/arch-silence/theme.txt"/g' /etc/default/grub
@@ -274,7 +275,7 @@ do
            sleep 1s
            sudo pacman -S gnome
            sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder
-	   sudo pacman -S gedit-code-assistance gnome-podcasts 
+	   sudo pacman -S gedit-code-assistance
            sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
@@ -407,6 +408,7 @@ sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
 #
+#Experimentos
 #echo Configurando SystemD para ignorar la tapa del portatil
 #sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 #sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
