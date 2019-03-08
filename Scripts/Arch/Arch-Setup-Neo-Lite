@@ -89,8 +89,8 @@ sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks
 sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap
 sudo pacman -S speedtest-cli cmatrix bash-completion gpart
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
-#sudo pacman -S easytag python-pylast python-wikipedia
-#sudo pacman -S filemanager-actions
+sudo pacman -S python-pylast python-wikipedia
+sudo pacman -S filemanager-actions
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
@@ -282,9 +282,9 @@ do
            sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder
 	   sudo pacman -S gedit-code-assistance
            sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
-           sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
-	   #sudo pacman -S budgie-desktop budgie-extras gnome-mpv
+           sleep 2s
+	   sudo pacman -S budgie-desktop budgie-extras gnome-mpv
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
@@ -426,5 +426,5 @@ clear
 screenfetch
 df -h
 date
-echo ---=[El nuevo Sistema basado en Arch Linux está listo]=---
+echo ---=++[El nuevo Sistema basado en Arch Linux está listo]++=---
 #
