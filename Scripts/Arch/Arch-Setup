@@ -65,15 +65,15 @@ done
 #
 echo   -=Instalando Soporte AUR=-
 git clone https://aur.archlinux.org/trizen.git
-cd trizen && makepkg -si
+cd trizen && makepkg -si --noconfirm
 cd ..
 #
 git clone https://aur.archlinux.org/package-query.git
-cd package-query && makepkg -si
+cd package-query && makepkg -si --noconfirm
 cd ..
 #
 git clone https://aur.archlinux.org/yaourt.git
-cd yaourt && makepkg -si
+cd yaourt && makepkg -si --noconfirm
 cd ..
 #
 rm -rf trizen package-query yaourt
@@ -139,7 +139,7 @@ trizen -S google-chrome
 trizen -S etcher-bin
 sleep 2s
 #Firmware Especifico
-trizen -S aic94xx-firmware wd719x-firmware
+#trizen -S aic94xx-firmware wd719x-firmware
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
@@ -187,8 +187,7 @@ echo Configurando Plymouth
 sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
 sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
 sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
-sudo plymouth-set-default-theme -R arch-charge-big
-#sudo plymouth-set-default-theme -R arch-beat
+sudo plymouth-set-default-theme -R arch-beat
 sudo mkinitcpio -p linux
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
