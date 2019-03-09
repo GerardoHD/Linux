@@ -9,8 +9,6 @@ sudo rm -rf screenfetch
 sudo rm -rf Actualizar-Arch
 sudo rm -rf Actualizar-Ubuntu
 sudo rm -rf Arch-Setup
-sudo rm -rf Arch-Setup-Neo
-sudo rm -rf Arch-Setup-Neo-Lite
 sudo rm -rf Blue-Script
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Limpiar-Arch
@@ -30,8 +28,6 @@ sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/scre
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Actualizar-Arch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Actualizar-Ubuntu
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup-Neo-Lite
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup-Neo-Lite
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Limpiar-Arch
@@ -51,8 +47,6 @@ sudo chmod +x screenfetch
 sudo chmod +x Actualizar-Arch
 sudo chmod +x Actualizar-Ubuntu
 sudo chmod +x Arch-Setup
-sudo chmod +x Arch-Setup-Neo
-sudo chmod +x Arch-Setup-Neo-Lite
 sudo chmod +x Blue-Script
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Limpiar-Arch

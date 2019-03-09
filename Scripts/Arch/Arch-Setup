@@ -25,7 +25,7 @@ sudo pacman -Syyu --noconfirm
 echo     ---=Instalando Bases para Arch Linux=---
 sudo pacman -S pacman-contrib linux-headers dkms flatpak vim git
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
-sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp vim lsb-release
+sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
 echo   -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse alsa-utils
@@ -87,13 +87,13 @@ sudo pacman -S gparted polkit
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
 sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap
-sudo pacman -S speedtest-cli cmatrix bash-completion vim gpart
+sudo pacman -S speedtest-cli cmatrix bash-completion gpart
 sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
-sudo pacman -S easytag python-pylast python-wikipedia
+sudo pacman -S python-pylast python-wikipedia
 #Fuentes
-sudo pacman -S noto-fonts noto-fonts-emoji
+sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
-sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-ubuntu-font-family 
+sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code ttf-ubuntu-font-family 
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
@@ -101,9 +101,9 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins
-sudo pacman -S menulibre geary tilix vocal fragments lollypop
+sudo pacman -S geary tilix fragments lollypop
 sudo pacman -S calibre
-sudo pacman -S gnome-twitch feedreader corebird
+sudo pacman -S gnome-twitch feedreader corebird vocal
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
@@ -132,7 +132,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 trizen -S nautilus-admin libinput-gestures gradio
-trizen -S pamac-aur pacli otf-san-francisco ttf-roboto-slab otf-bitter
+trizen -S pamac-aur otf-san-francisco ttf-roboto-slab otf-bitter
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 trizen -S google-chrome
@@ -158,7 +158,7 @@ trizen -S aic94xx-firmware wd719x-firmware
 #trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
 #trizen -S wps-office-mui-es-mx ttf-wps-fonts
 #Freezer
-#sudo pacman -S avidemux-qt noto-fonts-cjk noto-fonts-extra npm npm-check-updates nodejs
+#sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag menulibre 
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
@@ -192,9 +192,9 @@ sudo plymouth-set-default-theme -R arch-charge-big
 sudo mkinitcpio -p linux
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
-#echo Configurando SystemD para ignorar la tapa del portatil
-#sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
-#sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
+echo Configurando SystemD para ignorar la tapa del portatil
+sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
 #
 echo  -=Actualizando Arch Linux=-
 trizen -Syyu
@@ -292,6 +292,13 @@ do
            sleep 2s
            trizen -S gnome-backgrounds-bitday-git
            #
+	   echo Configurando el botón de Apagado para Gnome
+           gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
+	   sudo cp -av /usr/share/gnome-shell/gnome-shell-theme.gresource{,~}
+	   cd /usr/share/themes/Materia-light/gnome-shell
+	   sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+           sudo systemctl enable gdm.service
+	   #
            echo       ---=Activando Gnome Display Manager "gdm"=---
            #sudo systemctl enable gdm.service
            #
