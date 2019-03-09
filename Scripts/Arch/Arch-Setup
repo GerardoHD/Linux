@@ -131,7 +131,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
-trizen -S nautilus-admin libinput-gestures gradio
+trizen -S nautilus-admin gradio
 trizen -S pamac-aur otf-san-francisco ttf-roboto-slab otf-bitter
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
@@ -173,9 +173,6 @@ sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
 echo Cambiando configuraciòn de UDisks2
 sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
-#
-echo Activando libinput-gestures
-libinput-gestures-setup autostart 
 #
 echo Customizando GRUB
 sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
@@ -290,9 +287,14 @@ do
            #
            sleep 2s
            trizen -S gnome-backgrounds-bitday-git
+	   trizen -S libinput-gestures
            #
+	   #
+	   echo Activando libinput-gestures
+	   libinput-gestures-setup autostart
 	   echo Configurando el botón de Apagado para Gnome
            gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
+	   #
 	   sudo cp -av /usr/share/gnome-shell/gnome-shell-theme.gresource{,~}
 	   cd /usr/share/themes/Materia-light/gnome-shell
 	   sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
@@ -419,9 +421,6 @@ sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
 #
-#Experimentos
-#echo Configurando el botón de Apagado para Gnome
-#gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 #
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
