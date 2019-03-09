@@ -288,7 +288,6 @@ do
            sleep 2s
            trizen -S gnome-backgrounds-bitday-git
 	   trizen -S libinput-gestures
-           #
 	   #
 	   echo Activando libinput-gestures
 	   libinput-gestures-setup autostart
