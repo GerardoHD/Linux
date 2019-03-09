@@ -100,7 +100,7 @@ sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 sudo pacman -S filemanager-actions
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins
+sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre
 sudo pacman -S geary tilix fragments lollypop
 sudo pacman -S calibre
 sudo pacman -S gnome-twitch feedreader corebird vocal
@@ -158,7 +158,7 @@ trizen -S aic94xx-firmware wd719x-firmware
 #trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
 #trizen -S wps-office-mui-es-mx ttf-wps-fonts
 #Freezer
-#sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag menulibre 
+#sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
