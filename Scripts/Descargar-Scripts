@@ -6,9 +6,12 @@ echo
 #!/bin/bash
 cd /usr/local/bin
 sudo rm -rf screenfetch
-sudo rm -rf Actualizar-Arch
-sudo rm -rf Actualizar-Ubuntu
+sudo rm -rf Arch-Clean
+sudo rm -rf Arch-Poweroff
+sudo rm -rf Arch-Reboot
+sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
+sudo rm -rf Arch-Update
 sudo rm -rf Blue-Script
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Limpiar-Arch
