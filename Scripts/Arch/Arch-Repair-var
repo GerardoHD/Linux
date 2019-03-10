@@ -1,8 +1,15 @@
 #Reparar Pacman db.lck
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Reparando Pacman db.lck--
+sleep 1s
+if [ "$(id -u)" -eq 0 ] ; then
+        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+        echo " Simplemente ejecute este Script desde su usuario. "
+        exit
+fi
+#
 sudo rm -f /var/lib/pacman/db.lck
-sudo pacman-mirrors -g
 trizen -Syyu
 clear
 screenfetch

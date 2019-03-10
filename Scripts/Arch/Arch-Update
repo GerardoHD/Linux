@@ -9,8 +9,6 @@ if [ "$(id -u)" -eq 0 ] ; then
         exit
 fi
 #
-#!/bin/bash
-echo  -=Actualizando Arch Linux=-
 speedtest
 sudo mount -o remount,size=2G,noatime /tmp
 trizen -Syyu --noconfirm
