@@ -30,6 +30,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Reboot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
@@ -43,7 +44,12 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ub
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Update
 sudo chmod +x screenfetch
+sudo chmod +x Arch-Clean
+sudo chmod +x Arch-Poweroff
+sudo chmod +x Arch-Reboot
+sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
+sudo chmod +x Arch-Update
 sudo chmod +x Blue-Script
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
@@ -54,7 +60,10 @@ sudo chmod +x Reboot
 sudo chmod +x Red-Script
 sudo chmod +x STATE
 sudo chmod +x Tweaks
+sudo chmod +x Ubuntu-Clean
+sudo chmod +x Ubuntu-Repair-var
 sudo chmod +x Ubuntu-Setup
+sudo chmod +x Ubuntu-Update
 cd /
 sleep 1s
 echo Ejecuta el Script Elegido
