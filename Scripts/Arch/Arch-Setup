@@ -96,14 +96,14 @@ sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
 sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code ttf-ubuntu-font-family 
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
-sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme
+sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme arc-kde
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 sudo pacman -S filemanager-actions
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre
-sudo pacman -S geary tilix fragments lollypop
+sudo pacman -S geary tilix fragments lollypop gthumb
 sudo pacman -S calibre
-sudo pacman -S gnome-twitch feedreader corebird vocal
+sudo pacman -S feedreader gnome-twitch corebird vocal
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
@@ -132,7 +132,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 #
 echo     ---=Instalando Software desde Arch User Repository=---
 trizen -S nautilus-admin gradio
-trizen -S pamac-aur otf-san-francisco ttf-roboto-slab otf-bitter
+trizen -S pamac-aur otf-san-francisco ttf-roboto-slab otf-bitter ephifonts
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
 trizen -S google-chrome
@@ -286,7 +286,7 @@ do
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           trizen -S gnome-backgrounds-bitday-git
+           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper
 	   trizen -S libinput-gestures
 	   #
 	   echo Activando libinput-gestures
@@ -294,10 +294,13 @@ do
 	   echo Configurando el botón de Apagado para Gnome
            gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	   #
+	   echo Activando tema Materia-light para GDM, recomiendo complementar con Materia-light como tema de Gnome
+           sleep 4s
 	   sudo cp -av /usr/share/gnome-shell/gnome-shell-theme.gresource{,~}
 	   cd /usr/share/themes/Materia-light/gnome-shell
 	   sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
-           sudo systemctl enable gdm.service
+	   echo ejectutar Original-GDM-Theme para revertir al tema predeterminado
+	   sleep 2s
 	   #
            echo       ---=Activando Gnome Display Manager "gdm"=---
            #sudo systemctl enable gdm.service
@@ -431,3 +434,5 @@ df -h
 date
 echo ---=[El nuevo Sistema basado en Arch Linux está listo]=---
 #
+#Experimental
+#trizen -S bcm43142a0-firmware
