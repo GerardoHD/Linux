@@ -1,10 +1,10 @@
-echo          ------==Script Creado por GerardoHD==------
+echo	------==Script Creado por GerardoHD==------
 echo https://www.github.com/GerardoHD/Linux
 echo Script creado para configurar un sistema completo basado en Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
-	echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+	echo " ADVERTENCIA: Makepkg no compilará paquetes en una sesión Root "
 	echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
 	echo " Simplemente ejecute este Script desde su usuario. "
 	exit
@@ -15,21 +15,21 @@ ping -c 3 www.archlinux.org
 sudo mount -o remount,size=2G,noatime /tmp
 sudo timedatectl set-ntp true
 #
-echo       ---=Configurando Pacman=---
+echo	---=Configurando Pacman=---
 sleep 1s
 echo Inicializando Pacman
 sudo pacman-key --populate archlinux
 sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
-echo     ---=Instalando Bases para Arch Linux=---
-sudo pacman -S pacman-contrib linux-headers dkms flatpak vim git
+echo	---=Instalando Bases para Arch Linux=---
+sudo pacman -S linux-headers dkms flatpak vim git
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release
 sudo pacman -S wireless_tools wpa_supplicant wpa_actiond dialog pacman-contrib
-echo   -=Pulse Audio=-
+echo -=Pulse Audio=-
 sudo pacman -S pulseaudio-alsa libcanberra-pulse alsa-utils
-echo   -=X Window System=-
+echo -=X Window System=-
 sudo pacman -S xorg-server xorg-xdriinfo xorg-xdpyinfo xorg-xprop xorg-xinit
 sudo pacman -S mesa mesa-demos 
 #
@@ -63,7 +63,7 @@ do
     esac
 done
 #
-echo   -=Instalando Soporte AUR=-
+echo -=Instalando Soporte AUR=-
 git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -si --noconfirm
 cd ..
@@ -78,92 +78,96 @@ cd ..
 #
 rm -rf trizen package-query yaourt
 #
-echo  -=Actualizando Arch Linux=-
+echo -=Actualizando Arch Linux=-
 trizen -Syyu
 sudo os-prober
 #
-echo     ---=Instalando Software desde Repositorios Oficiales=---
-sudo pacman -S gparted polkit
+echo	---=Instalando Software desde Repositorios Oficiales=---
+sudo pacman -S polkit bash-completion gpart
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
-sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks 
-sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap
-sudo pacman -S speedtest-cli cmatrix bash-completion gpart
-sudo pacman -S openssh sshfs youtube-dl android-tools xdg-user-dirs
+sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks gparted
+sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap openssh sshfs
+sudo pacman -S speedtest-cli cmatrix 
+sudo pacman -S youtube-dl android-tools xdg-user-dirs
 sudo pacman -S python-pylast python-wikipedia
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
-sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code ttf-ubuntu-font-family 
+sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation ttf-ubuntu-font-family
+sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code 
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
-sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme arc-kde
-sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
-sudo pacman -S filemanager-actions
+sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
+sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc arc-kde
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre
+sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre
 sudo pacman -S geary tilix fragments lollypop gthumb
-sudo pacman -S calibre
 sudo pacman -S feedreader gnome-twitch corebird vocal
+sudo pacman -S filemanager-actions
+sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
-sleep 2s
-echo Firefox
-sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
-#echo -=VLC=-
-#sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
+#
 #echo -=Steam=-
 #sudo pacman -S steam steam-native-runtime
+#
 #echo -=KODI=-
 #sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 #sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 #sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #sudo pacman -S mediaelch
+#
+#echo -=VLC=-
+#sudo pacman -S vlc libva-vdpau-driver libva-intel-driver qt4
+#
 #echo -=LibreOffice=-
 #sudo pacman -S libreoffice-fresh libreoffice-fresh-es libcdr
+sleep 2s
 #
-echo  -=Instalando Software desde Flathub=---
+echo	-=Instalando Software desde Flathub=---
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
+flatpak install flathub org.gtk.Gtk3theme.Adapta{,-Brila,-Eta,-Nokto,-Brila-Eta,-Nokto-Eta} -y
+flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #flatpak install flathub de.haeckerfelix.gradio -y
 #flatpak install flathub com.github.needleandthread.vocal -y
 #flatpak install flathub de.haeckerfelix.Fragments -y
 #flatpak install flathub com.spotify.Client -y
 #
-echo     ---=Instalando Software desde Arch User Repository=---
-trizen -S nautilus-admin gradio
-trizen -S pamac-aur otf-san-francisco ttf-roboto-slab otf-bitter ephifonts
+echo	---=Instalando Software desde Arch User Repository=---
+trizen -S otf-san-francisco ttf-roboto-slab otf-bitter ephifonts
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
-trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big 
+trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
+trizen -S nautilus-admin gradio pamac-aur
 trizen -S google-chrome
 trizen -S etcher-bin
-sleep 2s
-#Firmware Especifico
-#trizen -S aic94xx-firmware wd719x-firmware
+#
+#echo -=WPS-Office=-
+#trizen -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts ttf-ms-fonts
+#trizen -S wps-office-mui-es-es 
+#echo -=Steam=-
+#trizen -S steam-fonts
 #echo -=KODI=-
 #trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
 #trizen -S kodi-standalone-service
 #trizen -S filebot java-openjfx
-#echo -=Steam=-
-#trizen -S steam-fonts
 #echo -=PLEX=-
 #trizen -S plex-media-server
 #trizen -S plex-media-server-plexpass
 #trizen -S plex-media-player
 #echo Activando Servicio Plex Media Server
 #systemctl enable plexmediaserver.service
+#Firmware Especifico
+#trizen -S aic94xx-firmware wd719x-firmware
 #echo -=Soporte Impresora Epson L210=-
 #trizen -S epson-inkjet-printer-201207w
-#echo -=WPS-Office=-
-#trizen -S wps-office wps-office-extension-spanish-dictionary wps-office-mui-es-es
-#trizen -S wps-office-mui-es-mx ttf-wps-fonts
+sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
-#echo     ---=Descargando Sudocabulary desde Github=---
-#curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
+echo Configuraciones varias
 #
 echo Modificando valor Swappiness
 echo >> 99-sysctl.conf
@@ -180,17 +184,23 @@ sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
 sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
 #
-echo Configurando Plymouth
-sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
-sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
-sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
-sudo plymouth-set-default-theme -R arch-beat
-sudo mkinitcpio -p linux
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-#
 echo Configurando SystemD para ignorar la tapa del portatil
 sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
+#
+echo  Mejorando la-capitaine-icon-theme
+sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
+#
+#echo Configurando Plymouth
+#sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
+#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
+#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
+#sudo plymouth-set-default-theme -R arch-beat
+#sudo mkinitcpio -p linux
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
+#
+#echo Descargando Sudocabulary desde Github
+#curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo  -=Actualizando Arch Linux=-
 trizen -Syyu
@@ -206,7 +216,7 @@ echo       ---=Activando Servicio SSHD "sshd"=---
 sudo systemctl enable sshd.service
 sudo systemctl enable sshd.socket
 #
-sleep 1s
+sleep 2s
 echo     ---=Instalando Entorno de Escritorio=---
 PS3='Introduce tu elecciòn: '
 options=("Arch-Cinnamon" "Arch-Deepin" "Arch-Gnome" "Arch-KDE" "Arch-Mate" "Arch-Xfce" "Salir")
@@ -275,7 +285,7 @@ do
            echo     ---=Instalando Gnome=---
            sleep 1s
            sudo pacman -S gnome
-           sudo pacman -S dconf-editor gnome-code-assistance gnome-mines gnome-sound-recorder
+           sudo pacman -S dconf-editor gnome-code-assistance gnome-sound-recorder
 	   sudo pacman -S gedit-code-assistance
            sudo pacman -S gnome-tweak-tool gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
@@ -294,12 +304,6 @@ do
 	   echo Configurando el botón de Apagado para Gnome
            gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	   #
-	   echo Activando tema Materia-light para GDM, recomiendo complementar con Materia-light como tema de Gnome
-           sleep 4s
-	   sudo cp -av /usr/share/gnome-shell/gnome-shell-theme.gresource{,~}
-	   cd /usr/share/themes/Materia-light/gnome-shell
-	   sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
-	   echo ejectutar Original-GDM-Theme para revertir al tema predeterminado
 	   sleep 2s
 	   #
            echo       ---=Activando Gnome Display Manager "gdm"=---
@@ -434,5 +438,3 @@ df -h
 date
 echo ---=[El nuevo Sistema basado en Arch Linux está listo]=---
 #
-#Experimental
-#trizen -S bcm43142a0-firmware
