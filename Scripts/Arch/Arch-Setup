@@ -135,7 +135,7 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
-trizen -S otf-san-francisco ttf-roboto-slab otf-bitter ephifonts
+trizen -S otf-san-francisco ttf-roboto-slab otf-bitter ephifonts-no-helvetica
 trizen -S capitaine-cursors la-capitaine-icon-theme-git arch-silence-grub-theme
 trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
 trizen -S nautilus-admin gradio pamac-aur
