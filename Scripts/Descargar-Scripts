@@ -66,10 +66,9 @@ sudo chmod +x Tweaks
 #sudo chmod +x Ubuntu-Update
 cd /
 sleep 1s
-echo Ejecuta el Script Elegido
-echo Recomiendo revisar alguno de los scripts ubicados en:
-echo /usr/local/bin/
-ls /usr/local/bin/
-sleep 5s
 clear
 screenfetch
+echo Recomiendo editar/revisar alguno de los scripts ubicados en:
+echo /usr/local/bin/
+ls /usr/local/bin/
+echo Ejecuta el Script Elegido
