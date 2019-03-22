@@ -187,7 +187,20 @@ echo  Mejorando la-capitaine-icon-theme
 sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
 #
 echo Mejorando loader Systemd-boot
-#sudo sed -i 's/rw/rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/efi/loader/entries/Arch.conf
+sudo sed -i 's/rw/rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/efi/loader/entries/Arch.conf
+#
+echo Creando Hook de Pacman para systemd-boot
+echo >> 100-systemd-boot.hook
+sed -i '$ a\[Trigger]' 100-systemd-boot.hook
+sed -i '$ a\Type = Package' 100-systemd-boot.hook
+sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
+sed -i '$ a\Target = systemd' 100-systemd-boot.hook
+sed -i '$ a\ ' 100-systemd-boot.hook
+sed -i '$ a\[Action]' 100-systemd-boot.hook
+sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
+sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
+sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
+sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
 #
 #echo Customizando GRUB
 #sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
@@ -301,7 +314,7 @@ do
            #
            sleep 2s
            trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper
-	   trizen -S libinput-gestures
+	   trizen -S libinput-gestures gnome-appfolders-manager
 	   #
 	   echo Activando libinput-gestures
 	   libinput-gestures-setup autostart
