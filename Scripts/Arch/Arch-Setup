@@ -80,7 +80,6 @@ rm -rf trizen package-query yaourt
 #
 echo -=Actualizando Arch Linux=-
 trizen -Syyu
-sudo os-prober
 #
 echo	---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S polkit bash-completion gpart
@@ -163,8 +162,6 @@ trizen -S epson-inkjet-printer-201207w
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
-#sudo pacman -S linux-headers dkms
-#trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big arch-silence-grub-theme
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
@@ -202,16 +199,24 @@ sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
 sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
 sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
 #
-#echo Customizando GRUB
+#echo Instalando y configurando GRUB
+#sudo pacman -S os-prober
+#trizen -S arch-silence-grub-theme
 #sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
 #sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
 #sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
 #sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/g' /etc/default/grub
+#sudo os-prober
+#sudo mkinitcpio -p linux
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
-#echo Configurando Plymouth
+#echo Instalando y configurando Plymouth
+#sudo pacman -S linux-headers dkms
+#trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
 #sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=0 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
+#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard)/g' /etc/mkinitcpio.conf
+#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=3 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
 #sudo plymouth-set-default-theme -R arch-beat
 #sudo mkinitcpio -p linux
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -324,7 +329,7 @@ do
 	   sleep 2s
 	   #
            echo       ---=Activando Gnome Display Manager "gdm"=---
-           #sudo systemctl enable gdm.service
+           sudo systemctl enable gdm.service
            #
            break
            ;;
