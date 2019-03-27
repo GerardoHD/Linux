@@ -306,12 +306,21 @@ do
            echo "Escogiste Instalar Gnome"
            echo     ---=Instalando Gnome=---
            sleep 1s
-           sudo pacman -S gnome
+	   sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
+	   sudo pacman -S gnome-calculator gnome-calendar  gnome-characters  gnome-clocks
+	   sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
+	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
+	   sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
+	   sudo pacman -S gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra
+	   sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
+	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
+	   sudo pacman -S mousetweaks mutter nautilus networkmanager orca rygel sushi
+	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
            sudo pacman -S dconf-editor gnome-code-assistance gnome-sound-recorder
 	   sudo pacman -S gedit-code-assistance
            sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
-           sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects
+           sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
 	   sudo pacman -S budgie-desktop budgie-extras gnome-mpv
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
