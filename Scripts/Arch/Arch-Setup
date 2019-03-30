@@ -169,7 +169,7 @@ echo Configuraciones varias
 #
 echo Modificando valor Swappiness
 echo >> 99-sysctl.conf
-sudo sed -i '$ a\vm.swappiness=70' 99-sysctl.conf
+sudo sed -i '$ a\vm.swappiness=40' 99-sysctl.conf
 sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
 sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
@@ -184,7 +184,7 @@ echo  Mejorando la-capitaine-icon-theme
 sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
 #
 echo Mejorando loader Systemd-boot
-sudo sed -i 's/rw/rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
+sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
 #
 echo Creando Hook de Pacman para systemd-boot
 echo >> 100-systemd-boot.hook
@@ -198,6 +198,15 @@ sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
 sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
 sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
 sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
+#
+echo configurando Silen boot, desactivando varias alertas del sistema
+sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
 #
 #echo Instalando y configurando GRUB
 #sudo pacman -S os-prober
@@ -307,7 +316,7 @@ do
            echo     ---=Instalando Gnome=---
            sleep 1s
 	   sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
-	   sudo pacman -S gnome-calculator gnome-calendar  gnome-characters  gnome-clocks
+	   sudo pacman -S gnome-calculator gnome-calendar gnome-characters gnome-clocks
 	   sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
 	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
 	   sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
