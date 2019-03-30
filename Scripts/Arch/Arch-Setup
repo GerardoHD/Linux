@@ -183,52 +183,134 @@ sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /e
 echo  Mejorando la-capitaine-icon-theme
 sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
 #
-echo Mejorando loader Systemd-boot
-sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
-#
-echo Creando Hook de Pacman para systemd-boot
-echo >> 100-systemd-boot.hook
-sed -i '$ a\[Trigger]' 100-systemd-boot.hook
-sed -i '$ a\Type = Package' 100-systemd-boot.hook
-sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
-sed -i '$ a\Target = systemd' 100-systemd-boot.hook
-sed -i '$ a\ ' 100-systemd-boot.hook
-sed -i '$ a\[Action]' 100-systemd-boot.hook
-sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
-sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
-sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
-sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
-#
-echo configurando Silen boot, desactivando varias alertas del sistema
-sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
-sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
-sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
-#
-#echo Instalando y configurando GRUB
-#sudo pacman -S os-prober
-#trizen -S arch-silence-grub-theme
-#sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-#sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
-#sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
-#sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
-#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/g' /etc/default/grub
-#sudo os-prober
-#sudo mkinitcpio -p linux
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
-#
-#echo Instalando y configurando Plymouth
-#sudo pacman -S linux-headers dkms
-#trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
-#sudo sed -i 's/MODULES=()/MODULES=(i915)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard)/g' /etc/mkinitcpio.conf
-#sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=3 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/GRUB_CMDLINE_LINUX_DEFAULT="rw quiet splash loglevel=3 udev.log_priority=3 vt.global_cursor_default=0 vga=current"/g' /etc/default/grub
-#sudo plymouth-set-default-theme -R arch-beat
-#sudo mkinitcpio -p linux
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo	---=Configurando Bootloader=---
+PS3='Elige el bootloader a configurar: '
+options=("Systemd-boot" "GRUB" "Systemd-boot + Plymouth" "GRUB + Plymouth" "Salir")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Systemd-boot")
+           echo "Escogiste Configurar Systemd-boot"
+	   #
+	   echo Configurando loader Systemd-boot
+	   sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
+	   #
+	   echo Creando Hook de Pacman para systemd-boot
+	   echo >> 100-systemd-boot.hook
+	   sed -i '$ a\[Trigger]' 100-systemd-boot.hook
+	   sed -i '$ a\Type = Package' 100-systemd-boot.hook
+	   sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
+	   sed -i '$ a\Target = systemd' 100-systemd-boot.hook
+	   sed -i '$ a\ ' 100-systemd-boot.hook
+	   sed -i '$ a\[Action]' 100-systemd-boot.hook
+	   sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
+	   sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
+	   sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
+	   sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
+	   #
+	   echo configurando Silent boot, desactivando varias alertas del sistema
+	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   sudo mkinitcpio -p linux
+	   sudo bootctl update
+           break
+           ;;
+        "GRUB")
+           echo "Escogiste Configurar GRUB"
+	   sudo pacman -S os-prober
+	   trizen -S arch-silence-grub-theme
+	   #
+	   sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+	   sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
+	   sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
+	   sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+	   sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/g' /etc/default/grub
+	   #
+	   echo configurando Silent boot, desactivando varias alertas del sistema
+	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   sudo mkinitcpio -p linux
+	   sudo os-prober
+	   sudo grub-mkconfig -o /boot/grub/grub.cfg
+           break
+           ;;
+        "Systemd-boot + Plymouth")
+           echo "Escogiste configurar Systemd-boot + Plymouth"
+	   #
+	   sudo pacman -S linux-headers dkms
+	   trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
+	   #
+	   echo Creando Hook de Pacman para systemd-boot
+	   echo >> 100-systemd-boot.hook
+	   sed -i '$ a\[Trigger]' 100-systemd-boot.hook
+	   sed -i '$ a\Type = Package' 100-systemd-boot.hook
+	   sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
+	   sed -i '$ a\Target = systemd' 100-systemd-boot.hook
+	   sed -i '$ a\ ' 100-systemd-boot.hook
+	   sed -i '$ a\[Action]' 100-systemd-boot.hook
+	   sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
+	   sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
+	   sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
+	   sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
+	   #
+	   echo Configurando loader Systemd-boot
+	   sudo sed -i 's/rw/quiet splash loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3  vt.global_cursor_default=0/g' /boot/loader/entries/Arch.conf
+	   #
+	   echo configurando Silent boot, desactivando varias alertas del sistema, activando Plymouth
+	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd plymouth autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   #
+   	   sudo plymouth-set-default-theme -R arch-beat
+	   sudo mkinitcpio -p linux
+	   sudo bootctl update
+           break
+           ;;
+        "GRUB + Plymouth")
+	   #
+	   sudo pacman -S os-prober linux-headers dkms
+	   trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big arch-silence-grub-theme
+	   #
+	   sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+	   sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
+	   sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
+	   sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+	   sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=1 vga=current rd.systemd.show_status=auto udev.log_priority=3 vt.global_cursor_default=0"/g' /etc/default/grub
+	   #
+	   echo configurando Silent boot, desactivando varias alertas del sistema, activando Plymouth
+	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd plymouth autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   sudo plymouth-set-default-theme -R arch-beat
+	   sudo mkinitcpio -p linux
+	   sudo os-prober
+	   sudo grub-mkconfig -o /boot/grub/grub.cfg
+           break
+           ;;
+	"Salir")
+           break
+           ;;
+        *) echo invalid option;;
+    esac
+done
 #
 #echo Descargando Sudocabulary desde Github
 #curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
