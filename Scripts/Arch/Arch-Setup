@@ -101,7 +101,7 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre
 sudo pacman -S geary tilix fragments lollypop gthumb vocal
 sudo pacman -S filemanager-actions
-sudo pacman -S firefox arch-firefox-search firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
+sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups iscan iscan-data
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
@@ -133,14 +133,14 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
-trizen -S otf-san-francisco ttf-roboto-slab otf-bitter ephifonts-no-helvetica
+trizen -S otf-san-francisco otf-bitter ephifonts-no-helvetica
 trizen -S capitaine-cursors la-capitaine-icon-theme-git
-trizen -S nautilus-admin gradio pamac-aur
+trizen -S nautilus-admin gradio pamac-aur arch-firefox-search
 trizen -S google-chrome
 trizen -S etcher-bin
 #
 echo -=WPS-Office=-
-trizen -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts ttf-ms-fonts
+trizen -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
 trizen -S wps-office-mui-es-es 
 #echo -=Steam=-
 #trizen -S steam-fonts
@@ -182,6 +182,9 @@ sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /e
 #
 echo  Mejorando la-capitaine-icon-theme
 sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
+#
+echo Arreglando Menulibre
+sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
 #
 echo	---=Configurando Bootloader=---
 PS3='Elige el bootloader a configurar: '
