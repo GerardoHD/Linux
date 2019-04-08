@@ -6,6 +6,7 @@ if [ "$(id -u)" -eq 0 ] ; then
         exit
 fi
 #
+sudo mount -o remount,size=2G,noatime /tmp
 trizen -Syyu --noconfirm
 sudo poweroff
 #
