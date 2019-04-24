@@ -98,8 +98,8 @@ sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc arc-kde
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre
-sudo pacman -S geary tilix fragments lollypop gthumb vocal
+sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre lollypop fragments gthumb
+sudo pacman -S geary tilix vocal
 sudo pacman -S filemanager-actions
 sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
