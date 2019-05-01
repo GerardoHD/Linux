@@ -499,7 +499,7 @@ do
            echo "Escogiste Instalar Xfce"
            echo     ---=Instalando Xfce=---
            sudo pacman -S xfce4
-           sudo pacman -S orage thunar-archive-plugin thunar-media-tags-plugin xfce4-artwork
+           sudo pacman -S thunar-archive-plugin thunar-media-tags-plugin xfce4-artwork
            sudo pacman -S xfce4-battery-plugin xfce4-datetime-plugin xfce4-diskperf-plugin
            sudo pacman -S xfce4-fsguard-plugin xfce4-mount-plugin xfce4-netload-plugin
            sudo pacman -S xfce4-notifyd xfce4-pulseaudio-plugin xfce4-taskmanager
