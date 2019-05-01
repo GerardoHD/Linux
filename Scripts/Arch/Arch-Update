@@ -10,7 +10,7 @@ if [ "$(id -u)" -eq 0 ] ; then
 fi
 #
 #speedtest
-sudo mount -o remount,size=2G,noatime /tmp
+sudo mount -o remount,size=5G,noatime /tmp
 trizen -Syyu --noconfirm
 #sudo os-prober
 #sudo grub-mkconfig -o /boot/grub/grub.cfg

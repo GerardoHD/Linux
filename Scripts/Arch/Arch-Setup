@@ -96,7 +96,7 @@ sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
-sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc arc-kde
+sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre lollypop fragments gthumb
 sudo pacman -S geary tilix vocal
@@ -446,7 +446,7 @@ do
            sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
            sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
            sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
-           sudo pacman -S plasma-wayland-session adapta-kde materia-kde
+           sudo pacman -S plasma-wayland-session adapta-kde materia-kde arc-kde
 	   sudo pacman -S redshift plasma5-applets-redshift-control
            sleep 2s
            sudo pacman -S kio-gdrive kdeconnect
@@ -514,7 +514,7 @@ do
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           trizen -S redshift-gtk-git 
+           #trizen -S redshift-gtk-git 
 	   trizen -S mugshot indicator-keylock archlinux-themes-balou
            trizen -S xfce4-windowck-plugin
            #
