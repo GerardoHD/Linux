@@ -17,7 +17,7 @@ sudo sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Setup
 #Menulibre no funciona:
 #sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
 #fsck de Systemd
-sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+#sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+#sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+#sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+#sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service

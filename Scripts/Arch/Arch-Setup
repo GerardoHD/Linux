@@ -98,7 +98,7 @@ sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-the
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre lollypop fragments gthumb
-sudo pacman -S geary tilix vocal
+sudo pacman -S geary vocal
 sudo pacman -S filemanager-actions
 sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
@@ -160,7 +160,8 @@ trizen -S epson-inkjet-printer-201207w
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
-#sudo pacman -S feedreader gnome-twitch corebird
+#sudo pacman -S feedreader gnome-twitch corebird tilix sushi gnome-maps
+#sudo pacman -S budgie-desktop budgie-extras
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
 #
@@ -402,19 +403,19 @@ do
 	   sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
 	   sudo pacman -S gnome-calculator gnome-calendar gnome-characters gnome-clocks
 	   sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
-	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
+	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-menus
 	   sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
 	   sudo pacman -S gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra
 	   sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
-	   sudo pacman -S mousetweaks mutter nautilus networkmanager orca rygel sushi
+	   sudo pacman -S mousetweaks mutter nautilus networkmanager orca rygel 
 	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
            sudo pacman -S dconf-editor gnome-code-assistance gnome-sound-recorder
 	   sudo pacman -S gedit-code-assistance
            sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
-	   sudo pacman -S budgie-desktop budgie-extras gnome-mpv
+	   sudo pacman -S gnome-mpv
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
