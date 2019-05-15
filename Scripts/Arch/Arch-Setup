@@ -23,7 +23,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo	---=Instalando Bases para Arch Linux=---
-sudo pacman -S flatpak vim git fwupd
+sudo pacman -S flatpak vim git fwupd sbsigntools
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo -=Pulse Audio=-	
@@ -134,7 +134,7 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 echo	---=Instalando Software desde Arch User Repository=---
 trizen -S otf-san-francisco otf-bitter ephifonts-no-helvetica
 trizen -S capitaine-cursors la-capitaine-icon-theme-git
-trizen -S nautilus-admin gradio pamac-aur arch-firefox-search
+trizen -S nautilus-admin gradio pamac-aur arch-firefox-search shim-signed
 trizen -S google-chrome
 trizen -S etcher-bin
 #
