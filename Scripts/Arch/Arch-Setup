@@ -198,18 +198,8 @@ do
 	   echo Configurando loader Systemd-boot
 	   sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
 	   #
-	   echo Creando Hook de Pacman para systemd-boot
-	   echo >> 100-systemd-boot.hook
-	   sed -i '$ a\[Trigger]' 100-systemd-boot.hook
-	   sed -i '$ a\Type = Package' 100-systemd-boot.hook
-	   sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
-	   sed -i '$ a\Target = systemd' 100-systemd-boot.hook
-	   sed -i '$ a\ ' 100-systemd-boot.hook
-	   sed -i '$ a\[Action]' 100-systemd-boot.hook
-	   sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
-	   sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
-	   sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
-	   sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
+	   echo Descargando Hook de Pacman para systemd-boot
+	   sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
 	   #
 	   echo configurando Silent boot, desactivando varias alertas del sistema
 	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
@@ -253,18 +243,8 @@ do
 	   sudo pacman -S linux-headers dkms
 	   trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
 	   #
-	   echo Creando Hook de Pacman para systemd-boot
-	   echo >> 100-systemd-boot.hook
-	   sed -i '$ a\[Trigger]' 100-systemd-boot.hook
-	   sed -i '$ a\Type = Package' 100-systemd-boot.hook
-	   sed -i '$ a\Operation = Upgrade' 100-systemd-boot.hook
-	   sed -i '$ a\Target = systemd' 100-systemd-boot.hook
-	   sed -i '$ a\ ' 100-systemd-boot.hook
-	   sed -i '$ a\[Action]' 100-systemd-boot.hook
-	   sed -i '$ a\Description = Updating systemd-boot' 100-systemd-boot.hook
-	   sed -i '$ a\When = PostTransaction' 100-systemd-boot.hook
-	   sed -i '$ a\Exec = /usr/bin/bootctl update' 100-systemd-boot.hook
-	   sudo mv 100-systemd-boot.hook /usr/share/libalpm/hooks/100-systemd-boot.hook
+	   echo Descargando Hook de Pacman para systemd-boot
+	   sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
 	   #
 	   echo Configurando loader Systemd-boot
 	   sudo sed -i 's/rw/quiet splash loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3  vt.global_cursor_default=0/g' /boot/loader/entries/Arch.conf
