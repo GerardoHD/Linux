@@ -83,8 +83,8 @@ trizen -Syyu
 echo	---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S polkit bash-completion gpart
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
-sudo pacman -S libunrar unrar unarchiver zip cmus opusfile x264 elinks gparted
-sudo pacman -S mtools mlocate ffmpegthumbnailer mailcap openssh sshfs
+sudo pacman -S libunrar unrar unarchiver zip x264 elinks gparted
+sudo pacman -S mtools mlocate ffmpegthumbnailer openssh sshfs
 sudo pacman -S speedtest-cli cmatrix 
 sudo pacman -S youtube-dl android-tools xdg-user-dirs
 sudo pacman -S python-pylast python-wikipedia
@@ -99,7 +99,6 @@ sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-th
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre lollypop fragments gthumb
 sudo pacman -S geary vocal
-sudo pacman -S filemanager-actions
 sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -109,7 +108,7 @@ sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #sudo pacman -S steam steam-native-runtime
 #
 #echo -=KODI=-
-#sudo pacman -S kodi kodi-addon-adsp-freesurround kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
+#sudo pacman -S kodi kodi-addon-audioencoder-flac kodi-addon-audioencoder-lame
 #sudo pacman -S kodi-addon-audioencoder-vorbis kodi-addon-audioencoder-wav
 #sudo pacman -S kodi-addon-visualization-spectrum kodi-eventclients p8-platform
 #sudo pacman -S mediaelch
@@ -136,7 +135,6 @@ trizen -S otf-san-francisco otf-bitter ephifonts-no-helvetica
 trizen -S capitaine-cursors la-capitaine-icon-theme-git
 trizen -S nautilus-admin gradio pamac-aur arch-firefox-search shim-signed
 trizen -S google-chrome
-trizen -S etcher-bin
 #
 echo -=WPS-Office=-
 trizen -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
@@ -161,9 +159,9 @@ sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
 #sudo pacman -S feedreader gnome-twitch corebird tilix sushi gnome-maps
-#sudo pacman -S budgie-desktop budgie-extras
+#sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
-#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme
+#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin
 #
 echo Configuraciones varias
 #
@@ -188,7 +186,7 @@ sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.marku
 #
 echo	---=Configurando Bootloader=---
 PS3='Elige el bootloader a configurar: '
-options=("Systemd-boot" "GRUB" "Systemd-boot + Plymouth" "GRUB + Plymouth" "Salir")
+options=("Systemd-boot" "GRUB" "Salir")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -232,57 +230,6 @@ do
 	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
 	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
 	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
-	   sudo mkinitcpio -p linux
-	   sudo os-prober
-	   sudo grub-mkconfig -o /boot/grub/grub.cfg
-           break
-           ;;
-        "Systemd-boot + Plymouth")
-           echo "Escogiste configurar Systemd-boot + Plymouth"
-	   #
-	   sudo pacman -S linux-headers dkms
-	   trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big
-	   #
-	   echo Descargando Hook de Pacman para systemd-boot
-	   sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
-	   #
-	   echo Configurando loader Systemd-boot
-	   sudo sed -i 's/rw/quiet splash loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3  vt.global_cursor_default=0/g' /boot/loader/entries/Arch.conf
-	   #
-	   echo configurando Silent boot, desactivando varias alertas del sistema, activando Plymouth
-	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd plymouth autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
-	   #
-   	   sudo plymouth-set-default-theme -R arch-beat
-	   sudo mkinitcpio -p linux
-	   sudo bootctl update
-           break
-           ;;
-        "GRUB + Plymouth")
-	   #
-	   sudo pacman -S os-prober linux-headers dkms
-	   trizen -S plymouth-git plymouth-theme-arch-beat plymouth-theme-arch-charge-big arch-silence-grub-theme
-	   #
-	   sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-	   sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=2/g' /etc/default/grub
-	   sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
-	   sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
-	   sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=1 vga=current rd.systemd.show_status=auto udev.log_priority=3 vt.global_cursor_default=0"/g' /etc/default/grub
-	   #
-	   echo configurando Silent boot, desactivando varias alertas del sistema, activando Plymouth
-	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd plymouth autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
-	   sudo plymouth-set-default-theme -R arch-beat
 	   sudo mkinitcpio -p linux
 	   sudo os-prober
 	   sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -388,7 +335,7 @@ do
 	   sudo pacman -S gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra
 	   sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
-	   sudo pacman -S mousetweaks mutter nautilus networkmanager orca rygel 
+	   sudo pacman -S mousetweaks mutter nautilus networkmanager rygel
 	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
            sudo pacman -S dconf-editor gnome-code-assistance gnome-sound-recorder
 	   sudo pacman -S gedit-code-assistance
