@@ -151,8 +151,8 @@ trizen -S wps-office-mui-es-es
 #trizen -S plex-media-player
 #echo Activando Servicio Plex Media Server
 #systemctl enable plexmediaserver.service
-echo -=Firmware Especifico=-
-trizen -S aic94xx-firmware wd719x-firmware
+#echo -=Firmware Especifico=-
+#trizen -S aic94xx-firmware wd719x-firmware
 echo -=Soporte Impresora Epson L210=-
 trizen -S epson-inkjet-printer-201207w
 sleep 2s
@@ -337,8 +337,7 @@ do
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
 	   sudo pacman -S mousetweaks mutter nautilus networkmanager rygel
 	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
-           sudo pacman -S dconf-editor gnome-code-assistance gnome-sound-recorder
-	   sudo pacman -S gedit-code-assistance
+           sudo pacman -S dconf-editor gnome-sound-recorder
            sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
