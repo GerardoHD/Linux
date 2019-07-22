@@ -2,11 +2,11 @@
 cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTX64.efi
 cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
 cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/grubx64.efi
-echo Signing Files
+echo Firmando achivos
 sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
 sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
 sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-echo Verifying Signs
+echo Verificando firmas
 sbverify --cert ~/efitools/MOK.crt /boot/vmlinuz-linux
 sbverify --cert ~/efitools/MOK.crt /boot/EFI/BOOT/grubx64.efi
 sbverify --cert ~/efitools/MOK.crt /boot/EFI/systemd/systemd-bootx64.efi

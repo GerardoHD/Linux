@@ -97,8 +97,8 @@ sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre calibre lollypop fragments gthumb
-sudo pacman -S geary vocal
+sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre lollypop fragments gthumb
+sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
 sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -153,8 +153,8 @@ trizen -S wps-office-mui-es-es
 #systemctl enable plexmediaserver.service
 #echo -=Firmware Especifico=-
 #trizen -S aic94xx-firmware wd719x-firmware
-echo -=Soporte Impresora Epson L210=-
-trizen -S epson-inkjet-printer-201207w
+#echo -=Soporte Impresora Epson L210=-
+#trizen -S epson-inkjet-printer-201207w
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
@@ -165,11 +165,11 @@ sleep 2s
 #
 echo Configuraciones varias
 #
-echo Modificando valor Swappiness
-echo >> 99-sysctl.conf
-sudo sed -i '$ a\vm.swappiness=40' 99-sysctl.conf
-sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
-sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
+#echo Modificando valor Swappiness
+#echo >> 99-sysctl.conf
+#sudo sed -i '$ a\vm.swappiness=40' 99-sysctl.conf
+#sudo sed -i '$ a\vm.vfs_cache_pressure=50' 99-sysctl.conf
+#sudo mv  99-sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #
 echo Cambiando configuraciòn de UDisks2
 sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
@@ -201,12 +201,7 @@ do
 	   #
 	   echo configurando Silent boot, desactivando varias alertas del sistema
 	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   echo Ejcutar Systemd-fsck-Setup como usuario root
 	   sudo mkinitcpio -p linux
 	   sudo bootctl update
            break
@@ -224,12 +219,7 @@ do
 	   #
 	   echo configurando Silent boot, desactivando varias alertas del sistema
 	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
-	   sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
-	   sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+	   echo Ejcutar Systemd-fsck-Setup como usuario root
 	   sudo mkinitcpio -p linux
 	   sudo os-prober
 	   sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -330,7 +320,7 @@ do
 	   sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
 	   sudo pacman -S gnome-calculator gnome-calendar gnome-characters gnome-clocks
 	   sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
-	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-menus
+	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
 	   sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
 	   sudo pacman -S gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra
 	   sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins

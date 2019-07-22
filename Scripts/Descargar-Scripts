@@ -12,6 +12,9 @@ sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
 sudo rm -rf Arch-Update
+sudo rm -rf Secure-boot
+sudo rm -rf Systemd-fsck-Setup
+sudo rm -rf Tweaks
 sudo rm -rf Blue-Script
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Materia-GDM-Theme
@@ -19,7 +22,6 @@ sudo rm -rf Original-GDM-Theme
 sudo rm -rf Red-Script
 sudo rm -rf ROOT-A
 sudo rm -rf STATE
-sudo rm -rf Tweaks
 #sudo rm -rf Ubuntu-Clean
 #sudo rm -rf Ubuntu-Repair-var
 #sudo rm -rf Ubuntu-Setup
@@ -31,6 +33,9 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Systemd-fsck-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
@@ -38,7 +43,6 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Or
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/STATE
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Clean
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Repair-var
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
@@ -50,6 +54,9 @@ sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
 sudo chmod +x Arch-Update
+sudo chmod +x Secure-boot
+sudo chmod +x Systemd-fsck-Setup
+sudo chmod +x Tweaks
 sudo chmod +x Blue-Script
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
@@ -59,7 +66,6 @@ sudo chmod +x ROOT-A
 sudo chmod +x Reboot
 sudo chmod +x Red-Script
 sudo chmod +x STATE
-sudo chmod +x Tweaks
 #sudo chmod +x Ubuntu-Clean
 #sudo chmod +x Ubuntu-Repair-var
 #sudo chmod +x Ubuntu-Setup
