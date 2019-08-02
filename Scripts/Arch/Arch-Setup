@@ -132,7 +132,7 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
 trizen -S otf-san-francisco otf-bitter ephifonts-no-helvetica
-trizen -S capitaine-cursors la-capitaine-icon-theme-git
+trizen -S capitaine-cursors
 trizen -S nautilus-admin gradio pamac-aur arch-firefox-search shim-signed
 trizen -S google-chrome
 #
@@ -161,7 +161,10 @@ sleep 2s
 #sudo pacman -S gnome-twitch corebird tilix sushi 
 #sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
-#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin
+#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
+#
+#echo  Mejorando la-capitaine-icon-theme
+#sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
 #
 echo Configuraciones varias
 #
@@ -177,9 +180,7 @@ sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedeskto
 echo Configurando SystemD para ignorar la tapa del portatil
 sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
-#
-echo  Mejorando la-capitaine-icon-theme
-sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
+
 #
 echo Arreglando Menulibre
 sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
