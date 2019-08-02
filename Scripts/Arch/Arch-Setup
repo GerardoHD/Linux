@@ -98,7 +98,7 @@ sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-the
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
 sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre lollypop fragments gthumb
-sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
+sudo pacman -S geary vocal calibre gnome-epub-thumbnailer feedreader
 sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -158,7 +158,7 @@ trizen -S wps-office-mui-es-es
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
-#sudo pacman -S feedreader gnome-twitch corebird tilix sushi gnome-maps
+#sudo pacman -S gnome-twitch corebird tilix sushi 
 #sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin
@@ -359,7 +359,7 @@ do
            sudo pacman -S plasma
            sudo pacman -S akonadi-calendar-tools akonadi-import-wizard akonadiconsole 
            sudo pacman -S ark okular
-           sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole
+           sudo pacman -S dolphin dolphin-plugins dragon ffmpegthumbs filelight gwenview konsole spectacle
            sudo pacman -S kaccounts-integration kaccounts-providers kaddressbook kamoso kate kcalc kdegraphics-mobipocket
            sudo pacman -S kcharselect kcolorchooser kmail kdenetwork-filesharing kdialog kfind khelpcenter ktorrent
            sudo pacman -S plasma-wayland-session adapta-kde materia-kde arc-kde
