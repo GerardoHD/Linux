@@ -3,14 +3,14 @@ echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Arch Linux=---
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
-        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
-        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
-        echo " Simplemente ejecute este Script desde su usuario. "
-        exit
+	echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
+	echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
+	echo " Simplemente ejecute este Script desde su usuario. "
+	exit
 fi
 #
 #speedtest
-sudo mount -o remount,size=5G,noatime /tmp
+sudo mount -o remount,size=4G,noatime /tmp
 trizen -Syyu --noconfirm
 #sudo os-prober
 #sudo grub-mkconfig -o /boot/grub/grub.cfg

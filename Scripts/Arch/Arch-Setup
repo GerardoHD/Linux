@@ -12,7 +12,7 @@ fi
 #
 echo Probando conexión a Internet
 ping -c 3 www.archlinux.org
-sudo mount -o remount,size=5G,noatime /tmp
+sudo mount -o remount,size=4G,noatime /tmp
 sudo timedatectl set-ntp true
 #
 echo	---=Configurando Pacman=---
@@ -23,7 +23,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo	---=Instalando Bases para Arch Linux=---
-sudo pacman -S flatpak vim git fwupd sbsigntools
+sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools 
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo -=Pulse Audio=-	
@@ -85,13 +85,12 @@ sudo pacman -S polkit bash-completion gpart
 sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 sudo pacman -S libunrar unrar unarchiver zip x264 elinks gparted
 sudo pacman -S mtools mlocate ffmpegthumbnailer openssh sshfs
-sudo pacman -S speedtest-cli cmatrix 
 sudo pacman -S youtube-dl android-tools xdg-user-dirs
 sudo pacman -S python-pylast python-wikipedia
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-sudo pacman -S ttf-hack libotf ttf-roboto ttf-liberation
-sudo pacman -S ttf-fira-sans ttf-fira-mono ttf-fira-code 
+sudo pacman -S ttf-hack libotf ttf-roboto
+sudo pacman -S otf-fira-code  otf-fira-mono otf-fira-sans
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
@@ -131,7 +130,7 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
-trizen -S otf-san-francisco otf-bitter ephifonts-no-helvetica
+trizen -S otf-san-francisco otf-bitter
 trizen -S capitaine-cursors
 trizen -S nautilus-admin gradio pamac-aur arch-firefox-search shim-signed
 trizen -S google-chrome
@@ -158,7 +157,7 @@ trizen -S wps-office-mui-es-es
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
-#sudo pacman -S gnome-twitch corebird tilix sushi 
+#sudo pacman -S gnome-twitch corebird tilix sushi speedtest-cli cmatrix
 #sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
@@ -328,7 +327,7 @@ do
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
 	   sudo pacman -S mousetweaks mutter nautilus networkmanager rygel
 	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
-           sudo pacman -S dconf-editor gnome-sound-recorder
+           sudo pacman -S dconf-editor gnome-sound-recorder totem
            sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
@@ -338,7 +337,7 @@ do
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper
+           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
 	   trizen -S libinput-gestures gnome-appfolders-manager
 	   #
 	   echo Activando libinput-gestures

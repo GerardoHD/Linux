@@ -1,7 +1,6 @@
-#mv /boot/EFI/BOOT/BOOTX64.efi /boot/EFI/BOOT/grubx64.efi
+cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/grubx64.efi
 cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTX64.efi
 cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
-cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/grubx64.efi
 echo Firmando achivos
 sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
 sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi

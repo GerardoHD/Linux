@@ -1,6 +1,7 @@
 #Systemd-fsck-Setup
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Descargando Scripts=---
+	echo ------==Script Creado por GerardoHD==------
+	echo ---=Descargando Scripts=---
+	echo " Este Script deberá ejecutarse en una sesion root "
 sleep 3s
 echo
 #!/bin/bash
