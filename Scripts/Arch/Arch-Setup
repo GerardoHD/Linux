@@ -90,7 +90,7 @@ sudo pacman -S python-pylast python-wikipedia
 #Fuentes
 sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 sudo pacman -S ttf-hack libotf ttf-roboto
-sudo pacman -S otf-fira-code  otf-fira-mono otf-fira-sans
+sudo pacman -S otf-fira-code otf-fira-mono otf-fira-sans
 #Temas
 sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
@@ -176,10 +176,10 @@ echo Configuraciones varias
 echo Cambiando configuraciòn de UDisks2
 sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 #
-echo Configurando SystemD para ignorar la tapa del portatil
-sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
-sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
-
+#echo Configurando SystemD para ignorar la tapa del portatil
+#sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+#sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
+#
 #
 echo Arreglando Menulibre
 sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
@@ -208,7 +208,7 @@ do
            ;;
         "GRUB")
            echo "Escogiste Configurar GRUB"
-	   sudo pacman -S os-prober
+	   sudo pacman -S os-prober grub
 	   trizen -S arch-silence-grub-theme
 	   #
 	   sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
@@ -337,13 +337,17 @@ do
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
-	   trizen -S libinput-gestures gnome-appfolders-manager
+           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
 	   #
-	   echo Activando libinput-gestures
-	   libinput-gestures-setup autostart
+	   #echo -=libinput-gestures=-
+	   #trizen -S libinput-gestures
+	   #echo Activando libinput-gestures
+	   #libinput-gestures-setup autostart
+	   #
 	   echo Configurando el botón de Apagado para Gnome
            gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
+	   echo Configurando Alt+Tab para que cambie solo entre aplicaciones de la misma area de trabajo
+	   gsettings set org.gnome.shell.app-switcher current-workspace-only true
 	   #
 	   sleep 2s
 	   #
