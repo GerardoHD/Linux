@@ -157,7 +157,7 @@ trizen -S wps-office-mui-es-es
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
-#sudo pacman -S gnome-twitch corebird tilix sushi speedtest-cli cmatrix
+#sudo pacman -S gnome-twitch corebird tilix sushi speedtest-cli cmatrix celluloid
 #sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
 #trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
 #trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
@@ -322,7 +322,7 @@ do
 	   sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
 	   sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
 	   sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
-	   sudo pacman -S gnome-shell-extensions gnome-system-monitor gnome-terminal gnome-themes-extra
+	   sudo pacman -S gnome-system-monitor gnome-terminal gnome-themes-extra
 	   sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
 	   sudo pacman -S mousetweaks mutter nautilus networkmanager rygel
@@ -331,7 +331,7 @@ do
            sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
            sleep 2s
            sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
-	   sudo pacman -S gnome-mpv
+	   #
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
