@@ -11,7 +11,7 @@ fi
 #
 #speedtest
 sudo mount -o remount,size=4G,noatime /tmp
-trizen -Syyu --noconfirm
+yay -Syyu --noconfirm
 #sudo os-prober
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 #sudo bootctl update

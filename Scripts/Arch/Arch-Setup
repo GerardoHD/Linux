@@ -23,7 +23,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo	---=Instalando Bases para Arch Linux=---
-sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools 
+sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo -=Pulse Audio=-	
@@ -63,22 +63,27 @@ do
 done
 #
 echo -=Instalando Soporte AUR=-
-git clone https://aur.archlinux.org/trizen.git
-cd trizen && makepkg -si --noconfirm
-cd ..
-#
 git clone https://aur.archlinux.org/package-query.git
 cd package-query && makepkg -si --noconfirm
 cd ..
 #
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt && makepkg -si --noconfirm
-cd ..
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si --noconfirm
 #
-rm -rf trizen package-query yaourt
+rm -rf package-query yay
+#
+#git clone https://aur.archlinux.org/yaourt.git
+#cd yaourt && makepkg -si --noconfirm
+#cd ..
+#
+#git clone https://aur.archlinux.org/trizen.git
+#cd yay && makepkg -si --noconfirm
+#cd ..
+#
+#rm -rf yaourt trizen
 #
 echo -=Actualizando Arch Linux=-
-trizen -Syyu
+yay -Syyu
 #
 echo	---=Instalando Software desde Repositorios Oficiales=---
 sudo pacman -S polkit bash-completion gpart
@@ -96,13 +101,14 @@ sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper
 sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
 sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins menulibre lollypop fragments gthumb
-sudo pacman -S geary vocal calibre gnome-epub-thumbnailer feedreader
-sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
+sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb
+sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
 echo -=Soporte de impresion=-
 sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
+#echo -=Firefox=-
+#sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
 #echo -=Steam=-
 #sudo pacman -S steam steam-native-runtime
 #
@@ -130,37 +136,37 @@ flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 #flatpak install flathub com.spotify.Client -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
-trizen -S otf-san-francisco otf-bitter
-trizen -S capitaine-cursors
-trizen -S nautilus-admin gradio pamac-aur arch-firefox-search shim-signed
-trizen -S google-chrome
+yay -S otf-san-francisco otf-bitter
+yay -S capitaine-cursors menulibre
+yay -S nautilus-admin gradio pamac-aur shim-signed
+yay -S google-chrome
 #
 echo -=WPS-Office=-
-trizen -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
-trizen -S wps-office-mui-es-es 
+yay -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
+yay -S wps-office-mui-es-es 
 #echo -=Steam=-
-#trizen -S steam-fonts
+#yay -S steam-fonts
 #echo -=KODI=-
-#trizen -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
-#trizen -S kodi-standalone-service
-#trizen -S filebot47 java-openjfx
+#yay -S kodi-addon-pvr-iptvsimple-git kodi-platform-git libplatform-legacy
+#yay -S kodi-standalone-service
+#yay -S filebot47 java-openjfx
 #echo -=PLEX=-
-#trizen -S plex-media-server
-#trizen -S plex-media-server-plexpass
-#trizen -S plex-media-player
+#yay -S plex-media-server
+#yay -S plex-media-server-plexpass
+#yay -S plex-media-player
 #echo Activando Servicio Plex Media Server
 #systemctl enable plexmediaserver.service
 #echo -=Firmware Especifico=-
-#trizen -S aic94xx-firmware wd719x-firmware
+#yay -S aic94xx-firmware wd719x-firmware
 #echo -=Soporte Impresora Epson L210=-
-#trizen -S epson-inkjet-printer-201207w
+#yay -S epson-inkjet-printer-201207w
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
 #sudo pacman -S gnome-twitch corebird tilix sushi speedtest-cli cmatrix celluloid
-#sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround
-#trizen -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git
-#trizen -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
+#sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround feedreader
+#yay -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git arch-firefox-search
+#yay -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
 #
 #echo  Mejorando la-capitaine-icon-theme
 #sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
@@ -180,63 +186,38 @@ sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedeskto
 #sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 #sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
 #
-#
 echo Arreglando Menulibre
 sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
 #
-echo	---=Configurando Bootloader=---
-PS3='Elige el bootloader a configurar: '
-options=("Systemd-boot" "GRUB" "Salir")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Systemd-boot")
-           echo "Escogiste Configurar Systemd-boot"
-	   #
-	   echo Configurando loader Systemd-boot
-	   sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
-	   #
-	   echo Descargando Hook de Pacman para systemd-boot
-	   sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
-	   #
-	   echo configurando Silent boot, desactivando varias alertas del sistema
-	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   echo Ejcutar Systemd-fsck-Setup como usuario root
-	   sudo mkinitcpio -p linux
-	   sudo bootctl update
-           break
-           ;;
-        "GRUB")
-           echo "Escogiste Configurar GRUB"
-	   sudo pacman -S os-prober grub
-	   trizen -S arch-silence-grub-theme
-	   #
-	   sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-	   sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=1/g' /etc/default/grub
-	   sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
-	   sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
-	   sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/g' /etc/default/grub
-	   #
-	   echo configurando Silent boot, desactivando varias alertas del sistema
-	   sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-	   echo Ejcutar Systemd-fsck-Setup como usuario root
-	   sudo mkinitcpio -p linux
-	   sudo os-prober
-	   sudo grub-mkconfig -o /boot/grub/grub.cfg
-           break
-           ;;
-	"Salir")
-           break
-           ;;
-        *) echo invalid option;;
-    esac
-done
+echo	---=Configurando Bootloaders=---
+sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
+#
+echo Descargando Hook de Pacman para systemd-boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
+#
+echo Configurando Silent boot, desactivando varias alertas del sistema
+sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+echo Ejecutar Systemd-fsck-Setup como usuario root
+sudo mkinitcpio -p linux
+sudo bootctl update
+#
+echo Instalando os-prober, Grub y Tema arch-silence
+yay -S os-prober grub arch-silence-grub-theme
+sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
+sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
+sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=1/g' /etc/default/grub
+sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
+sudo sed -i 's/#GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/grub
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3"/g' /etc/default/grub
+sudo mkinitcpio -p linux
+sudo os-prober
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
 #echo Descargando Sudocabulary desde Github
 #curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
 #
 echo  -=Actualizando Arch Linux=-
-trizen -Syyu
+yay -Syyu
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
@@ -269,8 +250,8 @@ do
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           trizen -S cinnamon-sound-effects
-           trizen -S macos-arc-white-theme
+           yay -S cinnamon-sound-effects
+           yay -S macos-arc-white-theme
            #
            echo Cambiando distribución del teclado en LightDM
            echo >> 20-keyboard.conf
@@ -327,20 +308,20 @@ do
 	   sudo pacman -S gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
 	   sudo pacman -S mousetweaks mutter nautilus networkmanager rygel
 	   sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
-           sudo pacman -S dconf-editor gnome-sound-recorder totem
-           sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
-           sleep 2s
-           sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
+	   sudo pacman -S dconf-editor gnome-sound-recorder totem
+	   sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
+	   sleep 2s
+	   sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
 	   #
            echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           trizen -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
+           yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
 	   #
 	   #echo -=libinput-gestures=-
-	   #trizen -S libinput-gestures
+	   #yay -S libinput-gestures
 	   #echo Activando libinput-gestures
 	   #libinput-gestures-setup autostart
 	   #
@@ -348,6 +329,8 @@ do
            gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	   echo Configurando Alt+Tab para que cambie solo entre aplicaciones de la misma area de trabajo
 	   gsettings set org.gnome.shell.app-switcher current-workspace-only true
+	   echo Configurando Papirus como tema de iconos
+	   gsettings set org.gnome.desktop.interface icon-theme Papirus
 	   #
 	   sleep 2s
 	   #
@@ -372,8 +355,8 @@ do
            sudo pacman -S kio-gdrive kdeconnect
            sudo pacman -S partitionmanager plasma-browser-integration
            sleep 2s
-           trizen -S pamac-tray-appindicator archlinux-themes-sddm
-           trizen -S systemd-kcm
+           yay -S pamac-tray-appindicator archlinux-themes-sddm
+           yay -S systemd-kcm
            # 
            echo Ajustando Mapa de Teclas para sddm
            sudo sed -i '$ a\setxkbmap es' /usr/share/sddm/scripts/Xsetup
@@ -395,7 +378,7 @@ do
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           trizen -S mate-applet-lockkeys
+           yay -S mate-applet-lockkeys
            #
            echo Cambiando distribución del teclado en LightDM
            echo >> 20-keyboard.conf
@@ -434,12 +417,12 @@ do
            sudo pacman -S qt5-styleplugins qt5ct 
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
-           #trizen -S redshift-gtk-git 
-	   trizen -S mugshot indicator-keylock archlinux-themes-balou
-           trizen -S xfce4-windowck-plugin
+           #yay -S redshift-gtk-git 
+	   yay -S mugshot indicator-keylock archlinux-themes-balou
+           yay -S xfce4-windowck-plugin
            #
            echo -=KDE Connect=-
-           trizen -S indicator-kdeconnect kde-cli-tools
+           yay -S indicator-kdeconnect kde-cli-tools
            #
            echo Cambiando distribución del teclado en LightDM
            echo >> 20-keyboard.conf
@@ -467,7 +450,7 @@ do
 done
 #
 echo  -=Actualizando Arch Linux=-
-trizen -Syyu
+yay -Syyu
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
@@ -476,7 +459,7 @@ xdg-user-dirs-update
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 sudo pacman -Sc
-trizen -Sc
+yay -Sc
 clear
 screenfetch
 df -h

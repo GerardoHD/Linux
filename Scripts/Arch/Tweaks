@@ -10,8 +10,8 @@ sleep 1s
 #
 #Automatizar instalaciòn de paquetes en mis scripts:
 sudo sed -i 's/sudo pacman -S /sudo pacman -S --noconfirm /g' /usr/local/bin/Arch-Setup
-sudo sed -i 's/trizen -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Setup
+sudo sed -i 's/yay -S /trizen -S --noconfirm /g' /usr/local/bin/Arch-Setup
 #
 #Automatizar desinstalaciòn de paquetes en mis scripts:
 #sed -i 's/sudo pacman -S /sudo pacman -Rcs --noconfirm /g' /usr/local/bin/Arch-Setup
-#sed -i 's/trizen -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Setup
+#sed -i 's/yay -S /trizen -Rcs  --noconfirm /g' /usr/local/bin/Arch-Setup

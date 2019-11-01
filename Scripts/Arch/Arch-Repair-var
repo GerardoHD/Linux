@@ -11,7 +11,7 @@ fi
 #
 sudo mount -o remount,size=4G,noatime /tmp
 sudo rm -f /var/lib/pacman/db.lck
-trizen -Syyu
+yay -Syyu
 clear
 screenfetch
 df -h

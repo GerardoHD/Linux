@@ -3,6 +3,7 @@ Type = Package
 Operation = Upgrade
 Target = systemd
 Target = linux
+Target = grub
 
 [Action]
 Description = Signing Files with Machine Owner Key for Secure Boot

@@ -7,6 +7,6 @@ if [ "$(id -u)" -eq 0 ] ; then
 fi
 #
 sudo mount -o remount,size=4G,noatime /tmp
-trizen -Syyu --noconfirm
+yay -Syyu --noconfirm
 sudo poweroff
 #

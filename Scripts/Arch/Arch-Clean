@@ -3,7 +3,7 @@ echo          ------==Script Creado por GerardoHD==------
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
 sudo pacman -Sc
-trizen -Sc
+yay -Sc
 clear
 screenfetch
 df -h
