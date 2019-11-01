@@ -7,6 +7,7 @@ echo
 cd /usr/local/bin
 sudo rm -rf screenfetch
 sudo rm -rf Arch-Clean
+sudo rm -rf Arch-EFISTUB
 sudo rm -rf Arch-Poweroff
 sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
@@ -28,6 +29,7 @@ sudo rm -rf STATE
 #sudo rm -rf Ubuntu-Update
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Clean
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-EFISTUB
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Poweroff
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Reboot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
@@ -49,6 +51,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/ST
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Update
 sudo chmod +x screenfetch
 sudo chmod +x Arch-Clean
+sudo chmod +x Arch-EFISTUB
 sudo chmod +x Arch-Poweroff
 sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
