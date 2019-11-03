@@ -1,2 +1,0 @@
-echo Creando entrada de EFISTUB:
-#efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTLABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 initrd=\intel-ucode.img initrd=\initramfs-linux.img' --verbose
