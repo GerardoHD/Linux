@@ -23,7 +23,7 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo	---=Instalando Bases para Arch Linux=---
-sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man
+sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man efitools
 sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
 sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo -=Pulse Audio=-	
@@ -138,7 +138,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 echo	---=Instalando Software desde Arch User Repository=---
 yay -S otf-san-francisco otf-bitter
 yay -S menulibre
-yay -S nautilus-admin gradio pamac-aur shim-signed
+yay -S nautilus-admin gradio pamac-aur
 yay -S google-chrome
 #
 echo -=WPS-Office=-
@@ -166,7 +166,7 @@ sleep 2s
 #sudo pacman -S gnome-twitch corebird tilix sushi speedtest-cli cmatrix celluloid
 #sudo pacman -S budgie-desktop budgie-extras kodi-addon-adsp-freesurround feedreader
 #yay -S gtk-theme-united-gnome macos-icon-theme spotify rhythmbox-plugin-alternative-toolbar-git arch-firefox-search
-#yay -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git
+#yay -S albert gtk-arc-flatabulous-theme-git macos11-icon-theme etcher-bin la-capitaine-icon-theme-git shim-signed
 #
 #echo  Mejorando la-capitaine-icon-theme
 #sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
