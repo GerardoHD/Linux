@@ -62,9 +62,7 @@ sudo chmod +x Blue-Script
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
-sudo chmod +x Poweroff
 sudo chmod +x ROOT-A
-sudo chmod +x Reboot
 sudo chmod +x Red-Script
 sudo chmod +x STATE
 #sudo chmod +x Ubuntu-Clean
