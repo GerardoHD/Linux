@@ -1,0 +1,12 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = systemd
+Target = linux
+Target = grub
+
+[Action]
+Description = Signing Files with Machine Owner Key for Secure Boot
+When = PostTransaction
+Exec = /bin/sh -c 'Secure-Boot'
