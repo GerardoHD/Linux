@@ -1,3 +1,4 @@
+#!/bin/bash
 #Reparar Pacman db.lck
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Reparando Pacman db.lck--
@@ -14,6 +15,6 @@ sudo rm -f /var/lib/pacman/db.lck
 yay -Syyu
 clear
 screenfetch
-df -h
+df -hT
 date
 #

@@ -1,3 +1,4 @@
+#!/bin/bash
 #Actualizar Arch
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Arch Linux=---
@@ -16,6 +17,6 @@ yay -Syyu --noconfirm
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 #sudo bootctl update
 screenfetch
-df -h
+df -hT
 date
 #

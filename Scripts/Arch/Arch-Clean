@@ -1,3 +1,4 @@
+#!/bin/bash
 #Limpiar Arch
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Limpiando Arch Linux=--
@@ -6,6 +7,6 @@ sudo pacman -Sc
 yay -Sc
 clear
 screenfetch
-df -h
+df -hT
 date
 #

@@ -1,3 +1,4 @@
+#!/bin/bash
 echo	------==Script Creado por GerardoHD==------
 echo https://www.github.com/GerardoHD/Linux
 echo Script creado para configurar un sistema completo basado en Arch Linux
@@ -71,16 +72,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si --noconfirm
 #
 rm -rf package-query yay
-#
-#git clone https://aur.archlinux.org/yaourt.git
-#cd yaourt && makepkg -si --noconfirm
-#cd ..
-#
-#git clone https://aur.archlinux.org/trizen.git
-#cd yay && makepkg -si --noconfirm
-#cd ..
-#
-#rm -rf yaourt trizen
 #
 echo -=Actualizando Arch Linux=-
 yay -Syyu
@@ -192,9 +183,6 @@ sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.marku
 echo	---=Configurando Bootloaders=---
 sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3/g' /boot/loader/entries/Arch.conf
 #
-echo Descargando Hook de Pacman para systemd-boot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/100-systemd-boot.hook -O /usr/share/libalpm/hooks/100-systemd-boot.hook
-#
 echo Configurando Silent boot, desactivando varias alertas del sistema
 sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
 echo Ejecutar Systemd-fsck-Setup como usuario root
@@ -212,6 +200,17 @@ sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"/GRUB_CMDLINE_LINUX_
 sudo mkinitcpio -p linux
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+#
+echo Descargando Hook de Pacman para Secure-Boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/91-Secure-Boot.hook -O /usr/share/libalpm/hooks/91-Secure-Boot.hook
+#
+echo Descargando Hook de Pacman para Systemd-Boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Systemd-Boot.hook -O /usr/share/libalpm/hooks/92-Systemd-Boot.hook
+#
+echo Creando carpeta Arch-signed y archivo cmdline.txt para Secure-Boot en /root
+sudo mkdir -p /root/Arch-signed
+echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 > cmdline.txt
+sudo mv cmdline.txt /root/Arch-signed/
 #
 #echo Descargando Sudocabulary desde Github
 #curl https://raw.githubusercontent.com/badarsh2/Sudocabulary/master/script.sh | bash
@@ -461,7 +460,7 @@ sudo pacman -Sc
 yay -Sc
 clear
 screenfetch
-df -h
+df -hT
 date
 echo ---=[El nuevo Sistema basado en Arch Linux está listo]=---
 #

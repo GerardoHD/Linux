@@ -1,3 +1,4 @@
+#!/bin/bash
 #Systemd-fsck-Setup
 	echo ------==Script Creado por GerardoHD==------
 	echo ---=Descargando Scripts=---

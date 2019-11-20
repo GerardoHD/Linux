@@ -1,3 +1,4 @@
+#!/bin/bash
 #Reiniciar y Actualizar Arch Linux
 if [ "$(id -u)" -eq 0 ] ; then
         echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "

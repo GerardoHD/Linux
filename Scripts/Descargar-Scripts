@@ -1,3 +1,4 @@
+#!/bin/bash
 #Descargar-Scripts
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Descargando Scripts=---
@@ -12,7 +13,7 @@ sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
 sudo rm -rf Arch-Update
-sudo rm -rf Secure-boot
+sudo rm -rf Secure-Boot
 sudo rm -rf Systemd-fsck-Setup
 sudo rm -rf Tweaks
 sudo rm -rf Blue-Script
@@ -33,7 +34,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Systemd-fsck-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Blue-Script
@@ -54,7 +55,7 @@ sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
 sudo chmod +x Arch-Update
-sudo chmod +x Secure-boot
+sudo chmod +x Secure-Boot
 sudo chmod +x Systemd-fsck-Setup
 sudo chmod +x Tweaks
 sudo chmod +x Blue-Script
