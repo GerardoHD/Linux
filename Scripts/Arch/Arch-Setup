@@ -201,11 +201,11 @@ sudo mkinitcpio -p linux
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #
-echo Descargando Hook de Pacman para Secure-Boot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/91-Secure-Boot.hook -O /usr/share/libalpm/hooks/91-Secure-Boot.hook
-#
 echo Descargando Hook de Pacman para Systemd-Boot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Systemd-Boot.hook -O /usr/share/libalpm/hooks/92-Systemd-Boot.hook
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Systemd-Boot.hook -O /usr/share/libalpm/hooks/91-Systemd-Boot.hook
+#
+echo Descargando Hook de Pacman para Secure-Boot
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/91-Secure-Boot.hook -O /usr/share/libalpm/hooks/92-Secure-Boot.hook
 #
 echo Creando carpeta Arch-signed y archivo cmdline.txt para Secure-Boot en /root
 sudo mkdir -p /root/Arch-signed
