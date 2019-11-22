@@ -1,0 +1,56 @@
+#!/bin/bash
+#ChromiumOS
+echo          ------==Script Creado por GerardoHD==------
+echo https://github.com/GerardoHD
+echo       ---=Preparando Sistema de archivos=---
+mount -o remount, rw /
+mkdir /usr/lib/cromo
+mkdir /opt/google/chrome/pepper
+echo       ---=Descargando Scripts de GerardoHD=---
+mkdir /usr
+mkdir /usr/local
+mkdir /usr/local/bin
+cd /usr/local/bin/
+sudo rm -rf Descargar-Scripts
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
+sudo chmod +x Descargar-Scripts
+#
+screenfetch
+cd /
+#
+echo       ---=Instalando Flash para ChromiumOS=---
+#!/bin/bash
+ 
+if [ `uname -m` != 'x86_64' ]; then
+  # non x86_64
+  echo "This script is designed for working with x86_64 system"
+  exit
+else
+    #x86_64
+  echo "x86_64 system detected. OK to continue."
+fi
+ 
+#remount / as read/write
+mount -o remount,rw /
+ 
+cd /opt/google/chrome/
+#remove old files
+rm -f libpdf.so
+rm -f libffmpegsumo.so
+mkdir pepper
+cd pepper
+rm -f manifest.json
+rm -f libpepflashplayer.so
+rm -f pepper-flash.info
+ 
+#download package
+curl -L "https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/plugin.tgz" -o "plugin.tgz"
+#flash
+tar -xzvf plugin.tgz
+#PDF
+mv -f libpdf.so ..
+#mp3/mp4
+mv -f libffmpegsumo.so ..
+#delete downloaded package
+rm -f plugin.tgz
+restart ui
