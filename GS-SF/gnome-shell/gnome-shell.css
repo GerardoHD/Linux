@@ -1,0 +1,9 @@
+stage { font-family: SF Compact Text; }
+
+#La siguiente seccion debería de cambiar el fondo de pantalla de gdm, pero no funciona
+#lockDialogGroup {
+background: #2c001e url(file:///usr/share/backgrounds/archlinux/archlinux-berry.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
