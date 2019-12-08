@@ -24,14 +24,14 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 #
 echo	---=Instalando Bases para Arch Linux=---
-sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man efitools
-sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
-sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
+	sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man efitools
+	sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g
+	sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo -=Pulse Audio=-	
-sudo pacman -S pulseaudio-alsa libcanberra-pulse alsa-utils
+	sudo pacman -S pulseaudio-alsa libcanberra-pulse alsa-utils
 echo -=X Window System=-
-sudo pacman -S xorg-server xorg-xdriinfo xorg-xdpyinfo xorg-xprop xorg-xinit
-sudo pacman -S mesa mesa-demos 
+	sudo pacman -S xorg-server xorg-xdriinfo xorg-xdpyinfo xorg-xprop xorg-xinit
+	sudo pacman -S mesa mesa-demos 
 #
 echo	---=Instalando Drivers Graficos=---
 PS3='Introduce tu elecciòn: '
@@ -70,6 +70,7 @@ cd ..
 #
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si --noconfirm
+cd ..
 #
 rm -rf package-query yay
 #
@@ -77,26 +78,26 @@ echo -=Actualizando Arch Linux=-
 yay -Syyu
 #
 echo	---=Instalando Software desde Repositorios Oficiales=---
-sudo pacman -S polkit bash-completion gpart
-sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
-sudo pacman -S libunrar unrar unarchiver zip x264 elinks gparted
-sudo pacman -S mtools mlocate ffmpegthumbnailer openssh sshfs
-sudo pacman -S youtube-dl android-tools xdg-user-dirs
-sudo pacman -S python-pylast python-wikipedia
+	sudo pacman -S polkit bash-completion gpart
+	sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
+	sudo pacman -S libunrar unrar unarchiver zip x264 elinks gparted
+	sudo pacman -S mtools mlocate ffmpegthumbnailer openssh sshfs
+	sudo pacman -S youtube-dl android-tools xdg-user-dirs
+	sudo pacman -S python-pylast python-wikipedia
 #Fuentes
-sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-sudo pacman -S ttf-hack libotf ttf-roboto
-sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
+	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+	sudo pacman -S ttf-hack libotf ttf-roboto
+	sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
 #Temas
-sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper capitaine-cursors
-sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
-sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
+	sudo pacman -S gtk-engine-murrine gtk-engines archlinux-wallpaper capitaine-cursors
+	sudo pacman -S adapta-gtk-theme materia-gtk-theme papirus-icon-theme arc-gtk-theme
+	sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
-sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb
-sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
+	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb
+	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
 echo -=Soporte de impresion=-
-sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
-sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
+	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
+	sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
 #
 #echo -=Firefox=-
 #sudo pacman -S firefox firefox-i18n-es-es firefox-i18n-es-mx mozilla-common
@@ -127,14 +128,14 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 #flatpak install flathub com.spotify.Client -y
 #
 echo	---=Instalando Software desde Arch User Repository=---
-yay -S otf-bitter otf-san-francisco-pro otf-san-francisco-compact otf-san-francisco-mono
-yay -S menulibre
-yay -S nautilus-admin gradio pamac-aur
-yay -S google-chrome
+	yay -S otf-bitter otf-san-francisco-pro otf-san-francisco-compact otf-san-francisco-mono
+	yay -S menulibre
+	yay -S nautilus-admin gradio pamac-aur
+	yay -S google-chrome
 #
 echo -=WPS-Office=-
-yay -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
-yay -S wps-office-mui-es-es 
+	yay -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
+	yay -S wps-office-mui-es-es 
 #echo -=Steam=-
 #yay -S steam-fonts
 #echo -=KODI=-
@@ -149,8 +150,8 @@ yay -S wps-office-mui-es-es
 #systemctl enable plexmediaserver.service
 #echo -=Firmware Especifico=-
 #yay -S aic94xx-firmware wd719x-firmware
-#echo -=Soporte Impresora Epson L4150=-
-#yay -S epson-inkjet-printer-escpr
+echo -=Soporte Impresora Epson L4150=-
+	yay -S epson-inkjet-printer-escpr
 sleep 2s
 #Freezer
 #sudo pacman -S avidemux-qt noto-fonts-extra npm npm-check-updates nodejs easytag ttf-ubuntu-font-family
@@ -189,9 +190,11 @@ echo Ejecutar Systemd-fsck-Setup como usuario root
 sudo mkinitcpio -p linux
 sudo bootctl update
 #
+#En implementaciones UEFI problematicas, activar la linea alternativa de grub, y desactivar/eliminar el Hook  de Systemd-Boot
 echo Instalando os-prober, Grub y Tema arch-silence
-yay -S os-prober grub arch-silence-grub-theme
+	yay -S os-prober grub arch-silence-grub-theme
 sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
+#sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --removable --recheck
 sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=1/g' /etc/default/grub
 sudo sed -i 's|#GRUB_THEME="/path/to/gfxtheme"|GRUB_THEME=/boot/grub/themes/arch-silence/theme.txt|g' /etc/default/grub
@@ -317,7 +320,8 @@ do
            sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
            #
            sleep 2s
-           yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
+           yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper 
+	   yay -S dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
 	   #
 	   #echo -=libinput-gestures=-
 	   #yay -S libinput-gestures
