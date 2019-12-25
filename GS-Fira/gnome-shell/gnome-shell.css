@@ -7,3 +7,5 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 }
+
+#panel .popup-menu-arrow { width: 0; height: 0; }
