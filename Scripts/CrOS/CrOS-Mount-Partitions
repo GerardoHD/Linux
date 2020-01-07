@@ -4,5 +4,4 @@ sudo mount /dev/sda27 /home/chronos/u-e10ecca064310dd96be189cd9b425d8c174c3105/M
 sudo mount /dev/sda28 /home/chronos/u-e10ecca064310dd96be189cd9b425d8c174c3105/MyFiles/Windows
 sudo mount /dev/sda30 /home/chronos/u-e10ecca064310dd96be189cd9b425d8c174c3105/MyFiles/Arch
 sudo mount /dev/sda31 /home/chronos/u-e10ecca064310dd96be189cd9b425d8c174c3105/MyFiles/Datos
-sudo mount /dev/sda32 /home/chronos/u-e10ecca064310dd96be189cd9b425d8c174c3105/MyFiles/Android
 df -hT
