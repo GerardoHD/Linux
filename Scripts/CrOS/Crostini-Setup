@@ -1,0 +1,13 @@
+##!/bin/bash
+#Crostini-Setup
+#!/bin/bash
+echo	------==Script Creado por GerardoHD==------
+echo https://www.github.com/GerardoHD/Linux
+echo Script creado para configurar la sesión Debian en Crostini en ChromeOS
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+#
+sudo sed -i 's/LANG=en_US.UTF-8/LANG=es_MX.UTF-8/g' /etc/default/locale
+sudo sed -i 's/# es_MX.UTF-8/es_MX.UTF-8/g'  /etc/locale.gen
+sudo sed -i 's/en_US.UTF-8/#en_US.UTF-8/g'  /etc/locale.gen
+sudo apt install android-tools-adb android-tools-fastboot -y
