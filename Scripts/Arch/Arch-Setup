@@ -74,7 +74,7 @@ cd ..
 #
 rm -rf package-query yay
 #
-echo -=Actualizando Arch Linux=-
+echo  -=Actualizando Arch Linux=-
 yay -Syyu
 #
 echo	---=Instalando Software desde Repositorios Oficiales=---
