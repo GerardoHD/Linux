@@ -1,5 +1,7 @@
 #!/bin/bash
-#Reiniciar y Actualizar Arch Linux
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando y reiniciando Arch Linux--
+sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
         echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
         echo " Este Script usará sudo cuando sea necesario. Deteniendo. "

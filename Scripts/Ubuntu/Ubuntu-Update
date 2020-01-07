@@ -1,4 +1,4 @@
-#Actualizar Ubuntu
+#!/bin/bash
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Ubuntu=---
 sleep 1s

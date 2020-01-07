@@ -1,5 +1,4 @@
 #!/bin/bash
-#Reparar Pacman db.lck
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Reparando Pacman db.lck--
 sleep 1s

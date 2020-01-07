@@ -1,5 +1,9 @@
 #!/bin/bash
-#
+#echo	------==Script Creado por GerardoHD==------
+#echo https://www.github.com/GerardoHD/Linux
+#echo Script creado para crear Imagen de Kernel Unificada para UEFI Boot
+#echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+#sleep 1s
 #Usando MOK
 #cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/grubx64.efi
 #cp /usr/share/shim-signed/shimx64.efi /boot/EFI/BOOT/BOOTX64.efi

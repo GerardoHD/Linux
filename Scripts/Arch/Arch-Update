@@ -1,5 +1,4 @@
 #!/bin/bash
-#Actualizar Arch
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Actualizando Arch Linux=---
 sleep 1s

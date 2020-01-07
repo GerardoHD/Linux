@@ -1,5 +1,4 @@
 #!/bin/bash
-#Limpiar Arch
 echo          ------==Script Creado por GerardoHD==------
 echo       ---=Limpiando Arch Linux=--
 sleep 1s
