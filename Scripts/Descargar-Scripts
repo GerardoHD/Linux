@@ -26,10 +26,10 @@ sudo rm -rf Descargar-Scripts
 sudo rm -rf Materia-GDM-Theme
 sudo rm -rf Original-GDM-Theme
 sudo rm -rf Red-Script
-#sudo rm -rf Ubuntu-Clean
-#sudo rm -rf Ubuntu-Repair-var
-#sudo rm -rf Ubuntu-Setup
-#sudo rm -rf Ubuntu-Update
+sudo rm -rf Ubuntu-Clean
+sudo rm -rf Ubuntu-Repair-var
+sudo rm -rf Ubuntu-Setup
+sudo rm -rf Ubuntu-Update
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Clean
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Poweroff
@@ -50,10 +50,10 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/De
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Clean
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Repair-var
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Update
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Clean
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Repair-var
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Update
 sudo chmod +x screenfetch
 sudo chmod +x Arch-Clean
 sudo chmod +x Arch-Poweroff
@@ -74,10 +74,10 @@ sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
 sudo chmod +x Red-Script
-#sudo chmod +x Ubuntu-Clean
-#sudo chmod +x Ubuntu-Repair-var
-#sudo chmod +x Ubuntu-Setup
-#sudo chmod +x Ubuntu-Update
+sudo chmod +x Ubuntu-Clean
+sudo chmod +x Ubuntu-Repair-var
+sudo chmod +x Ubuntu-Setup
+sudo chmod +x Ubuntu-Update
 cd /
 sleep 1s
 clear
