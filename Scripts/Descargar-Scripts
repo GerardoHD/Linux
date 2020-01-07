@@ -50,10 +50,10 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/De
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Red-Script
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Clean
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Repair-var
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Setup
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu-Update
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu/Ubuntu-Clean
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu/Ubuntu-Repair-var
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu/Ubuntu-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ubuntu/Ubuntu-Update
 sudo chmod +x screenfetch
 sudo chmod +x Arch-Clean
 sudo chmod +x Arch-Poweroff
