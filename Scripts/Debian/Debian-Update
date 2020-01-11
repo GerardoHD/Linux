@@ -1,0 +1,14 @@
+#!/bin/bash
+echo          ------==Script Creado por GerardoHD==------
+echo       ---=Actualizando Ubuntu=---
+sleep 1s
+echo
+#!/bin/bash
+#speedtest
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+#sudo update-grub
+#sudo fc-cache -f -v
+#sudo gtk-update-icon-cache
+screenfetch
