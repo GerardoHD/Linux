@@ -1,0 +1,48 @@
+#!/bin/bash
+echo	------==Script Creado por GerardoHD==------
+echo https://www.github.com/GerardoHD/Linux
+echo Script creado para configurar un sistema Ubuntu (18.04)
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+#
+	sudo apt install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04 -y
+	sudo apt install ubuntu-restricted-extras -y
+	sudo apt install chrome-gnome-shell -y
+	sudo apt install flatpak sshfs -y
+	sudo apt install dconf-tools git curl -y
+	sudo apt install android-tools-adb android-tools-fastboot -y
+	sudo apt install autoconf automake cmake -y
+	sudo apt install gparted -y
+	snap install communitheme
+#
+	sudo apt install synaptic -y
+	sudo apt install gnome-contacts nautilus-admin -y
+#
+	sudo apt install geary calibre menulibre -y
+#
+echo     ---=Descargando Google Chrome=---
+wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+#
+	sudo apt purge libreoffice*
+	sudo apt remove gnome-mahjongg
+	sudo apt purge remmina aisleriot gnome-todo
+·
+echo     ---=Actualizando el sistema=---
+sleep 2s
+#Actualizando la biblioteca de paquetes
+sudo apt update
+# Actualizando el sistema
+sudo apt upgrade -y
+#
+echo       ---=Limpiando Ubuntu=---
+sleep 1s
+echo
+#!/bin/bash
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+df -h
+sleep 3s
+#
