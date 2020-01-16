@@ -78,7 +78,7 @@ echo  -=Actualizando Arch Linux=-
 yay -Syyu
 #
 echo	---=Instalando Software desde Repositorios Oficiales=---
-	sudo pacman -S polkit bash-completion gpart
+	sudo pacman -S polkit bash-completion gpart qt5-wayland
 	sudo pacman -S p7zip lrzip lzip minizip gst-libav atomicparsley unarj unace
 	sudo pacman -S libunrar unrar unarchiver zip x264 elinks gparted
 	sudo pacman -S mtools mlocate ffmpegthumbnailer openssh sshfs
@@ -134,8 +134,8 @@ echo	---=Instalando Software desde Arch User Repository=---
 	yay -S google-chrome
 #
 echo -=WPS-Office=-
-	yay -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
-	yay -S wps-office-mui-es-es 
+#	yay -S wps-office wps-office-extension-spanish-dictionary ttf-wps-fonts
+#	yay -S wps-office-mui-es-es 
 #echo -=Steam=-
 #yay -S steam-fonts
 #echo -=KODI=-
