@@ -4,7 +4,6 @@ echo       ---=Limpiando Arch Linux=--
 sleep 1s
 sudo pacman -Sc
 yay -Sc
-clear
 screenfetch
 df -hT
 date
