@@ -76,8 +76,8 @@ sudo chmod +x Original-GDM-Theme
 sudo chmod +x Red-Script
 sudo chmod +x Debian-Clean
 sudo chmod +x Debian-Repair-var
-sudo chmod +x Debian-Setup
-sudo chmod +x Ubuntu-Update
+sudo chmod +x Debian-Update
+sudo chmod +x Ubuntu-Setup
 cd /
 sleep 1s
 #clear
