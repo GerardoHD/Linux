@@ -1,6 +1,6 @@
 #!/bin/bash
 echo          ------==Script Creado por GerardoHD==------
-echo       ---=Limpiando Ubuntu=---
+echo       ---=Limpiando Debian=---
 sleep 1s
 echo
 #!/bin/bash
