@@ -158,7 +158,7 @@ done
 #
 #Programas
 	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb gparted
-	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd gnome-twitch
+	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd
 #
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -358,7 +358,7 @@ do
 	  sudo pacman -S gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-nfs gvfs-smb
 	  sudo pacman -S mousetweaks mutter nautilus networkmanager rygel sushi
 	  sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
-	  sudo pacman -S dconf-editor gnome-sound-recorder totem gnome-multi-writer
+	  sudo pacman -S dconf-editor gnome-sound-recorder totem
 	  sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
 	  sleep 2s
 	  sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
