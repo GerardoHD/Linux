@@ -20,7 +20,7 @@ sleep 1s
 #
 	sudo apt install geary calibre menulibre -y
 #
-echo     ---=Descargando Google Chrome=---
+echo  -=Descargando Google Chrome=-
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
@@ -29,14 +29,14 @@ rm google-chrome-stable_current_amd64.deb
 	sudo apt remove gnome-mahjongg
 	sudo apt purge remmina aisleriot gnome-todo
 ·
-echo     ---=Actualizando el sistema=---
+echo  -=Actualizando el sistema=-
 sleep 2s
 #Actualizando la biblioteca de paquetes
 sudo apt update
 # Actualizando el sistema
 sudo apt upgrade -y
 #
-echo       ---=Limpiando Ubuntu=---
+echo  -=Limpiando Ubuntu=-
 sleep 1s
 echo
 #!/bin/bash

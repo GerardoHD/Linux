@@ -1,14 +1,14 @@
 #!/bin/bash
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Actualizando y reiniciando Arch Linux--
+echo	------==Script Creado por GerardoHD==------
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
-        echo " ADVERTENCIA: Makepkg no compilará paquetes desde AUR en una sesión Root "
-        echo " Este Script usará sudo cuando sea necesario. Deteniendo. "
-        echo " Simplemente ejecute este Script desde su usuario. "
-        exit
+	echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión Root "
+	echo " Este script usará sudo cuando sea necesario. Deteniendo. "
+	echo " Simplemente ejecute este script desde su usuario. "
+	exit
 fi
 #
+echo  -=Reiniciando y actualizando Arch Linux=-
 sudo mount -o remount,size=4G,noatime /tmp
 yay -Syyu --noconfirm
 sudo reboot

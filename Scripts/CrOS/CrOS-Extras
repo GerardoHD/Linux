@@ -1,15 +1,12 @@
 #!/bin/bash
-#ChromiumOS
-echo          ------==Script Creado por GerardoHD==------
+echo	------==Script Creado por GerardoHD==------
 echo https://github.com/GerardoHD
-echo       ---=Preparando Sistema de archivos=---
+echo  -=Preparando Sistema de archivos=-
 mount -o remount, rw /
-mkdir /usr/lib/cromo
-mkdir /opt/google/chrome/pepper
-echo       ---=Descargando Scripts de GerardoHD=---
-mkdir /usr
-mkdir /usr/local
-mkdir /usr/local/bin
+mkdir -p /usr/lib/cromo
+mkdir -p /opt/google/chrome/pepper
+echo  ---=Descargando Scripts de GerardoHD=-
+mkdir -p /usr/local/bin
 cd /usr/local/bin/
 sudo rm -rf Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
@@ -18,7 +15,7 @@ sudo chmod +x Descargar-Scripts
 screenfetch
 cd /
 #
-echo       ---=Instalando Flash para ChromiumOS=---
+echo  -=Instalando Flash para ChromiumOS=-
 #!/bin/bash
  
 if [ `uname -m` != 'x86_64' ]; then
@@ -32,7 +29,7 @@ fi
  
 #remount / as read/write
 mount -o remount,rw /
- 
+
 cd /opt/google/chrome/
 #remove old files
 rm -f libpdf.so

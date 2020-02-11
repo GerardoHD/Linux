@@ -1,5 +1,3 @@
-##!/bin/bash
-#Crostini-Setup
 #!/bin/bash
 echo	------==Script Creado por GerardoHD==------
 echo https://www.github.com/GerardoHD/Linux
@@ -15,14 +13,14 @@ sudo apt install apt-utils
 sudo apt install android-tools-adb android-tools-fastboot -y
 sudo apt install manpages-es manpages-es-extra
 #
-echo     ---=Actualizando el sistema=---
+echo  -=Actualizando el sistema=-
 sleep 2s
 #Actualizando la biblioteca de paquetes
 sudo apt update
 # Actualizando el sistema
 sudo apt upgrade -y
 #
-echo      ---=Limpiando Ubuntu=---
+echo  -=Limpiando Ubuntu=-
 sleep 1s
 echo
 #!/bin/bash

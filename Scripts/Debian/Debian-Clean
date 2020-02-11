@@ -1,9 +1,9 @@
 #!/bin/bash
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Limpiando Debian=---
+echo	------==Script Creado por GerardoHD==------
+echo  -=Limpiando Debian=-
 sleep 1s
 echo
-#!/bin/bash
+#
 sudo apt clean
 sudo apt autoclean
 sudo apt autoremove

@@ -1,7 +1,6 @@
 #!/bin/bash
-#Descargar-Scripts
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Descargando Scripts=---
+echo	------==Script Creado por GerardoHD==------
+echo  -=Descargando Scripts=-
 sleep 3s
 echo
 #!/bin/bash
@@ -12,6 +11,7 @@ sudo rm -rf Arch-Poweroff
 sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
+sudo rm -rf Arch-Setup-Testing
 sudo rm -rf Arch-Update
 sudo rm -rf CrOS-Clone-ROOT-A
 sudo rm -rf CrOS-Clone-STATE
@@ -36,6 +36,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Reboot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup-Testing
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Systemd-fsck-Setup
@@ -60,6 +61,7 @@ sudo chmod +x Arch-Poweroff
 sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
+sudo chmod +x Arch-Setup-Testing
 sudo chmod +x Arch-Update
 sudo chmod +x CrOS-Clone-ROOT-A
 sudo chmod +x CrOS-Clone-STATE

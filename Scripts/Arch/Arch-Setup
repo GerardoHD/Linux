@@ -94,7 +94,7 @@ echo	---=Instalando Software desde Repositorios Oficiales=---
 	sudo pacman -S kvantum-qt5 kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
 #Programas
 	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb
-	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer
+	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
 	sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends

@@ -1,6 +1,6 @@
 #!/bin/bash
-echo          ------==Script Creado por GerardoHD==------
-echo       ---=Actualizando Debian`=---
+echo	------==Script Creado por GerardoHD==------
+echo  -=Actualizando Debian`=---
 sleep 1s
 echo
 #!/bin/bash

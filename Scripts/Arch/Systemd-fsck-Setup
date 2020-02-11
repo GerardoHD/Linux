@@ -12,3 +12,4 @@ sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/system
 sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
 sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
 sudo mkinitcpio -p linux
+Secure-Boot
