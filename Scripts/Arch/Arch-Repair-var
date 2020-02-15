@@ -11,7 +11,7 @@ fi
 echo  -=Reparando Pacman db.lck-
 sudo mount -o remount,size=4G,noatime /tmp
 sudo rm -f /var/lib/pacman/db.lck
-yay -Syyu --nocofonfirm
+yay -Syyu --noconfirm
 screenfetch
 df -hT
 date
