@@ -206,7 +206,9 @@ done
 #
 echo  -=Instalando Software desde Arch User Repository=-
 	yay -S menulibre
-	yay -S nautilus-admin gradio pamac-aur
+	yay -S nautilus-admin
+	yay -S gradio
+	yay -S pamac-aur
 	yay -S google-chrome
 #
 echo  -=Programas opcionales=-
@@ -369,7 +371,8 @@ do
 	  #
 	  sleep 2s
 	  yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper 
-	  yay -S dynamic-wallpaper-catalina-gnome-timed-git gnome-appfolders-manager
+	  yay -S dynamic-wallpaper-catalina-gnome-timed-git 
+	  yay -S gnome-appfolders-manager
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures
