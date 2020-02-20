@@ -67,7 +67,7 @@ do
 	  ;;
  	*) echo invalid option;;
     esac
-do ne
+done
 #
 echo  -=Instalando Soporte AUR=-
 #
