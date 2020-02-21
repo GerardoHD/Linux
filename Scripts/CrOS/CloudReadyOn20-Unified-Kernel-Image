@@ -1,0 +1,14 @@
+#!/bin/bash
+mkdir -p /root/CloudReadyon20
+mkdir -p /boot/EFI/CloudReadyon20
+echo root=/dev/sda20 quiet console=tty2 init=/sbin/init boot=local rootwait ro noresume noswap loglevel=1 noinitrd i915.modeset=1 cros_efi cros_debug  > /root/CloudReadyon20/cmdline.txt
+
+objcopy \
+    --add-section .cmdline="/root/CloudReadyon20/cmdline.txt"           --change-section-vma .cmdline=0x30000  \
+    --add-section .linux="/run/media/gerardohd/ROOT-A/boot/vmlinuz-4.19.65+"         --change-section-vma .linux=0x2000000  \
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/EFI/CloudReadyon20/CloudReady-signed.efi
+
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/CloudReadyon20/CloudReady-signed.efi /boot/EFI/CloudReadyon20/CloudReady-signed.efi
+#
+#Crear Entrada NVRAM
+#efibootmgr --create --disk /dev/sda --part 27 --label "CloudReady on 20" --loader "\EFI\CloudReadyon20\CloudReady-Signed.efi" --verbose
