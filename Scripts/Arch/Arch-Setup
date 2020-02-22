@@ -87,9 +87,6 @@ yay -Syyu
 echo  -=Configurando Bootloader=-
 #sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on/g' /boot/loader/entries/Arch.conf
 #
-echo Configurando Silent boot, desactivando varias alertas del sistema
-sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-sudo mkinitcpio -p linux
 #sudo bootctl update
 #
 echo  -=Grub=-
