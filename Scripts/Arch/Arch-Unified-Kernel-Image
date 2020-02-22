@@ -4,7 +4,11 @@ echo Se aconseja usar este script solo una vez despúes de instalar Arch Linux
 echo ya que luego los Hooks de Pacman automáticamente regeneran y firman los
 echo archivos .efi para Secure Boot
 #Creando carpeta de trabajo y cmdline.txt
-sudo -i
+#
+mkdir -p /boot/efi/Linux
+sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+mkinitcpio -p linux
+rm /boot/initramfs-linux-fallback.img
 mkdir -p /root/Arch-UKI
 echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on > /root/Arch-UKI/cmdline.txt
 #Uniendo ucode y initramfs
@@ -17,8 +21,8 @@ objcopy \
     --add-section .splash="/usr/share/systemd/bootctl/splash-arch.bmp"  --change-section-vma .splash=0x40000   \
     --add-section .linux="/boot/vmlinuz-linux"                          --change-section-vma .linux=0x2000000  \
     --add-section .initrd="/root/Arch-UKI/Initramfs.img"                --change-section-vma .initrd=0x3000000 \
-    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/EFI/Linux/Arch.efi
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/efi/Linux/Arch.efi
 #
 echo -=Creando entrada NVRAM de Arch.efi=-
-efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\EFI\Linux\Arch.efi" --verbose
+efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch.efi" --verbose
 #
