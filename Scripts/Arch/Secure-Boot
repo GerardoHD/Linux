@@ -6,6 +6,10 @@
 #sleep 1s
 #Usando Platform Key Infrastructure
 echo Creando Arch Linux Unified Kernel Image...
+#
+echo Limpiando imagenes viejas
+rm /root/Arch-UKI/Initramfs.img
+rm /boot/efi/Linux/Arch.efi
 #Uniendo ucode y initramfs
 cat /boot/intel-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
@@ -16,10 +20,10 @@ objcopy \
     --add-section .splash="/usr/share/systemd/bootctl/splash-arch.bmp"  --change-section-vma .splash=0x40000   \
     --add-section .linux="/boot/vmlinuz-linux"                          --change-section-vma .linux=0x2000000  \
     --add-section .initrd="/root/Arch-UKI/Initramfs.img"                --change-section-vma .initrd=0x3000000 \
-    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/EFI/Linux/Arch.efi
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/efi/Linux/Arch.efi
 #
 echo Firmando archivos para Secure Boot...
-sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/Linux/Arch.efi /boot/EFI/Linux/Arch.efi
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/Linux/Arch.efi /boot/efi/Linux/Arch.efi
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 #sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
 #sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
