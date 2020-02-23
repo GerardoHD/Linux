@@ -10,7 +10,7 @@ echo Creando Arch Linux Unified Kernel Image...
 echo -=Actualizando Systemd-boot=-
 bootctl update
 #
-echo Limpiando imagenes viejas
+echo Limpiando archivos innecesarios
 rm /root/Arch-UKI/Initramfs.img
 rm /boot/efi/Linux/Arch.efi
 #Actualizando initramfs

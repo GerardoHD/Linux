@@ -7,15 +7,15 @@ echo
 cd /usr/local/bin
 sudo rm -rf screenfetch
 sudo rm -rf Arch-Clean
+sudo rm -rf Arch-Post-Chroot
 sudo rm -rf Arch-Poweroff
 sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
 sudo rm -rf Arch-Update
 sudo rm -rf Tweaks
-sudo rm -rf Arch-Unified-Kernel-Image
-sudo rm -rf CloudReadyOn18-Unified-Kernel-Image
-sudo rm -rf CloudReadyOn20-Unified-Kernel-Image
+sudo rm -rf CloudReadyOn18-UKI
+sudo rm -rf CloudReadyOn20-UKI
 sudo rm -rf CrOS-Clone-ROOT-A
 sudo rm -rf CrOS-Clone-STATE
 #sudo rm -rf CrOS-Extras
@@ -32,6 +32,7 @@ sudo rm -rf Ubuntu-Setup
 sudo rm -rf Debian-Update
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Clean
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Post-Chroot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Poweroff
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Reboot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
@@ -40,9 +41,8 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Systemd-fsck-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Unified-Kernel-Image
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn18-Unified-Kernel-Image
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn20-Unified-Kernel-Image
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn18-UKI
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn20-UKI
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Clone-ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Clone-STATE
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Extras
@@ -57,15 +57,15 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/De
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Ubuntu-Setup
 sudo chmod +x screenfetch
 sudo chmod +x Arch-Clean
+sudo chmod +x Arch-Post-Chroot
 sudo chmod +x Arch-Poweroff
 sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
 sudo chmod +x Arch-Update
 sudo chmod +x Tweaks
-sudo chmod +x Arch-Unified-Kernel-Image
-sudo chmod +x CloudReadyOn18-Unified-Kernel-Image
-sudo chmod +x CloudReadyOn20-Unified-Kernel-Image
+sudo chmod +x CloudReadyOn18-UKI
+sudo chmod +x CloudReadyOn20-UKI
 sudo chmod +x CrOS-Clone-ROOT-A
 sudo chmod +x CrOS-Clone-STATE
 #sudo chmod +x CrOS-Extras
