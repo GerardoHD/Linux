@@ -87,7 +87,7 @@ yay -Syyu
 echo  -=Configurando Bootloaders=-
 #
 echo  -=Grub=-
-PS3='Quieres instalar GRUB2?'
+PS3='Quieres instalar GRUB2? '
 options=("Si" "No")
 select opt in "${options[@]}"
 do
@@ -132,7 +132,7 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S gtk-engine-murrine gtk-engines gnome-icon-theme-extras
 	sudo pacman -S kvantum-qt5
 echo  -=Temas=-
-PS3='Quieres instalar temas y paquetes de iconos?'
+PS3='Quieres instalar temas y paquetes de iconos? '
 options=("Si" "No")
 select opt in "${options[@]}"
 do
@@ -172,7 +172,7 @@ sudo gtk-update-icon-cache
 xdg-user-dirs-update
 #
 echo  -=Flatpak opcionales=-
-cmd=(dialog --separate-output --checklist "Elige los flatpak a instalar (selecciona con tecla espacio):" 22 76 16)
+cmd=(dialog --separate-output --checklist "Elige los flatpak a instalar (selecciona con tecla espacio)" 22 76 16)
 options=(1 "Gradio" off    # any option can be set to default to "on"
          2 "Vocal" off
          3 "Fragments" off
@@ -213,7 +213,7 @@ echo  -=Instalando Software desde Arch User Repository=-
 	yay -S google-chrome
 #
 echo  -=Programas opcionales=-
-cmd=(dialog --separate-output --checklist "Elige los programas a instalar (selecciona con tecla espacio):" 22 76 16)
+cmd=(dialog --separate-output --checklist "Elige los programas a instalar (selecciona con tecla espacio) " 22 76 16)
 options=(1 "Firefox" off    # any option can be set to default to "on"
          2 "KODI, mediaelch, y filebot" off
          3 "VLC" off
