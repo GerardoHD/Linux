@@ -381,11 +381,15 @@ do
 	  #libinput-gestures-setup autostart
 	  #
 	  echo Configurando tap-to-click en gdm
-	  sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+	  gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 	  echo Configurando el botón de Apagado para Gnome
 	  gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	  echo Configurando Alt+Tab para que cambie solo entre aplicaciones de la misma area de trabajo
 	  gsettings set org.gnome.shell.app-switcher current-workspace-only true
+	  echo Configurando Fira como tipografía en GNOME Shell
+	  gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Medium 11'
+	  gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'
+	  gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 10'
 	  #echo Configurando Papirus como tema de iconos
 	  #gsettings set org.gnome.desktop.interface icon-theme Papirus
 	  #
