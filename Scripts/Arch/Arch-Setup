@@ -85,9 +85,6 @@ echo  -=Actualizando Arch Linux=-
 yay -Syyu
 #
 echo  -=Configurando Bootloader=-
-#sudo sed -i 's/rw/quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on/g' /boot/loader/entries/Arch.conf
-#
-#sudo bootctl update
 #
 echo  -=Grub=-
 PS3='Quieres instalar GRUB2?'
@@ -117,17 +114,8 @@ do
     esac
 done
 #
-#echo Descargando Hook de Pacman para Systemd-Boot
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/91-Systemd-Boot.hook -O /usr/share/libalpm/hooks/91-Systemd-Boot.hook
-#
 echo Descargando Hook de Pacman para Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Secure-Boot.hook -O /usr/share/libalpm/hooks/92-Secure-Boot.hook
-#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/93-Initramfs-Updater.hook -O /usr/share/libalpm/hooks/93-Initramfs-Updater.hook
-#
-#echo Creando carpeta Arch-signed y archivo cmdline.txt para Secure-Boot en /root
-#sudo mkdir -p /root/Arch-signed
-#echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on > cmdline.txt
-#sudo mv cmdline.txt /root/Arch-signed/
 #
 echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S bash-completion gpart fatresize
@@ -381,9 +369,9 @@ do
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
-	  yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper 
-	  yay -S dynamic-wallpaper-catalina-gnome-timed-git 
-	  yay -S gnome-appfolders-manager
+	  #yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper 
+	  #yay -S dynamic-wallpaper-catalina-gnome-timed-git 
+	  #yay -S gnome-appfolders-manager
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures

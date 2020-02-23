@@ -7,9 +7,14 @@
 #Usando Platform Key Infrastructure
 echo Creando Arch Linux Unified Kernel Image...
 #
+echo -=Actualizando Systemd-boot=-
+bootctl update
+#
 echo Limpiando imagenes viejas
 rm /root/Arch-UKI/Initramfs.img
 rm /boot/efi/Linux/Arch.efi
+#Actualizando initramfs
+mkinitcpio -p linux
 #Uniendo ucode y initramfs
 cat /boot/intel-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
@@ -25,8 +30,9 @@ objcopy \
 echo Firmando archivos para Secure Boot...
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/Linux/Arch.efi /boot/efi/Linux/Arch.efi
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-#sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
-#sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/boot/grubx64.efi /boot/EFI/boot/grubx64.efi
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
 #sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
 #
 #Usando MOK
@@ -45,4 +51,3 @@ sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --outp
 #sbverify --cert /root/efi-keys-MOK/MOK.crt /boot/EFI/grub/grubx64.efi
 #sbverify --cert /root/efi-keys-MOK/MOK.crt /boot/EFI/systemd/systemd-bootx64.efi
 #sbverify --cert /root/efi-keys-MOK/MOK.crt /boot/vmlinuz-linux
-#

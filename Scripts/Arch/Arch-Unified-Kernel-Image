@@ -1,16 +1,24 @@
 #!/bin/bash
 echo	------==Script Creado por GerardoHD==------
+echo https://www.github.com/GerardoHD/Linux
+echo Script creado para crear finalizar instalación de Arch Linux
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 2s
 echo Se aconseja usar este script solo una vez despúes de instalar Arch Linux
 echo ya que luego los Hooks de Pacman automáticamente regeneran y firman los
 echo archivos .efi para Secure Boot
-#Creando carpeta de trabajo y cmdline.txt
 #
+echo -=Instalando Systemd-boot=-
+bootctl --path=/boot install
+#Crear carpetas, cmdline.txt y limpiar archivos innecesarios
 mkdir -p /boot/efi/Linux
-sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
-mkinitcpio -p linux
-rm /boot/initramfs-linux-fallback.img
 mkdir -p /root/Arch-UKI
 echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on > /root/Arch-UKI/cmdline.txt
+sudo sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
+#echo Desactivando fallback initrd.img
+#sudo sed -i 's|PRESETS=('default' 'fallback')|PRESETS=('default')|g' /etc/mkinitcpio.d/linux.preset
+mkinitcpio -p linux
+rm /boot/initramfs-linux-fallback.img
 #Uniendo ucode y initramfs
 cat /boot/intel-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
@@ -26,3 +34,11 @@ objcopy \
 echo -=Creando entrada NVRAM de Arch.efi=-
 efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch.efi" --verbose
 #
+#echo -=Creando entrada NVRAM de CloudReady=-
+#efibootmgr --create --disk /dev/sda --part 27 --label "CloudReady" --loader "\efi\boot\grubx64.efi" --verbose
+#
+echo Creando CloudReady.conf para Systemd-boot
+echo >> CloudReady.conf
+sed -i '$ a\title CloudReady' CloudReady.conf
+sed -i '$ a\efi /efi/boot/grubx64.efi' CloudReady.conf
+mv CloudReady.conf /boot/loader/entries/CloudReady.conf

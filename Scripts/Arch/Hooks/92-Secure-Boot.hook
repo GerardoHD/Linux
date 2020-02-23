@@ -5,8 +5,10 @@ Operation = Upgrade
 Target = systemd
 Target = linux
 Target = grub
+Target = mkinitcpio
+Target = intel-ucode
 
 [Action]
-Description = Signing Files with Machine Owner Key for Secure Boot
+Description = Firmando archivos para Secure Boot
 When = PostTransaction
 Exec = /bin/sh -c 'Secure-Boot'
