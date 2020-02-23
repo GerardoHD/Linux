@@ -13,6 +13,7 @@ sudo rm -rf Arch-Reboot
 sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
 sudo rm -rf Arch-Update
+sudo rm -rf Secure-Boot
 sudo rm -rf Tweaks
 sudo rm -rf CloudReadyOn18-UKI
 sudo rm -rf CloudReadyOn20-UKI
@@ -21,8 +22,6 @@ sudo rm -rf CrOS-Clone-STATE
 #sudo rm -rf CrOS-Extras
 sudo rm -rf CrOS-Mount-Partitions
 sudo rm -rf Crostini-Setup
-sudo rm -rf Secure-Boot
-sudo rm -rf Systemd-fsck-Setup
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Materia-GDM-Theme
 sudo rm -rf Original-GDM-Theme
@@ -39,7 +38,6 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Systemd-fsck-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn18-UKI
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn20-UKI
@@ -63,6 +61,7 @@ sudo chmod +x Arch-Reboot
 sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
 sudo chmod +x Arch-Update
+sudo chmod +x Secure-Boot
 sudo chmod +x Tweaks
 sudo chmod +x CloudReadyOn18-UKI
 sudo chmod +x CloudReadyOn20-UKI
@@ -71,8 +70,6 @@ sudo chmod +x CrOS-Clone-STATE
 #sudo chmod +x CrOS-Extras
 sudo chmod +x CrOS-Mount-Partitions
 sudo chmod +x Crostini-Setup
-sudo chmod +x Secure-Boot
-sudo chmod +x Systemd-fsck-Setup
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
@@ -84,7 +81,6 @@ cd /
 sleep 1s
 #clear
 screenfetch
-echo Recomiendo editar/revisar alguno de los scripts ubicados en:
-echo /usr/local/bin/
+echo Recomiendo editar/revisar alguno de los scripts ubicados en /usr/local/bin/
 ls /usr/local/bin/
 echo Ejecuta el Script Elegido

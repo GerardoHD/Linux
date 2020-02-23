@@ -32,6 +32,14 @@ locale-gen
 #Desactivar fallback initrd.img
 sed -i 's/PRESETS=('default' 'fallback')/PRESETS=('default')/g' /etc/mkinitcpio.d/linux.preset
 #
+#Configurar Systemd-fsck
+sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck-root.service
+sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck-root.service
+sudo cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+sudo echo StandardOutput=null >> /etc/systemd/system/systemd-fsck@.service
+sudo echo StandardError=journal+console >> /etc/systemd/system/systemd-fsck@.service
+#
 echo Modificando mkinitcpio.conf:
 sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(systemd autodetect modconf sd-vconsole block filesystems keyboard)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
