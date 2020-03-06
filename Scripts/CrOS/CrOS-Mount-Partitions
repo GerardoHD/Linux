@@ -1,7 +1,12 @@
 #!/bin/bash
 echo Se necesita introducir la carpeta del perfil, identificarlo en chrome://version/#profile_path y modificar el u- debajo:
+sudo mkdir -p /home/chronos/u-/MyFiles/EFI
+sudo mkdir -p /home/chronos/u-/MyFiles/Windows
+sudo mkdir -p /home/chronos/u-/MyFiles/Arch
+sudo mkdir -p /home/chronos/u-/MyFiles/Datos
 #sudo mount /dev/sda27 /home/chronos/u-/MyFiles/EFI
 #sudo mount /dev/sda28 /home/chronos/u-/MyFiles/Windows
 #sudo mount /dev/sda30 /home/chronos/u-/MyFiles/Arch
 #sudo mount /dev/sda31 /home/chronos/u-/MyFiles/Datos
 df -hT
+screenfetch
