@@ -119,7 +119,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 #
 echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S bash-completion gpart fatresize
-	sudo pacman -S p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
+	sudo pacman -S p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace squashfs-tools
 	sudo pacman -S gst-libav ffmpegthumbnailer youtube-dl
 	sudo pacman -S python-pylast python-wikipedia
 	sudo pacman -S android-tools openssh xdg-user-dirs
@@ -365,7 +365,7 @@ do
 	  sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
 	  sleep 2s
 	  sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
-	  sudo pacman -S gnome-firmware
+	  sudo pacman -S gnome-firmware pipewire-pulse
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
 	  sudo pacman -S qt5-styleplugins qt5ct 
