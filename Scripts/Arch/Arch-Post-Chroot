@@ -18,7 +18,7 @@ hwclock --systohc
 echo Arch >> /etc/hostname
 #
 #Establecer la distribución del teclado:
-echo KEYMAP=la-latin1 >>/etc/vconsole.conf
+echo KEYMAP=la-latin1 >> /etc/vconsole.conf
 #
 #Establecer la localización:
 echo LANG=es_MX.UTF-8 >> /etc/locale.conf
@@ -45,7 +45,7 @@ sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/H
 mkinitcpio -p linux
 #
 echo Creando un usuario:
-useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,video,wheel, -s /bin/bash user
+useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,video,wheel -s /bin/bash gerardohd
 #
 echo Activando NetworkManager:
 systemctl enable NetworkManager.service
