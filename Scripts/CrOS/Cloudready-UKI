@@ -1,0 +1,54 @@
+#!/bin/bash
+echo -=Creando Imagen de Kernel Unificada de CloudReady A=-
+#
+#Crear carpetas, cmdline.txt y limpiar archivos innecesarios
+mkdir -p /CR-A
+mount /dev/sda18 /CR-A
+mkdir -p /boot/efi/CR-A
+mkdir -p /root/CR-A
+echo init=/sbin/init boot=local rootwait ro noresume noswap quiet loglevel=3 noinitrd console=  i915.modeset=1 cros_efi cros_debug       root=/dev/sda18 > /root/CR-A/cmdline.txt
+echo Limpiando archivos innecesarios
+rm /boot/efi/CR-A/CR-A.efi
+#
+objcopy \
+    --add-section .cmdline="/root/CR-A/cmdline.txt"                 --change-section-vma .cmdline=0x30000  \
+    --add-section .linux="/CR-A/boot/vmlinuz"                          --change-section-vma .linux=0x2000000  \
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/efi/CR-A/CR-A.efi
+#
+#echo -=Creando entrada NVRAM de CR-A=-
+#efibootmgr --create --disk /dev/sda --part 27 --label "CR-A" --loader "\efi\boot\grubx64.efi" --verbose
+#
+echo Creando CR-A.conf para Systemd-boot
+echo >> CR-A.conf
+sed -i '$ a\title Cloudready-A' CR-A.conf
+sed -i '$ a\efi /efi/CR-A/CR-A.efi' CR-A.conf
+mv CR-A.conf /boot/loader/entries/CR-A.conf
+#
+echo -=Creando Imagen de Kernel Unificada de CloudReady B=-
+#
+#Crear carpetas, cmdline.txt y limpiar archivos innecesarios
+mkdir -p /CR-B
+mount /dev/sda20 /CR-B
+mkdir -p /boot/efi/CR-B
+mkdir -p /root/CR-B
+echo init=/sbin/init boot=local rootwait ro noresume noswap quiet loglevel=3 noinitrd console=  i915.modeset=1 cros_efi cros_debug       root=/dev/sda20 > /root/CR-B/cmdline.txt
+echo Limpiando archivos innecesarios
+rm /boot/efi/CR-B/CR-B.efi
+#
+objcopy \
+    --add-section .cmdline="/root/CR-B/cmdline.txt"                 --change-section-vma .cmdline=0x30000  \
+    --add-section .linux="/CR-B/boot/vmlinuz"                          --change-section-vma .linux=0x2000000  \
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/efi/CR-B/CR-B.efi
+#
+#echo -=Creando entrada NVRAM de CR-B=-
+#efibootmgr --create --disk /dev/sda --part 27 --label "CR-B" --loader "\efi\boot\grubx64.efi" --verbose
+#
+echo Creando CR-B.conf para Systemd-boot
+echo >> CR-B.conf
+sed -i '$ a\title Cloudready-B' CR-B.conf
+sed -i '$ a\efi /efi/CR-B/CR-B.efi' CR-B.conf
+mv CR-B.conf /boot/loader/entries/CR-B.conf
+
+echo Firmando archivos para Secure Boot
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/CR-A/CR-A.efi /boot/efi/CR-A/CR-A.efi
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/CR-B/CR-B.efi /boot/efi/CR-B/CR-B.efi
