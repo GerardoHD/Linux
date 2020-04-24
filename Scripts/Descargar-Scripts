@@ -15,8 +15,7 @@ sudo rm -rf Arch-Setup
 sudo rm -rf Arch-Update
 sudo rm -rf Secure-Boot
 sudo rm -rf Tweaks
-sudo rm -rf CloudReadyOn18-UKI
-sudo rm -rf CloudReadyOn20-UKI
+sudo rm -rf Cloudready-UKI
 sudo rm -rf CrOS-Clone-ROOT-A
 sudo rm -rf CrOS-Clone-STATE
 #sudo rm -rf CrOS-Extras
@@ -39,8 +38,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn18-UKI
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CloudReadyOn20-UKI
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/Cloudready-UKI
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Clone-ROOT-A
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Clone-STATE
 #sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/CrOS-Extras
@@ -63,8 +61,7 @@ sudo chmod +x Arch-Setup
 sudo chmod +x Arch-Update
 sudo chmod +x Secure-Boot
 sudo chmod +x Tweaks
-sudo chmod +x CloudReadyOn18-UKI
-sudo chmod +x CloudReadyOn20-UKI
+sudo chmod +x Cloudready-UKI
 sudo chmod +x CrOS-Clone-ROOT-A
 sudo chmod +x CrOS-Clone-STATE
 #sudo chmod +x CrOS-Extras
