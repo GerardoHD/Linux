@@ -87,7 +87,7 @@ yay -Syyu
 echo  -=Configurando Bootloaders=-
 #
 echo  -=Grub=-
-PS3='Quieres instalar GRUB2? '
+PS3='Quieres instalar GRUB? '
 options=("Si" "No")
 select opt in "${options[@]}"
 do
