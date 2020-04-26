@@ -31,7 +31,7 @@ echo Firmando archivos para Secure Boot...
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/Linux/Arch.efi /boot/efi/Linux/Arch.efi
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
-sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/boot/grubx64.efi /boot/EFI/boot/grubx64.efi
+#sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/boot/grubx64.efi /boot/EFI/boot/grubx64.efi
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
 #sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
 #

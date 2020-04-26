@@ -87,7 +87,7 @@ yay -Syyu
 echo  -=Configurando Bootloaders=-
 #
 echo  -=Grub=-
-PS3='Quieres instalar GRUB? '
+PS3='Quieres instalar GRUB?'
 options=("Si" "No")
 select opt in "${options[@]}"
 do
@@ -128,9 +128,10 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S libotf
 	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
 	sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
-#Temas
-	sudo pacman -S gtk-engine-murrine gtk-engines gnome-icon-theme-extras
+#Motores de temas
+	sudo pacman -S gtk-engine-murrine gtk-engines
 	sudo pacman -S kvantum-qt5
+#
 echo  -=Temas=-
 PS3='Quieres instalar temas y paquetes de iconos? '
 options=("Si" "No")
@@ -159,7 +160,7 @@ done
 #Programas
 	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb gparted
 	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd
-	sudo pacman -S gnome-multi-writer
+	sudo pacman -S gnome-multi-writer gnome-icon-theme-extras
 #
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -380,9 +381,9 @@ do
 	  #echo Activando libinput-gestures
 	  #libinput-gestures-setup autostart
 	  #
-	  echo Configurando tap-to-click en gdm
+	  echo Configurando tap-to-click en GNOME Shell
 	  gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-	  echo Configurando el botón de Apagado para Gnome
+	  echo Configurando el botón de Apagado a interactivo
 	  gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	  echo Configurando Alt+Tab para que cambie solo entre aplicaciones de la misma area de trabajo
 	  gsettings set org.gnome.shell.app-switcher current-workspace-only true
