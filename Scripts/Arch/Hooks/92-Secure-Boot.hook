@@ -7,6 +7,7 @@ Target = linux
 Target = grub
 Target = mkinitcpio
 Target = intel-ucode
+Target = amd-ucode
 
 [Action]
 Description = Firmando archivos para Secure Boot
