@@ -1,0 +1,65 @@
+#!/bin/bash
+echo	------==Script Creado por GerardoHD==------
+echo https://www.github.com/GerardoHD/Linux
+echo Script creado para gestionar un sistema basado en Debian/Ubuntu
+echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
+sleep 1s
+if [ "$(id -u)" -eq 0 ] ; then
+	echo " Este script usará sudo cuando sea necesario. Deteniendo. "
+	echo " Simplemente ejecute este script desde su usuario. "
+	exit
+fi
+#
+echo Remontando /tmp con tamaño de 4 GB
+sudo mount -o remount,size=4G,noatime /tmp
+#
+echo  -=Acciones disponibles=-
+cmd=(dialog --separate-output --checklist "Elige las acciones a realizar (selecciona con tecla espacio)" 22 76 16)
+options=(1 "Reparar el error de dpkg/lock" off
+	 2 "Actualizar el sistema" off
+         3 "Limpiar caché de paquetes" off
+         4 "Actualizar y reiniciar" off
+         5 "Actualizar y apagar" off)
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+for choice in $choices
+do
+    case $choice in
+	1)
+	  echo  -=Reparando Var=-
+	  sudo fuser -vki  /var/lib/dpkg/lock
+	  sudo rm -f /var/lib/dpkg/lock
+	  sudo dpkg --configure -a
+	  sudo apt autoremove
+	  sudo apt update --fix-missing
+	  ;;
+	2)
+	  echo  -=Actualizando Debian=-
+	  sudo apt update
+	  sudo apt upgrade
+	  sudo apt full-upgrade
+	  ;;
+	3)
+	  echo  -=Limpiando cache de apt=-
+	  sleep 1s
+	  sudo apt clean
+	  sudo apt autoclean
+	  sudo apt autoremove
+	  ;;
+	4)
+	  echo  -=Actualizando Debian y reiniciando el sistema=-
+	  sudo apt update
+	  sudo apt upgrade
+	  sudo apt full-upgrade
+	  sudo reboot
+	  ;;
+	5)
+	  echo  -=Actualizando Debian y apagando el sistema=-
+	  sudo apt update
+	  sudo apt upgrade
+	  sudo apt full-upgrade
+	  sudo poweroff
+	  ;;
+    esac
+done
+#
