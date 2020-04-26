@@ -6,13 +6,9 @@ echo
 #!/bin/bash
 cd /usr/local/bin
 sudo rm -rf screenfetch
-sudo rm -rf Arch-Clean
+sudo rm -rf Arch-Manager
 sudo rm -rf Arch-Post-Chroot
-sudo rm -rf Arch-Poweroff
-sudo rm -rf Arch-Reboot
-sudo rm -rf Arch-Repair-var
 sudo rm -rf Arch-Setup
-sudo rm -rf Arch-Update
 sudo rm -rf Secure-Boot
 sudo rm -rf Tweaks
 sudo rm -rf Cloudready-UKI
@@ -20,22 +16,16 @@ sudo rm -rf CrOS-Clone-ROOT-A
 sudo rm -rf CrOS-Clone-STATE
 #sudo rm -rf CrOS-Extras
 sudo rm -rf CrOS-Mount-Partitions
-sudo rm -rf Crostini-Setup
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Materia-GDM-Theme
 sudo rm -rf Original-GDM-Theme
-sudo rm -rf Debian-Clean
-sudo rm -rf Debian-Repair-var
+sudo rm -rf Crostini-Setup
+sudo rm -rf Debian-Manager
 sudo rm -rf Ubuntu-Setup
-sudo rm -rf Debian-Update
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Clean
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Post-Chroot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Poweroff
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Reboot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Repair-var
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Update
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/Cloudready-UKI
@@ -47,18 +37,12 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/De
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Crostini-Setup
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Clean
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Repair-var
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Update
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Ubuntu-Setup
 sudo chmod +x screenfetch
-sudo chmod +x Arch-Clean
+sudo chmod +x Arch-Manager
 sudo chmod +x Arch-Post-Chroot
-sudo chmod +x Arch-Poweroff
-sudo chmod +x Arch-Reboot
-sudo chmod +x Arch-Repair-var
 sudo chmod +x Arch-Setup
-sudo chmod +x Arch-Update
 sudo chmod +x Secure-Boot
 sudo chmod +x Tweaks
 sudo chmod +x Cloudready-UKI
@@ -66,13 +50,11 @@ sudo chmod +x CrOS-Clone-ROOT-A
 sudo chmod +x CrOS-Clone-STATE
 #sudo chmod +x CrOS-Extras
 sudo chmod +x CrOS-Mount-Partitions
-sudo chmod +x Crostini-Setup
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
-sudo chmod +x Debian-Clean
-sudo chmod +x Debian-Repair-var
-sudo chmod +x Debian-Update
+sudo chmod +x Crostini-Setup
+sudo chmod +x Debian-Manager
 sudo chmod +x Ubuntu-Setup
 cd /
 sleep 1s
