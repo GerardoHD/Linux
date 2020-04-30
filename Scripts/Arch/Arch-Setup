@@ -160,7 +160,6 @@ done
 #Programas
 	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb gparted
 	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd
-	sudo pacman -S gnome-multi-writer gnome-icon-theme-extras
 #
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
