@@ -81,6 +81,30 @@ cd ..
 #
 rm -rf package-query yay
 #
+echo  -=Repositorio Disastrosaur=-
+PS3='Quieres instalar el repositorio disastrosaur?'
+options=("Si" "No")
+select opt in "${options[@]}"
+do
+    case $opt in
+	"Si")
+	echo [disastrousaur] >> /etc/pacman.conf
+	echo Server = https://mirror.repohost.de/disastrousaur/x86_64/ >> /etc/pacman.conf
+	wget -c https://mirror.repohost.de/disastrousaur.key -O disastrosaur.key
+	sudo pacman-key --add disastrosaur.key
+	sudo pacman-key --lsign-key CBAE582A876533FD
+	sudo pacman -Syyu
+	rm disastrosaur.key
+	break
+	;;
+	#
+	"No")
+	break
+	;;
+	*) echo invalid option;;
+    esac
+done
+#
 echo  -=Actualizando Arch Linux=-
 yay -Syyu
 #
@@ -206,11 +230,8 @@ do
 done
 #
 echo  -=Instalando Software desde Arch User Repository=-
-	yay -S menulibre
-	yay -S nautilus-admin
-	yay -S shortwave
-	yay -S pamac-aur
-	yay -S google-chrome
+	yay -S google-chrome pamac-aur shortwave
+	yay -S menulibre nautilus-admin
 #
 echo  -=Programas opcionales=-
 cmd=(dialog --separate-output --checklist "Elige los programas a instalar (selecciona con tecla espacio) " 22 76 16)
