@@ -20,7 +20,7 @@ objcopy \
 #
 echo Creando CR-A.conf para Systemd-boot
 echo >> CR-A.conf
-sed -i '$ a\title Cloudready-A' CR-A.conf
+sed -i '$ a\title Cloudready ROOT-A' CR-A.conf
 sed -i '$ a\efi /efi/CR-A/CR-A.efi' CR-A.conf
 mv CR-A.conf /boot/loader/entries/CR-A.conf
 #
@@ -45,7 +45,7 @@ objcopy \
 #
 echo Creando CR-B.conf para Systemd-boot
 echo >> CR-B.conf
-sed -i '$ a\title Cloudready-B' CR-B.conf
+sed -i '$ a\title Cloudready ROOT-B' CR-B.conf
 sed -i '$ a\efi /efi/CR-B/CR-B.efi' CR-B.conf
 mv CR-B.conf /boot/loader/entries/CR-B.conf
 

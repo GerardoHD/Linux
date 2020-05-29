@@ -84,6 +84,14 @@ efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\ef
 #sed -i '$ a\efi /efi/boot/grubx64.efi' CloudReady.conf
 #mv CloudReady.conf /boot/loader/entries/CloudReady.conf
 #
+echo Inicializando Pacman
+sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+sudo sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
+sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
+sudo pacman-key --populate archlinux
+sudo pacman-key --init
+sudo pacman -Syyu --noconfirm
+#
 echo  -=Repositorio Disastrosaur=-
 PS3='Quieres instalar el repositorio disastrosaur?'
 options=("Si" "No")
@@ -96,7 +104,7 @@ do
 	wget -c https://mirror.repohost.de/disastrousaur.key -O disastrosaur.key
 	sudo pacman-key --add disastrosaur.key
 	sudo pacman-key --lsign-key CBAE582A876533FD
-	sudo pacman -Syyu
+	sudo pacman -Syyu package-query yay
 	rm disastrosaur.key
 	break
 	;;
@@ -108,3 +116,4 @@ do
     esac
 done
 #
+
