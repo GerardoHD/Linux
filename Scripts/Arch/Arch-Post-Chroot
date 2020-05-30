@@ -30,7 +30,7 @@ echo Generando localización:
 locale-gen
 #
 #Desactivar fallback initrd.img
-sed -i 's/PRESETS=('default' 'fallback')/PRESETS=('default')/g' /etc/mkinitcpio.d/linux.preset
+#sed -i 's/PRESETS=('default' 'fallback')/PRESETS=('default')/g' /etc/mkinitcpio.d/linux.preset
 #
 #Configurar Systemd-fsck
 sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
@@ -78,11 +78,11 @@ efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\ef
 #echo -=Creando entrada NVRAM de CloudReady=-
 #efibootmgr --create --disk /dev/sda --part 27 --label "CloudReady" --loader "\efi\boot\grubx64.efi" --verbose
 #
-#echo Creando CloudReady.conf para Systemd-boot
-#echo >> CloudReady.conf
-#sed -i '$ a\title CloudReady' CloudReady.conf
-#sed -i '$ a\efi /efi/boot/grubx64.efi' CloudReady.conf
-#mv CloudReady.conf /boot/loader/entries/CloudReady.conf
+#echo Creando Cloudready.conf para Systemd-boot
+#echo >> Cloudready.conf
+#sed -i '$ a\title Cloudready' Cloudready.conf
+#sed -i '$ a\efi /efi/boot/grubx64.efi' Cloudready.conf
+#mv Cloudready.conf /boot/loader/entries/Cloudready.conf
 #
 echo Inicializando Pacman
 sudo sed -i 's/#Color/Color/g' /etc/pacman.conf

@@ -364,7 +364,7 @@ do
 	  sudo pacman -S gnome-firmware pipewire-pulse
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
-	  sudo pacman -S qt5-styleplugins qt5ct 
+	  sudo yay -S qt5-styleplugins qt5ct 
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
