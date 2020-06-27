@@ -18,13 +18,9 @@ ping -c 3 www.archlinux.org
 sudo mount -o remount,size=4G,noatime /tmp
 sudo timedatectl set-ntp true
 #
-#echo Inicializando Pacman
-#sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
-#sudo sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
-#sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
-#sudo pacman-key --populate archlinux
-#sudo pacman-key --init
-#sudo pacman -Syyu --noconfirm
+echo -=Actualizando Arch Linux
+sudo pacman -Syyy
+sudo pacman -Syyu --noconfirm
 #
 echo  -=Instalando Bases para Arch Linux=-
 	sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man efitools pciutils usbutils

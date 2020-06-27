@@ -91,6 +91,7 @@ sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
 sudo pacman-key --populate archlinux
 sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
+sudo pacman -Syyy
 #
 echo  -=Repositorio Disastrosaur=-
 PS3='Quieres instalar el repositorio disastrosaur?'
