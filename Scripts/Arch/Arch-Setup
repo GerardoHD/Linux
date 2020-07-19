@@ -123,6 +123,7 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S libotf
 	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
 	sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
+	sudo pacman -S ttf-croscore
 #Motores de temas
 	sudo pacman -S gtk-engine-murrine gtk-engines
 	sudo pacman -S kvantum-qt5
@@ -202,7 +203,7 @@ done
 #
 echo  -=Instalando Software desde Arch User Repository=-
 	yay -S google-chrome pamac-aur shortwave
-	yay -S menulibre nautilus-admin
+	yay -S menulibre nautilus-admin ttf-ms-fonts
 #
 echo  -=Programas opcionales=-
 cmd=(dialog --separate-output --checklist "Elige los programas a instalar (selecciona con tecla espacio) " 22 76 16)
