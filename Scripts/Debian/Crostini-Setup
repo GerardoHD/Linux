@@ -7,12 +7,13 @@ sleep 1s
 #
 sudo sed -i 's/LANG=en_US.UTF-8/LANG=es_MX.UTF-8/g' /etc/default/locale
 sudo sed -i 's/en_US.UTF-8/#en_US.UTF-8/g' /etc/locale.gen
-sudo sed -i 's/#es_MX.UTF-8/es_MX.UTF-8/g' /etc/locale.gen
+sudo sed -i 's/# es_MX.UTF-8/es_MX.UTF-8/g' /etc/locale.gen
 sudo locale-gen
-sudo apt install apt-utils xdg-user-dirs debconf 
+sudo apt install apt-utils xdg-user-dirs debconf -y
 sudo apt install android-tools-adb android-tools-fastboot -y
-sudo apt install manpages-es manpages-es-extra
-sudo apt install gnome-software
+sudo apt install manpages-es manpages-es-extra -y
+sudo apt install gnome-software menulibre -y
+xdg-user-dirs-update
 #
 sudo apt install calibre flatpak
 #
