@@ -365,8 +365,7 @@ do
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
-	  #yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper 
-	  #yay -S dynamic-wallpaper-catalina-gnome-timed-git 
+	  yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git 
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures
