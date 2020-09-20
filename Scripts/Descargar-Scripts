@@ -9,6 +9,7 @@ sudo rm -rf screenfetch
 sudo rm -rf Arch-Manager
 sudo rm -rf Arch-Post-Chroot
 sudo rm -rf Arch-Setup
+sudo rm -rf GNOME-Fonts-Setup
 sudo rm -rf Secure-Boot
 sudo rm -rf Tweaks
 sudo rm -rf Cloudready-UKI
@@ -26,6 +27,7 @@ sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/scre
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Post-Chroot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/GNOME-Fonts-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Secure-Boot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/CrOS/Cloudready-UKI
@@ -43,6 +45,7 @@ sudo chmod +x screenfetch
 sudo chmod +x Arch-Manager
 sudo chmod +x Arch-Post-Chroot
 sudo chmod +x Arch-Setup
+sudo chmod +x GNOME-Fonts-Setup
 sudo chmod +x Secure-Boot
 sudo chmod +x Tweaks
 sudo chmod +x Cloudready-UKI

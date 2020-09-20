@@ -3,10 +3,10 @@ echo	------==Script Creado por GerardoHD==------
 echo https://www.github.com/GerardoHD/Linux
 echo Script creado para configurar un sistema completo basado en Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
-echo El enfoque actual es en GNOME, aunque hay opcion de instalar otros Entornos de Escritorio
+echo El enfoque actual es en GNOME, aunque hay opciones para instalar otros Entornos de Escritorio
 sleep 1s
 if [ "$(id -u)" -eq 0 ] ; then
-	echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión Root "
+	echo " ADVERTENCIA: makepkg no se ejecutará en una sesión Root "
 	echo " Este script usará sudo cuando sea necesario. Deteniendo. "
 	echo " Simplemente ejecute este script desde su usuario. "
 	exit
@@ -19,7 +19,6 @@ sudo mount -o remount,size=4G,noatime /tmp
 sudo timedatectl set-ntp true
 #
 echo -=Actualizando Arch Linux
-sudo pacman -Syyy
 sudo pacman -Syyu --noconfirm
 #
 echo  -=Instalando Bases para Arch Linux=-
@@ -65,14 +64,14 @@ do
     esac
 done
 #
-#echo  -=Instalando Soporte AUR=-
-#git clone https://aur.archlinux.org/package-query.git
-#cd package-query && makepkg -si --noconfirm
-#cd ..
+echo  -=Instalando Soporte AUR=-
+git clone https://aur.archlinux.org/package-query.git
+cd package-query && makepkg -si --noconfirm
+cd ..
 #
-#git clone https://aur.archlinux.org/yay.git
-#cd yay && makepkg -si --noconfirm
-#cd ..
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si --noconfirm
+cd ..
 #
 rm -rf package-query yay
 #
@@ -123,7 +122,8 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S libotf
 	sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
 	sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
-	sudo pacman -S ttf-croscore
+	sudo pacman -S ttf-croscore ttf-roboto ttf-roboto-mono ttf-opensans
+	sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
 #Motores de temas
 	sudo pacman -S gtk-engine-murrine gtk-engines
 	sudo pacman -S kvantum-qt5
@@ -271,8 +271,6 @@ sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.marku
 #
 echo  -=Activando Servicio Cups "cupsd"=-
 sudo systemctl enable org.cups.cupsd.service
-#echo  -=Activando Servicio Network Manager=-
-#sudo systemctl enable NetworkManager.service
 echo  -=Activando Servicio SSHD "sshd"=-
 sudo systemctl enable sshd.service
 #
@@ -358,7 +356,7 @@ do
 	  sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
 	  sleep 2s
 	  sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
-	  sudo pacman -S gnome-firmware pipewire-pulse
+	  sudo pacman -S gnome-firmware pipewire-pulse gnome-mines gnome-recipes
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
 	  sudo yay -S qt5-styleplugins qt5ct 
@@ -378,10 +376,8 @@ do
 	  gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 	  echo Configurando Alt+Tab para que cambie solo entre aplicaciones de la misma area de trabajo
 	  gsettings set org.gnome.shell.app-switcher current-workspace-only true
-	  echo Configurando Fira como tipografía en GNOME Shell
-	  gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Medium 11'
-	  gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'
-	  gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 10'
+	  echo Elegir tipografía a usar en GNOME Shell
+	  GNOME-Fonts-Setup
 	  #echo Configurando Papirus como tema de iconos
 	  #gsettings set org.gnome.desktop.interface icon-theme Papirus
 	  #
@@ -507,7 +503,6 @@ yay -Syyu
 sudo fc-cache -f -v
 sudo gtk-update-icon-cache
 xdg-user-dirs-update
-#
 #
 echo  -=Limpiando Arch Linux=-
 sleep 1s
