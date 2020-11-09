@@ -6,6 +6,7 @@ echo
 #!/bin/bash
 cd /usr/local/bin
 sudo rm -rf screenfetch
+sudo rm -rf Arch-Crostini-Setup
 sudo rm -rf Arch-Manager
 sudo rm -rf Arch-Post-Chroot
 sudo rm -rf Arch-Setup
@@ -20,10 +21,11 @@ sudo rm -rf CrOS-Mount-Partitions
 sudo rm -rf Descargar-Scripts
 sudo rm -rf Materia-GDM-Theme
 sudo rm -rf Original-GDM-Theme
-sudo rm -rf Crostini-Setup
+sudo rm -rf Debian-Crostini-Setup
 sudo rm -rf Debian-Manager
 sudo rm -rf Ubuntu-Setup
 sudo wget -c https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev -O screenfetch
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Crostini-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Post-Chroot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
@@ -38,10 +40,11 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Cr
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Descargar-Scripts
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Materia-GDM-Theme
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Original-GDM-Theme
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Crostini-Setup
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Crostini-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Debian-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Debian/Ubuntu-Setup
 sudo chmod +x screenfetch
+sudo chmod +x Arch-Crostini-Setup
 sudo chmod +x Arch-Manager
 sudo chmod +x Arch-Post-Chroot
 sudo chmod +x Arch-Setup
@@ -56,7 +59,7 @@ sudo chmod +x CrOS-Mount-Partitions
 sudo chmod +x Descargar-Scripts
 sudo chmod +x Materia-GDM-Theme
 sudo chmod +x Original-GDM-Theme
-sudo chmod +x Crostini-Setup
+sudo chmod +x Debian-Crostini-Setup
 sudo chmod +x Debian-Manager
 sudo chmod +x Ubuntu-Setup
 cd /
