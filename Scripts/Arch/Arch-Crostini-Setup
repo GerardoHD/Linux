@@ -1,0 +1,85 @@
+#!/bin/bash
+echo  -=Configurar Arch Linux en Crostini de ChromeOS=-
+PS3='Elige la etapa de configuración: '
+options=("Etapa 1" "Etapa 2" "Etapa 3" "Etapa 4" "Etapa 5" "Salir")
+select opt in "${options[@]}"
+do
+    case $opt in
+	"Etapa 1")
+	  ip -4 a show dev eth0
+	  grep 1000:1000 /etc/passwd|cut -d':' -f1
+	  pkill -9 -u alarm
+	  groupmod -n gerardoherreradiaz alarm
+	  usermod -d /home/gerardoherreradiaz -l gerardoherreradiaz -m -c gerardoherreradiaz alarm
+	  passwd gerardoherreradiaz
+	  pacman-key --init
+	  pacman-key --populate archlinuxarm
+	  pacman -Syyu --noconfirm sudo vim
+	  sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+	  sudo sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
+	  sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
+	  pacman -Syyu --noconfirm base-devel dialog wget git
+	  curl -L https://goo.gl/MYj2pz | bash
+	  visudo
+	  usermod -aG wheel gerardoherreradiaz
+	  exit
+	  break
+	  ;;
+	"Etapa 2")
+	  sudo sed -i 's/LANG=C/LANG=es_MX.UTF-8/g' /etc/locale.conf
+	  sudo sed -i 's/#es_MX.UTF-8/es_MX.UTF-8/g' /etc/locale.gen
+	  sudo locale-gen
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 3")
+	  sudo pacman -S --noconfirm usbutils xorg-server-xwayland sshfs
+	  sudo pacman -S --noconfirm gvfs mtpfs gvfs-mtp pacman-contrib
+	  echo  -=Instalando Soporte AUR=-
+	  git clone https://aur.archlinux.org/package-query.git
+	  cd package-query && makepkg -si --noconfirm
+	  cd ..
+	  #
+	  git clone https://aur.archlinux.org/yay.git
+	  cd yay && makepkg -si --noconfirm
+	  cd ..
+	  #
+	  rm -rf package-query yay
+	  #
+	  yay -S --noconfirm cros-container-guest-tools-git
+	  cp -r /etc/skel/.config/pulse ~/.config
+	  systemctl --user enable --now sommelier@0 sommelier-x@0 sommelier@1 sommelier-x@1
+	  sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 4")
+	  systemctl --failed
+	  systemctl --user --failed
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 5")
+	  sudo pacman -S appstream archlinux-appstream-data pipewire-pulse
+	  sudo pacman -S bash-completion
+	  sudo pacman -S p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
+	  sudo pacman -S android-tools xdg-user-dirs
+	  sudo pacman -S libappimage
+	  sudo pacman -S libotf
+	  sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
+	  sudo pacman -S #ttf-croscore #ttf-roboto ttf-roboto-mono ttf-opensans
+	  sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
+	  sudo pacman -S gtk-engine-murrine gtk-engines
+	  sudo pacman -S gedit-plugins nautilus dconf-editor
+	  sudo pacman -S gnome-software lsb-release
+	  flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+	  sudo pacman -S gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
+	  sudo pacman -S calibre
+	  break
+	  ;;
+	"Salir")
+	  break
+	  ;;
+ 	*) echo invalid option;;
+    esac
+done
