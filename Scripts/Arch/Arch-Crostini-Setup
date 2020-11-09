@@ -67,7 +67,7 @@ do
 	  sudo pacman -S libappimage
 	  sudo pacman -S libotf
 	  sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
-	  sudo pacman -S #ttf-croscore #ttf-roboto ttf-roboto-mono ttf-opensans
+	  sudo pacman -S ttf-roboto-mono ttf-opensans
 	  sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
 	  sudo pacman -S gtk-engine-murrine gtk-engines
 	  sudo pacman -S gedit-plugins nautilus dconf-editor
