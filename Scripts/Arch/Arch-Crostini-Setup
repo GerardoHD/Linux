@@ -57,21 +57,22 @@ do
 	  break
 	  ;;
 	"Etapa 5")
-	  sudo pacman -S appstream archlinux-appstream-data pipewire-pulse
-	  sudo pacman -S bash-completion
-	  sudo pacman -S p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
-	  sudo pacman -S android-tools xdg-user-dirs
-	  sudo pacman -S libappimage
-	  sudo pacman -S libotf
-	  sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
-	  sudo pacman -S ttf-roboto-mono ttf-opensans
-	  sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
-	  sudo pacman -S gtk-engine-murrine gtk-engines
-	  sudo pacman -S gedit-plugins nautilus dconf-editor
-	  sudo pacman -S gnome-software
+	  sudo pacman -S --noconfirm  appstream archlinux-appstream-data pipewire-pulse
+	  sudo pacman -S --noconfirm  bash-completion
+	  sudo pacman -S --noconfirm  p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
+	  sudo pacman -S --noconfirm  android-tools xdg-user-dirs
+	  sudo pacman -S --noconfirm  libappimage
+	  sudo pacman -S --noconfirm  libotf
+	  sudo pacman -S --noconfirm  ttf-fira-code ttf-fira-mono ttf-fira-sans
+	  sudo pacman -S --noconfirm  ttf-roboto-mono ttf-opensans
+	  sudo pacman -S --noconfirm  ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
+	  sudo pacman -S --noconfirm  gtk-engine-murrine gtk-engines
+	  sudo pacman -S --noconfirm  gedit-plugins nautilus
+	  sudo pacman -S --noconfirm  gnome-software
 	  flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-	  sudo pacman -S gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
+	  sudo pacman -S --noconfirm  gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
 	  sudo pacman -S calibre
+	  sudo poweroff
 	  break
 	  ;;
 	"Salir")
