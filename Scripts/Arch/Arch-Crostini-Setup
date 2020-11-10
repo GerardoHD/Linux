@@ -47,7 +47,7 @@ do
 	  rm -rf package-query yay
 	  #
 	  yay -S --noconfirm cros-container-guest-tools-git
-	  cp -r /etc/skel/.config/pulse ~/.config
+	  #cp -r /etc/skel/.config/pulse ~/.config
 	  systemctl --user enable --now sommelier@0 sommelier-x@0 sommelier@1 sommelier-x@1
 	  sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
 	  sudo poweroff
