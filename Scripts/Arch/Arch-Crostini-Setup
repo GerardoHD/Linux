@@ -14,12 +14,9 @@ do
 	  passwd gerardoherreradiaz
 	  pacman-key --init
 	  pacman-key --populate archlinuxarm
-	  pacman -Syyu --noconfirm sudo vim
 	  sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 	  sudo sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
 	  sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
-	  pacman -Syyu --noconfirm base-devel dialog wget git
-	  curl -L https://goo.gl/MYj2pz | bash
 	  visudo
 	  usermod -aG wheel gerardoherreradiaz
 	  exit
