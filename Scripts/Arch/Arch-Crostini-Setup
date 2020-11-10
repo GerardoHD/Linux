@@ -31,7 +31,7 @@ do
 	  ;;
 	"Etapa 3")
 	  sudo pacman -S --noconfirm usbutils xorg-server-xwayland sshfs
-	  sudo pacman -S --noconfirm gvfs mtpfs gvfs-mtp pacman-contrib
+	  sudo pacman -S --noconfirm gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 	  echo  -=Instalando Soporte AUR=-
 	  git clone https://aur.archlinux.org/package-query.git
 	  cd package-query && makepkg -si --noconfirm
@@ -68,7 +68,7 @@ do
 	  sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
 	  sudo pacman -S gtk-engine-murrine gtk-engines
 	  sudo pacman -S gedit-plugins nautilus dconf-editor
-	  sudo pacman -S gnome-software lsb-release
+	  sudo pacman -S gnome-software
 	  flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	  sudo pacman -S gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
 	  sudo pacman -S calibre
