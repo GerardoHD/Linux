@@ -69,6 +69,7 @@ do
 	  sudo pacman -S --noconfirm  gtk-engine-murrine gtk-engines
 	  sudo pacman -S --noconfirm  gedit-plugins nautilus
 	  sudo pacman -S --noconfirm  gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
+	  yay -S menulibre
 	  sudo pacman -S calibre
 	  sudo poweroff
 	  break
