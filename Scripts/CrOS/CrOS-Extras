@@ -29,7 +29,6 @@ fi
  
 #remount / as read/write
 mount -o remount,rw /
-
 cd /opt/google/chrome/
 #remove old files
 rm -f libpdf.so
