@@ -58,6 +58,7 @@ do
     case $opt in
 	"Si")
 	bootctl --path=/boot install
+	echo Si se instala Systemd-boot, activar sus líneas correspondientes en Secure-Boot 
 	;;
 	#
 	"No")
