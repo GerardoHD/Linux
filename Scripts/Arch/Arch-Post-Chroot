@@ -50,8 +50,22 @@ useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,vi
 echo Activando NetworkManager:
 systemctl enable NetworkManager.service
 #
-echo -=Instalando Systemd-boot=-
-bootctl --path=/boot install
+echo  -=Systemd-boot=-
+PS3='Quieres instalar Systemd-boot?'
+options=("Si" "No")
+select opt in "${options[@]}"
+do
+    case $opt in
+	"Si")
+	bootctl --path=/boot install
+	;;
+	#
+	"No")
+	break
+	;;
+	*) echo invalid option;;
+    esac
+done
 #
 echo -=Creando Imagen de Kernel Unificada=-
 #
@@ -117,4 +131,3 @@ do
     esac
 done
 #
-
