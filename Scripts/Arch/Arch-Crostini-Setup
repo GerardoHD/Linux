@@ -1,16 +1,10 @@
+echo  -=Instalando Flash para ChromiumOS=-
 #!/bin/bash
-echo  -=Configurar Arch Linux en Crostini de ChromeOS=-
-#
-if [ `uname -m` != 'aarch64' ]; then
+ 
+if [ `uname -m` != 'x86_64' ]; then
   # non x86_64
-  echo "Este script solo funciona correctamente en arquitecturas aarch64"
-  exit
-else
-    #x86_64
-  echo "Arquitectura aarch64 detectada."
-fi
-#
-PS3='Elige la etapa de configuración: '
+  echo "Arquitectura aarch64 detectada"
+  PS3='Elige la etapa de configuración: '
 options=("Etapa 1" "Etapa 2" "Etapa 3" "Etapa 4" "Etapa 5" "Salir")
 select opt in "${options[@]}"
 do
@@ -90,3 +84,88 @@ do
  	*) echo invalid option;;
     esac
 done
+  exit
+else
+    #x86_64
+  echo "Arquitectura x86_64 detectada"
+  PS3='Elige la etapa de configuración: '
+options=("Etapa 1" "Etapa 2" "Etapa 3" "Etapa 4" "Etapa 5" "Salir")
+select opt in "${options[@]}"
+do
+    case $opt in
+	"Etapa 1")
+	  ip -4 a show dev eth0
+	  grep 1000:1000 /etc/passwd|cut -d':' -f1
+useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,video,wheel -s /bin/bash gerardohd
+	  passwd gerardoherreradiaz
+	  pacman-key --init
+	  pacman-key --populate archlinuxarm
+	  sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+	  sudo sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
+	  sudo sed -i 's/#CheckSpace/CheckSpace/g' /etc/pacman.conf
+	  visudo
+	  usermod -aG wheel gerardoherreradiaz
+	  exit
+	  break
+	  ;;
+	"Etapa 2")
+	  echo LANG=es_MX.UTF-8 >> locale.conf
+          sudo mv locale.conf  /etc/locale.conf
+	  echo es_MX.UTF-8 UTF-8 >> locale.gen
+          sudo mv locale.gen  /etc/locale.gen
+	  sudo locale-gen
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 3")
+	  sudo pacman -S --noconfirm usbutils xorg-server-xwayland sshfs
+	  sudo pacman -S --noconfirm gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
+	  echo  -=Instalando Soporte AUR=-
+	  git clone https://aur.archlinux.org/package-query.git
+	  cd package-query && makepkg -si --noconfirm
+	  cd ..
+	  #
+	  git clone https://aur.archlinux.org/yay.git
+	  cd yay && makepkg -si --noconfirm
+	  cd ..
+	  #
+	  rm -rf package-query yay
+	  #
+	  yay -S --noconfirm cros-container-guest-tools-git
+	  #cp -r /etc/skel/.config/pulse ~/.config
+	  systemctl --user enable --now sommelier@0 sommelier-x@0 sommelier@1 sommelier-x@1
+	  sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 4")
+	  systemctl --failed
+	  systemctl --user --failed
+	  sudo poweroff
+	  break
+	  ;;
+	"Etapa 5")
+	  sudo pacman -S --noconfirm  appstream archlinux-appstream-data pipewire-pulse
+	  sudo pacman -S --noconfirm  bash-completion
+	  sudo pacman -S --noconfirm  p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
+	  sudo pacman -S --noconfirm  android-tools xdg-user-dirs
+	  sudo pacman -S --noconfirm  libappimage
+	  sudo pacman -S --noconfirm  libotf
+	  sudo pacman -S --noconfirm  ttf-fira-code ttf-fira-mono ttf-fira-sans
+	  sudo pacman -S --noconfirm  ttf-roboto-mono ttf-opensans
+	  sudo pacman -S --noconfirm  ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
+	  sudo pacman -S --noconfirm  gtk-engine-murrine gtk-engines
+	  sudo pacman -S --noconfirm  gedit-plugins nautilus
+	  sudo pacman -S --noconfirm  gst-libav gst-plugins-ugly ffmpegthumbnailer gnome-epub-thumbnailer 
+	  yay -S menulibre
+	  sudo pacman -S calibre
+	  sudo poweroff
+	  break
+	  ;;
+	"Salir")
+	  break
+	  ;;
+ 	*) echo invalid option;;
+    esac
+done
+fi
