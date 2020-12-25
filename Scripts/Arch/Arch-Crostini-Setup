@@ -1,6 +1,6 @@
-echo  -=Instalando Flash para ChromiumOS=-
+echo  -=Configurando Arch Linux en Crostini=-
 #!/bin/bash
- 
+# 
 if [ `uname -m` != 'x86_64' ]; then
   # non x86_64
   echo "Arquitectura aarch64 detectada"
@@ -96,7 +96,7 @@ do
 	"Etapa 1")
 	  ip -4 a show dev eth0
 	  grep 1000:1000 /etc/passwd|cut -d':' -f1
-useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,video,wheel -s /bin/bash gerardohd
+useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,video,wheel -s /bin/bash gerardoherreradiaz
 	  passwd gerardoherreradiaz
 	  pacman-key --init
 	  pacman-key --populate archlinuxarm
