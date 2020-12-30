@@ -64,7 +64,7 @@ do
 	  sudo pacman -S --noconfirm  appstream archlinux-appstream-data pipewire-pulse
 	  sudo pacman -S --noconfirm  bash-completion
 	  sudo pacman -S --noconfirm  p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace
-	  sudo pacman -S --noconfirm  android-tools xdg-user-dirs
+	  sudo pacman -S --noconfirm  android-tools xdg-user-dirs file-roller
 	  sudo pacman -S --noconfirm  libappimage
 	  sudo pacman -S --noconfirm  libotf
 	  sudo pacman -S --noconfirm  ttf-fira-code ttf-fira-mono ttf-fira-sans
