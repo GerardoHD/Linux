@@ -15,7 +15,7 @@ ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 hwclock --systohc
 #
 #Establecer el nombre de Sistema:
-echo Arch >> /etc/ArchLinux
+echo Arch >> /etc/hostname
 #
 #Establecer la distribución del teclado:
 echo KEYMAP=la-latin1 >> /etc/vconsole.conf
