@@ -7,8 +7,8 @@
 #Usando Platform Key Infrastructure
 echo Creando Arch Linux Unified Kernel Image...
 #
-echo -=Actualizando Systemd-boot=-
-bootctl update
+#echo -=Actualizando Systemd-boot=-
+#bootctl update
 #
 echo Limpiando archivos innecesarios
 rm /root/Arch-UKI/Initramfs.img
