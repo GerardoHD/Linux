@@ -31,6 +31,7 @@ locale-gen
 #
 #Desactivar fallback initrd.img
 #sed -i 's/PRESETS=('default' 'fallback')/PRESETS=('default')/g' /etc/mkinitcpio.d/linux.preset
+rm /boot/intramfs-linux-fallback.img
 #
 #Configurar Systemd-fsck
 sudo cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
