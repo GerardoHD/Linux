@@ -73,8 +73,8 @@ systemctl enable NetworkManager.service
 #done
 #
 echo -=Creando Imagenes de Kernel Unificado=-
-#Crear carpetas, cmdline.txt y limpiar archivos innecesarios
-mkdir -p /boot/efi/Linux
+#Creando carpetas y cmdline
+mkdir -p /efi/efi/Linux
 mkdir -p /root/Arch-UKI
 echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on > /root/Arch-UKI/cmdline.txt
 #rm /boot/initramfs-linux-fallback.img
