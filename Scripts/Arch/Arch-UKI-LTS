@@ -15,7 +15,7 @@ rm /root/Arch-UKI/Initramfs-LTS.img
 rm /efi/efi/Linux/Arch-LTS.efi
 #Actualizando initramfs
 mkinitcpio -p linux
-#Uniendo ucode y initramfs
+#Uniendo ucode e initramfs
 cat /boot/intel-ucode.img /boot/initramfs-linux-lts.img >> /root/Arch-UKI/Initramfs-LTS.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux-lts.img >> /root/Arch-UKI/Initramfs-LTS.img
 #
