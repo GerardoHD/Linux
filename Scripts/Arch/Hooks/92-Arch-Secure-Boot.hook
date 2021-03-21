@@ -12,4 +12,4 @@ Target = amd-ucode
 [Action]
 Description = Firmando archivos para Secure Boot
 When = PostTransaction
-Exec = /bin/sh -c 'Secure-Boot'
+Exec = /bin/sh -c 'Arch-Secure-Boot'
