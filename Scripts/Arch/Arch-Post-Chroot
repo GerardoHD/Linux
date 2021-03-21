@@ -91,6 +91,9 @@ objcopy \
     --add-section .initrd="/root/Arch-UKI/Initramfs.img"                --change-section-vma .initrd=0x3000000 \
     /usr/lib/systemd/boot/efi/linuxx64.efi.stub /efi/efi/Linux/Arch.efi
 #
+echo -=Creando entrada NVRAM de Arch.efi=-
+efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch.efi" --verbose
+#
 #Uniendo ucode e initramfs de LTS
 cat /boot/intel-ucode.img /boot/initramfs-linux-lts.img >> /root/Arch-UKI/Initramfs-LTS.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux-lts.img >> /root/Arch-UKI/Initramfs-LTS.img
@@ -103,11 +106,8 @@ objcopy \
     --add-section .initrd="/root/Arch-UKI/Initramfs-LTS.img"            --change-section-vma .initrd=0x3000000 \
     /usr/lib/systemd/boot/efi/linuxx64.efi.stub /efi/efi/Linux/Arch-LTS.efi
 #
-echo -=Creando entrada NVRAM de Arch.efi=-
-efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch.efi" --verbose
-#
 echo -=Creando entrada NVRAM de Arch-LTS.efi=-
-efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch-LTS.efi" --verbose
+efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux LTS" --loader "\efi\Linux\Arch-LTS.efi" --verbose
 #
 #echo -=Creando entrada NVRAM de CloudReady=-
 #efibootmgr --create --disk /dev/sda --part 27 --label "CloudReady" --loader "\efi\boot\grubx64.efi" --verbose
