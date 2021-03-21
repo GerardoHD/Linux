@@ -51,23 +51,23 @@ useradd -m -g users -G audio,games,input,lp,optical,power,scanner,storage,sys,vi
 echo Activando NetworkManager:
 systemctl enable NetworkManager.service
 #
-echo  -=Systemd-boot=-
-PS3='Quieres instalar Systemd-boot?'
-options=("Si" "No")
-select opt in "${options[@]}"
-do
-    case $opt in
-	"Si")
-	bootctl --path=/boot install
-	echo Si se instala Systemd-boot, activar sus líneas correspondientes en Secure-Boot 
-	;;
-	#
-	"No")
-	break
-	;;
-	*) echo invalid option;;
-    esac
-done
+#echo  -=Systemd-boot=-
+#PS3='Quieres instalar Systemd-boot?'
+#options=("Si" "No")
+#select opt in "${options[@]}"
+#do
+#    case $opt in
+#	"Si")
+#	bootctl --path=/boot install
+#	echo Si se instala Systemd-boot, activar sus líneas correspondientes en Secure-Boot 
+#	;;
+#	#
+#	"No")
+#	break
+#	;;
+#	*) echo invalid option;;
+#    esac
+#done
 #
 echo -=Creando Imagen de Kernel Unificada=-
 #
@@ -109,27 +109,27 @@ sudo pacman-key --init
 sudo pacman -Syyu --noconfirm
 sudo pacman -Syyy
 #
-echo  -=Repositorio Disastrosaur=-
-PS3='Quieres instalar el repositorio disastrosaur?'
-options=("Si" "No")
-select opt in "${options[@]}"
-do
-    case $opt in
-	"Si")
-	echo [disastrousaur] >> /etc/pacman.conf
-	echo Server = https://mirror.repohost.de/disastrousaur/x86_64/ >> /etc/pacman.conf
-	wget -c https://mirror.repohost.de/disastrousaur.key -O disastrosaur.key
-	sudo pacman-key --add disastrosaur.key
-	sudo pacman-key --lsign-key CBAE582A876533FD
-	sudo pacman -Syyu package-query yay
-	rm disastrosaur.key
-	break
-	;;
-	#
-	"No")
-	break
-	;;
-	*) echo invalid option;;
-    esac
-done
+#echo  -=Repositorio Disastrosaur=-
+#PS3='Quieres instalar el repositorio disastrosaur?'
+#options=("Si" "No")
+#select opt in "${options[@]}"
+#do
+#    case $opt in
+#	"Si")
+#	echo [disastrousaur] >> /etc/pacman.conf
+#	echo Server = https://mirror.repohost.de/disastrousaur/x86_64/ >> /etc/pacman.conf
+#	wget -c https://mirror.repohost.de/disastrousaur.key -O disastrosaur.key
+#	sudo pacman-key --add disastrosaur.key
+#	sudo pacman-key --lsign-key CBAE582A876533FD
+#	sudo pacman -Syyu package-query yay
+#	rm disastrosaur.key
+#	break
+#	;;
+#	#
+#	"No")
+#	break
+#	;;
+#	*) echo invalid option;;
+#    esac
+#done
 #
