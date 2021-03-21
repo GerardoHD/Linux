@@ -1,0 +1,15 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = systemd
+Target = linux
+Target = grub
+Target = mkinitcpio
+Target = intel-ucode
+Target = amd-ucode
+
+[Action]
+Description = Firmando archivos para Secure Boot
+When = PostTransaction
+Exec = /bin/sh -c 'Arch-Secure-Boot-LTS'
