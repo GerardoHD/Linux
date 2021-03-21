@@ -109,7 +109,8 @@ do
 done
 #
 echo Descargando Hook de Pacman para Secure-Boot
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Arch-Secure-Boot.hook -O /usr/share/libalpm/hooks/92-Arch-Secure-Boot.hook
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/92-Arch-UKI.hook -O /usr/share/libalpm/hooks/92-Arch-UKI.hook
+sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Hooks/93-Arch-UKI-LTS.hook -O /usr/share/libalpm/hooks/93-Arch-UKI-LTS.hook
 #
 echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S bash-completion gpart fatresize
