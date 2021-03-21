@@ -12,7 +12,7 @@ echo Creando Arch Linux Unified Kernel Image...
 #
 echo Limpiando archivos innecesarios
 rm /root/Arch-UKI/Initramfs.img
-rm /boot/efi/Linux/Arch.efi
+rm /efi/efi/Linux/Arch.efi
 #Actualizando initramfs
 mkinitcpio -p linux
 #Uniendo ucode y initramfs
@@ -25,10 +25,10 @@ objcopy \
     --add-section .splash="/usr/share/systemd/bootctl/splash-arch.bmp"  --change-section-vma .splash=0x40000   \
     --add-section .linux="/boot/vmlinuz-linux"                          --change-section-vma .linux=0x2000000  \
     --add-section .initrd="/root/Arch-UKI/Initramfs.img"                --change-section-vma .initrd=0x3000000 \
-    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /boot/efi/Linux/Arch.efi
+    /usr/lib/systemd/boot/efi/linuxx64.efi.stub /efi/efi/Linux/Arch.efi
 #
 echo Firmando archivos para Secure Boot...
-sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/efi/Linux/Arch.efi /boot/efi/Linux/Arch.efi
+sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /efi/efi/Linux/Arch.efi /efi/efi/Linux/Arch.efi
 sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 #sbsign --key /root/efi-keys/db_arch.key --cert /root/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
 #La siguiente linea rompe el grub customizado por Cloudready, activar solo para testeo de firmado
