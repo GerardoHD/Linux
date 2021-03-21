@@ -11,6 +11,9 @@ echo archivos .efi para Secure Boot
 #Configurar la zona horaria en CDMX:
 ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 #
+#Activar ntp para sincronizar el reloj del sistema:
+timedatectl set-ntp true
+#
 #Generar /etc/adjtime (este comando asume que el reloj del hardware esta en UTC):
 hwclock --systohc
 #
@@ -70,12 +73,11 @@ systemctl enable NetworkManager.service
 #done
 #
 echo -=Creando Imagen de Kernel Unificada=-
-#
 #Crear carpetas, cmdline.txt y limpiar archivos innecesarios
 mkdir -p /boot/efi/Linux
 mkdir -p /root/Arch-UKI
 echo root=LABEL=Arch quiet loglevel=1 vga=current rd.systemd.show_status=auto rd.udev.log_priority=3 random.trust_cpu=on > /root/Arch-UKI/cmdline.txt
-rm /boot/initramfs-linux-fallback.img
+#rm /boot/initramfs-linux-fallback.img
 #Uniendo ucode y initramfs
 cat /boot/intel-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
 #cat /boot/amd-ucode.img /boot/initramfs-linux.img >> /root/Arch-UKI/Initramfs.img
@@ -90,6 +92,9 @@ objcopy \
 #
 echo -=Creando entrada NVRAM de Arch.efi=-
 efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch.efi" --verbose
+#
+echo -=Creando entrada NVRAM de Arch-LTS.efi=-
+efibootmgr --create --disk /dev/sda --part 27 --label "Arch Linux" --loader "\efi\Linux\Arch-LTS.efi" --verbose
 #
 #echo -=Creando entrada NVRAM de CloudReady=-
 #efibootmgr --create --disk /dev/sda --part 27 --label "CloudReady" --loader "\efi\boot\grubx64.efi" --verbose
