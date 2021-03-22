@@ -4,6 +4,7 @@ Operation = Install
 Operation = Upgrade
 Target = systemd
 Target = linux
+Target = linux-lts
 Target = grub
 Target = mkinitcpio
 Target = intel-ucode
@@ -12,4 +13,4 @@ Target = amd-ucode
 [Action]
 Description = Firmando archivos para Secure Boot
 When = PostTransaction
-Exec = /bin/sh -c 'Arch-Secure-Boot'
+Exec = /bin/sh -c 'Arch-UKI'
