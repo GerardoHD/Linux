@@ -10,7 +10,7 @@ sudo rm -rf Arch-Crostini-Setup
 sudo rm -rf Arch-Manager
 sudo rm -rf Arch-Post-Chroot
 sudo rm -rf Arch-UKI
-sudo rm -rf Arch-UKI-LTS
+#sudo rm -rf Arch-UKI-LTS
 sudo rm -rf Arch-Setup
 sudo rm -rf GNOME-Fonts-Setup
 sudo rm -rf Tweaks
@@ -30,7 +30,7 @@ sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Ar
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Manager
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Post-Chroot
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-UKI
-sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-UKI-LTS
+#sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-UKI-LTS
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Arch-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/GNOME-Fonts-Setup
 sudo wget -c https://raw.githubusercontent.com/GerardoHD/Linux/master/Scripts/Arch/Tweaks
@@ -50,7 +50,7 @@ sudo chmod +x Arch-Crostini-Setup
 sudo chmod +x Arch-Manager
 sudo chmod +x Arch-Post-Chroot
 sudo chmod +x Arch-UKI
-sudo chmod +x Arch-UKI-LTS
+#sudo chmod +x Arch-UKI-LTS
 sudo chmod +x Arch-Setup
 sudo chmod +x GNOME-Fonts-Setup
 sudo chmod +x Tweaks
