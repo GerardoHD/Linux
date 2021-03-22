@@ -21,7 +21,7 @@ objcopy \
     --add-section .linux="/boot/vmlinuz-linux"                          --change-section-vma .linux=0x2000000  \
     --add-section .initrd="/root/Arch-UKI/initramfs.img"                --change-section-vma .initrd=0x3000000 \
     /usr/lib/systemd/boot/efi/linuxx64.efi.stub /efi/efi/Linux/Arch.efi
-#Imagen unificada de Kernel  LTS
+#Imagen unificada de Kernel LTS
 objcopy \
     --add-section .osrel="/etc/os-release"                              --change-section-vma .osrel=0x20000    \
     --add-section .cmdline="/root/Arch-UKI/cmdline.txt"                 --change-section-vma .cmdline=0x30000  \
