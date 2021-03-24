@@ -22,7 +22,7 @@ echo -=Actualizando Arch Linux
 sudo pacman -Syyu --noconfirm
 #
 echo  -=Instalando Bases para Arch Linux=-
-	sudo pacman -S flatpak vim git fwupd tpm2-tss sbsigntools man efitools pciutils usbutils
+	sudo pacman -S flatpak fwupd tpm2-tss man man-db man-pages-es efitools pciutils usbutils
 	sudo pacman -S btrfs-progs dosfstools exfat-utils f2fs-tools reiserfsprogs xfsprogs ntfs-3g sshfs
 	sudo pacman -S jfsutils mtools nilfs-utils gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 echo  -=Pulse Audio=-
@@ -42,7 +42,7 @@ do
     case $opt in
 	"Intel")
 	  echo "Escogiste Instalar Drivers Intel"
-	  sudo pacman -S intel-ucode xf86-video-intel libva-intel-driver beignet
+	  sudo pacman -S xf86-video-intel libva-intel-driver intel-compute-runtime
 	  break
 	  ;;
 	"AMD")
@@ -252,7 +252,7 @@ do
 	  yay -S aic94xx-firmware wd719x-firmware
 	  ;;
 	8)
-	  yay -S epson-inkjet-printer-escpr
+	  yay -S epson-inkjet-printer-escpr imagescan
 	  ;;
     esac
 done
@@ -363,7 +363,7 @@ do
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
-	  yay -S gnome-backgrounds-bitday-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git 
+	  yay -S gnome-backgrounds-bitday-git gnome-backgrounds-lakeside-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures
