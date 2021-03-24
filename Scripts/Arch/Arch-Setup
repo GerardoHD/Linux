@@ -355,8 +355,7 @@ do
 	  sleep 2s
 	  sudo pacman -S dconf-editor gnome-mines gnome-sound-recorder gnome-tweaks
 	  sudo pacman -S gnome-software-packagekit-plugin
-	  sudo pacman -S chrome-gnome-shell eog-plugins gnome-initial-setup
-	  sudo pacman -S gnome-firmware pipewire-pulse
+	  sudo pacman -S chrome-gnome-shell eog-plugins gnome-initial-setup gnome-firmware
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
 	  sudo yay -S qt5-styleplugins qt5ct 
