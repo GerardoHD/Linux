@@ -342,28 +342,29 @@ do
 	  echo "Escogiste Instalar el entorno de Escritorio GNOME"
 	  echo   ---=Instalando GNOME=---
 	  sleep 1s
-	  sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
+	  sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-boxes
 	  sudo pacman -S gnome-calculator gnome-calendar gnome-characters gnome-clocks
 	  sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
 	  sudo pacman -S gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus
 	  sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
-	  sudo pacman -S gnome-system-monitor gnome-terminal gnome-themes-extra
+	  sudo pacman -S gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra
 	  sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
 	  sudo pacman -S gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-nfs gvfs-smb
-	  sudo pacman -S mousetweaks mutter nautilus networkmanager rygel sushi
-	  sudo pacman -S tracker tracker-miners vino xdg-user-dirs-gtk yelp gnome-software simple-scan
-	  sudo pacman -S dconf-editor gnome-sound-recorder totem
-	  sudo pacman -S gnome-tweaks gnome-weather gnome-software-packagekit-plugin chrome-gnome-shell
+	  sudo pacman -S mutter nautilus networkmanager rygel simple-scan sushi
+	  sudo pacman -S totem vino xdg-user-dirs-gtk yelp 
 	  sleep 2s
-	  sudo pacman -S gnome-initial-setup eog-plugins gnome-video-effects libgnome-keyring
-	  sudo pacman -S gnome-firmware pipewire-pulse gnome-mines gnome-recipes
+	  sudo pacman -S dconf-editor gnome-mines gnome-sound-recorder gnome-tweaks
+	  sudo pacman -S gnome-software-packagekit-plugin
+	  sudo pacman -S chrome-gnome-shell eog-plugins gnome-initial-setup
+	  sudo pacman -S gnome-firmware pipewire-pulse
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
 	  sudo yay -S qt5-styleplugins qt5ct 
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
-	  yay -S gnome-backgrounds-bitday-git gnome-backgrounds-lakeside-git gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
+	  yay -S gnome-backgrounds-bitday-git gnome-backgrounds-lakeside-git
+	  yay -S gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures
