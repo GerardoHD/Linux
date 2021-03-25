@@ -159,7 +159,7 @@ done
 #
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
-	sudo pacman -S system-config-printer cups-pk-helper gtk3-print-backends
+	sudo pacman -S system-config-printer cups-pk-helper
 #
 sleep 2s
 #
