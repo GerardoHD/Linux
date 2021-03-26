@@ -115,7 +115,7 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S bash-completion gpart fatresize
 	sudo pacman -S p7zip lrzip lzip minizip libunrar unrar unarchiver zip unarj unace squashfs-tools
 	sudo pacman -S gst-libav gst-plugins-ugly ffmpegthumbnailer youtube-dl
-	sudo pacman -S python-pylast python-wikipedia
+	sudo pacman -S speedtest-cli python-pylast python-wikipedia
 	sudo pacman -S android-tools openssh xdg-user-dirs
 	sudo pacman -S libappimage libmicrodns
 #Fuentes
