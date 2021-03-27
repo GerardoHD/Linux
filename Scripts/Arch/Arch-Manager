@@ -17,7 +17,7 @@ sudo mount -o remount,size=4G,noatime /tmp
 echo  -=Acciones disponibles=-
 cmd=(dialog --separate-output --checklist "Elige las acciones a realizar (selecciona con tecla espacio)" 22 76 16)
 options=(1 "Reparar el error de db.lck" off
-	 2 "Actualizar el sistema" off
+	 2 "Actualizar el sistema" on
          3 "Limpiar caché de paquetes" off
          4 "Actualizar y reiniciar" off
          5 "Actualizar y apagar" off)
