@@ -135,13 +135,12 @@ select opt in "${options[@]}"
 do
     case $opt in
 	"Si")
-	sudo pacman -S materia-gtk-theme adapta-gtk-theme arc-gtk-theme
-	sudo pacman -S kvantum-theme-materia kvantum-theme-adapta kvantum-theme-arc
+	sudo pacman -S materia-gtk-theme arc-gtk-theme
+	sudo pacman -S kvantum-theme-materia
 	sudo pacman -S papirus-icon-theme capitaine-cursors archlinux-wallpaper
 	flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
-	flatpak install flathub org.gtk.Gtk3theme.Adapta{,-Brila,-Eta,-Nokto,-Brila-Eta,-Nokto-Eta} -y
 	flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
-	yay -S la-capitaine-icon-theme
+	yay -S la-capitaine-icon-theme kvantum-theme-arc
 	sudo sed -i 's|Inherits=breeze,elementary,gnome,deepin|Inherits=Papirus,breeze,elementary,gnome,deepin|g' /usr/share/icons/la-capitaine-icon-theme/index.theme
 	break
 	;;
@@ -214,7 +213,7 @@ options=(1 "Firefox" off    # any option can be set to default to "on"
          5 "WPS Office" off
          6 "PLEX" off
          7 "Firmware para advertencias de mknitcpio" off
-         8 "Drivers Impresora Epson L4150" off )
+         8 "Drivers Impresora Epson L4150" on )
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -266,8 +265,8 @@ sudo sed -i 's/auth_admin_keep/yes/g' /usr/share/polkit-1/actions/org.freedeskto
 #sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
 #sudo sed -i 's/#HandleLidSwitchDocked=suspend/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
 #
-echo Arreglando Menulibre
-sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
+#echo Arreglando Menulibre
+#sudo sed -i 's|return GLib.markup_escape_text(text, len(text))|return GLib.markup_escape_text(text)|g' /usr/lib/python3.7/site-packages/menulibre/util.py
 #
 echo  -=Activando Servicio Cups "cupsd"=-
 sudo systemctl enable org.cups.cupsd.service
