@@ -357,7 +357,7 @@ do
 	  sudo pacman -S chrome-gnome-shell eog-plugins gnome-initial-setup gnome-firmware
 	  #
 	  echo Instalando QT5CT para mejorar la integración de los programas QT en escritorios GTK 
-	  sudo yay -S qt5-styleplugins qt5ct 
+	  yay -S qt5-styleplugins qt5ct 
 	  sudo sed -i '$ a\QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 	  #
 	  sleep 2s
