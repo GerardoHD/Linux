@@ -201,7 +201,7 @@ do
 done
 #
 echo  -=Instalando Software desde Arch User Repository=-
-	yay -S google-chrome pamac-aur shortwave
+	yay -S google-chrome pamac-aur
 	yay -S menulibre nautilus-admin ttf-ms-fonts
 #
 echo  -=Programas opcionales=-
