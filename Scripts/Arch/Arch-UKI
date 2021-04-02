@@ -31,13 +31,13 @@ objcopy \
     /usr/lib/systemd/boot/efi/linuxx64.efi.stub /efi/efi/Linux/Arch-LTS.efi
 #
 echo Firmando archivos para Secure Boot...
-sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /efi/efi/Linux/Arch.efi /efi/efi/Linux/Arch.efi
-sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /efi/efi/Linux/Arch-LTS.efi /efi/efi/Linux/Arch-LTS.efi
-sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /boot/vmlinuz-linux-lts /boot/vmlinuz-linux-lts
-#sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
-#sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
-#sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
+sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /efi/efi/Linux/Arch.efi /efi/efi/Linux/Arch.efi
+sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /efi/efi/Linux/Arch-LTS.efi /efi/efi/Linux/Arch-LTS.efi
+sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /boot/vmlinuz-linux-lts /boot/vmlinuz-linux-lts
+#sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /boot/EFI/BOOT/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
+#sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
+#sbsign --key /etc/efi-keys/db_arch.key --cert /etc/efi-keys/db_arch.pem --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
 #
 #Usando MOK
 #cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/grubx64.efi
@@ -45,13 +45,13 @@ sbsign --key /root/sb-keys/db_arch.key --cert /root/sb-keys/db_arch.pem --output
 #cp /usr/share/shim-signed/mmx64.efi /boot/EFI/BOOT/
 #
 #echo Firmando archivos para Secure Boot...
-#sbsign --key /root/sbs-keys-MOK/MOK.key --cert /root/sb-keys-MOK/MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
-#sbsign --key /root/sb-keys-MOK/MOK.key --cert /root/sb-keys-MOK/MOK.crt --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
-#sbsign --key /root/sb-keys-MOK/MOK.key --cert /root/sb-keys-MOK/MOK.crt --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
-#sbsign --key /root/sb-keys-MOK/MOK.key --cert /root/sb-keys-MOK/MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+#sbsign --key /etc/efi-keys/MOK.key --cert /etc/efi-keys/MOK.crt --output /boot/EFI/BOOT/grubx64.efi /boot/EFI/BOOT/grubx64.efi
+#sbsign --key /etc/efi-keys/MOK.key --cert /etc/efi-keys/MOK.crt --output /boot/EFI/grub/grubx64.efi /boot/EFI/grub/grubx64.efi
+#sbsign --key /etc/efi-keys/MOK.key --cert /etc/efi-keys/MOK.crt --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
+#sbsign --key /etc/efi-keys/MOK.key --cert /etc/efi-keys/MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 #
 #echo -Verificando firmas-
-#sbverify --cert /root/sb-keys-MOK/MOK.crt /boot/EFI/BOOT/grubx64.efi
-#sbverify --cert /root/sb-keys-MOK/MOK.crt /boot/EFI/grub/grubx64.efi
-#sbverify --cert /root/sb-keys-MOK/MOK.crt /boot/EFI/systemd/systemd-bootx64.efi
-#sbverify --cert /root/sb-keys-MOK/MOK.crt /boot/vmlinuz-linux
+#sbverify --cert /etc/efi-keys/MOK.crt /boot/EFI/BOOT/grubx64.efi
+#sbverify --cert /etc/efi-keys/MOK.crt /boot/EFI/grub/grubx64.efi
+#sbverify --cert /etc/efi-keys/MOK.crt /boot/EFI/systemd/systemd-bootx64.efi
+#sbverify --cert /etc/efi-keys/MOK.crt /boot/vmlinuz-linux
