@@ -124,9 +124,10 @@ echo  -=Instalando Software desde Repositorios Oficiales=-
 	sudo pacman -S ttf-fira-code ttf-fira-mono ttf-fira-sans
 	sudo pacman -S ttf-croscore ttf-roboto ttf-roboto-mono ttf-opensans
 	sudo pacman -S ttf-ibm-plex ttf-ubuntu-font-family gnu-free-fonts
-#Motores de temas
+#Motores de temas y fondos de pantalla
 	sudo pacman -S gtk-engine-murrine gtk-engines
 	sudo pacman -S kvantum-qt5
+	sudo pacman -S archlinux-wallpaper
 #
 echo  -=Temas=-
 PS3='Quieres instalar temas y paquetes de iconos? '
@@ -137,7 +138,7 @@ do
 	"Si")
 	sudo pacman -S materia-gtk-theme arc-gtk-theme
 	sudo pacman -S kvantum-theme-materia
-	sudo pacman -S papirus-icon-theme capitaine-cursors archlinux-wallpaper
+	sudo pacman -S papirus-icon-theme capitaine-cursors
 	flatpak install flathub org.gtk.Gtk3theme.Materia{,-dark,-light}{,-compact} -y
 	flatpak install flathub org.gtk.Gtk3theme.Arc{,-Dark,-Darker,} -y
 	yay -S la-capitaine-icon-theme kvantum-theme-arc
@@ -202,7 +203,7 @@ done
 #
 echo  -=Instalando Software desde Arch User Repository=-
 	yay -S google-chrome pamac-aur
-	yay -S menulibre nautilus-admin ttf-ms-fonts
+	yay -S menulibre ttf-ms-fonts
 #
 echo  -=Programas opcionales=-
 cmd=(dialog --separate-output --checklist "Elige los programas a instalar (selecciona con tecla espacio) " 22 76 16)
