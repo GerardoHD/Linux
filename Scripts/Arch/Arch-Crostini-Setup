@@ -1,5 +1,5 @@
-echo  -=Configurando Arch Linux en Crostini=-
 #!/bin/bash
+echo  -=Configurando Arch Linux en Crostini=-
 # 
 if [ `uname -m` != 'x86_64' ]; then
   # non x86_64
@@ -38,14 +38,10 @@ do
 	  sudo pacman -S --noconfirm gvfs mtpfs gvfs-mtp lsb-release pacman-contrib
 	  echo  -=Instalando Soporte AUR=-
 	  git clone https://aur.archlinux.org/package-query.git
-	  cd package-query && makepkg -si --noconfirm
-	  cd ..
-	  #
 	  git clone https://aur.archlinux.org/yay.git
-	  cd yay && makepkg -si --noconfirm
-	  cd ..
-	  #
-	  rm -rf package-query yay
+	  cd package-query && makepkg -si --noconfirm
+	  cd ../yay/ && makepkg -si --noconfirm
+	  cd .. && rm -rf package-query yay
 	  #
 	  yay -S --noconfirm cros-container-guest-tools-git
 	  #cp -r /etc/skel/.config/pulse ~/.config

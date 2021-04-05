@@ -66,14 +66,10 @@ done
 #
 echo  -=Instalando Soporte AUR=-
 git clone https://aur.archlinux.org/package-query.git
-cd package-query && makepkg -si --noconfirm
-cd ..
-#
 git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si --noconfirm
-cd ..
-#
-rm -rf package-query yay
+cd package-query && makepkg -si --noconfirm
+cd ../yay/ && makepkg -si --noconfirm
+cd .. && rm -rf package-query yay
 #
 echo  -=Actualizando Arch Linux=-
 yay -Syyu
