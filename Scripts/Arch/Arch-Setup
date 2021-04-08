@@ -360,7 +360,6 @@ do
 	  sleep 2s
 	  yay -S gnome-backgrounds-bitday-git gnome-backgrounds-lakeside-git
 	  yay -S gnome-mojave-timed-wallpaper dynamic-wallpaper-catalina-gnome-timed-git
-	  yay -S gnome-shell-extension-background-logo-git
 	  #
 	  #echo  -=libinput-gestures=-
 	  #yay -S libinput-gestures
