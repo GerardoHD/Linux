@@ -4,15 +4,9 @@ echo https://www.github.com/GerardoHD/Linux
 echo Script creado para gestionar un sistema basado en Arch Linux
 echo Se distribuye con la esperanza de que sea útil, pero sin ninguna garantía
 sleep 1s
-if [ "$(id -u)" -eq 0 ] ; then
-	echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión Root "
-	echo " Este script usará sudo cuando sea necesario. Deteniendo. "
-	echo " Simplemente ejecute este script desde su usuario. "
-	exit
-fi
-#
-echo Remontando /tmp con tamaño de 4 GB
-sudo mount -o remount,size=4G,noatime /tmp
+echo Revisando actualizaciones desde repositorios oficiales
+checkupdates
+sleep 5s
 #
 echo  -=Acciones disponibles=-
 cmd=(dialog --separate-output --checklist "Elige las acciones a realizar (selecciona con tecla espacio)" 22 76 16)
@@ -29,27 +23,68 @@ do
 	1)
 	  echo  -=Reparando Pacman db.lck-
 	  sudo rm -f /var/lib/pacman/db.lck
+	  if [ "$(id -u)" -eq 0 ] ; then
+	  echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión root "
+	  echo " Solo se actualizarán paquetes de los repositorios oficiales"
+	  echo " Para actualizar paquetes de AUR, ejecute este script desde su usuario. "
+	  pacman -Syu --noconfirm
+	  else
+	  echo Remontando /tmp con tamaño de 4 GB
+	  sudo mount -o remount,size=4G,noatime /tmp
 	  yay -Syu --noconfirm
+	  fi
 	  ;;
 	2)
 	  echo  -=Actualizando Arch Linux=-
+	  echo Remontando /tmp con tamaño de 4 GB
+	  sudo mount -o remount,size=4G,noatime /tmp
+	  if [ "$(id -u)" -eq 0 ] ; then
+	  echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión root "
+	  echo " Solo se actualizarán paquetes de los repositorios oficiales"
+	  echo " Para actualizar paquetes de AUR, ejecute este script desde su usuario. "
+	  pacman -Syu --noconfirm
+	  else
 	  yay -Syu --noconfirm
+	  fi
 	  ;;
 	3)
 	  echo  -=Limpiando cache de pacman y AUR=-
 	  sleep 1s
-	  sudo pacman -Sc --noconfirm
+	  if [ "$(id -u)" -eq 0 ] ; then
+	  pacman -Sc --noconfirm
+	  else
 	  yay -Sc --noconfirm
+	  fi
 	  ;;
 	4)
 	  echo  -=Actualizando Arch Linux y reiniciando el sistema=-
+	  echo Remontando /tmp con tamaño de 4 GB
+	  sudo mount -o remount,size=4G,noatime /tmp
+	  if [ "$(id -u)" -eq 0 ] ; then
+	  echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión root "
+	  echo " Solo se actualizarán paquetes de los repositorios oficiales"
+	  echo " Para actualizar paquetes de AUR, ejecute este script desde su usuario. "
+	  pacman -Syu --noconfirm
+	  reboot
+	  else
 	  yay -Syu --noconfirm
 	  sudo reboot
+	  fi
 	  ;;
 	5)
 	  echo  -=Actualizando Arch Linux y apagando el sistema=-
+	  echo Remontando /tmp con tamaño de 4 GB
+	  sudo mount -o remount,size=4G,noatime /tmp
+	  if [ "$(id -u)" -eq 0 ] ; then
+	  echo " ADVERTENCIA: makepkg no funciona correctamente en una sesión root "
+	  echo " Solo se actualizarán paquetes de los repositorios oficiales"
+	  echo " Para actualizar paquetes de AUR, ejecute este script desde su usuario. "
+	  pacman -Syu --noconfirm
+	  poweroff
+	  else
 	  yay -Syu --noconfirm
 	  sudo poweroff
+	  fi
 	  ;;
     esac
 done
