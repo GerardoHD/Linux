@@ -338,18 +338,20 @@ do
 	  echo "Escogiste Instalar el entorno de Escritorio GNOME"
 	  echo   ---=Instalando GNOME=---
 	  sleep 1s
-	  sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-boxes
+	  sudo pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds
 	  sudo pacman -S gnome-calculator gnome-calendar gnome-characters gnome-clocks
 	  sudo pacman -S gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility
 	  sudo pacman -S gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus
 	  sudo pacman -S gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell
 	  sudo pacman -S gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra
 	  sudo pacman -S gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins
-	  sudo pacman -S gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-nfs gvfs-smb
-	  sudo pacman -S mutter nautilus networkmanager rygel simple-scan sushi
+	  sudo pacman -S gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
+	  sudo pacman -S mutter nautilus networkmanager rygel sushi
 	  sudo pacman -S totem vino xdg-user-dirs-gtk yelp 
+	  sudo pacman -S gnome-boxes simple-scan
 	  sleep 2s
-	  sudo pacman -S dconf-editor gnome-mines gnome-sound-recorder gnome-tweaks
+	  sudo pacman -S dconf-editor gnome-mines gnome-sound-recorder gnome-sudoku 
+	  sudo pacman -S gnome-taquin gnome-tetravex gnome-tweaks gnome-usage
 	  sudo pacman -S gnome-software-packagekit-plugin
 	  sudo pacman -S chrome-gnome-shell eog-plugins gnome-initial-setup gnome-firmware
 	  #
