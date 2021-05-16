@@ -151,7 +151,7 @@ done
 #
 #Programas
 	sudo pacman -S evince gnome-disk-utility gedit-plugins lollypop fragments gthumb gparted
-	sudo pacman -S geary vocal calibre gnome-epub-thumbnailer foliate dictd
+	sudo pacman -S geary calibre gnome-epub-thumbnailer foliate dictd
 #
 echo -=Soporte de impresion=-
 	sudo pacman -S gutenprint foomatic-db-gutenprint-ppds cups libcups
@@ -166,11 +166,10 @@ xdg-user-dirs-update
 echo  -=Flatpak opcionales=-
 cmd=(dialog --separate-output --checklist "Elige los flatpak a instalar (selecciona con tecla espacio)" 22 76 16)
 options=(1 "Gradio" off    # any option can be set to default to "on"
-         2 "Vocal" off
-         3 "Fragments" off
-         4 "Spotify" off
-         5 "Bitwarden" off
-         6 "Shortwave Nightly" off )
+         2 "Fragments" off
+         3 "Spotify" off
+         4 "Bitwarden" off
+         5 "Shortwave Nightly" off )
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices
@@ -180,18 +179,16 @@ do
 	  flatpak install flathub de.haeckerfelix.gradio -y
 	  ;;
 	2)
-	  flatpak install flathub com.github.needleandthread.vocal -y
-	  ;;
-	3)
 	  flatpak install flathub de.haeckerfelix.Fragments -y
 	  ;;
-	4)
+	3)
 	  flatpak install flathub com.spotify.Client -y
 	  ;;
-	5)
+	4)
 	  flatpak install flathub com.bitwarden.desktop -y
 	  ;;
-	6)
+	  
+	5)
 	  flatpak install https://haeckerfelix.de/~repo/shortwave.flatpakref
 	  ;;
     esac
